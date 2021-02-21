@@ -7,9 +7,11 @@ output:
     toc_float: TRUE
 ---
 
-# Ongoing
+# Ongoing {#ongoing}
 
 ## KOMPASS {#kompass}
+
+[Project homepage](http://www.kompass-forschung.de/)
 
 ## ESPEN {#espen}
 
@@ -24,16 +26,22 @@ DISIS stands for Diagnostic of internalizing psychological problems in schools.
 
 The project is funded by the BMBF.
 
+[Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)
+
+# Upcoming {#upcoming}
+
 ## DYNAMIK {#dynamik}
 
 ## SikLeDU {#sikledu}
 
 # Past
 
-## Mettmann 20
+## Mettmann 20 {#mm20}
 
-## Mettmann
+[Project homepage](https://www.hf.uni-koeln.de/38801)
 
-## QLB-PSI Potsdam-Diagnostik
+## Mettmann {#mm}
+
+## QLB-PSI Potsdam-Diagnostik {#qlb}
 
 [Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)

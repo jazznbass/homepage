@@ -6,25 +6,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Projects"
-      menu: 
-        - text: "ACTIVE"
-        - text: "-----------"
-        - text: "DISIS"
-          href: projects.html#disis
-        - text: "ESPEN"
-          href: projects.html#espen
-        - text: "KOMPASS"
-          href: http://www.kompass-forschung.de/
-        - text: "DYNAMIK"
-          href: projects.html
-        - text: "SikLeDu"
-          href: projects.html
-        - text: "PAST"
-        - text: "-----------"
-        - text: "Mettmann 20"
-          href: https://www.hf.uni-koeln.de/38801
-        - text: "Mettmann"
-          href: projects.html
+      href: projects.html
     - text: "Publications"
       href: publications.html
     - text: "Alumni"
