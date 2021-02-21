@@ -1,0 +1,39 @@
+---
+title: "Projects"
+output:  
+  html_document:  
+    self_contained: no  
+    toc: true
+    toc_float: TRUE
+---
+
+# Ongoing
+
+## KOMPASS {#kompass}
+
+## ESPEN {#espen}
+
+ESPEN stands for Emotional, social, and psychological development in inclusive primary schools.
+
+Project partners are:
+Jürgen Wilbert, Karolina Urton, Johanna Krull, Pawel Kulawiak, Thomas Hennemann
+
+## DISIS {#disis}
+
+DISIS stands for Diagnostic of internalizing psychological problems in schools.
+
+The project is funded by the BMBF.
+
+## DYNAMIK {#dynamik}
+
+## SikLeDU {#sikledu}
+
+# Past
+
+## Mettmann 20
+
+## Mettmann
+
+## QLB-PSI Potsdam-Diagnostik
+
+[Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)

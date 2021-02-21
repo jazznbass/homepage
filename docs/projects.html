@@ -11,7 +11,7 @@
 
 
 
-<title>Links</title>
+<title>Projects</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -20,6 +20,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -245,6 +248,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -252,6 +318,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -332,56 +408,52 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Links</h1>
+<h1 class="title toc-ignore">Projects</h1>
 
 </div>
 
 
-<table>
-<colgroup>
-<col width="60%" />
-<col width="39%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><a href="https://www.uni-potsdam.de/en/inklusion/researchmethodsanddiagnostics/wilbert.html"><img src="images/up.png" width="71" alt="UP" /></a><br />
-</td>
-<td>My homepage at the University of Potsdam</td>
-</tr>
-<tr class="even">
-<td><a href="https://www.researchgate.net/profile/Juergen_Wilbert2"><img src="images/researchgate_icon.png" width="70" alt="Researchgate" /></a></td>
-<td>Research gate</td>
-</tr>
-<tr class="odd">
-<td><a href="https://github.com/jazznbass"><img src="images/github.png" alt="GitHub" /></a></td>
-<td>Github</td>
-</tr>
-<tr class="even">
-<td><a href="http://www.psychologie-aktuell.com/index.php?id=255"><img src="images/esp_icon.png" width="70" alt="Empirische Sonderpädagogik" /></a></td>
-<td>Empirische Sonderpädagogik (Journal Empirical Research in Special Education)</td>
-</tr>
-<tr class="odd">
-<td><a href="https://orcid.org/0000-0002-8392-2873"><img src="images/ORCID_iD.svg.png" width="69" alt="ORCID" /></a></td>
-<td>ORCID</td>
-</tr>
-<tr class="even">
-<td><a href="https://scholar.google.de/citations?user=RF7Siq4AAAAJ&amp;hl=en"><img src="images/google_scholar.png" width="60" alt="Google" /></a></td>
-<td>Google Scholar</td>
-</tr>
-<tr class="odd">
-<td><a href="https://osf.io/q7gme/"><img src="images/osf.png" width="60" alt="OSF" /></a></td>
-<td>OFS - Open Science Framework</td>
-</tr>
-<tr class="even">
-<td><a href="https://twitter.com/juergen_wilbert"><img src="images/twitter.png" width="70" alt="twitter" /></a></td>
-<td>My personal Twitter account</td>
-</tr>
-</tbody>
-</table>
+<div id="ongoing" class="section level1">
+<h1>Ongoing</h1>
+<div id="kompass" class="section level2">
+<h2>KOMPASS</h2>
+</div>
+<div id="espen" class="section level2">
+<h2>ESPEN</h2>
+<p>ESPEN stands for Emotional, social, and psychological development in inclusive primary schools.</p>
+<p>Project partners are: Jürgen Wilbert, Karolina Urton, Johanna Krull, Pawel Kulawiak, Thomas Hennemann</p>
+</div>
+<div id="disis" class="section level2">
+<h2>DISIS</h2>
+<p>DISIS stands for Diagnostic of internalizing psychological problems in schools.</p>
+<p>The project is funded by the BMBF.</p>
+</div>
+<div id="dynamik" class="section level2">
+<h2>DYNAMIK</h2>
+</div>
+<div id="sikledu" class="section level2">
+<h2>SikLeDU</h2>
+</div>
+</div>
+<div id="past" class="section level1">
+<h1>Past</h1>
+<div id="mettmann-20" class="section level2">
+<h2>Mettmann 20</h2>
+</div>
+<div id="mettmann" class="section level2">
+<h2>Mettmann</h2>
+</div>
+<div id="qlb-psi-potsdam-diagnostik" class="section level2">
+<h2>QLB-PSI Potsdam-Diagnostik</h2>
+<p><a href="https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik">Project homepage</a></p>
+</div>
+</div>
 
 <p>&copy; 2021 Jürgen Wilbert</p>
 
 
+</div>
+</div>
 
 </div>
 
@@ -414,6 +486,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

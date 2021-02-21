@@ -10,9 +10,9 @@ navbar:
         - text: "ACTIVE"
         - text: "-----------"
         - text: "DISIS"
-          href: projects.html
+          href: projects.html#disis
         - text: "ESPEN"
-          href: projects.html
+          href: projects.html#espen
         - text: "KOMPASS"
           href: http://www.kompass-forschung.de/
         - text: "DYNAMIK"
