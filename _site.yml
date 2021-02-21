@@ -5,30 +5,33 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Publications"
-      href: publications.html
     - text: "Projects"
       menu: 
         - text: "ACTIVE"
         - text: "-----------"
         - text: "DISIS"
-        - href: disis.html
+          href: projects.html
         - text: "ESPEN"
-        - href: disis.html
+          href: projects.html
+        - text: "KOMPASS"
+          href: http://www.kompass-forschung.de/
         - text: "DYNAMIK"
-        - href: disis.html
+          href: projects.html
         - text: "SikLeDu"
-        - href: disis.html
+          href: projects.html
         - text: "PAST"
         - text: "-----------"
         - text: "Mettmann 20"
-        - href: disis.html
+          href: https://www.hf.uni-koeln.de/38801
         - text: "Mettmann"
-        - href: disis.html
+          href: projects.html
+    - text: "Publications"
+      href: publications.html
     - text: "Alumni"
       href: alumni.html
     - text: "Links"
       href: links.html
+  right:
     - text: "About"
       icon: fa-info
       href: about.html
@@ -36,5 +39,6 @@ output:
   html_document:
     theme: spacelab
     highlight: tango
+    css: style.css
     include:
       after_body: footer.html
