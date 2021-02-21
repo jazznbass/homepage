@@ -1,0 +1,15 @@
+---
+title: "Welcome!"
+---
+
+I thought it was necessary to have a center for all my web activities, a place where someone who is interested in my work can start off. Here it is!
+
+The menu bar on top is pretty self-explaining:
+
+|                  |                                                                                                    |
+|------------------|----------------------------------------------------------------------------------------------------|
+| **Projects**     | If you are looking for past or present projects I am working on: here is the place                 |
+| **Publications** | From any place, this is the one that you get my most recent publication list                       |
+| **Alumni**       | A list of great people that I had the pleasure to supervise and accompany through their graduation |
+| **Links**        | From here, you get to many of the other places I am presented on the web                           |
+| **About**        | Here find information on my career                                                                 |

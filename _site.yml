@@ -1,0 +1,40 @@
+name: "Jürgen Wilbert's Homepage"
+output_dir: "docs"  
+navbar:
+  title: "Jürgen Wilbert"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Publications"
+      href: publications.html
+    - text: "Projects"
+      menu: 
+        - text: "ACTIVE"
+        - text: "-----------"
+        - text: "DISIS"
+        - href: disis.html
+        - text: "ESPEN"
+        - href: disis.html
+        - text: "DYNAMIK"
+        - href: disis.html
+        - text: "SikLeDu"
+        - href: disis.html
+        - text: "PAST"
+        - text: "-----------"
+        - text: "Mettmann 20"
+        - href: disis.html
+        - text: "Mettmann"
+        - href: disis.html
+    - text: "Alumni"
+      href: alumni.html
+    - text: "Links"
+      href: links.html
+    - text: "About"
+      icon: fa-info
+      href: about.html
+output:
+  html_document:
+    theme: journal
+    highlight: tango
+    include:
+      after_body: footer.html

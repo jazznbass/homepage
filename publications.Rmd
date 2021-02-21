@@ -1,0 +1,178 @@
+---
+title: "Publications"
+output:  
+  html_document:  
+    self_contained: no  
+    toc: true
+    toc_float: TRUE
+---
+
+Updated `r Sys.Date()`
+
+# Journal papers
+
+1.  Wilbert, J., Bosch, J., & Lüke, T. (2021). Validity and judgement bias in visual analysis of single-case data. *International Journal for Research in Learning Disabilities*, *5*(1), 13--24. <https://doi.org/10.28987/ijrld.5.1.13>
+
+2.  Börnert-Ringleb, M., & Wilbert, J. (2020). Die Vorhersage von Mathe- und Leseleistungen durch dynamisches Testen. *Lernen und Lernstörungen*, 1--12. <https://doi.org/10.1024/2235-0977/a000331>
+
+3.  Kulawiak, Pawel R., Wilbert, J., Schlack, R., & Börnert-Ringleb, M. (2020). Prediction of child and adolescent outcomes with broadband and narrowband dimensions of internalizing and externalizing behavior using the child and adolescent version of the Strengths and Difficulties Questionnaire. *PLOS ONE*, *15*(10), e0240312. <https://doi.org/10.1371/journal.pone.0240312>
+
+4.  Dünkel, N., Knigge, M., & Wilbert, J. (2020). Determinanten und Akkuratheit von Schülerurteilen über sprachliche Fähigkeiten von Mitschüler(inne)n im Deutschen und den Herkunftssprachen Türkisch und Russisch. *Zeitschrift für Erziehungswissenschaft*. <https://doi.org/10.1007/s11618-020-00972-8>
+
+5.  Hoffmann, L., Wilbert, J., Lehofer, M., & Schwab, S. (2020). Are we good friends? -- Friendship preferences and the quantity and quality of mutual friendships. *European Journal of Special Needs Education*, *0*(0), 1--15. <https://doi.org/10.1080/08856257.2020.1769980>
+
+6.  Bosch, J., & Wilbert, J. (2020). Contrast and Assimilation Effects on Self-Evaluation of Performance and Task Interest in a Sample of Elementary School Children. *Frontiers in Education*, *4*. <https://doi.org/10.3389/feduc.2019.00165>
+
+7.  Kulawiak, Pawel Roman, Urton, K., Krull, J., Hennemann, T., & Wilbert, J. (2020). Internalizing Behaviour of Sociometrically Neglected Students in Inclusive Primary Classrooms - A Methodological Issue? *Frontiers in Education*, *5*. <https://doi.org/10.3389/feduc.2020.00032>
+
+8.  Wilbert, J., Urton, K., Krull, J., Kulawiak, P. R., Schwalbe, A., & Hennemann, T. (2020). Teachers' Accuracy in Estimating Social Inclusion of Students With and Without Special Educational Needs. *Frontiers in Education*, *5*. <https://doi.org/10.3389/feduc.2020.598330>
+
+9.  Börnert-Ringleb, M., & Wilbert, J. (2019). Beitrag eines dynamischen gegenüber einem statischen kognitiven Test zur Vorhersage der Schulleistung. *Empirische Sonderpädagogik*, *11*(3), 175--190.
+
+10. Kulawiak, Pawel R., & Wilbert, J. (2019). Introduction of a new method for representing the sociometric status within the peer group: the example of sociometrically neglected children. *International Journal of Research & Method in Education*, 1--19. <https://doi.org/10.1080/1743727X.2019.1621830>
+
+11. Börnert-Ringleb, M., & Wilbert, J. (2018). The Association of Strategy Use and Concrete-Operational Thinking in Primary School. *Frontiers in Education*, *3*. <https://doi.org/10.3389/feduc.2018.00038>
+
+12. Krull, J., Wilbert, J., & Hennemann, T. (2018). Does social exclusion by classmates lead to behaviour problems and learning difficulties or vice versa? A cross-lagged panel analysis. *European Journal of Special Needs Education*, *33*(2), 235--253. <https://doi.org/10.1080/08856257.2018.1424780>
+
+13. Hennemann, T., Hillenbrand, C., Fitting-Dahlmann, K., Wilbert, J., & Urton, K. (2018). Auf dem Weg zum inklusiven Schulsystem im Kreis Mettmann -- Konzeption der wissenschaftlichen Begleitevaluation. *Zeitschrift für Heilpädagogik*, *69*(1), 4--16.
+
+14. Krull, J., Urton, K., Wilbert, J., & Hennemann, T. (2018). Der Kreis Mettmann auf dem Weg zum inklusiven Schulsystem -- zentrale Ergebnisse der wissenschaftlichen Begleitung. *Zeitschrift für Heilpädagogik*, *69*(1), 17--39.
+
+15. Urton, K., Börnert-Ringleb, M., Krull, J., Wilbert, J., & Hennemann, T. (2018). Inklusives Schulklima: Konzeptionelle Darstellung eines Rahmendmodells. *Zeitschrift für Heilpädagogik*, *69*, 40--52.
+
+16. Bosch, J., & Wilbert, J. (2017). Contrast and Assimilation Effects on Task Interest in an Academic Learning Task. *Frontline Learning Research*, *5*(2), 60--78.
+
+17. Grünke, M., Wilbert, J., Tsiriotakis, I. K., & Agirregoikoa, A. L. (2017). Improving the Length and Quality of Texts Written by Fourth Graders With Learning Disabilities Through a Peer-Tutoring Graphic Organizing Strategy. *Insights into Learning Disabilities*, *14*(2), 167--188.
+
+18. Hennemann, T., Casale, G., Wilbert, J., Grosche, M., Fitting-Dahlmann, K., Hövel, D., Hagen, T., Leidig, T., & Melzer, C. (2017). „Schulen auf dem Weg zur Inklusion" Konzeption, Evaluation und erste Befunde eines landesweiten Qualifizierungsprogrammes zur Umsetzung von Inklusion in Nordrhein-Westfalen. *Zeitschrift für Heilpädagogik*.
+
+19. Wilbert, J., Urton, K., & Grubert, J. (2016). Entwicklung eines Verfahrens zur Messung des inklusionsspezifischen Selbstwirksamkeitserlebens im schulischen Kontext. *Empirische Sonderpädagogik*, *8*(3), 289--302.
+
+20. Urton, K., Wilbert, J., Grosche, M., & Hennemann, T. (2016). Vergleich der beruflichen Interessenstruktur von Studierenden der Sonderpädagogik mit den Anforderungen des sonderpädagogischen Lehrerberufs. *Zeitschrift für Bildungsforschung*. <https://doi.org/10.1007/s35834-016-0160-5>
+
+21. Börnert, M., & Wilbert, J. (2016). Dynamisches Testen als neue Perspektive in der sonderpädagogischen Diagnostik - Theorie, Evidenzen, Impulse für Forschung und Praxis. *Zeitschrift für Heilpädagogik*, *67*(4), 156--167.
+
+22. Hintz, A.-M., Urton, K., Krull, J., Wilbert, J., & Hennemann, T. (2015). Teachers' Perceptions of Opportunities and Threats Concerning Inclusive Schooling in Germany at an Early Stage of Inclusion: Analyses of a Mixed Methodology Approach. *Journal of Cognitive Education and Psychology*, *14*(3), 357--374. <https://doi.org/10.1891/1945-8959.14.3.357>
+
+23. Urton, K., Wilbert, J., & Hennemann, T. (2015). Die Einstellung zur Integration und die Selbstwirksamkeit von Lehrkräften. *Psychologie in Erziehung und Unterricht*, *62*(2), 147--157. <https://doi.org/10.2378/peu2015.art09d>
+
+24. Börnert, M., & Wilbert, J. (2015). Thinking-aloud protocols of Piagetian tasks: Insights into problem-solving processes of primary school students. *Insights on Learning Disabilities*, *12*(1), 19--34.
+
+25. Grünke, M., Büyüknarci, Ö., Wilbert, J., & Breuer, Esther. (2015). To what extent do certain characteristics of a child's written story influence the way it is rated? Insights into features necessary for supporting struggling writers. *Insights into Learning Disabilities*, *12*(2), 163--177.
+
+26. Kulawiak, Pawel R., & Wilbert, J. (2015). Methoden zur Analyse der sozialen Integration von Schulkindern mit sonderpädagogischem Förderbedarf im gemeinsamen Unterricht. *Empirische Sonderpädagogik*, *7*(3), 241--257.
+
+27. Rietz, C., & Wilbert, J. (Hrsg.). (2015). Schwerpunktthema: Best-Practice der Datenanalyse in sonderpädagogischen Forschungsfeldern. *Empirische Sonderpädagogik*, *7*(3).
+
+28. Krull, J., Wilbert, J., & Hennemann, T. (2014a). Soziale Ausgrenzung von Erstklässlerinnen und Erstklässlern mit sonderpädagogischem Förderbedarf im Gemeinsamen Unterricht. *Empirische Sonderpädagogik*, *6*(1), 59--75.
+
+29. Krull, J., Wilbert, J., & Hennemann, T. (2014b). The Social and Emotional Situation of First Graders with Classroom Behavior Problems and Classroom Learning Difficulties in Inclusive Classes. *Learning Disabilities: A Contemporary Journal*, *12*(2), 169--190.
+
+30. Lüke, T., Wilbert, J., Weichselbaum, M., & Grünke, M. (2014). Zur Sichtbarkeit der Fachzeitschrift „Empirische Sonderpädagogik" -- Eine bibliometrische Analyse. *Empirische Sonderpädagogik*, *6*(4), 363--370.
+
+31. Urton, K., Wilbert, J., & Hennemann, T. (2014a). Attitudes towards inclusion and self-efficacy of principals and teachers in German primary schools. *Learning Disabilities: A Contemporary Journal*, *12*(2), 151--168.
+
+32. Urton, K., Wilbert, J., & Hennemann, T. (2014b). Der Zusammenhang zwischen der Einstellung zur Integration und der Selbstwirksamkeit von Schulleitungen und deren Kollegien. *Empirische Sonderpädagogik*, *6*(1), 3--16.
+
+33. Grünke, M., Wilbert, J., & Stegemann-Calder, K. (2013). Analyzing the effects of story mapping on the reading comprehension of children with low intellectual abilities. *Learning Disabilities: A Contemporary Journal*, *11*(2), 51--64.
+
+34. Huber, C., & Wilbert, J. (2012). Soziale Ausgrenzung von Schülern mit sonderpädagogischem Förderbedarf und niedrigen Schulleistungen im gemeinsamen Unterricht. *Empirische Sonderpädagogik*, *4*(2), 147--165.
+
+35. Wilbert, J., & Grosche, M. (2012). A dissociation of implicit and explicit spatial sequence learning in a group of students with learning difficulties. *Journal of Cognitive Education and Psychology*, *11*(3), 301--316.
+
+36. Wilbert, J., & Haider, H. (2012). The subjective experience of committed errors and the Discrepancy-Attribution hypothesis. *Acta Psychologica*, *139*, 370--381. <https://doi.org/10.1016/j.actpsy.2011.11.010>
+
+37. Wilbert, J. (2011). Die Einsetzbarkeit der Skalen zur Erfassung der Lern- und Leistungsmotivation (SELLMO) bei Schülern des Förderschwerpunkts Lernen. *Zeitschrift für Heilpädagogik*, *62*, 11--17.
+
+38. Wilbert, J., & Linnemann, M. (2011). Kriterien zur Analyse eines Tests zur Lernverlaufsdiagnostik. *Empirische Sonderpädagogik*, *3*(3), 225--242.
+
+39. Hennemann, T., Hillenbrand, C., Wilbert, J., Franke, S., Spieß, R., Jürgens, J., & Görgens, G. (2010). Kompetenzen und Risiken in der Transition in die Hauptschule - eine Querschnittsuntersuchung von Schülerinnen und Schülern der 5. Jahrgangsstufen. *Empirische Sonderpädagogik*, *2*(4), 36--49.
+
+40. Neugebauer, U., & Wilbert, J. (2010). Zum Zusammenhang zwischen Bewältigungsstil und Burnout-Symptomen bei Lehrkräften der Förderschule Lernen. *Empirische Sonderpädagogik*, *2*(3), 69--82.
+
+41. Wilbert, J. (2010). Stereotype-Threat Effekte bei Schülern des Förderschwerpunkts Lernen. *Heilpädagogische Forschung*, *36*(4), 154--161.
+
+42. Wilbert, J., Grosche, M., & Gerdes, H. (2010). Effects of Evaluative Feedback on Rate of Learning and Task Motivation: An Analogue Experiment. *Learning Disabilities: A Contemporary Journal*, *8*(1), 43--52.
+
+43. Wilbert, J., & Grünke, M. (2010a). Ein Vergleich des Lehrerbildes von Schülern der Förderschule Lernen und der Regelschule. *Heilpädagogische Forschung*, *36*(1), 2--14.
+
+44. Wilbert, J., & Grünke, M. (2010b). Norms and goals of appraisal of German teachers for students with learning disabilities. *Learning Disabilities: A Contemporary Journal*, *8*(2), 19--30.
+
+45. Wilbert, J., & Gerdes, H. (2009). Die Bezugsnormwahl bei der Bewertung schulischer Leistungen durch angehende Lehrkräfte des Förderschwerpunktes Lernen. *Heilpädagogische Forschung*, *35*, 122--135.
+
+46. Wilbert, J., & Gerdes, H. (2007). Lehrerbild von Schülern und Lehrern: Eine empirische Studie zum Vergleich der Vorstellungen vom idealen und vom typischen Lehrer. *Psychologie in Erziehung und Unterricht*, *54*(3), 208--222.
+
+47. Bosch, J., & Wilbert, J. (submitted). *The Impact of Social Comparison Processes on Self-Evaluation of Performance, Self-Concept, and Task Interest*.
+
+48. Leidig, T., Casale, G., Wilbert, J., Grosche, M., Wolpe, R., Hennemann, T., & Briesch, A. M. (submitted). Effects of the Good Behavior Game on At-risk Primary School Students in Germany. *School Psychology Quarterly*.
+
+49. Schwalbe, A., Müller, C. M., & Wilbert, J. (submitted). Von Grundschulkindern wahrgenommene Gruppennormen zur sozialen Akzeptanz in der Klasse. *Zeitschrift für Grundschule*.
+
+# Book chapters
+
+1.  Börnert-Ringleb, M., & Wilbert, J. (in print). Dynamisches Testen: Diagnostik als Möglichkeit der Modellierung von Kompetenzentwicklung. In C. Mähler & M. Hasselhorn (Hrsg.), *Inklusionsherausforderungen*. Hogrefe.
+
+2.  Börnert-Ringleb, M., & Wilbert, J. (in print). *Verlaufsdiagnostik und einzelfallbasierte Veränderungsmessung im Rahmen schulischer Förderung* (Y. Blumenthal & S. Blumenthal, Hrsg.). Universität Rostock.
+
+3.  Wilbert, J., & Krull, J. (in print). Die Bedeutung von Peers für die soziale Partizipation von Lernenden mit Lern- und Verhaltensproblemen in inklusiven Schulklassen. In M. Kreutzmann, L. Zander, & B. Hannover (Hrsg.), *Aufwachsen mit Anderen. Peerbeziehungen als Bildungsfaktor*. Kohlhammer.
+
+4.  Urton, K., Wilbert, J., & Knigge, M. (2019). Die Entwicklung der Selbstwirksamkeit und des Rollenverständnisses  während des Praxissemesters von Studierenden des Lehramtes für  Sonderpädagogische Förderung. In D. Zimmermann, U. Fickler-Stang, L. Dietrich, & K. Weiland (Hrsg.), *Professionalisierung für Unterricht und Beziehungsarbeit mit psychosozial beeinträchtigten Kindern und Jugendlichen* (S. 145--157). Klinkhammer.
+
+5.  Urton, K., Börnert-Ringleb, M., & Wilbert, J. (2018). Gestaltung eines inklusiven Schulklimas als Schulentwicklungsaufgabe. In F. Hellmich, G. Görel, & M. Löper (Hrsg.), *Inklusive Schul- und Unterrichtsentwicklung*. Kohlhammer.
+
+6.  Börnert-Ringleb, M., Bosch, J., & Wilbert, J. (2018). Lernverlaufsdiagnostik. In M. Dziak-Mahler, T. Hennemann, S. Jaster, T. Leidig, & J. Springob (Hrsg.), *Fachdidaktik inklusiv II - (Fach-)Unterricht inklusiv gestalten - Theoretische Annäherungen und praktische Umsetzungen*. Waxmann Verlag.
+
+7.  Grubert, J., Kulawiak, P. R., Schwalbe, A., Scherreiks, L., Börnert-Ringleb, M., & Wilbert, J. (2018). Fragebogen zur Erfassung diagnostischer Kompetenzen hinsichtlich psychischer Auffälligkeiten von Schüler_innen. In *Potsdamer Beiträge zur Lehrerbildung und Bildungsforschung* (S. 17--27). Universität Potsdam.
+
+8.  Grubert, J., Schwalbe, A., Kulawiak, P. R., & Wilbert, J. (2018). Seminarkonzept zur Förderung inklusionsrelevanter Kompetenzen -- Diagnostik hinsichtlich psychischer Auffälligkeiten von Schüler_innen. In *Potsdamer Beiträge zur Lehrerbildung und Bildungsforschung* (S. 125--124). Universität Potsdam.
+
+9.  Kulawiak, P. R., & Wilbert, J. (2018). Komplementäre Studiendesigns zur Evidenzbasierung in der Bildungswissenschaft. In R. Haring & J. Siegmüller (Hrsg.), *Evidenzbasierte Praxis in den Gesundheitsberufen* (S. 17--31). Springer Berlin Heidelberg. <https://doi.org/10.1007/978-3-662-55377-0_2>
+
+10. Börnert, M., Grubert, J., & Wilbert, J. (2016). *Lautes Denken als Methode zur Forschung und Diagnostik in inklusionspädagogischen Handlungsfeldern* (D. Gebele & A. L. Zepter, Hrsg.; S. 165--186). Gilles & Francke Verlag.
+
+11. Bosch, J., Schaefer, A., Kulawiak, P. R., & Wilbert, J. (2016). *Forschungsdesigns zur Untersuchung kausaler Beziehungen in den empirischen Bildungswissenschaften* (D. Gebele & A. L. Zepter, Hrsg.; S. 138--164). Gilles & Francke Verlag.
+
+12. Wilbert, J. (2015). Streuung, Standardabweichung und Varianz. In S. Ellinger & K. Koch (Hrsg.), *Forschungsmethoden in der Heil- und Sonderpädagogik* (S. 129--136). Hogrefe.
+
+13. Wilbert, J., & Grünke, M. (2015). Kontrollierte Einzelfallforschung. In S. Ellinger & K. Koch (Hrsg.), *Forschungsmethoden in der Heil- und Sonderpädagogik* (S. 100--105). Hogrefe.
+
+14. Wilbert, J., & Börnert, M. (2015). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). Julius Klinkhardt.
+
+15. Linnemann, M., & Wilbert, J. (2014). Do C-tests measure language comprehension of learning disabled students? In R. Grotjahn (Hrsg.), *Der C-Test: Beiträge aus der aktuellen Forschung/ The C-Test: Contributions from Current Research* (S. 223--238). Lang.
+
+16. Wilbert, J. (2014a). Instrumente zur Lernverlaufsmessung. Gütekriterien und Auswertungsherausforderungen. In M. Hasselhorn, W. Schneider, & U. Trautwein (Hrsg.), *Lernverlaufsdiagnostik* (S. 281--308). Hogrefe.
+
+17. Wilbert, J. (2014b). Lern- und Leistungsmotivation. In A. Castello (Hrsg.), *Entwicklungsrisiken bei Kindern und Jugendlichen: Prävention im pädagogischen Alltag*. Kohlhammer.
+
+18. Wilbert, J. (2014c). Vermittlung von Basiskompetenzen zum Rechnen. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (S. 209--219). Hogrefe.
+
+19. Linnemann, M., & Wilbert, J. (2010). The C-test: A valid instrument for screening language skills and reading comprehension of children with learning problems? In R. Grotjahn (Hrsg.), *Der C-Test: Beiträge aus der aktuellen Forschung/ The C-Test: Contributions from Current Research* (S. 113--124). Lang.
+
+20. Grünke, M., & Wilbert, J. (2008). Offener Unterricht und Projektunterricht. In M. Fingerle & S. Ellinger (Hrsg.), *Sonderpädagogische Förderung: Förderkonzepte auf dem Prüfstand* (S. 13--33). Kohlhammer.
+
+21. Hurrelman, B., Becker, S., Elias, S., Odag, Ö., & Wilbert, J. (2002). Mündlichkeit und Schriftlichkeit: Zur (Re-)Konstruktion geschlechtsspezifischer Vermittlungsformen in der Lesesozialisation. In H. Bonfadelli & P. Bucher (Hrsg.), *Lesen in der Mediengesellschaft. Stand und Perspektiven der Forschung* (S. 178--214). Pestalozzianum.
+
+# Books and reports
+
+1.  Krull, J., Urton, K., Hennemann, T., & Wilbert, J. (2021). *Mettmann 2.0 -- Wissenschaftliche Begleitung auf dem Weg zum inklusiven Schulsystem des Kreises Mettmann Abschlussbericht* (S. 68). University of Cologne.
+
+2.  Wilbert, J. (2021). *Analyzing single-case data with R and scan*. <https://jazznbass.github.io/scan-Book/>
+
+3.  Hennemann, T., Wilbert, J., & Hillenbrand, C. (2014). *Wissenschaftliche Begleitung im Rahmen der Umsetzung zur inklusiven Schule im Kreis Mettmann (Mehrebenenanalyse 2010 -- 2012). Abschlussbericht*. Universität zu Köln.
+
+4.  Becker-Mrotzek, M., Ehlich, K., Füssenich, I., Günther, H., Hasselhorn, M., Hopf, M., Jeuk, S., Lengyel, D., Neugebauer, U., Panagiotopoulou, A., Stanat, P., & Wilbert, J. (2013). *Qualitätsmerkmale für Sprachstandsverfahren im Elementarbereich. Ein Bewertungsrahmen für fundierte Sprachdiagnostik in der Kita*. Mercator-Institut für Sprachförderung und Deutsch als Zweitsprache.
+
+5.  Wilbert, J. (2011). *Motivationale Faktoren in der Sonderpädagogik bei Lernstörungen.* [Habilitationsschrift]. Universität Oldenburg.
+
+6.  Wilbert, J. (2010). *Förderung der Motivation bei Lernstörungen*. Kohlhammer.
+
+7.  Wilbert, J. (2006). *Die Etikettierung eines Verhaltens als Fehlerhaft: Eine empirische Untersuchung zur bewussten Gewahrwerdung eigener Verhaltensfehler*. Pabst Science Publishers.
+
+# Software
+
+1.  Wilbert, J. (2020). *scaledic:  An R package for adding scaling information to variables in data frames* (0.1.8) [English]. University of Potsdam. <https://github.com/jazznbass/scaledic/>
+
+2.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40) [English]. University of Potsdam. <https://CRAN.R-project.org/package=scan>
+
+3.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20) [English]. University of Potsdam. <https://cran.r-project.org/web/packages/scan/index.html>
