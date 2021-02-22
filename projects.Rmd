@@ -11,37 +11,89 @@ output:
 
 ## KOMPASS {#kompass}
 
-[Project homepage](http://www.kompass-forschung.de/)
+Title: Cooperative behavior modification and computer-based-training for students with behavioral and academic problems. [Original: Kooperative Verhaltensmodifikation und PC-basierte Förderung bei Verhaltensauffälligkeiten und Schulschwierigkeiten]
+
+Homepage: [Project homepage](http://www.kompass-forschung.de/)
+
+Partner: Christian Huber; Michael von Aster; Gerd Schulte-Körne
+
+Term: 1.10.2018 - 30.9.2021
+
+Funding: [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)
 
 ## ESPEN {#espen}
 
-ESPEN stands for Emotional, social, and psychological development in inclusive primary schools.
+Title: Emotional, social, and psychological development in inclusive primary schools [Original: Emotionale, soziale und psychische Entwicklung an der
+inklusiven Grundschule]
 
-Project partners are:
-Jürgen Wilbert, Karolina Urton, Johanna Krull, Pawel Kulawiak, Thomas Hennemann
+Project partners: Karolina Urton, Johanna Krull, Pawel Kulawiak, Thomas Hennemann
 
-## DISIS {#disis}
+Term: 1.9.2021 - 31.8.2023
 
-DISIS stands for Diagnostic of internalizing psychological problems in schools.
+Funding: School district Mettmann, Germany
 
-The project is funded by the BMBF.
+## QLB-DISIS {#disis}
 
-[Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)
+Title: Diagnostic of internalizing psychological problems in schools.
+
+Homepage: [Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)
+
+Term: 1.2.2021 - 30.12.2023
+
+Funding: [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)
 
 # Upcoming {#upcoming}
 
 ## DYNAMIK {#dynamik}
 
-## SikLeDU {#sikledu}
+Title: Dynamic testing as a perspective for intervention oriented diagnostic decisions. [Original: Dynamisches Testen als Perspektive für förderdiagnostische Entscheidungen in der Schule]
+
+Project partner: Moritz Börnert-Ringleb; Claudia Mähler
+
+Funding: Decision is awaited ([Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html))
+
+Term: Planed 1.11.2021 - 31.10.2024
+
+## SiKLedU {#sikledu}
+
+Title: Process monitoring and support of language education in inclusive classes. [Original: Sprachbildungsprozesse in inklusiven Klassen im Lernverlauf diagnostizieren und unterstützen]
+
+Project partner: Markus Linnemann; Gabriele Kniffka; Petra Gretsch
+
+Term: Planed 1.11.2021 - 31.10.2024
+
+Funding: Decision is awaited ([Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html))
 
 # Past
 
 ## Mettmann 20 {#mm20}
 
-[Project homepage](https://www.hf.uni-koeln.de/38801)
+Title: Schule auf dem Weg zur Inklusion [Original: School on its way to inclusion]
+
+Homepage: [Project homepage](https://www.hf.uni-koeln.de/38801)
+
+Project partner: Thomas Hennemann
+
+Funding: School district Mettmann, Germany
+
+Term: 1.11.2016 - 31.10.2020
 
 ## Mettmann {#mm}
 
+Title: Inclusive school development [Original: Wissenschaftliche Begleitung zur inklusiven Schulentwicklung im Kreis Mettmann]
+
+Project partner: Thomas Hennemann; Clemens Hillenbrand
+
+Term: 1.8.2012 - 30.7.2015
+
+Funding: School district Mettmann, Germany
+
 ## QLB-PSI Potsdam-Diagnostik {#qlb}
 
-[Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)
+Title: Diagnostic competences of teachers in inclusive classes
+
+Homepage: [Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)
+
+Term: 1.9.2015 - 31.8.2019
+
+Funding: [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)
