@@ -6,7 +6,7 @@ I thought it was necessary to have a center for all my web activities, a place w
 
 Here it is!
 
-The menu bar on top is pretty self-explaining:
+The menu bar on top is pretty much self-explaining:
 
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------+
 | [**Projects**](projects.html)         | If you are looking for past or present projects I am working on: here is the place                        |
