@@ -11,89 +11,142 @@ output:
 
 ## KOMPASS {#kompass}
 
-Title: Cooperative behavior modification and computer-based-training for students with behavioral and academic problems. [Original: Kooperative Verhaltensmodifikation und PC-basierte Förderung bei Verhaltensauffälligkeiten und Schulschwierigkeiten]
-
-Homepage: [Project homepage](http://www.kompass-forschung.de/)
-
-Partner: Christian Huber; Michael von Aster; Gerd Schulte-Körne
-
-Term: 1.10.2018 - 30.9.2021
-
-Funding: [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)
++--------------+-------------------------------------------------------------------------------------------------------------------------------+
+| **Title**    | Cooperative behavior modification and computer-based-training for students with behavioral and academic problems              |
++==============+===============================================================================================================================+
+|              | Original: Kooperative Verhaltensmodifikation und PC-basierte Förderung bei Verhaltensauffälligkeiten und Schulschwierigkeiten |
++--------------+-------------------------------------------------------------------------------------------------------------------------------+
+| **PIs**      | Michael von Aster; Christian Huber; Gerd Schulte-Körne; Jürgen Wilbert                                                        |
++--------------+-------------------------------------------------------------------------------------------------------------------------------+
+| **Team**     | Linda Kuhr; Moritz Börnert (see homepage for full list)                                                                       |
++--------------+-------------------------------------------------------------------------------------------------------------------------------+
+| **Homepage** | [Project homepage](http://www.kompass-forschung.de/)                                                                          |
++--------------+-------------------------------------------------------------------------------------------------------------------------------+
+| **Term**     | 1.10.2018 - 30.9.2021                                                                                                         |
++--------------+-------------------------------------------------------------------------------------------------------------------------------+
+| **Funding**  | [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)                                        |
++--------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 ## ESPEN {#espen}
 
-Title: Emotional, social, and psychological development in inclusive primary schools [Original: Emotionale, soziale und psychische Entwicklung an der
-inklusiven Grundschule]
-
-Project partners: Karolina Urton, Johanna Krull, Pawel Kulawiak, Thomas Hennemann
-
-Term: 1.9.2021 - 31.8.2023
-
-Funding: School district Mettmann, Germany
++--------------+----------------------------------------------------------------------------------------+
+| **Title**    | Emotional, social, and psychological development in inclusive primary schools          |
++--------------+----------------------------------------------------------------------------------------+
+|              | Original: Emotionale, soziale und psychische Entwicklung an der inklusiven Grundschule |
++--------------+----------------------------------------------------------------------------------------+
+| **PIs**      | Johanna Krull; Karolina Urton; Thomas Hennemann; Jürgen Wilbert                        |
++--------------+----------------------------------------------------------------------------------------+
+| **Team**     | Pawel Kulawiak                                                                         |
++--------------+----------------------------------------------------------------------------------------+
+| **Homepage** | Not available                                                                          |
++--------------+----------------------------------------------------------------------------------------+
+| **Term**     | 1.9.2021 - 31.8.2023                                                                   |
++--------------+----------------------------------------------------------------------------------------+
+| **Funding**  | School district Mettmann, Germany                                                      |
++--------------+----------------------------------------------------------------------------------------+
 
 ## QLB-DISIS {#disis}
 
-Title: Diagnostic of internalizing psychological problems in schools.
-
-Homepage: [Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)
-
-Term: 1.2.2021 - 30.12.2023
-
-Funding: [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Title**    | Diagnostic of internalizing psychological problems in schools                                                                                                                 |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|              | Original: Diagnostik internalisierender Störungen an der inklusiven Schule                                                                                                    |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **PI**       | Jürgen Wilbert                                                                                                                                                                |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Team**     | Jannnis Bosch; Anja Schwalbe                                                                                                                                                  |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Homepage** | [Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik) |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Term**     | 1.2.2021 - 30.12.2023                                                                                                                                                         |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Funding**  | [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)                                                                                        |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 # Upcoming {#upcoming}
 
 ## DYNAMIK {#dynamik}
 
-Title: Dynamic testing as a perspective for intervention oriented diagnostic decisions. [Original: Dynamisches Testen als Perspektive für förderdiagnostische Entscheidungen in der Schule]
-
-Project partner: Moritz Börnert-Ringleb; Claudia Mähler
-
-Funding: Decision is awaited ([Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html))
-
-Term: Planed 1.11.2021 - 31.10.2024
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **Title**    | Dynamic testing as a perspective for intervention oriented diagnostic decisions                              |
++--------------+--------------------------------------------------------------------------------------------------------------+
+|              | Original: Dynamisches Testen als Perspektive für förderdiagnostische Entscheidungen in der Schule            |
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **PIs**      | Moritz Börnert-Ringleb; Claudia Mähler; Jürgen Wilbert                                                       |
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **Homepage** | Not available                                                                                                |
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **Term**     | Planed 1.11.2021 - 31.10.2024                                                                                |
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **Funding**  | Decision is awaited ([Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)) |
++--------------+--------------------------------------------------------------------------------------------------------------+
 
 ## SiKLedU {#sikledu}
 
-Title: Process monitoring and support of language education in inclusive classes. [Original: Sprachbildungsprozesse in inklusiven Klassen im Lernverlauf diagnostizieren und unterstützen]
-
-Project partner: Markus Linnemann; Gabriele Kniffka; Petra Gretsch
-
-Term: Planed 1.11.2021 - 31.10.2024
-
-Funding: Decision is awaited ([Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html))
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **Title**    | Process monitoring and support of language education in inclusive classes                                    |
++--------------+--------------------------------------------------------------------------------------------------------------+
+|              | Original: Sprachbildungsprozesse in inklusiven Klassen im Lernverlauf diagnostizieren und unterstützen       |
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **PIs**      | Markus Linnemann; Gabriele Kniffka; Petra Gretsch; Jürgen Wilbert                                            |
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **Homepage** | Not available                                                                                                |
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **Term**     | 1.11.2021 - 31.10.2024                                                                                       |
++--------------+--------------------------------------------------------------------------------------------------------------+
+| **Funding**  | Decision is awaited ([Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)) |
++--------------+--------------------------------------------------------------------------------------------------------------+
 
 # Past
 
 ## Mettmann 20 {#mm20}
 
-Title: Schule auf dem Weg zur Inklusion [Original: School on its way to inclusion]
-
-Homepage: [Project homepage](https://www.hf.uni-koeln.de/38801)
-
-Project partner: Thomas Hennemann
-
-Funding: School district Mettmann, Germany
-
-Term: 1.11.2016 - 31.10.2020
++------------------+------------------------------------------------------------+
+| **Title**        | School on its way to inclusion                             |
++------------------+------------------------------------------------------------+
+|                  | Original: Mettmann 20: Schule auf dem Weg zur Inklusion    |
++------------------+------------------------------------------------------------+
+| **PIs**          | Thomas Hennemann; Jürgen Wilbert                           |
++------------------+------------------------------------------------------------+
+| **Team**         | Johanna Krull; Karolina Urton (see homepage for full list) |
++------------------+------------------------------------------------------------+
+| **Homepage**     | [Project homepage](https://www.hf.uni-koeln.de/38801)      |
++------------------+------------------------------------------------------------+
+| **Term**         | 1.11.2016 - 31.10.2020                                     |
++------------------+------------------------------------------------------------+
+| **Funding**      | School district Mettmann, Germany                          |
++------------------+------------------------------------------------------------+
 
 ## Mettmann {#mm}
 
-Title: Inclusive school development [Original: Wissenschaftliche Begleitung zur inklusiven Schulentwicklung im Kreis Mettmann]
-
-Project partner: Thomas Hennemann; Clemens Hillenbrand
-
-Term: 1.8.2012 - 30.7.2015
-
-Funding: School district Mettmann, Germany
++-------------+------------------------------------------------------------------------------------------+
+| **Title**   | Inclusive school development                                                             |
++-------------+------------------------------------------------------------------------------------------+
+|             | Original: Wissenschaftliche Begleitung zur inklusiven Schulentwicklung im Kreis Mettmann |
++-------------+------------------------------------------------------------------------------------------+
+| **PIs**     | Thomas Hennemann; Clemens Hillenbrand                                                    |
++-------------+------------------------------------------------------------------------------------------+
+| **Team**    | Johanna Krull; Karlina Urton; Jürgen Wilbert                                             |
++-------------+------------------------------------------------------------------------------------------+
+| **Term**    | 1.8.2012 - 30.7.2015                                                                     |
++-------------+------------------------------------------------------------------------------------------+
+| **Funding** | School district Mettmann, Germany                                                        |
++-------------+------------------------------------------------------------------------------------------+
 
 ## QLB-PSI Potsdam-Diagnostik {#qlb}
 
-Title: Diagnostic competences of teachers in inclusive classes
-
-Homepage: [Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik)
-
-Term: 1.9.2015 - 31.8.2019
-
-Funding: [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Title**    | Diagnostic competences of teachers in inclusive classes                                                                                                                       |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|              | Original: Diagnostische Kompetenz von Lehrkräften im inklusiven Unterricht                                                                                                    |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **PI**       | Jürgen Wilbert                                                                                                                                                                |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Team**     | Jana Grubert; Lynn Scherreiks                                                                                                                                                 |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Homepage** | [Project homepage](https://www.uni-potsdam.de/de/qlb/das-projekt/sp-3-inklusion-und-heterogenitaet/inklusionspaedagogik-foerderschwerpunkt-forschungsmethoden-und-diagnostik) |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Term**     | 1.9.2015 - 31.8.2019                                                                                                                                                          |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Funding**  | [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)                                                                                        |
++--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
