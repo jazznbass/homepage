@@ -21,6 +21,6 @@ output:
   html_document:
     theme: spacelab
     highlight: tango
-    css: style.css
+    css: style_add.css
     include:
       after_body: footer.html
