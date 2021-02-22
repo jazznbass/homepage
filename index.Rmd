@@ -6,6 +6,8 @@ I thought it was necessary to have a center for all my web activities, a place w
 
 Here it is!
 
+------------------------------------------------------------------------
+
 The menu bar on top is pretty much self-explaining:
 
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------+
