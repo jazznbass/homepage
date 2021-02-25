@@ -173,6 +173,8 @@ Updated `r Sys.Date()`
 
 1.  Wilbert, J. (2020). *scaledic:  An R package for adding scaling information to variables in data frames* (0.1.8) [English]. University of Potsdam. <https://github.com/jazznbass/scaledic/>
 
-2.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40) [English]. University of Potsdam. <https://CRAN.R-project.org/package=scan>
+2.  Wilbert, J., & Lüke, T. (2021). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.51) [English]. University of Potsdam. <https://CRAN.R-project.org/package=scan>
 
-3.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20) [English]. University of Potsdam. <https://cran.r-project.org/web/packages/scan/index.html>
+3.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40) [English]. University of Potsdam.
+
+4.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20) [English]. University of Potsdam.
