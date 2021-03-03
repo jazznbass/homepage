@@ -13,6 +13,8 @@ navbar:
       href: students.html
     - text: "Links"
       href: links.html
+    - text: "Courses"
+      href: courses.html
   right:
     - text: "About"
       icon: fa-info
