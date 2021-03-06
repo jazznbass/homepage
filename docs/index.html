@@ -30,8 +30,6 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -228,14 +226,11 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Jürgen Wilbert</a>
+      <a class="navbar-brand" href="index.html"></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
-</li>
-<li>
   <a href="projects.html">Projects</a>
 </li>
 <li>
@@ -247,16 +242,39 @@ $(document).ready(function () {
 <li>
   <a href="links.html">Links</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Courses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="course_R_intro.html">R-Introduction</a>
+    </li>
+  </ul>
+</li>
 <li>
-  <a href="courses.html">Courses</a>
+  <a href="about.html">About</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="about.html">
-    <span class="fas fa-info"></span>
+  <a href="https://twitter.com/juergen_wilbert">
+    <span class="fab fa-twitter"></span>
      
-    About
+  </a>
+</li>
+<li>
+  <a href="https://github.com/jazznbass">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.researchgate.net/profile/Juergen_Wilbert2">
+    <span class="fab fa-researchgate"></span>
+     
   </a>
 </li>
       </ul>
@@ -273,6 +291,25 @@ $(document).ready(function () {
 </div>
 
 
+<style>
+  
+  a.power:link, a.power:visited {
+    background-color: #eb9e34;
+    color: black;
+    border: 2px solid black;
+    padding: 7px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a.power:hover, a:active {
+    background-color: #d6562b;
+    color: white;
+  }
+}
+
+</style>
 <p>I thought it was necessary to have a center for all my web activities, a place where someone who is interested in my work can start off.</p>
 <p>Here it is!</p>
 <hr />
@@ -296,10 +333,14 @@ $(document).ready(function () {
 <td>A list of great people that I have or had the pleasure to supervise and accompany through their graduation</td>
 </tr>
 <tr class="even">
+<td><a href=""><strong>Courses</strong></a></td>
+<td>Some of my online courses</td>
+</tr>
+<tr class="odd">
 <td><a href="links.html"><strong>Links</strong></a></td>
 <td>From here, you get to many of the other places I am presented on the web</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="about.html"><strong>About</strong></a></td>
 <td>Some information on my career and me</td>
 </tr>

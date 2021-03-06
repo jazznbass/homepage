@@ -5,3 +5,48 @@
     margin-right: auto;
     width: 50%;
 }
+
+a:link, a:visited {
+  color: #ab270c;
+}
+
+a:hover, a:active {
+  color: #ff562b;
+}
+
+p {
+ font-size: 22px;
+ font-family: Arial;
+ color: #541103;
+}
+
+table {
+ font-size: 22px;
+ font-family: Arial;
+ color: black;
+  }
+  
+body {
+  background-image: url('images/penguin.png');
+}
+
+.navbar {
+  font-size: 22px;
+  font-family: Arial;
+}
+
+.navbar-brand {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background-image: url('images/penguin.png');
+  background-size: 70px;
+  width: 70px;
+}
+
+.navbar-header {
+  background-image: url('images/penguin.png');
+}
+
+
+

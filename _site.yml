@@ -1,10 +1,8 @@
 name: "Jürgen Wilbert's Homepage"
 output_dir: "docs"  
 navbar:
-  title: "Jürgen Wilbert"
+  title: ''
   left:
-    - text: "Home"
-      href: index.html
     - text: "Projects"
       href: projects.html
     - text: "Publications"
@@ -14,11 +12,23 @@ navbar:
     - text: "Links"
       href: links.html
     - text: "Courses"
-      href: courses.html
-  right:
+      menu:
+        - text: "R-Introduction"
+          href: course_R_intro.html
     - text: "About"
-      icon: fa-info
       href: about.html
+      
+  right:
+    - icon: fab fa-twitter
+      href: https://twitter.com/juergen_wilbert
+    - icon: fab fa-github
+      href: https://github.com/jazznbass
+    - icon: fab fa-researchgate
+      href: https://www.researchgate.net/profile/Juergen_Wilbert2
+
+
+      
+
 output:
   html_document:
     theme: spacelab
