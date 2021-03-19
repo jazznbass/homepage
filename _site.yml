@@ -5,6 +5,8 @@ navbar:
   left:
     - text: "Projects"
       href: projects.html
+    - text: "R Packages"
+      href: rpackages.html
     - text: "Publications"
       href: publications.html
     - text: "Students"
@@ -15,6 +17,8 @@ navbar:
       menu:
         - text: "R-Introduction"
           href: course_R_intro.html
+    - text: "Blog"
+      href: blog.html
     - text: "About"
       href: about.html
       

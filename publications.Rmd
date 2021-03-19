@@ -7,7 +7,7 @@ output:
     toc_float: TRUE
 ---
 
-Updated `r Sys.Date()`
+Updated 2021-02-25
 
 # Journal papers
 

@@ -1,0 +1,20 @@
+---
+title: Private Blog
+---
+
+*This blog is only for internal use (e.g. teaching or sending ideas to colleagues). Please do not reference or cite things I say here :-)*
+
+## 2021
+
+### Thursday, March 18
+
+### <a href = './posts/git_github.html'>**Git and Github**</a>
+
+Set up a git project in Rstudio and publish is to gitHub
+
+### Wednesday, March 17
+
+### <a href = './posts/multivariate_multilevel.html'>**Multivariate multilevel analyses**</a>
+
+A short description how to do Multivariate Multilevel Analyses in nlme and MCMCglmm
+

@@ -7,12 +7,18 @@
 }
 
 a:link, a:visited {
-  color: #ab270c;
+  color: #541103;
+  text-decoration: none;
+  border-bottom: #ab270c 0.125em solid;
 }
 
 a:hover, a:active {
-  color: #ff562b;
+  color: #541103;
+  text-decoration: none;
+  border-bottom: #ff562b 0.125em solid;
 }
+
+
 
 p {
  font-size: 22px;
@@ -24,10 +30,10 @@ table {
  font-size: 22px;
  font-family: Arial;
  color: black;
-  }
+  } 
   
 body {
-  background-image: url('images/penguin.png');
+  background-image: url('images/backgroundforDadlighter.jpeg');
 }
 
 .navbar {
@@ -45,7 +51,7 @@ body {
 }
 
 .navbar-header {
-  background-image: url('images/penguin.png');
+  background-image: url('images/backgroundforDadlighter.jpeg');
 }
 
 
