@@ -1,3 +1,6 @@
+.title{
+    display: none;
+}
 
 .blog_year {
   text-align: center;
@@ -13,8 +16,6 @@
 .blog_abstract {
   text-indent: 2em;
 }
-
-
 
 .center {
     display: block;

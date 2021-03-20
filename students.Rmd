@@ -1,7 +1,9 @@
-
+---
+title: Graduate Students
+---
 ------------------------------------------------------------------------
 
-# <img src="images/phdhat.png" alt="present" class="center" style="width: 190px"/>
+# <img src="images/phdhat.png" alt="Graduate Students" class="center" style="width: 190px"/>
 
 ------------------------------------------------------------------------
 

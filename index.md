@@ -1,10 +1,12 @@
 ---
-title: "Welcome!"
+title: "Homepage Jürgen Wilbert"
 ---
 
 ```{=html}
 <style>
-  
+  .title{
+    display: none;
+  }
   a.power:link, a.power:visited {
     background-color: #eb9e34;
     color: black;
@@ -23,6 +25,8 @@ title: "Welcome!"
 
 </style>
 ```
+# Welcome!
+
 I thought it was necessary to have a center for all my web activities, a place where someone who is interested in my work can start off.
 
 Here it is!

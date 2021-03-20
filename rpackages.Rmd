@@ -1,6 +1,15 @@
+---
+title: "R Packages"
+output:  
+  html_document:  
+    self_contained: no  
+    toc: true
+    toc_float: TRUE
+---
+
 # scan - Single-Case Data Analyses for Single and Multiple Baseline Designs
 
-This package provides a collection of procedures for analysing, visualising, 
+This package provides a collection of procedures for analyzing, visualizing, 
 and managing single-case data. These include piecewise linear regression 
 models, multilevel models, overlap indices (PND, PEM, PAND, PET, tauU, 
 baseline corrected tau), and randomization tests. Data preparation functions 
