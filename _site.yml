@@ -29,10 +29,7 @@ navbar:
       href: https://github.com/jazznbass
     - icon: fab fa-researchgate
       href: https://www.researchgate.net/profile/Juergen_Wilbert2
-
-
       
-
 output:
   html_document:
     theme: spacelab
@@ -40,3 +37,4 @@ output:
     css: style_add.css
     include:
       after_body: footer.html
+      in_header: header.html

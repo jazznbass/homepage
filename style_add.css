@@ -1,4 +1,21 @@
 
+.blog_year {
+  text-align: center;
+}
+
+.blog_date {
+}
+
+.blog_link {
+  text-indent: 2em;
+}
+
+.blog_abstract {
+  text-indent: 2em;
+}
+
+
+
 .center {
     display: block;
     margin-left: auto;
