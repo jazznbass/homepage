@@ -2,6 +2,8 @@
 title: Private Blog
 ---
 
+# Private Blog
+
 *This blog is only for internal use (e.g. teaching or sending ideas to colleagues). Please do not reference or cite things I say here :-)*
 
 <h2 class = 'blog_year'>2021</h2>
@@ -10,7 +12,7 @@ title: Private Blog
 
 <h3 class = 'blog_link'><a href = './posts/git_github.html'>**Git and Github**</a><h3>
 
-<p class = 'blog_abstract'>Set up a git project in Rstudio and publish is to gitHub</p>
+<p class = 'blog_abstract'>Set up a git project in Rstudio and publish it to gitHub</p>
 
 <h3 class = 'blog_date'>Wednesday, March 17</h3>
 

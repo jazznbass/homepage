@@ -2,7 +2,7 @@
 title: Git and Github
 author: Jürgen Wilbert
 date: 2021/03/18
-abstract: Set up a git project in Rstudio and publish is to gitHub
+abstract: Set up a git project in Rstudio and publish it to gitHub
 output:
   html_document: 
     toc: yes

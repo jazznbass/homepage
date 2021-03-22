@@ -24,34 +24,43 @@
     width: 50%;
 }
 
-a:link, a:visited {
-  color: #541103;
-  text-decoration: none;
-  border-bottom: #ab270c 0.125em solid;
+a {
+  color: #444444;
 }
 
-a:hover, a:active {
-  color: #541103;
-  text-decoration: none;
-  border-bottom: #ff562b 0.125em solid;
+a:link, a:visited {
+  color: #666666;
+  text-decoration-color: #541103;
+  text-decoration-thickness: .125em;
+  text-underline-offset: 1.5px;
 }
+
+/*a:hover, a:active {
+  color: #541103;
+  text-decoration-color: #EA215A;
+  text-decoration-thickness: .125em;
+  text-underline-offset: 1.5px;
+  //color: #541103;
+  //text-decoration: none;
+  //border-bottom: #ff562b 0.05em solid;
+}*/
 
 
 
 p {
- font-size: 22px;
+ font-size: 20px;
  font-family: Arial;
- color: #541103;
+ color: #000000;
 }
 
 table {
- font-size: 22px;
+ font-size: 20px;
  font-family: Arial;
  color: black;
   } 
   
 body {
-  background-image: url('images/backgroundforDadlighter.jpeg');
+  //background-image: url('images/backgroundforDadlighter.jpeg');
 }
 
 .navbar {
@@ -69,7 +78,7 @@ body {
 }
 
 .navbar-header {
-  background-image: url('images/backgroundforDadlighter.jpeg');
+  //background-image: url('images/backgroundforDadlighter.jpeg');
 }
 
 

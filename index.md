@@ -2,30 +2,7 @@
 title: "Homepage Jürgen Wilbert"
 ---
 
-```{=html}
-<style>
-  .title{
-    display: none;
-  }
-  a.power:link, a.power:visited {
-    background-color: #eb9e34;
-    color: black;
-    border: 2px solid black;
-    padding: 7px 14px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  a.power:hover, a:active {
-    background-color: #d6562b;
-    color: white;
-  }
-}
-
-</style>
-```
-# Welcome!
+# Hi there, I am Jürgen!
 
 I thought it was necessary to have a center for all my web activities, a place where someone who is interested in my work can start off.
 
