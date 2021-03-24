@@ -10,13 +10,13 @@ title: Private Blog
 
 <h3 class = 'blog_date'>Thursday, March 18</h3>
 
-<h3 class = 'blog_link'><a href = './posts/git_github.html'>**Git and Github**</a><h3>
+<h3 class = 'blog_link'><a href = './posts/git_github.html'><p class = 'blog_title'>Git, Github, and RStudio</p></a></h3>
 
 <p class = 'blog_abstract'>Set up a git project in Rstudio and publish it to gitHub</p>
 
 <h3 class = 'blog_date'>Wednesday, March 17</h3>
 
-<h3 class = 'blog_link'><a href = './posts/multivariate_multilevel.html'>**Multivariate multilevel analyses**</a><h3>
+<h3 class = 'blog_link'><a href = './posts/multivariate_multilevel.html'><p class = 'blog_title'>Multivariate multilevel analyses</p></a></h3>
 
-<p class = 'blog_abstract'>A short description how to do Multivariate Multilevel Analyses in nlme and MCMCglmm</p>
+<p class = 'blog_abstract'>A short description how to do Multivariate Multilevel Analyses in R with the `nlme` and `MCMCglmm` packages</p>
 

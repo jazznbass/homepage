@@ -2,6 +2,7 @@ name: "Jürgen Wilbert's Homepage"
 output_dir: "docs"  
 navbar:
   title: ''
+  type: inverse
   left:
     - text: "Projects"
       href: projects.html

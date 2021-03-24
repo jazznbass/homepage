@@ -1,16 +1,36 @@
 ---
 title: Multivariate multilevel analyses
+subtitle: A hands on primer in R
 author: Jürgen Wilbert
 date: 2021/03/17
-abstract: A short description how to do Multivariate Multilevel Analyses in nlme and MCMCglmm
 output:
-  html_document: 
+  html_document:
     toc: yes
     toc_depth: 2
     toc_float: yes
     df_print: default
     theme: journal
+  pdf_document: 
+    toc: yes
+    toc_depth: 2
+    latex_engine: xelatex
+keywords: 
+  - Statistics
+  - R
+  - Multilevel
+  - Bayesian
+  - nlme
+  - MCMCglmm
+abstract: A short description how to do Multivariate Multilevel Analyses in R with the `nlme` and
+  `MCMCglmm` packages
 ---
+
+```{r results='asis', echo = FALSE}
+cat("*Keywords: ", paste0(rmarkdown::metadata$keywords, collapse = ", "), "*"
+)
+```
+
+
 
 # Problem
 
@@ -22,6 +42,8 @@ In this paper by Ben Bolker (<https://rpubs.com/bbolker/3336>), five subtypes ar
 When dvs have different variances, the models must be weighted by their variance and when the intercorrelation between the dvs varies, the intercorrelations of the residuals have to be fixed to take these variations into account.
 
 One approach is a Bayesian analyses with a Markov-Chain Monte-Carlo method. There is a vignette of the MCMCglmm package that explains how to do these analyses more in detail ([\<https://cran.r-project.org/web/packages/MCMCglmm/vignettes/CourseNotes.pdf\>](https://cran.r-project.org/web/packages/MCMCglmm/vignettes/CourseNotes.pdf){.uri}). Note: This example is for repeated measures.
+
+# A frequentist approach
 
 Snijders and Bosker (2012) describe multivariate multilevel analyses and they provide an [R example](https://www.stats.ox.ac.uk/~snijders/ch16.r) on this webage <https://www.stats.ox.ac.uk/~snijders/mlbook.htm>.
 

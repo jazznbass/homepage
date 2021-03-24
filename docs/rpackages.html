@@ -13,7 +13,7 @@
 
 <title>R Packages</title>
 
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.7.4/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -29,9 +29,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -215,69 +212,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -287,19 +221,9 @@ div.tocify {
 <div class="container-fluid main-container">
 
 
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-sm-12 col-md-4 col-lg-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-sm-12 col-md-8 col-lg-9">
 
 
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -378,15 +302,22 @@ div.tocify {
 </div>
 
 
-<div id="scan---single-case-data-analyses-for-single-and-multiple-baseline-designs" class="section level1">
-<h1>scan - Single-Case Data Analyses for Single and Multiple Baseline Designs</h1>
+<div id="section" class="section level1 tabset tabset-fade tabset-pills">
+<h1 class="tabset tabset-fade tabset-pills"></h1>
+<div id="scan" class="section level2">
+<h2>scan</h2>
+<div id="scan---single-case-data-analyses-for-single-and-multiple-baseline-designs" class="section level3">
+<h3><strong><em>scan - Single-Case Data Analyses for Single and Multiple Baseline Designs</em></strong></h3>
 <p>This package provides a collection of procedures for analyzing, visualizing, and managing single-case data. These include piecewise linear regression models, multilevel models, overlap indices (PND, PEM, PAND, PET, tauU, baseline corrected tau), and randomization tests. Data preparation functions support outlier detection, handling missing values, scaling, truncating, rank transformation, and smoothing. An exporting function helps to generate html and latex tables in a publication friendly style.</p>
 <p>More details can be found at <a href="https://jazznbass.github.io/scan-Book/" class="uri">https://jazznbass.github.io/scan-Book/</a>.</p>
 <p>github: <a href="https://github.com/jazznbass/scan" class="uri">https://github.com/jazznbass/scan</a></p>
 <p>CRAN: <a href="https://CRAN.R-project.org/package=scan" class="uri">https://CRAN.R-project.org/package=scan</a></p>
 </div>
-<div id="scaledic---a-dictionary-for-scales" class="section level1">
-<h1>scaledic - A dictionary for scales</h1>
+</div>
+<div id="scaledic" class="section level2">
+<h2>scaledic</h2>
+<div id="scaledic---a-dictionary-for-scales" class="section level3">
+<h3><strong><em>scaledic - A dictionary for scales</em></strong></h3>
 <p><code>scaledic</code> is an R package for extending data frames and tibbles with several scale related attributes. It is designed to implement (psychometric) scale information to items of a data frame. These include values, labels, sub scales, weights etc.. A couple of functions help to organize, extract, replace and impute missing values, find typos, build scale scores etc.</p>
 <p>For now, <code>scaledic</code> is already working and up to the task but still in an experimental stage where I might change the basic syntax.<br />
 Also documentation is poor. I am working on that.</p>
@@ -394,17 +325,20 @@ Also documentation is poor. I am working on that.</p>
 <p>github: <a href="https://github.com/jazznbass/scaledic" class="uri">https://github.com/jazznbass/scaledic</a></p>
 <p>Pagedown homepage: <a href="https://jazznbass.github.io/scaledic/" class="uri">https://jazznbass.github.io/scaledic/</a></p>
 </div>
-<div id="wmisc" class="section level1">
-<h1>wmisc</h1>
+</div>
+<div id="wmisc" class="section level2">
+<h2>wmisc</h2>
+<div id="wmisc---wilberts-miscellaneous-functions" class="section level3">
+<h3><strong><em>wmisc - Wilbert’s miscellaneous functions</em></strong></h3>
 <p>This R package comprises miscellaneous functions that I use to ease my work. It is developed to help people who work with my code.</p>
+</div>
+</div>
 </div>
 
 <br>
 <p style = "text-align: right">&copy; 2021 Jürgen Wilbert</p>
 
 
-</div>
-</div>
 
 </div>
 
@@ -437,32 +371,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

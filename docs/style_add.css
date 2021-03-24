@@ -1,5 +1,5 @@
 .title{
-    display: none;
+  display: none;
 }
 
 .blog_year {
@@ -7,17 +7,25 @@
 }
 
 .blog_date {
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .blog_link {
-  text-indent: 2em;
+}
+
+.blog_title {
+  padding-left: 2em;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .blog_abstract {
-  text-indent: 2em;
+  padding-left: 2em;
+  margin-bottom: 2em;
 }
 
-.center {
+img.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -27,25 +35,24 @@
 a {
   color: #444444;
 }
-
+ 
 a:link, a:visited {
-  color: #666666;
-  text-decoration-color: #541103;
-  text-decoration-thickness: .125em;
-  text-underline-offset: 1.5px;
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-color: #5c829e;
+  text-decoration-thickness: .15em;
+  text-underline-offset: 5px;
 }
 
-/*a:hover, a:active {
-  color: #541103;
-  text-decoration-color: #EA215A;
-  text-decoration-thickness: .125em;
-  text-underline-offset: 1.5px;
-  //color: #541103;
+a:hover, a:active {
+  background-color: #e4edf2;
+  text-decoration: underline;
+  text-decoration-color: #5c829e;
+  text-decoration-thickness: .15em;
+  text-underline-offset: 5px;
   //text-decoration: none;
-  //border-bottom: #ff562b 0.05em solid;
-}*/
-
-
+  
+}
 
 p {
  font-size: 20px;
@@ -81,5 +88,17 @@ body {
   //background-image: url('images/backgroundforDadlighter.jpeg');
 }
 
+h1 {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
 
+h2 {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.center{
+  text-align: center;
+}
 
