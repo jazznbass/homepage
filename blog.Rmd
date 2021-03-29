@@ -6,17 +6,17 @@ title: Private Blog
 
 *This blog is only for internal use (e.g. teaching or sending ideas to colleagues). Please do not reference or cite things I say here :-)*
 
-<h2 class = 'blog_year'>2021</h2>
+<h1 class = 'blog_year'>2021</h1>
 
-<h3 class = 'blog_date'>Thursday, March 18</h3>
+<p class = 'blog_date'>Donnerstag, März 18</p>
 
-<h3 class = 'blog_link'><a href = './posts/git_github.html'><p class = 'blog_title'>Git, Github, and RStudio</p></a></h3>
+<a href = './posts/git_github.html' class = 'blog_link'><p class = 'blog_title'>Git, Github, and RStudio</p></a>
 
 <p class = 'blog_abstract'>Set up a git project in Rstudio and publish it to gitHub</p>
 
-<h3 class = 'blog_date'>Wednesday, March 17</h3>
+<p class = 'blog_date'>Mittwoch, März 17</p>
 
-<h3 class = 'blog_link'><a href = './posts/multivariate_multilevel.html'><p class = 'blog_title'>Multivariate multilevel analyses</p></a></h3>
+<a href = './posts/multivariate_multilevel.html' class = 'blog_link'><p class = 'blog_title'>Multivariate multilevel analyses</p></a>
 
 <p class = 'blog_abstract'>A short description how to do Multivariate Multilevel Analyses in R with the `nlme` and `MCMCglmm` packages</p>
 
