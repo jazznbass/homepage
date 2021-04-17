@@ -8,13 +8,13 @@ title: Private Blog
 
 <h1 class = 'blog_year'>2021</h1>
 
-<p class = 'blog_date'>Donnerstag, März 18</p>
+<p class = 'blog_date'>Thursday, March 18</p>
 
 <a href = './posts/git_github.html' class = 'blog_link'><p class = 'blog_title'>Git, Github, and RStudio</p></a>
 
 <p class = 'blog_abstract'>Set up a git project in Rstudio and publish it to gitHub</p>
 
-<p class = 'blog_date'>Mittwoch, März 17</p>
+<p class = 'blog_date'>Wednesday, March 17</p>
 
 <a href = './posts/multivariate_multilevel.html' class = 'blog_link'><p class = 'blog_title'>Multivariate multilevel analyses</p></a>
 

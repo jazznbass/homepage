@@ -16,6 +16,8 @@ navbar:
       href: links.html
     - text: "Courses"
       menu:
+        - text: "Single-case regression analzes"
+          href: https://jazznbass.github.io/workshop_scan_regression/
         - text: "R-Introduction"
           href: course_R_intro.html
     - text: "Blog"
@@ -39,3 +41,8 @@ output:
     include:
       after_body: footer.html
       in_header: header.html
+
+blog:
+  template: _blog.Rmd
+  outfile: blog.Rmd
+  render: FALSE
