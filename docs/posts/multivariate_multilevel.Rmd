@@ -30,8 +30,6 @@ cat("*Keywords: ", paste0(rmarkdown::metadata$keywords, collapse = ", "), "*"
 )
 ```
 
-
-
 # Problem
 
 Most of our data have a multilevel structure. But "standard" Manova analyzes do not take a nested structure with various strata into account. What we need is a multivariate extension of the univariate multilevel regression approach.
