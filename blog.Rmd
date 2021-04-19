@@ -10,7 +10,7 @@ title: Private Blog
 
 <p class = 'blog_date'>Monday, April 19</p>
 
-<a href = './posts/2021-04-19.html' class = 'blog_link'><p class = 'blog_title'>Create Rmarmdown webpage on gitHub</p></a>
+<a href = './posts/2021-04-19.html' class = 'blog_link'><p class = 'blog_title'>Create Rmarkdown webpage on gitHub</p></a>
 
 <p class = 'blog_abstract'>Short description how to create an Rmarkdown webpage and publish it on gitHub</p>
 

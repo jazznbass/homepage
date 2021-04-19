@@ -1,5 +1,5 @@
 ---
-title: 'Create Rmarmdown webpage on gitHub'
+title: 'Create Rmarkdown webpage on gitHub'
 author: Jürgen Wilbert
 date: '2021-04-19'
 abstract: 'Short description how to create an Rmarkdown webpage and publish it on gitHub'
@@ -10,9 +10,6 @@ keywords:
   - Webpage
 output:
   html_document: 
-    toc: yes
-    toc_depth: 2
-    toc_float: yes
     df_print: default 
     theme: yeti
 ---
@@ -36,13 +33,13 @@ cat("***  \n", "*Keywords: ", paste0(rmarkdown::metadata$keywords, collapse = ",
 7. Click: Publish repository
 8. Open Github in Webbrowser and login
 9. Go to the new published repository
-10. Click `Settings``
+10. Click `Settings`
 11. Go to menu `Pages` or scroll to Github Pages
 12. At the field "Source" select `master`
 13. Change `select folder` from `\(root)` to `\docs`
 14. click save
 15. Copy / remember / open the link to the new webpage that opens up!
-16 Change to Webpage project at RStudio
+16 Change to webpage project at RStudio
 17. Commit **and** publish all files `[tab] Git -> Commit`
 18. Change to the new webpage address you remembered/copied or opened! (probably wait 30 seconds and renew the page)
 
