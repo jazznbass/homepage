@@ -19,7 +19,7 @@ navbar:
         - text: "Single-case regression analzes"
           href: https://jazznbass.github.io/workshop_scan_regression/
         - text: "R-Introduction"
-          href: course_R_intro.html
+          href: https://jazznbass.github.io/course_dataanalyzes_with_r/
     - text: "Blog"
       href: blog.html
     - text: "About"
