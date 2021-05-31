@@ -2,7 +2,7 @@
 title: eRm
 author: Jürgen Wilbert
 date: 2021/05/31
-abstract: Extended Rasch modelling
+abstract: An overview of extended Rasch modelling i R with the eRm package.
 output:
   html_document: 
     toc: yes
@@ -22,9 +22,6 @@ cat("*Keywords: ", paste0(rmarkdown::metadata$keywords, collapse = ", "), "*"
 ```
 
 ```{r setup, include = FALSE}
-library(tidyverse)
-library(eRm)
-
 knitr::opts_chunk$set(
   comment = '', fig.width = 6, fig.height = 6, echo = TRUE
 )
@@ -33,7 +30,9 @@ knitr::opts_chunk$set(
 # Prepare data
 
 ```{r}
-dat <- readRDS("test.rds")
+library(tidyverse)
+library(eRm)
+dat <- readRDS("erm_example.rds")
 
 dat <- dat %>% 
   mutate(
@@ -86,7 +85,7 @@ plotPImap(fit_d)
 
 # Test Modelfit
 
-## Visual insoection of item discrimination
+## Visual inspection of item discrimination
 
 ```{r}
 plotjointICC(fit_d, xlim = c(-5, 5))
@@ -96,9 +95,9 @@ plotjointICC(fit_a, xlim = c(-5, 5))
 
 ## Likelihood ratio tests
 
-LRtests estimate the estimation "stability" across several subsamples of the data set.
+LRtests test for the estimation "stability" across several sub-samples of the data set.
 
-A median split allows for cheking if the item-difficulty estimations are constant for the lower and upper part of the performance scale. This is actually a test for homoscedasticity.
+A median split allows for checking if the item-difficulty estimations are constant for the lower and upper part of the performance scale. This is similar to a test for homoscedasticity.
 
 ```{r}
 lr_d <- LRtest(fit_d, splitcr = "median")
