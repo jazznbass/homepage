@@ -8,6 +8,12 @@ title: Private Blog
 
 <h1 class = 'blog_year'>2021</h1>
 
+<p class = 'blog_date'>Monday, May 31</p>
+
+<a href = './posts/eRm.html' class = 'blog_link'><p class = 'blog_title'>eRm</p></a>
+
+<p class = 'blog_abstract'>Extended Rasch modelling</p>
+
 <p class = 'blog_date'>Monday, April 19</p>
 
 <a href = './posts/2021-04-19.html' class = 'blog_link'><p class = 'blog_title'>Create Rmarkdown webpage on gitHub</p></a>
