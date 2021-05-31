@@ -2,7 +2,7 @@
 title: eRm
 author: Jürgen Wilbert
 date: 2021/05/31
-abstract: An overview of extended Rasch modelling i R with the eRm package.
+abstract: An overview of extended Rasch modelling in R with the eRm package.
 output:
   html_document: 
     toc: yes
