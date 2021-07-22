@@ -13,7 +13,7 @@
 
 <title>Publications</title>
 
-<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -385,6 +385,7 @@ div.tocify {
 <div id="journal-papers" class="section level1">
 <h1>Journal papers</h1>
 <ol style="list-style-type: decimal">
+<li><p>Schwalbe, A., Müller, C. M., &amp; Wilbert, J. (2021). Wahrgenommene Gruppennormen und ihre Bedeutung für die soziale Akzeptanz und Ablehnung in Grundschulklassen. <em>Zeitschrift für Grundschulforschung</em>. <a href="https://doi.org/10.1007/s42278-021-00107-w" class="uri">https://doi.org/10.1007/s42278-021-00107-w</a></p></li>
 <li><p>Wilbert, J., Bosch, J., &amp; Lüke, T. (2021). Validity and judgement bias in visual analysis of single-case data. <em>International Journal for Research in Learning Disabilities</em>, <em>5</em>(1), 13–24. <a href="https://doi.org/10.28987/ijrld.5.1.13" class="uri">https://doi.org/10.28987/ijrld.5.1.13</a></p></li>
 <li><p>Börnert-Ringleb, M., &amp; Wilbert, J. (2020). Die Vorhersage von Mathe- und Leseleistungen durch dynamisches Testen. <em>Lernen und Lernstörungen</em>, 1–12. <a href="https://doi.org/10.1024/2235-0977/a000331" class="uri">https://doi.org/10.1024/2235-0977/a000331</a></p></li>
 <li><p>Kulawiak, Pawel R., Wilbert, J., Schlack, R., &amp; Börnert-Ringleb, M. (2020). Prediction of child and adolescent outcomes with broadband and narrowband dimensions of internalizing and externalizing behavior using the child and adolescent version of the Strengths and Difficulties Questionnaire. <em>PLOS ONE</em>, <em>15</em>(10), e0240312. <a href="https://doi.org/10.1371/journal.pone.0240312" class="uri">https://doi.org/10.1371/journal.pone.0240312</a></p></li>
@@ -524,6 +525,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
