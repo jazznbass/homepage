@@ -21,9 +21,10 @@ html and latex tables in a publication friendly style.
 
 More details can be found at <https://jazznbass.github.io/scan-Book/>.
 
-github: https://github.com/jazznbass/scan
-
-CRAN: https://CRAN.R-project.org/package=scan
+*State:* Stable CRAN version and extended developmental version on github  
+*github:* https://github.com/jazznbass/scan  
+*CRAN:* https://CRAN.R-project.org/package=scan  
+*webpage:* https://jazznbass.github.io/scan/
 
 ## scaledic
 
@@ -37,9 +38,21 @@ Also documentation is poor. I am working on that.
 
 Basically, scaledic loads a dictionary file that contains all relevant information and applies these to a data frame. Here, every variable corresponding to the ones describes in the dictionary gets a new attribute `dic` which contains a list with all dictionary values for that variable.  
 
-github: https://github.com/jazznbass/scaledic
+*State:* Working but still experimental  
+*github:* https://github.com/jazznbass/scaledic
+*webpage:* https://jazznbass.github.io/scaledic/
 
-Pagedown homepage: https://jazznbass.github.io/scaledic/
+## scplot
+
+### ***scplot - Visualizing single-case data***
+
+`scplot` is an extension to the `scan` package which provides powerful functions to generate single-case data plots. I try to keep the syntax simple and readable but nevertheless also allowing for sophisticated and complex depictions.
+
+The generated plots are compatible to `ggplot2`. 
+
+*State:* Early development but already working  
+*github:* https://github.com/jazznbass/scplot
+*webpage:* https://jazznbass.github.io/scplot/
 
 ## wmisc
 
@@ -48,4 +61,4 @@ Pagedown homepage: https://jazznbass.github.io/scaledic/
 This R package comprises miscellaneous functions that I use to ease my work.
 It is developed to help people who work with my code.
 
-
+*State:* Experimental
