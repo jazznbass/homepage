@@ -7,7 +7,19 @@ output:
     toc_float: TRUE
 ---
 
-Updated 2021-10-13
+Updated 2021-10-30
+
+# In progress
+
+1.  Bosch, J., & Wilbert, J. (submitted). *The Impact of Social Comparison Processes on Self-Evaluation of Performance, Self-Concept, and Task Interest*.
+
+2.  Leidig, T., Casale, G., Wilbert, J., Grosche, M., Wolpe, R., Hennemann, T., & Briesch, A. M. (submitted). Effects of the Good Behavior Game on At-risk Primary School Students in Germany. *School Psychology Quarterly*.
+
+3.  Wilbert, J., & Lüke, T. (submitted). Leistungsbewertung und Leistungsattribution. In M. Börnert-Ringleb, G. Casale, M. Balt, & M. Herzog (Hrsg.), *Lern- und Verhaltensschwierigkeiten in der Schule ---Erscheinungsformen, Erklärungsmodelle und Implikationen für die Praxis*. Kohlhammer.
+
+4.  Wilbert, J. (submitted). Vermittlung von Basiskompetenzen zum Rechnen. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (2. Aufl.). Hogrefe.
+
+5.  Wilbert, J. (). *scplot - Visualizing single-case data* [English]. University of Potsdam. <https://github.com/jazznbass/scaledic/>
 
 # Journal papers
 
@@ -107,77 +119,73 @@ Updated 2021-10-13
 
 48. Wilbert, J., & Gerdes, H. (2007). Lehrerbild von Schülern und Lehrern: Eine empirische Studie zum Vergleich der Vorstellungen vom idealen und vom typischen Lehrer. *Psychologie in Erziehung und Unterricht*, *54*(3), 208--222.
 
-49. Bosch, J., & Wilbert, J. (submitted). *The Impact of Social Comparison Processes on Self-Evaluation of Performance, Self-Concept, and Task Interest*.
-
-50. Leidig, T., Casale, G., Wilbert, J., Grosche, M., Wolpe, R., Hennemann, T., & Briesch, A. M. (submitted). Effects of the Good Behavior Game on At-risk Primary School Students in Germany. *School Psychology Quarterly*.
-
 # Book chapters
 
-1.  Wilbert, J., & Lüke, T. (submitted). Leistungsbewertung und Leistungsattribution. In M. Börnert-Ringleb, G. Casale, M. Balt, & M. Herzog (Hrsg.), *Lern- und Verhaltensschwierigkeiten in der Schule ---Erscheinungsformen, Erklärungsmodelle und Implikationen für die Praxis*. Kohlhammer.
+1.  Wilbert, J., & Börnert, M. (in print). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). 2. Auflage. Julius Klinkhardt.
 
-2.  Wilbert, J., & Börnert, M. (in print). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). 2. Auflage. Julius Klinkhardt.
+2.  Börnert-Ringleb, M., & Wilbert, J. (in print). *Verlaufsdiagnostik und einzelfallbasierte Veränderungsmessung im Rahmen schulischer Förderung* (Y. Blumenthal & S. Blumenthal, Hrsg.). Universität Rostock.
 
-3.  Börnert-Ringleb, M., & Wilbert, J. (in print). *Verlaufsdiagnostik und einzelfallbasierte Veränderungsmessung im Rahmen schulischer Förderung* (Y. Blumenthal & S. Blumenthal, Hrsg.). Universität Rostock.
+3.  Wilbert, J., & Krull, J. (in print). Die Bedeutung von Peers für die soziale Partizipation von Lernenden mit Lern- und Verhaltensproblemen in inklusiven Schulklassen. In M. Kreutzmann, L. Zander, & B. Hannover (Hrsg.), *Aufwachsen mit Anderen. Peerbeziehungen als Bildungsfaktor*. Kohlhammer.
 
-4.  Wilbert, J., & Krull, J. (in print). Die Bedeutung von Peers für die soziale Partizipation von Lernenden mit Lern- und Verhaltensproblemen in inklusiven Schulklassen. In M. Kreutzmann, L. Zander, & B. Hannover (Hrsg.), *Aufwachsen mit Anderen. Peerbeziehungen als Bildungsfaktor*. Kohlhammer.
+4.  Börnert-Ringleb, M., & Wilbert, J. (2021). Dynamisches Testen: Diagnostik als Möglichkeit der Modellierung von Kompetenzentwicklung. In C. Mähler & M. Hasselhorn (Hrsg.), *Inklusionsherausforderungen*. Hogrefe.
 
-5.  Börnert-Ringleb, M., & Wilbert, J. (2021). Dynamisches Testen: Diagnostik als Möglichkeit der Modellierung von Kompetenzentwicklung. In C. Mähler & M. Hasselhorn (Hrsg.), *Inklusionsherausforderungen*. Hogrefe.
+5.  Scherreiks, L., Kuhr, L., & Wilbert, J. (2021). *Veränderung der selbsteingeschätzten Kompetenz zur Diagnostik psychischer Auffälligkeiten im Psychodiagnostischen Praktikum*.
 
-6.  Scherreiks, L., Kuhr, L., & Wilbert, J. (2021). *Veränderung der selbsteingeschätzten Kompetenz zur Diagnostik psychischer Auffälligkeiten im Psychodiagnostischen Praktikum*.
+6.  Urton, K., Wilbert, J., & Knigge, M. (2019). Die Entwicklung der Selbstwirksamkeit und des Rollenverständnisses während des Praxissemesters von Studierenden des Lehramtes für Sonderpädagogische Förderung. In D. Zimmermann, U. Fickler-Stang, L. Dietrich, & K. Weiland (Hrsg.), *Professionalisierung für Unterricht und Beziehungsarbeit mit psychosozial beeinträchtigten Kindern und Jugendlichen* (S. 145--157). Klinkhammer.
 
-7.  Urton, K., Wilbert, J., & Knigge, M. (2019). Die Entwicklung der Selbstwirksamkeit und des Rollenverständnisses  während des Praxissemesters von Studierenden des Lehramtes für  Sonderpädagogische Förderung. In D. Zimmermann, U. Fickler-Stang, L. Dietrich, & K. Weiland (Hrsg.), *Professionalisierung für Unterricht und Beziehungsarbeit mit psychosozial beeinträchtigten Kindern und Jugendlichen* (S. 145--157). Klinkhammer.
+7.  Urton, K., Börnert-Ringleb, M., & Wilbert, J. (2018). Gestaltung eines inklusiven Schulklimas als Schulentwicklungsaufgabe. In F. Hellmich, G. Görel, & M. Löper (Hrsg.), *Inklusive Schul- und Unterrichtsentwicklung*. Kohlhammer.
 
-8.  Urton, K., Börnert-Ringleb, M., & Wilbert, J. (2018). Gestaltung eines inklusiven Schulklimas als Schulentwicklungsaufgabe. In F. Hellmich, G. Görel, & M. Löper (Hrsg.), *Inklusive Schul- und Unterrichtsentwicklung*. Kohlhammer.
+8.  Börnert-Ringleb, M., Bosch, J., & Wilbert, J. (2018). Lernverlaufsdiagnostik. In M. Dziak-Mahler, T. Hennemann, S. Jaster, T. Leidig, & J. Springob (Hrsg.), *Fachdidaktik inklusiv II - (Fach-)Unterricht inklusiv gestalten - Theoretische Annäherungen und praktische Umsetzungen*. Waxmann Verlag.
 
-9.  Börnert-Ringleb, M., Bosch, J., & Wilbert, J. (2018). Lernverlaufsdiagnostik. In M. Dziak-Mahler, T. Hennemann, S. Jaster, T. Leidig, & J. Springob (Hrsg.), *Fachdidaktik inklusiv II - (Fach-)Unterricht inklusiv gestalten - Theoretische Annäherungen und praktische Umsetzungen*. Waxmann Verlag.
+9.  Grubert, J., Kulawiak, P. R., Schwalbe, A., Scherreiks, L., Börnert-Ringleb, M., & Wilbert, J. (2018). Fragebogen zur Erfassung diagnostischer Kompetenzen hinsichtlich psychischer Auffälligkeiten von Schüler_innen. In *Potsdamer Beiträge zur Lehrerbildung und Bildungsforschung* (S. 17--27). Universität Potsdam.
 
-10. Grubert, J., Kulawiak, P. R., Schwalbe, A., Scherreiks, L., Börnert-Ringleb, M., & Wilbert, J. (2018). Fragebogen zur Erfassung diagnostischer Kompetenzen hinsichtlich psychischer Auffälligkeiten von Schüler_innen. In *Potsdamer Beiträge zur Lehrerbildung und Bildungsforschung* (S. 17--27). Universität Potsdam.
+10. Grubert, J., Schwalbe, A., Kulawiak, P. R., & Wilbert, J. (2018). Seminarkonzept zur Förderung inklusionsrelevanter Kompetenzen -- Diagnostik hinsichtlich psychischer Auffälligkeiten von Schüler_innen. In *Potsdamer Beiträge zur Lehrerbildung und Bildungsforschung* (S. 125--124). Universität Potsdam.
 
-11. Grubert, J., Schwalbe, A., Kulawiak, P. R., & Wilbert, J. (2018). Seminarkonzept zur Förderung inklusionsrelevanter Kompetenzen -- Diagnostik hinsichtlich psychischer Auffälligkeiten von Schüler_innen. In *Potsdamer Beiträge zur Lehrerbildung und Bildungsforschung* (S. 125--124). Universität Potsdam.
+11. Kulawiak, P. R., & Wilbert, J. (2018). Komplementäre Studiendesigns zur Evidenzbasierung in der Bildungswissenschaft. In R. Haring & J. Siegmüller (Hrsg.), *Evidenzbasierte Praxis in den Gesundheitsberufen* (S. 17--31). Springer Berlin Heidelberg. <https://doi.org/10.1007/978-3-662-55377-0_2>
 
-12. Kulawiak, P. R., & Wilbert, J. (2018). Komplementäre Studiendesigns zur Evidenzbasierung in der Bildungswissenschaft. In R. Haring & J. Siegmüller (Hrsg.), *Evidenzbasierte Praxis in den Gesundheitsberufen* (S. 17--31). Springer Berlin Heidelberg. <https://doi.org/10.1007/978-3-662-55377-0_2>
+12. Börnert, M., Grubert, J., & Wilbert, J. (2016). *Lautes Denken als Methode zur Forschung und Diagnostik in inklusionspädagogischen Handlungsfeldern* (D. Gebele & A. L. Zepter, Hrsg.; S. 165--186). Gilles & Francke Verlag.
 
-13. Börnert, M., Grubert, J., & Wilbert, J. (2016). *Lautes Denken als Methode zur Forschung und Diagnostik in inklusionspädagogischen Handlungsfeldern* (D. Gebele & A. L. Zepter, Hrsg.; S. 165--186). Gilles & Francke Verlag.
+13. Bosch, J., Schaefer, A., Kulawiak, P. R., & Wilbert, J. (2016). *Forschungsdesigns zur Untersuchung kausaler Beziehungen in den empirischen Bildungswissenschaften* (D. Gebele & A. L. Zepter, Hrsg.; S. 138--164). Gilles & Francke Verlag.
 
-14. Bosch, J., Schaefer, A., Kulawiak, P. R., & Wilbert, J. (2016). *Forschungsdesigns zur Untersuchung kausaler Beziehungen in den empirischen Bildungswissenschaften* (D. Gebele & A. L. Zepter, Hrsg.; S. 138--164). Gilles & Francke Verlag.
+14. Wilbert, J. (2015). Streuung, Standardabweichung und Varianz. In S. Ellinger & K. Koch (Hrsg.), *Forschungsmethoden in der Heil- und Sonderpädagogik* (S. 129--136). Hogrefe.
 
-15. Wilbert, J. (2015). Streuung, Standardabweichung und Varianz. In S. Ellinger & K. Koch (Hrsg.), *Forschungsmethoden in der Heil- und Sonderpädagogik* (S. 129--136). Hogrefe.
+15. Wilbert, J., & Grünke, M. (2015). Kontrollierte Einzelfallforschung. In S. Ellinger & K. Koch (Hrsg.), *Forschungsmethoden in der Heil- und Sonderpädagogik* (S. 100--105). Hogrefe.
 
-16. Wilbert, J., & Grünke, M. (2015). Kontrollierte Einzelfallforschung. In S. Ellinger & K. Koch (Hrsg.), *Forschungsmethoden in der Heil- und Sonderpädagogik* (S. 100--105). Hogrefe.
+16. Wilbert, J., & Börnert, M. (2015). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). Julius Klinkhardt.
 
-17. Wilbert, J., & Börnert, M. (2015). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). Julius Klinkhardt.
+17. Linnemann, M., & Wilbert, J. (2014). Do C-tests measure language comprehension of learning disabled students? In R. Grotjahn (Hrsg.), *Der C-Test: Beiträge aus der aktuellen Forschung/ The C-Test: Contributions from Current Research* (S. 223--238). Lang.
 
-18. Linnemann, M., & Wilbert, J. (2014). Do C-tests measure language comprehension of learning disabled students? In R. Grotjahn (Hrsg.), *Der C-Test: Beiträge aus der aktuellen Forschung/ The C-Test: Contributions from Current Research* (S. 223--238). Lang.
+18. Wilbert, J. (2014a). Instrumente zur Lernverlaufsmessung. Gütekriterien und Auswertungsherausforderungen. In M. Hasselhorn, W. Schneider, & U. Trautwein (Hrsg.), *Lernverlaufsdiagnostik* (S. 281--308). Hogrefe.
 
-19. Wilbert, J. (2014a). Instrumente zur Lernverlaufsmessung. Gütekriterien und Auswertungsherausforderungen. In M. Hasselhorn, W. Schneider, & U. Trautwein (Hrsg.), *Lernverlaufsdiagnostik* (S. 281--308). Hogrefe.
+19. Wilbert, J. (2014b). Lern- und Leistungsmotivation. In A. Castello (Hrsg.), *Entwicklungsrisiken bei Kindern und Jugendlichen: Prävention im pädagogischen Alltag*. Kohlhammer.
 
-20. Wilbert, J. (2014b). Lern- und Leistungsmotivation. In A. Castello (Hrsg.), *Entwicklungsrisiken bei Kindern und Jugendlichen: Prävention im pädagogischen Alltag*. Kohlhammer.
+20. Wilbert, J. (2014c). Vermittlung von Basiskompetenzen zum Rechnen. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (S. 209--219). Hogrefe.
 
-21. Wilbert, J. (2014c). Vermittlung von Basiskompetenzen zum Rechnen. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (S. 209--219). Hogrefe.
+21. Linnemann, M., & Wilbert, J. (2010). The C-test: A valid instrument for screening language skills and reading comprehension of children with learning problems? In R. Grotjahn (Hrsg.), *Der C-Test: Beiträge aus der aktuellen Forschung/ The C-Test: Contributions from Current Research* (S. 113--124). Lang.
 
-22. Linnemann, M., & Wilbert, J. (2010). The C-test: A valid instrument for screening language skills and reading comprehension of children with learning problems? In R. Grotjahn (Hrsg.), *Der C-Test: Beiträge aus der aktuellen Forschung/ The C-Test: Contributions from Current Research* (S. 113--124). Lang.
-
-23. Grünke, M., & Wilbert, J. (2008). Offener Unterricht und Projektunterricht. In M. Fingerle & S. Ellinger (Hrsg.), *Sonderpädagogische Förderung: Förderkonzepte auf dem Prüfstand* (S. 13--33). Kohlhammer.
+22. Grünke, M., & Wilbert, J. (2008). Offener Unterricht und Projektunterricht. In M. Fingerle & S. Ellinger (Hrsg.), *Sonderpädagogische Förderung: Förderkonzepte auf dem Prüfstand* (S. 13--33). Kohlhammer.
 
 # Books and reports
 
-1.  Krull, J., Urton, K., Hennemann, T., & Wilbert, J. (2021). *Mettmann 2.0 -- Wissenschaftliche Begleitung auf dem Weg zum inklusiven Schulsystem des Kreises Mettmann Abschlussbericht* (S. 68). University of Cologne.
+1.  Kuhr, L., Napiany, S., Huber, C., & Wilbert, J. (2021). *Abschlussbericht F1-Projekt KOMPASS Standorte: Potsdam/ Wuppertal* (S. 317). University of Potsdam and University of Wuppertal.
 
-2.  Wilbert, J. (2021). *Analyzing single-case data with R and scan*. <https://jazznbass.github.io/scan-Book/>
+2.  Krull, J., Urton, K., Hennemann, T., & Wilbert, J. (2021). *Mettmann 2.0 -- Wissenschaftliche Begleitung auf dem Weg zum inklusiven Schulsystem des Kreises Mettmann Abschlussbericht* (S. 68). University of Cologne.
 
-3.  Hennemann, T., Wilbert, J., & Hillenbrand, C. (2014). *Wissenschaftliche Begleitung im Rahmen der Umsetzung zur inklusiven Schule im Kreis Mettmann (Mehrebenenanalyse 2010 -- 2012). Abschlussbericht*. Universität zu Köln.
+3.  Wilbert, J. (2021). *Analyzing single-case data with R and scan*. <https://jazznbass.github.io/scan-Book/>
 
-4.  Becker-Mrotzek, M., Ehlich, K., Füssenich, I., Günther, H., Hasselhorn, M., Hopf, M., Jeuk, S., Lengyel, D., Neugebauer, U., Panagiotopoulou, A., Stanat, P., & Wilbert, J. (2013). *Qualitätsmerkmale für Sprachstandsverfahren im Elementarbereich. Ein Bewertungsrahmen für fundierte Sprachdiagnostik in der Kita*. Mercator-Institut für Sprachförderung und Deutsch als Zweitsprache.
+4.  Hennemann, T., Wilbert, J., & Hillenbrand, C. (2014). *Wissenschaftliche Begleitung im Rahmen der Umsetzung zur inklusiven Schule im Kreis Mettmann (Mehrebenenanalyse 2010 -- 2012). Abschlussbericht*. Universität zu Köln.
 
-5.  Wilbert, J. (2011). *Motivationale Faktoren in der Sonderpädagogik bei Lernstörungen.* [Habilitationsschrift]. Universität Oldenburg.
+5.  Becker-Mrotzek, M., Ehlich, K., Füssenich, I., Günther, H., Hasselhorn, M., Hopf, M., Jeuk, S., Lengyel, D., Neugebauer, U., Panagiotopoulou, A., Stanat, P., & Wilbert, J. (2013). *Qualitätsmerkmale für Sprachstandsverfahren im Elementarbereich. Ein Bewertungsrahmen für fundierte Sprachdiagnostik in der Kita*. Mercator-Institut für Sprachförderung und Deutsch als Zweitsprache.
 
-6.  Wilbert, J. (2010). *Förderung der Motivation bei Lernstörungen*. Kohlhammer.
+6.  Wilbert, J. (2011). *Motivationale Faktoren in der Sonderpädagogik bei Lernstörungen.* [Habilitationsschrift]. Universität Oldenburg.
 
-7.  Wilbert, J. (2006). *Die Etikettierung eines Verhaltens als Fehlerhaft: Eine empirische Untersuchung zur bewussten Gewahrwerdung eigener Verhaltensfehler*. Pabst Science Publishers.
+7.  Wilbert, J. (2010). *Förderung der Motivation bei Lernstörungen*. Kohlhammer.
+
+8.  Wilbert, J. (2006). *Die Etikettierung eines Verhaltens als Fehlerhaft: Eine empirische Untersuchung zur bewussten Gewahrwerdung eigener Verhaltensfehler*. Pabst Science Publishers.
 
 # Software
 
-1.  Wilbert, J. (2020). *scaledic:  An R package for adding scaling information to variables in data frames* (0.1.8) [English]. University of Potsdam. <https://github.com/jazznbass/scaledic/>
+1.  Wilbert, J. (2020). *scaledic: An R package for adding scaling information to variables in data frames* (0.1.8) [English]. University of Potsdam. <https://github.com/jazznbass/scaledic/>
 
 2.  Wilbert, J., & Lüke, T. (2021). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.51) [English]. University of Potsdam. <https://CRAN.R-project.org/package=scan>
 
