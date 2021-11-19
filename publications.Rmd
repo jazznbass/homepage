@@ -7,7 +7,7 @@ output:
     toc_float: TRUE
 ---
 
-Updated 2021-10-30
+Updated 2021-11-19
 
 # In progress
 
@@ -17,9 +17,11 @@ Updated 2021-10-30
 
 3.  Wilbert, J., & Lüke, T. (submitted). Leistungsbewertung und Leistungsattribution. In M. Börnert-Ringleb, G. Casale, M. Balt, & M. Herzog (Hrsg.), *Lern- und Verhaltensschwierigkeiten in der Schule ---Erscheinungsformen, Erklärungsmodelle und Implikationen für die Praxis*. Kohlhammer.
 
-4.  Wilbert, J. (submitted). Vermittlung von Basiskompetenzen zum Rechnen. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (2. Aufl.). Hogrefe.
+4.  Wilbert, J. (submitted). Grundlagen des Rechnens vermitteln. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (3. Aufl.). Hogrefe.
 
 5.  Wilbert, J. (). *scplot - Visualizing single-case data* [English]. University of Potsdam. <https://github.com/jazznbass/scaledic/>
+
+6.  Gabriel, T., Börnert-Ringleb, M., & Wilbert, J. (). Dynamisches Testen im Spannungsfeld von Selektion und Modifikation.
 
 # Journal papers
 
