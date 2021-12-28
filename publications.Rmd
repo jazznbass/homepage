@@ -7,7 +7,7 @@ output:
     toc_float: TRUE
 ---
 
-Updated 2021-11-19
+Updated 2021-12-28
 
 # In progress
 
@@ -17,11 +17,11 @@ Updated 2021-11-19
 
 3.  Wilbert, J., & Lüke, T. (submitted). Leistungsbewertung und Leistungsattribution. In M. Börnert-Ringleb, G. Casale, M. Balt, & M. Herzog (Hrsg.), *Lern- und Verhaltensschwierigkeiten in der Schule ---Erscheinungsformen, Erklärungsmodelle und Implikationen für die Praxis*. Kohlhammer.
 
-4.  Wilbert, J. (submitted). Grundlagen des Rechnens vermitteln. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (3. Aufl.). Hogrefe.
+4.  Wilbert, J. (in Druck). Grundlagen des Rechnens vermitteln. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (3. Aufl.). Hogrefe.
 
-5.  Wilbert, J. (). *scplot - Visualizing single-case data* [English]. University of Potsdam. <https://github.com/jazznbass/scaledic/>
+5.  Wilbert, J. (). *scplot - Visualizing single-case data*. University of Potsdam. <https://github.com/jazznbass/scaledic/>
 
-6.  Gabriel, T., Börnert-Ringleb, M., & Wilbert, J. (). Dynamisches Testen im Spannungsfeld von Selektion und Modifikation.
+6.  Gabriel, T., Börnert-Ringleb, M., & Wilbert, J. (submitted). Dynamisches Testen im Spannungsfeld von Selektion und Modifikation.
 
 # Journal papers
 
@@ -41,7 +41,7 @@ Updated 2021-11-19
 
 8.  Bosch, J., & Wilbert, J. (2020). Contrast and Assimilation Effects on Self-Evaluation of Performance and Task Interest in a Sample of Elementary School Children. *Frontiers in Education*, *4*. <https://doi.org/10.3389/feduc.2019.00165>
 
-9.  Kulawiak, Pawel Roman, Urton, K., Krull, J., Hennemann, T., & Wilbert, J. (2020). Internalizing Behaviour of Sociometrically Neglected Students in Inclusive Primary Classrooms - A Methodological Issue? *Frontiers in Education*, *5*. <https://doi.org/10.3389/feduc.2020.00032>
+9.  Kulawiak, P. R., Urton, K., Krull, J., Hennemann, T., & Wilbert, J. (2020). Internalizing Behaviour of Sociometrically Neglected Students in Inclusive Primary Classrooms - A Methodological Issue? *Frontiers in Education*, *5*. <https://doi.org/10.3389/feduc.2020.00032>
 
 10. Wilbert, J., Urton, K., Krull, J., Kulawiak, P. R., Schwalbe, A., & Hennemann, T. (2020). Teachers' Accuracy in Estimating Social Inclusion of Students With and Without Special Educational Needs. *Frontiers in Education*, *5*. <https://doi.org/10.3389/feduc.2020.598330>
 
@@ -127,7 +127,7 @@ Updated 2021-11-19
 
 2.  Börnert-Ringleb, M., & Wilbert, J. (in print). *Verlaufsdiagnostik und einzelfallbasierte Veränderungsmessung im Rahmen schulischer Förderung* (Y. Blumenthal & S. Blumenthal, Hrsg.). Universität Rostock.
 
-3.  Wilbert, J., & Krull, J. (in print). Die Bedeutung von Peers für die soziale Partizipation von Lernenden mit Lern- und Verhaltensproblemen in inklusiven Schulklassen. In M. Kreutzmann, L. Zander, & B. Hannover (Hrsg.), *Aufwachsen mit Anderen. Peerbeziehungen als Bildungsfaktor*. Kohlhammer.
+3.  Wilbert, J., & Krull, J. (2021). Die Bedeutung von Peers für die soziale Partizipation von Lernenden mit Lern- und Verhaltensproblemen in inklusiven Schulklassen. In M. Kreutzmann, L. Zander, & B. Hannover (Hrsg.), *Aufwachsen mit Anderen. Peerbeziehungen als Bildungsfaktor* (S. 134--152). Kohlhammer.
 
 4.  Börnert-Ringleb, M., & Wilbert, J. (2021). Dynamisches Testen: Diagnostik als Möglichkeit der Modellierung von Kompetenzentwicklung. In C. Mähler & M. Hasselhorn (Hrsg.), *Inklusionsherausforderungen*. Hogrefe.
 
@@ -179,7 +179,7 @@ Updated 2021-11-19
 
 5.  Becker-Mrotzek, M., Ehlich, K., Füssenich, I., Günther, H., Hasselhorn, M., Hopf, M., Jeuk, S., Lengyel, D., Neugebauer, U., Panagiotopoulou, A., Stanat, P., & Wilbert, J. (2013). *Qualitätsmerkmale für Sprachstandsverfahren im Elementarbereich. Ein Bewertungsrahmen für fundierte Sprachdiagnostik in der Kita*. Mercator-Institut für Sprachförderung und Deutsch als Zweitsprache.
 
-6.  Wilbert, J. (2011). *Motivationale Faktoren in der Sonderpädagogik bei Lernstörungen.* [Habilitationsschrift]. Universität Oldenburg.
+6.  Wilbert, J. (2011). *Motivationale Faktoren in der Sonderpädagogik bei Lernstörungen.* (Habilitationsschrift). Universität Oldenburg.
 
 7.  Wilbert, J. (2010). *Förderung der Motivation bei Lernstörungen*. Kohlhammer.
 
@@ -187,10 +187,10 @@ Updated 2021-11-19
 
 # Software
 
-1.  Wilbert, J. (2020). *scaledic: An R package for adding scaling information to variables in data frames* (0.1.8) [English]. University of Potsdam. <https://github.com/jazznbass/scaledic/>
+1.  Wilbert, J. (2020). *scaledic: An R package for adding scaling information to variables in data frames* (0.1.8). University of Potsdam. <https://github.com/jazznbass/scaledic/>
 
-2.  Wilbert, J., & Lüke, T. (2021). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.51) [English]. University of Potsdam. <https://CRAN.R-project.org/package=scan>
+2.  Wilbert, J., & Lüke, T. (2021). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.51). University of Potsdam. <https://CRAN.R-project.org/package=scan>
 
-3.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40) [English]. University of Potsdam.
+3.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40). University of Potsdam.
 
-4.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20) [English]. University of Potsdam.
+4.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20). University of Potsdam.
