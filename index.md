@@ -4,7 +4,6 @@ title: "Homepage Jürgen Wilbert"
 
 # Hi there!
 
-This is my personal homepage.  
 I thought it was necessary to have a center for all my web activities, a place where someone who is interested in my work can start off.
 
 Here it is!
