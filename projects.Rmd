@@ -3,7 +3,7 @@ title: Projects
 output: html_document
 ---
 
-# Projects {.center}
+# Active projects {.center}
 
 #  {.tabset .tabset-fade .tabset-pills}
 
@@ -86,7 +86,15 @@ output: html_document
 | **Term**     | since 2019                                                  |
 +--------------+-------------------------------------------------------------+
 
-## KOMPASS (ended) {#kompass style="color: blue"}
+# {} 
+
+------------------------------------------------------------------------
+
+# Completed projects {.center}
+
+# {.tabset .tabset-fade .tabset-pills} 
+
+## KOMPASS {#kompass style="color: blue"}
 
 +--------------+-------------------------------------------------------------------------------------------------------------------------------+
 | **Title**    | Cooperative behavior modification and computer-based-training for students with behavioral and academic problems              |
@@ -103,7 +111,7 @@ output: html_document
 | **Funding**  | [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)                                        |
 +--------------+-------------------------------------------------------------------------------------------------------------------------------+
 
-## Mettmann 20 (ended) {style="color: blue"}
+## Mettmann 20 {style="color: blue"}
 
 +---------------+------------------------------------------------------------+
 | **Title**     | School on its way to inclusion                             |
@@ -120,7 +128,7 @@ output: html_document
 | **Funding**   | School district Mettmann, Germany                          |
 +---------------+------------------------------------------------------------+
 
-## QLB-PSI Diagnostik (ended) {#qlb style="color: blue"}
+## QLB-PSI Diagnostik {#qlb style="color: blue"}
 
 +--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Title**    | Diagnostic competences of teachers in inclusive classes                                                                                                                       |
@@ -136,7 +144,7 @@ output: html_document
 | **Funding**  | [Federal Ministry of Education and Research - BMBF](https://www.bmbf.de/en/index.html)                                                                                        |
 +--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-## Mettmann (ended) {#mm style="color: blue"}
+## Mettmann {#mm style="color: blue"}
 
 +-------------+------------------------------------------------------------------------------------------+
 | **Title**   | Inclusive school development                                                             |
