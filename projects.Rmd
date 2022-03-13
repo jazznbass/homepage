@@ -17,7 +17,7 @@ output: html_document
 |              | Original: Emotionale, soziale und psychische Entwicklung an der inklusiven Grundschule |
 +--------------+----------------------------------------------------------------------------------------+
 | **Team**     | Thomas Hennemann; Jürgen Wilbert\                                                      |
-|              | Johanna Krull; Karolina Urton; Pawel Kulawiak                                          |
+|              | Johanna Krull; Karolina Urton; Jannis Bosch; Ella Baer                                          |
 +--------------+----------------------------------------------------------------------------------------+
 | **Homepage** | Not available                                                                          |
 +--------------+----------------------------------------------------------------------------------------+
