@@ -49,7 +49,7 @@ output: html_document
 +--------------+---------------------------------------------------------------------------------------------------+
 |              | Original: Dynamisches Testen als Perspektive für förderdiagnostische Entscheidungen in der Schule |
 +--------------+---------------------------------------------------------------------------------------------------+
-| **Team**     | Moritz Börnert-Ringleb; Claudia Mähler; Jürgen Wilbert                                            |
+| **Team**     | Moritz Börnert-Ringleb; Claudia Mähler; Jürgen Wilbert; Julia Küttner; Linda Kuhr                                            |
 +--------------+---------------------------------------------------------------------------------------------------+
 | **Homepage** | Not available                                                                                     |
 +--------------+---------------------------------------------------------------------------------------------------+
