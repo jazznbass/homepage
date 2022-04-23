@@ -13,7 +13,7 @@
 
 <title>Homepage Jürgen Wilbert</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -48,6 +48,7 @@
 
 
 
+
 <link rel="stylesheet" href="style_add.css" type="text/css" />
 
 
@@ -72,6 +73,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -224,7 +228,7 @@ $(document).ready(function () {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -249,7 +253,7 @@ $(document).ready(function () {
   <a href="links.html">Links</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Courses
      
     <span class="caret"></span>
@@ -305,7 +309,9 @@ $(document).ready(function () {
 
 <div id="hi-there" class="section level1">
 <h1>Hi there!</h1>
-<p>I thought it was necessary to have a center for all my web activities, a place where someone who is interested in my work can start off.</p>
+<p>I thought it was necessary to have a center for all my web
+activities, a place where someone who is interested in my work can start
+off.</p>
 <p>Here it is!</p>
 <hr />
 <p>The menu bar on top is pretty much self-explanatory:</p>
@@ -317,7 +323,8 @@ $(document).ready(function () {
 <tbody>
 <tr class="odd">
 <td><a href="projects.html"><strong>Projects</strong></a></td>
-<td>If you are looking for past or present projects I am working on: here is the place</td>
+<td>If you are looking for past or present projects I am working on:
+here is the place</td>
 </tr>
 <tr class="even">
 <td><a href="rpackages.html"><strong>R Packages</strong></a></td>
@@ -325,11 +332,13 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td><a href="publications.html"><strong>Publications</strong></a></td>
-<td>From any place, this is the one that you get my most recent publication list</td>
+<td>From any place, this is the one that you get my most recent
+publication list</td>
 </tr>
 <tr class="even">
 <td><a href="students.html"><strong>Students</strong></a></td>
-<td>A list of great people that I have or had the pleasure to supervise and accompany through their graduation</td>
+<td>A list of great people that I have or had the pleasure to supervise
+and accompany through their graduation</td>
 </tr>
 <tr class="odd">
 <td><a href=""><strong>Courses</strong></a></td>
@@ -337,11 +346,14 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td><a href="blog.html"><strong>Internal Blog</strong></a></td>
-<td>An internal blog like site which is only provided for discussions and consultations with people I directly work with. Please do not cite or reference this stuff.</td>
+<td>An internal blog like site which is only provided for discussions
+and consultations with people I directly work with. Please do not cite
+or reference this stuff.</td>
 </tr>
 <tr class="odd">
 <td><a href="links.html"><strong>Links</strong></a></td>
-<td>From here, you get to many of the other places I am presented on the web</td>
+<td>From here, you get to many of the other places I am presented on the
+web</td>
 </tr>
 <tr class="even">
 <td><a href="about.html"><strong>About</strong></a></td>

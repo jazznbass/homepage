@@ -13,7 +13,7 @@
 
 <title>Courses</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -50,6 +50,7 @@
 
 
 
+
 <link rel="stylesheet" href="style_add.css" type="text/css" />
 
 
@@ -74,6 +75,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -226,7 +230,7 @@ $(document).ready(function () {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -251,7 +255,7 @@ $(document).ready(function () {
   <a href="links.html">Links</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Courses
      
     <span class="caret"></span>
@@ -305,8 +309,13 @@ $(document).ready(function () {
 </div>
 
 
-<p><a href="course_R_intro.html" title="Introductory course to R">Introductory course to R for my students</a></p>
-<p><a href="https://jazznbass.github.io/workshop_scan_regression/">Workshop on regression analyzes for single-case data with the package <code>scan</code></a></p>
+<p><a href="course_R_intro.html"
+title="Introductory course to R">Introductory course to R for my
+students</a></p>
+<p><a
+href="https://jazznbass.github.io/workshop_scan_regression/">Workshop on
+regression analyzes for single-case data with the package
+<code>scan</code></a></p>
 
 <br>
 <p style = "text-align: right">&copy; 2022 Jürgen Wilbert</p>
