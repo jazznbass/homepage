@@ -159,7 +159,7 @@ Updated 2021-04-23
 
 2.  Krull, J., Urton, K., Hennemann, T., & Wilbert, J. (2021). *Mettmann 2.0 -- Wissenschaftliche Begleitung auf dem Weg zum inklusiven Schulsystem des Kreises Mettmann Abschlussbericht* (S. 68). University of Cologne.
 
-3.  Wilbert, J. (2021). *Analyzing single-case data with R and scan*. <https://jazznbass.github.io/scan-Book/>
+3.  Wilbert, J. (2022). *Analyzing single-case data with R and scan*. doi: 10.5281/zenodo.5713559. <https://jazznbass.github.io/scan-Book/>
 
 4.  Hennemann, T., Wilbert, J., & Hillenbrand, C. (2014). *Wissenschaftliche Begleitung im Rahmen der Umsetzung zur inklusiven Schule im Kreis Mettmann (Mehrebenenanalyse 2010 -- 2012). Abschlussbericht*. Universität zu Köln.
 
@@ -173,10 +173,12 @@ Updated 2021-04-23
 
 # Software
 
-1.  Wilbert, J. (2020). *scaledic: An R package for adding scaling information to variables in data frames* (0.1.8). University of Potsdam. <https://github.com/jazznbass/scaledic/>
+1.  Wilbert, J. (2022). *scplot: An R package for visualizing single-case data* (0.2.2) [English]. University of Potsdam; doi: 10.5281/zenodo.6480135. <https://jazznbass.github.io/scplot/>
 
 2.  Wilbert, J., & Lüke, T. (2022). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.54.1). University of Potsdam. <https://CRAN.R-project.org/package=scan>
 
-3.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40). University of Potsdam.
+3.  Wilbert, J. (2020). *scaledic: An R package for adding scaling information to variables in data frames* (0.1.8). University of Potsdam. <https://github.com/jazznbass/scaledic/>
 
-4.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20). University of Potsdam.
+4.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40). University of Potsdam.
+
+5.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20). University of Potsdam.
