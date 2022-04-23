@@ -7,21 +7,7 @@ output:
     toc_float: TRUE
 ---
 
-Updated 2021-12-28
-
-# In progress
-
-1.  Bosch, J., & Wilbert, J. (submitted). *The Impact of Social Comparison Processes on Self-Evaluation of Performance, Self-Concept, and Task Interest*.
-
-2.  Leidig, T., Casale, G., Wilbert, J., Grosche, M., Wolpe, R., Hennemann, T., & Briesch, A. M. (submitted). Effects of the Good Behavior Game on At-risk Primary School Students in Germany. *School Psychology Quarterly*.
-
-3.  Wilbert, J., & Lüke, T. (submitted). Leistungsbewertung und Leistungsattribution. In M. Börnert-Ringleb, G. Casale, M. Balt, & M. Herzog (Hrsg.), *Lern- und Verhaltensschwierigkeiten in der Schule ---Erscheinungsformen, Erklärungsmodelle und Implikationen für die Praxis*. Kohlhammer.
-
-4.  Wilbert, J. (in Druck). Grundlagen des Rechnens vermitteln. In G. Lauth, M. Grünke, & J. Brunstein (Hrsg.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (3. Aufl.). Hogrefe.
-
-5.  Wilbert, J. (). *scplot - Visualizing single-case data*. University of Potsdam. <https://github.com/jazznbass/scaledic/>
-
-6.  Gabriel, T., Börnert-Ringleb, M., & Wilbert, J. (submitted). Dynamisches Testen im Spannungsfeld von Selektion und Modifikation.
+Updated 2021-04-23
 
 # Journal papers
 
@@ -123,7 +109,7 @@ Updated 2021-12-28
 
 # Book chapters
 
-1.  Wilbert, J., & Börnert, M. (in print). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). 2. Auflage. Julius Klinkhardt.
+1.  Wilbert, J., & Börnert, M. (2022). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). 2. Auflage. Julius Klinkhardt.
 
 2.  Börnert-Ringleb, M., & Wilbert, J. (in print). *Verlaufsdiagnostik und einzelfallbasierte Veränderungsmessung im Rahmen schulischer Förderung* (Y. Blumenthal & S. Blumenthal, Hrsg.). Universität Rostock.
 
@@ -189,7 +175,7 @@ Updated 2021-12-28
 
 1.  Wilbert, J. (2020). *scaledic: An R package for adding scaling information to variables in data frames* (0.1.8). University of Potsdam. <https://github.com/jazznbass/scaledic/>
 
-2.  Wilbert, J., & Lüke, T. (2021). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.51). University of Potsdam. <https://CRAN.R-project.org/package=scan>
+2.  Wilbert, J., & Lüke, T. (2022). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.54.1). University of Potsdam. <https://CRAN.R-project.org/package=scan>
 
 3.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40). University of Potsdam.
 
