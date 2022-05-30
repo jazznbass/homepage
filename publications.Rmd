@@ -7,7 +7,7 @@ output:
     toc_float: TRUE
 ---
 
-Updated 2021-04-23
+Updated 2022-05-30
 
 # Journal papers
 
@@ -111,7 +111,7 @@ Updated 2021-04-23
 
 1.  Wilbert, J., & Börnert, M. (2022). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). 2. Auflage. Julius Klinkhardt.
 
-2.  Börnert-Ringleb, M., & Wilbert, J. (in print). *Verlaufsdiagnostik und einzelfallbasierte Veränderungsmessung im Rahmen schulischer Förderung* (Y. Blumenthal & S. Blumenthal, Hrsg.). Universität Rostock.
+2.  Börnert-Ringleb, M., & Wilbert, J. (2022). Verlaufsdiagnostik und einzelfallbasierte Veränderungsmessung im Rahmen schulischer Förderung. In Y. Blumenthal, S. Blumenthal, & K. Mahlau (Eds.), *Kinder mit Lern- und emotional-sozialen Entwicklungsauffälligkeiten in der Schule* (pp. 72--77). Kohlhammer.
 
 3.  Wilbert, J., & Krull, J. (2021). Die Bedeutung von Peers für die soziale Partizipation von Lernenden mit Lern- und Verhaltensproblemen in inklusiven Schulklassen. In M. Kreutzmann, L. Zander, & B. Hannover (Hrsg.), *Aufwachsen mit Anderen. Peerbeziehungen als Bildungsfaktor* (S. 134--152). Kohlhammer.
 
