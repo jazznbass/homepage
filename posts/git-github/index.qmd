@@ -1,0 +1,31 @@
+---
+title: Setup a new github / Rstudio project
+author: Jürgen Wilbert
+date: 2021/03/18
+abstract: Set up a git project in Rstudio and publish it to gitHub
+categories: 
+  - Git
+  - GitHub
+  - RStudio
+---
+
+1.  Start a new RStudio Project
+
+2.  Tools --\> Project Options --\> Git/SVN: Set *Version Control System* to Git
+
+3.  Commit a first file
+
+4.  Change to Github Desktop
+
+5.  File --\> Add local repository: Add the new project folder
+
+6.  On the main screen click: Add/push repository to git (or similar)
+
+7.  Give the repository a name: evoila!
+
+    \
+    Optional:
+
+8.  Change to Rstudio
+
+9.  Pull and Push committed files

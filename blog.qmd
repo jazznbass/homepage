@@ -1,0 +1,15 @@
+---
+title: Private blog
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
+
+*This blog is only for internal use (e.g. teaching or sending ideas to colleagues). Please do not reference or cite things I say here :-)*
+

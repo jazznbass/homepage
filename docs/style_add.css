@@ -1,36 +1,14 @@
-.title{
-  display: none;
+.navbar {
+  font-size: 22px;
 }
 
-.blog_year {
-  text-align: center;
+.navbar-brand > img {
+  max-height: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
 }
 
-.blog_date {
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
-
-.blog_link {
-}
-
-.blog_title {
-  padding-left: 2em;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.blog_abstract {
-  padding-left: 2em;
-  margin-bottom: 2em;
-}
-
-img.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
 
 a {
   color: #444444;
@@ -45,7 +23,7 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-  background-color: #e4edf2;
+  background-color: #222222;
   text-decoration: underline;
   text-decoration-color: #5c829e;
   text-decoration-thickness: .15em;
@@ -70,23 +48,6 @@ body {
   //background-image: url('images/backgroundforDadlighter.jpeg');
 }
 
-.navbar {
-  font-size: 22px;
-  font-family: Arial;
-}
-
-.navbar-brand {
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-  background-image: url('images/penguin.png');
-  background-size: 70px;
-  width: 70px;
-}
-
-.navbar-header {
-  //background-image: url('images/backgroundforDadlighter.jpeg');
-}
 
 h1 {
     margin-bottom: 1em;
@@ -102,12 +63,6 @@ h2 {
   text-align: center;
 }
 
-div.news{
-  background-color: #d5ddf2;
-  width: 300px;
-  border: 3px solid black;
-  padding: 50px;
-  margin: 1px;
-  font-family: Verdana;
-  font-size: 16;
+.title{
+  display: none;
 }
