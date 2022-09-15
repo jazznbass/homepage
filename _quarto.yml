@@ -1,0 +1,43 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  favicon: images/penguin.png
+  page-footer: "Copyright 2022, Jürgen Wilbert"
+  search: true
+  navbar:
+    logo: images/penguin.png
+    left:
+      - projects.qmd
+      - rpackages.qmd
+      - publications.qmd
+      - students.qmd
+      - links.qmd
+      - text: "Courses"
+        menu:
+          - text: "Single-case regression analzes"
+            href: https://jazznbass.github.io/workshop_scan_regression/
+          - text: "R-Introduction"
+            href: https://jazznbass.github.io/course_dataanalyzes_with_r/
+      - blog.qmd
+        
+    right:
+      - icon: twitter
+        href: https://twitter.com/juergen_wilbert
+      - icon: github
+        href: https://github.com/jazznbass
+      - icon: researchgate
+        href: https://www.researchgate.net/profile/Juergen_Wilbert2
+
+
+format:
+  html:
+    theme: [sandstone]
+    highlight: tango
+    css: style_add.css
+
+    
+
+
+

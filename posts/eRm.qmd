@@ -1,0 +1,141 @@
+---
+title: eRm
+author: Jürgen Wilbert
+date: 2021/05/31
+abstract: An overview of extended Rasch modelling in R with the eRm package.
+categories: 
+  - irt
+  - Rasch
+  - eRm
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  comment = '', fig.width = 6, fig.height = 6, echo = TRUE
+)
+```
+
+# Prepare data
+
+```{r}
+library(tidyverse)
+library(eRm)
+dat <- readRDS("erm_example.rds")
+
+dat <- dat %>% 
+  mutate(
+    sum_d = rowSums(across(starts_with("D_"))),
+    sum_a = rowSums(across(starts_with("A_")))
+  )
+
+dat_d <- dat %>% select(starts_with("D_"))
+dat_a <- dat %>% select(starts_with("A_"))
+```
+
+# Fit model
+
+```{r}
+fit_d <- RM(dat_d)
+fit_a <- RM(dat_a)
+```
+
+# Report item difficulty
+
+```{r}
+summary(fit_d)
+summary(fit_a)
+```
+
+# Person parameters
+
+## Extract
+
+```{r}
+pp_a <- person.parameter(fit_a)
+pp_d <- person.parameter(fit_d)
+
+dat$pp_d <- coef(pp_d) # add person parameter to raw data frame
+dat$pp_a <- coef(pp_a) # add person parameter to raw data frame
+```
+
+Caution! Raw values of 0 and 15 (upper and lower limit) are between -Inf/+Inf and the upper/lower cut off and are estimated based on the distribution shape.
+
+```{r}
+plot(pp_d, main = "Dekodierungsleistung")
+plot(pp_a, main = "Automatisierung")
+```
+
+```{r}
+plotPImap(fit_d)
+```
+
+
+
+# Test Modelfit
+
+## Visual inspection of item discrimination
+
+```{r}
+plotjointICC(fit_d, xlim = c(-5, 5))
+plotjointICC(fit_a, xlim = c(-5, 5))
+```
+
+
+## Likelihood ratio tests
+
+LRtests test for the estimation "stability" across several sub-samples of the data set.
+
+A median split allows for checking if the item-difficulty estimations are constant for the lower and upper part of the performance scale. This is similar to a test for homoscedasticity.
+
+```{r}
+lr_d <- LRtest(fit_d, splitcr = "median")
+lr_a <- LRtest(fit_a, splitcr = "median")
+
+lr_d
+lr_a
+
+```
+
+```{r}
+plotGOF(lr_d, conf= list())
+plotGOF(lr_a, ctrline= list())
+```
+
+
+
+# Wald Test
+
+```{r}
+Waldtest(fit_d)
+Waldtest(fit_a)
+
+```
+
+## Item In-Fit / Out Fit
+
+ItemFit interpretation:
+
+- larger 2.0: Distorts or degrades the measurementsystem
+- 1.5-2.0: Unproductive for construction of measurement, but not degrading
+- 0.5-1.5: Productive for measurement
+- <0.5: Lessproductive for measurement, but not degrading. May produce misleadingly good reliabilities and separations
+
+```{r}
+itemfit(pp_d)
+itemfit(pp_a)
+```
+
+## Person In-Fit / Out Fit
+
+Personfit interpretation:
+
+- larger 2.0: Distorts or degrades the measurementsystem
+- 1.5-2.0: Unproductive for construction of measurement, but not degrading
+- 0.5-1.5: Productive for measurement
+- <0.5: Lessproductive for measurement, but not degrading. May produce misleadingly good reliabilities and separations
+
+```{r}
+personfit(pp_d)
+personfit(pp_a)
+```
+

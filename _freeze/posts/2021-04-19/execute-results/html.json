@@ -1,0 +1,14 @@
+{
+  "hash": "bfb02cc76c9ea74695f5c7511518c254",
+  "result": {
+    "markdown": "---\ntitle: 'Create Rmarkdown webpage on gitHub'\nauthor: Jürgen Wilbert\ndate: '2021-04-19'\nabstract: 'Short description how to create an Rmarkdown webpage and publish it on gitHub'\nkeywords: \n  - Rmarkdown\n  - GitHub\n  - RStudio\n  - Webpage\noutput:\n  html_document: \n    df_print: default \n    theme: yeti\n---\n\n***  \n *Keywords:  Rmarkdown, GitHub, RStudio, Webpage *  \n\n\n------------------------------------------------------------------------\n\n1.  Create a new R Project:\\\n    `File -> New Project -> New Directory -> Simple Rmarkdown website`\n2.  Open new project\n3.  Activate \"git\" versioning for this project (`tools -> project Options -> Git/SVN`)\n4.  Edit the YAML file `_site.yml`:\\\n    add the line: \\`output_dir: \"docs\"\\`\\`\n5.  Build website: `Build -> Build all`\n6.  Change to Github Desktop\n7.  Add repository: `File -> Add local repository`\n8.  Click: Publish repository\n9.  Open Github in Webbrowser and login\n10. Go to the new published repository\n11. Click `Settings`\n12. Go to menu `Pages` or scroll to Github Pages\n13. At the field \"Source\" select `master`\n14. Change `select folder` from `\\(root)` to `\\docs`\n15. click save\n16. Copy / remember / open the link to the new webpage that opens up! 16 Change to webpage project at RStudio\n17. Commit **and** publish all files `[tab] Git -> Commit`\n18. Change to the new webpage address you remembered/copied or opened! (probably wait 30 seconds and renew the page)\n\nThat's it!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
