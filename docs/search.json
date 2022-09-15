@@ -53,7 +53,7 @@
     "href": "posts/multivariate_multilevel.html",
     "title": "Multivariate multilevel analyses",
     "section": "",
-    "text": "Keywords: Statistics, R, Multilevel, Bayesian, nlme, MCMCglmm"
+    "text": "Most of our data have a multilevel structure. But “standard” Manova analyzes do not take a nested structure with various strata into account. What we need is a multivariate extension of the univariate multilevel regression approach.\nMultivariate multilevel analyses has various subtypes depending on the assumptions of the intercorrelations and variance of the dependent variables (dvs).\nIn this paper by Ben Bolker (https://rpubs.com/bbolker/3336), five subtypes are described. Interestingly, the case #1 assumes equal variance of all dvs and equal (positive ?) correlations among the dvs. In this case, is is very easy: A random slope model with the dvs turned into a new random slope categorical variable.\nWhen dvs have different variances, the models must be weighted by their variance and when the intercorrelation between the dvs varies, the intercorrelations of the residuals have to be fixed to take these variations into account.\nOne approach is a Bayesian analyses with a Markov-Chain Monte-Carlo method. There is a vignette of the MCMCglmm package that explains how to do these analyses more in detail (<https://cran.r-project.org/web/packages/MCMCglmm/vignettes/CourseNotes.pdf>). Note: This example is for repeated measures."
   },
   {
     "objectID": "posts/multivariate_multilevel.html#a-computational-example",
@@ -116,7 +116,7 @@
     "href": "index.html",
     "title": "Homepage Jürgen Wilbert",
     "section": "",
-    "text": "Here is the center for all my web activities, a place where someone who is interested in my work can start off.\n\n\n\n\n\nMy name is Jürgen Wilbert. I am a professor for research methods and diagnostics at the department of inclusive education at the University of Potsdam in Germany. I studied education sciences at the University of Cologne where I also did my PhD in cognitive psychology. Thereafter, I got a tenured position as a senior researcher at the department of special education (also University of Cologne). Later I did my habilitation on “Pedagogy and psychology in learning disorders” at the Carl-von-Osietzky University Oldenburg.\nMy work focuses on:\n\nSingle-case research designs, analyzing single case data, and reporting single-case based results.\nSocial inclusion and social participation in classrooms.\nImplementation of Open Science and Data Science concepts into special education research."
+    "text": "Here is the center for all my web activities, a place where someone who is interested in my work can start off.\n\nMy name is Jürgen Wilbert. I am a professor for research methods and diagnostics at the department of inclusive education at the University of Potsdam in Germany. I studied education sciences at the University of Cologne where I also did my PhD in cognitive psychology. Thereafter, I got a tenured position as a senior researcher at the department of special education (also University of Cologne). Later I did my habilitation on “Pedagogy and psychology in learning disorders” at the Carl-von-Osietzky University Oldenburg.\nMy work focuses on:\n\nSingle-case research designs, analyzing single case data, and reporting single-case based results.\nSocial inclusion and social participation in classrooms.\nImplementation of Open Science and Data Science concepts into special education research."
   },
   {
     "objectID": "students.html",
