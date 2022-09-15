@@ -18,8 +18,6 @@ website:
         menu:
           - text: "Single-case regression analzes"
             href: https://jazznbass.github.io/workshop_scan_regression/
-          - text: "R-Introduction"
-            href: https://jazznbass.github.io/course_dataanalyzes_with_r/
       - blog.qmd
         
     right:

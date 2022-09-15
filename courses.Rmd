@@ -1,7 +1,0 @@
----
-title: Courses
----
-
-[Introductory course to R for my students](course_R_intro.html "Introductory course to R")
-
-[Workshop on regression analyzes for single-case data with the package `scan`](https://jazznbass.github.io/workshop_scan_regression/)

@@ -105,13 +105,6 @@
     "text": "Session 1: Introduction\n\n\nSlides: Introduction\n\n\nSession 1b: RStudio\n\n\n\n\nSession 2: Basics: Datatypes\n\n\nSlides: Basics\n\n\nSession 3: Sophisticated subsetting\n\n\nSlides: Sophisticated subsetting\n\n\nSession 4: Libraries, projects, and importing data\n\n\nSlides: Libraries, projects, and importing data\nExample file: cars.xlsx\n\n\nSession 5: Rmarkdown\n\n\nSlides: Rmarkdown\n\n\nSession 6: tidyverse\n\n\nSlides: Rmarkdown\n\n\nSession 7: Data preparation with dplyr\n\n\nSlides: dplyr\n\n\nSession 8: Graphics with gpplot2\n\n\nSlides: ggplot2"
   },
   {
-    "objectID": "courses.html",
-    "href": "courses.html",
-    "title": "Courses",
-    "section": "",
-    "text": "Workshop on regression analyzes for single-case data with the package scan"
-  },
-  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",

@@ -4,12 +4,12 @@ toc: true
 toc-location: left
 ---
 
-![](images/phdhat.png){fig-align="center"}
+![](images/phdhat.png){fig-align="center" width="217"}
 
 # Completed PhD students
 
 | Name                             | Field                                      | Graduation |
-|------------------------|:------------------------------|:----------------:|
+|------------------------|:-----------------------------|:----------------:|
 | Prof. Dr. Karolina Urton         | Inclusive school development               |    2016    |
 | Dr. Johanna Krull                | Social Inclusion                           |    2018    |
 | Prof. Dr. Moritz Börnert-Ringleb | Dynamic Testing                            |    2018    |
