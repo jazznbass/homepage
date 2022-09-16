@@ -34,6 +34,7 @@ format:
     theme: [sandstone]
     highlight: tango
     css: style_add.css
+    page-layout: full
 
     
 
