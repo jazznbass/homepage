@@ -8,11 +8,9 @@ Updated 2022-06-28
 
 # Journal papers
 
-1.  Leidig, T., Casale, G., Wilbert, J., Hennemann, T., Volpe, R. J., Briesch, A., & Grosche, M. (2022). Individual, generalized, and moderated effects of the good behavior game on at-risk primary school students: A multilevel multiple baseline study using behavioral progress monitoring. *Frontiers in Education*, 7. https://doi.org/10.3389/feduc.2022.917138
+1.  Leidig, T., Casale, G., Wilbert, J., Hennemann, T., Volpe, R. J., Briesch, A., & Grosche, M. (2022). Individual, generalized, and moderated effects of the good behavior game on at-risk primary school students: A multilevel multiple baseline study using behavioral progress monitoring. *Frontiers in Education*, 7. <https://doi.org/10.3389/feduc.2022.917138>
 
-
-2.  Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (2022). Statistical Power of Piecewise Regression Analyses of Single-Case Experimental Studies Addressing Behavior Problems. *Frontiers in Education Educational Psychology*, 7. https://doi.org/10.3389/feduc.2022.917944
-
+2.  Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (2022). Statistical Power of Piecewise Regression Analyses of Single-Case Experimental Studies Addressing Behavior Problems. *Frontiers in Education Educational Psychology*, 7. <https://doi.org/10.3389/feduc.2022.917944>
 
 3.  Krull, J., Urton, K., Kulawiak, P. R., Wilbert, J., & Hennemann, T. (accepted). Social-relational classroom climate and its link to primary students' behavioral problems. *Empirische Sonderpädagogik*.
 
@@ -36,7 +34,7 @@ Updated 2022-06-28
 
 13. Wilbert, J., Urton, K., Krull, J., Kulawiak, P. R., Schwalbe, A., & Hennemann, T. (2020). Teachers' Accuracy in Estimating Social Inclusion of Students With and Without Special Educational Needs. *Frontiers in Education*, *5*. <https://doi.org/10.3389/feduc.2020.598330>
 
-14. Börnert-Ringleb, M., & Wilbert, J. (2019). Beitrag eines dynamischen gegenüber einem statischen kognitiven Test zur Vorhersage der Schulleistung. *Empirische Sonderpädagogik*, *11*(3), 175--190.
+14. Börnert-Ringleb, M., & Wilbert, J. (2019). Beitrag eines dynamischen gegenüber einem statischen kognitiven Test zur Vorhersage der Schulleistung. *Empirische Sonderpädagogik*, *11*(3), 175--190. <https://doi.org/10.25656/01:17778>
 
 15. Kulawiak, Pawel R., & Wilbert, J. (2019). Introduction of a new method for representing the sociometric status within the peer group: the example of sociometrically neglected children. *International Journal of Research & Method in Education*, 1--19. <https://doi.org/10.1080/1743727X.2019.1621830>
 
@@ -50,13 +48,13 @@ Updated 2022-06-28
 
 20. Urton, K., Börnert-Ringleb, M., Krull, J., Wilbert, J., & Hennemann, T. (2018). Inklusives Schulklima: Konzeptionelle Darstellung eines Rahmendmodells. *Zeitschrift für Heilpädagogik*, *69*, 40--52.
 
-21. Bosch, J., & Wilbert, J. (2017). Contrast and Assimilation Effects on Task Interest in an Academic Learning Task. *Frontline Learning Research*, *5*(2), 60--78.
+21. Bosch, J., & Wilbert, J. (2017). Contrast and Assimilation Effects on Task Interest in an Academic Learning Task. *Frontline Learning Research*, *5*(2), 60--78. <https://doi.org/10.14786/flr.v5i2.292>
 
-22. Grünke, M., Wilbert, J., Tsiriotakis, I. K., & Agirregoikoa, A. L. (2017). Improving the Length and Quality of Texts Written by Fourth Graders With Learning Disabilities Through a Peer-Tutoring Graphic Organizing Strategy. *Insights into Learning Disabilities*, *14*(2), 167--188.
+22. Grünke, M., Wilbert, J., Tsiriotakis, I. K., & Agirregoikoa, A. L. (2017). Improving the Length and Quality of Texts Written by Fourth Graders With Learning Disabilities Through a Peer-Tutoring Graphic Organizing Strategy. *Insights into Learning Disabilities*, *14*(2), 167--188. <https://eric.ed.gov/?q=Improving+the+Length+and+Quality+of+Texts+Written+by+Fourth+Graders+With+Learning+Disabilities+Through+a+Peer-Tutoring+Graphic+Organizing+Strategy.+Insights+into+Learning+Disabilities&id=EJ1164946>
 
 23. Hennemann, T., Casale, G., Wilbert, J., Grosche, M., Fitting-Dahlmann, K., Hövel, D., Hagen, T., Leidig, T., & Melzer, C. (2017). „Schulen auf dem Weg zur Inklusion" Konzeption, Evaluation und erste Befunde eines landesweiten Qualifizierungsprogrammes zur Umsetzung von Inklusion in Nordrhein-Westfalen. *Zeitschrift für Heilpädagogik*.
 
-24. Wilbert, J., Urton, K., & Grubert, J. (2016). Entwicklung eines Verfahrens zur Messung des inklusionsspezifischen Selbstwirksamkeitserlebens im schulischen Kontext. *Empirische Sonderpädagogik*, *8*(3), 289--302.
+24. Wilbert, J., Urton, K., & Grubert, J. (2016). Entwicklung eines Verfahrens zur Messung des inklusionsspezifischen Selbstwirksamkeitserlebens im schulischen Kontext. *Empirische Sonderpädagogik*, *8*(3), 289--302. <https://doi.org/10.25656/01:12607>
 
 25. Urton, K., Wilbert, J., Grosche, M., & Hennemann, T. (2016). Vergleich der beruflichen Interessenstruktur von Studierenden der Sonderpädagogik mit den Anforderungen des sonderpädagogischen Lehrerberufs. *Zeitschrift für Bildungsforschung*. <https://doi.org/10.1007/s35834-016-0160-5>
 
@@ -70,7 +68,7 @@ Updated 2022-06-28
 
 30. Grünke, M., Büyüknarci, Ö., Wilbert, J., & Breuer, Esther. (2015). To what extent do certain characteristics of a child's written story influence the way it is rated? Insights into features necessary for supporting struggling writers. *Insights into Learning Disabilities*, *12*(2), 163--177.
 
-31. Kulawiak, Pawel R., & Wilbert, J. (2015). Methoden zur Analyse der sozialen Integration von Schulkindern mit sonderpädagogischem Förderbedarf im gemeinsamen Unterricht. *Empirische Sonderpädagogik*, *7*(3), 241--257.
+31. Kulawiak, Pawel R., & Wilbert, J. (2015). Methoden zur Analyse der sozialen Integration von Schulkindern mit sonderpädagogischem Förderbedarf im gemeinsamen Unterricht. *Empirische Sonderpädagogik*, *7*(3), 241--257.<https://doi.org/10.25656/01:11385>
 
 32. Rietz, C., & Wilbert, J. (Hrsg.). (2015). Schwerpunktthema: Best-Practice der Datenanalyse in sonderpädagogischen Forschungsfeldern. *Empirische Sonderpädagogik*, *7*(3).
 
@@ -178,7 +176,7 @@ Updated 2022-06-28
 
 # Software
 
-1.  Wilbert, J. (2022). *scplot: An R package for visualizing single-case data* (0.2.2) [English]. University of Potsdam; doi: 10.5281/zenodo.6480135. <https://jazznbass.github.io/scplot/>
+1.  Wilbert, J. (2022). *scplot: An R package for visualizing single-case data* (0.2.2) \[English\]. University of Potsdam; doi: 10.5281/zenodo.6480135. <https://jazznbass.github.io/scplot/>
 
 2.  Wilbert, J., & Lüke, T. (2022). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.54.1). University of Potsdam. <https://CRAN.R-project.org/package=scan>
 

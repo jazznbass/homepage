@@ -71,9 +71,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -195,18 +195,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="irt,Rasch,eRm" data-listing-date-sort="1622412000000" data-listing-file-modified-sort="1663231803661" data-listing-reading-time-sort="1.355">
-<div class="body">
-<a href="./posts/eRm.html">
-<h3 class="no-anchor listing-title">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="irt,Rasch,eRm" data-listing-date-sort="1622412000000" data-listing-file-modified-sort="1663231803661" data-listing-reading-time-sort="1.355">
+<a href="./posts/eRm.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 eRm
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('irt'); return false;">
 irt
@@ -218,33 +215,28 @@ Rasch
 eRm
 </div>
 </div>
-<a href="./posts/eRm.html">
-<div class="listing-description">
-<p>An overview of extended Rasch modelling in R with the eRm package.</p>
+<div class="card-text listing-description">
+An overview of extended Rasch modelling in R with the eRm package.
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/eRm.html">
-<div class="listing-date">
-May 31, 2021
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Jürgen Wilbert
 </div>
+<div class="listing-date">
+May 31, 2021
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Rmarkdown,GitHub,RStudio,Webpage" data-listing-date-sort="1618783200000" data-listing-file-modified-sort="1663231803661" data-listing-reading-time-sort="0.82">
-<div class="body">
-<a href="./posts/2021-04-19.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="1" data-categories="Rmarkdown,GitHub,RStudio,Webpage" data-listing-date-sort="1618783200000" data-listing-file-modified-sort="1663231803661" data-listing-reading-time-sort="0.82">
+<a href="./posts/2021-04-19.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Create Rmarkdown webpage on gitHub
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Rmarkdown'); return false;">
 Rmarkdown
@@ -259,33 +251,28 @@ RStudio
 Webpage
 </div>
 </div>
-<a href="./posts/2021-04-19.html">
-<div class="listing-description">
-<p>Short description how to create an Rmarkdown webpage and publish it on gitHub</p>
+<div class="card-text listing-description">
+Short description how to create an Rmarkdown webpage and publish it on gitHub
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-04-19.html">
-<div class="listing-date">
-Apr 19, 2021
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Jürgen Wilbert
 </div>
+<div class="listing-date">
+Apr 19, 2021
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Git,GitHub,RStudio" data-listing-date-sort="1616022000000" data-listing-file-modified-sort="1663231803662" data-listing-reading-time-sort="0.39">
-<div class="body">
-<a href="./posts/git-github/index.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="2" data-categories="Git,GitHub,RStudio" data-listing-date-sort="1616022000000" data-listing-file-modified-sort="1663231803662" data-listing-reading-time-sort="0.39">
+<a href="./posts/git-github/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Setup a new github / Rstudio project
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Git'); return false;">
 Git
@@ -297,33 +284,28 @@ GitHub
 RStudio
 </div>
 </div>
-<a href="./posts/git-github/index.html">
-<div class="listing-description">
-<p>Set up a git project in Rstudio and publish it to gitHub</p>
+<div class="card-text listing-description">
+Set up a git project in Rstudio and publish it to gitHub
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/git-github/index.html">
-<div class="listing-date">
-Mar 18, 2021
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Jürgen Wilbert
 </div>
+<div class="listing-date">
+Mar 18, 2021
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Statistics,R,Multilevel,Bayesian,nlme,MCMCglmm" data-listing-date-sort="1615935600000" data-listing-file-modified-sort="1663233182676" data-listing-reading-time-sort="4.11">
-<div class="body">
-<a href="./posts/multivariate_multilevel.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="3" data-categories="Statistics,R,Multilevel,Bayesian,nlme,MCMCglmm" data-listing-date-sort="1615935600000" data-listing-file-modified-sort="1663233182676" data-listing-reading-time-sort="4.11">
+<a href="./posts/multivariate_multilevel.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Multivariate multilevel analyses
-</h3>
-<div class="listing-subtitle">
-A hands on primer in R
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Statistics'); return false;">
 Statistics
@@ -344,22 +326,20 @@ nlme
 MCMCglmm
 </div>
 </div>
-<a href="./posts/multivariate_multilevel.html">
-<div class="listing-description">
-<p>A short description how to do Multivariate Multilevel Analyses in R with the <code>nlme</code> and <code>MCMCglmm</code> packages</p>
+<div class="card-text listing-description">
+A short description how to do Multivariate Multilevel Analyses in R with the <code>nlme</code> and <code>MCMCglmm</code> packages
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/multivariate_multilevel.html">
-<div class="listing-date">
-Mar 17, 2021
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Jürgen Wilbert
 </div>
-</a>
+<div class="listing-date">
+Mar 17, 2021
 </div>
+</div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
