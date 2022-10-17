@@ -1,0 +1,228 @@
+---
+title: "Contrasts in single-cases"
+author: Jürgen Wilbert
+date: 2022/09/27
+abstract: Contrasts in regression modells
+categories: 
+  - contrasts
+  - regression
+  - statistics
+draft: true
+---
+
+```{r}
+#| include: false
+library(scan)
+library(scplot)
+knitr::opts_chunk$set(comment = '')
+```
+
+# Example dataset
+
+::: panel-tabset
+
+## plot
+
+```{r}
+#| echo: false
+scplot(exampleA1B1A2B2$Pawel) |> 
+  add_statline("trendA", color = "red") |> 
+  add_statline("mean", color ="red")
+```
+
+## table
+
+```{r}
+#| echo: false
+export(exampleA1B1A2B2$Pawel)
+```
+
+:::
+
+```{r}
+#| echo: false
+# dataset:
+df <- as.data.frame(exampleA1B1A2B2$Pawel)
+df$mt <- df$mt - df$mt[1]
+```
+
+
+```{r}
+#| collapse: true
+
+# mean of all phases
+
+(means <- tapply(df$values, df$phase, mean))
+(grand_mean <- mean(means))
+```
+
+```{r}
+#| include: false
+
+#???
+cum_contr_mean <- matrix(c(-1,1/3,1/3,1/3, -0.5,-0.5,0.5,0.5, -1/3,-1/3,-1/3,1), ncol = 3)
+colnames(cum_contr_mean) <- levels(df$phase)[-1]
+
+cum_contr_mean
+
+cum_contr_mean <- matrix(
+  c(1/4,1/4,1/4,1/4, 
+    -1,1/3,1/3,1/3, 
+    -0.5,-0.5,0.5,0.5, 
+    -1/3,-1/3,-1/3,1), ncol = 4)
+cum_contr_mean
+cum_contr_mean <- solve(t(cum_contr_mean))[,-1]
+colnames(cum_contr_mean) <- levels(df$phase)[-1]
+cum_contr_mean
+
+
+```
+
+```{r}
+# Plm function reference:
+plm(exampleA1B1A2B2$Pawel, contrast = "first", trend = FALSE, slope = FALSE) %>% coef() %>% .[,1]
+
+plm(exampleA1B1A2B2$Pawel, contrast = "preceding", trend = FALSE, slope = FALSE) %>% coef() %>% .[,1]
+```
+
+# Contrasts
+
+## Treatment contrast
+
+*Compare mean of second to last phase against first phase (intercept)*
+
+The Intercept is the mean of a reference phase (defaults to the first).\
+The predictors are the differences from a phase to the reference (intercept).
+
+```{r}
+treatment <- contr.treatment(4)
+colnames(treatment) <- c("B1vsA1","A2vsA1","B2vsA1")
+treatment
+
+lm(values~phase, data=df, contrasts = list(phase = treatment)) |> coef()
+
+c(Intercept = 13.7, # phaseA1
+  phaseB1vsA1 = 25.9 - 13.7, 
+  phaseA2vsA1 = 14.7 - 13.7,
+  phaseB2vsA1 = 27 - 13.7)
+```
+
+## Sum contrast
+
+*Comparison from the first to the second last phase with the overall mean (Intercept is overall mean)*
+
+The Intercept is the overall mean.\
+The predictors are the differences from a phase mean to the overall mean.
+
+```{r}
+sum <- contr.sum(4)
+colnames(sum) <- c("A1vsMean","B1vsMean","A2vsMean")
+sum
+
+lm(values~phase, data=df, contrasts = list(phase = sum)) |> coef()
+
+c(Intercept = grand_mean,
+  phaseA1vsMean = 13.7 - grand_mean, 
+  phaseB1vsMean = 25.9 - grand_mean, 
+  phaseA2vsMean = 14.7 - grand_mean)
+```
+
+## Helmert contrast
+
+*Compares from the second to the last phase with the mean of all preceding phases.*
+
+The Intercept is the overall mean.\
+The predictors are the mean differences from a phase mean to the mean of all preceding phases.
+
+```{r}
+helmert <- contr.helmert(4)
+colnames(helmert) <- c("B1vsA1", "A2vsA1_B1", "B2vsA1_B1_A2")
+helmert
+
+lm(values~phase, data=df, contrasts = list(phase = helmert)) |> coef()
+
+c(Intercept = grand_mean,
+  phaseB1vsA1 = (25.9 + -13.7) / 2, 
+  phaseA2vsA1_B1 = (14.7  + (-13.7-25.9)/2) / 3,
+  phaseB2vsA1_B1_A2 = (27 + (-13.7-25.9-14.7)/3) /4)
+```
+
+## Revert Helmert
+
+*Comparing the second to last phase against the mean of all preceding phases*
+
+The Intercept is the grand mean.\
+The predictors are the differences from a phase to the mean of the preeding phases.
+
+*Compare phase2 vs. phase 1, phase 3 vs. mean of phase 1 and 2, phase4 vs. mean of phases 1,2,3 (Intercept is overall mean)*
+
+```{r}
+revers_helmert <- matrix(c(-1/2, 1/2, 0, 0, -1/3, -1/3, 2/3, 0, -1/4, -1/4, -1/4, 3/4), ncol = 3)
+colnames(revers_helmert) <- c("B1vsA1", "A2vsA1_B1", "B2vsA1_B1_A2")
+revers_helmert
+
+lm(values~phase, data=df, contrasts = list(phase = revers_helmert)) |> coef()
+
+c(Intercept = grand_mean,
+  phaseB1vsA1 = 25.7 - 13.7,
+  phaseA2vsA1_B1 = 14.7 - (13.7+25.9)/2,
+  phaseB2vsA1_B1_A2 = 27 - (13.7+25.9+14.7)/3)
+```
+
+## Cummulative
+
+*Compare mean of second to last phase to mean of preceding phase*
+
+The Intercept is the mean of the first phase.\
+The predictors are the differences from a phase to the preeding phase.
+
+```{r}
+cumulative <- matrix(c(0,1,1,1, 0,0,1,1, 0,0,0,1), ncol = 3)
+colnames(cumulative) <- c("B1vsA1","A2vsB1","B2vsA2")
+cumulative
+
+lm(values~phase, data=df, contrasts = list(phase = cumulative)) |> coef()
+
+c(Intercept = 13.7,
+  phaseB1vsA1 = 25.9 - 13.7, 
+  phaseA2vsB1 = 14.7 - 25.9,
+  phaseB2vsA2 = 27 - 14.7)
+```
+
+# Contrast computation
+
+## treatment
+
+```{r}
+#| collapse: true
+
+(treatment <- contr.treatment(4))
+(treatment <-  cbind(1, treatment))
+
+(treatment <- solve(t(treatment)))
+(treatment <- treatment[,-1])
+
+colnames(treatment) <- c("B1vsA1","A2vsA1","B2vsA1")
+
+lm(values~phase, data=df, contrasts = list(phase = treatment)) |> summary()
+```
+
+## sum
+
+```{r}
+(sum <- contr.sum(4))
+(sum <-  cbind(1, sum))
+
+(sum <- solve(t(sum)))
+(sum <- sum[,-1])
+colnames(sum) <- c("A1vsMean","B1vsMean","A2vsMean")
+
+
+lm(values~phase, data=df, contrasts = list(phase = sum)) |> coef()
+
+c(Intercept = grand_mean,
+  phaseA1vsMean = 13.7 - grand_mean, 
+  phaseB1vsMean = 25.9 - grand_mean, 
+  phaseA2vsMean = 14.7 - grand_mean)
+```
+

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.175">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jürgen Wilbert">
+<meta name="dcterms.date" content="2022-09-27">
+
+<title>Contrasts in single-cases</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/penguin.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../style_add.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/penguin.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html">Projects</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../rpackages.html">R Packages</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../students.html">Graduate Students</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../links.html">Links</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-courses">    
+        <li>
+    <a class="dropdown-item" href="https://jazznbass.github.io/workshop_scan_regression/">
+ <span class="dropdown-text">Single-case regression analzes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">Private blog</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/juergen_wilbert"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jazznbass"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.researchgate.net/profile/Juergen_Wilbert2"><i class="bi bi-researchgate" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#example-dataset" id="toc-example-dataset" class="nav-link active" data-scroll-target="#example-dataset">Example dataset</a></li>
+  <li><a href="#contrasts" id="toc-contrasts" class="nav-link" data-scroll-target="#contrasts">Contrasts</a>
+  <ul class="collapse">
+  <li><a href="#treatment-contrast" id="toc-treatment-contrast" class="nav-link" data-scroll-target="#treatment-contrast">Treatment contrast</a></li>
+  <li><a href="#sum-contrast" id="toc-sum-contrast" class="nav-link" data-scroll-target="#sum-contrast">Sum contrast</a></li>
+  <li><a href="#helmert-contrast" id="toc-helmert-contrast" class="nav-link" data-scroll-target="#helmert-contrast">Helmert contrast</a></li>
+  <li><a href="#revert-helmert" id="toc-revert-helmert" class="nav-link" data-scroll-target="#revert-helmert">Revert Helmert</a></li>
+  <li><a href="#cummulative" id="toc-cummulative" class="nav-link" data-scroll-target="#cummulative">Cummulative</a></li>
+  </ul></li>
+  <li><a href="#contrast-computation" id="toc-contrast-computation" class="nav-link" data-scroll-target="#contrast-computation">Contrast computation</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Contrasts in single-cases</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">contrasts</div>
+    <div class="quarto-category">regression</div>
+    <div class="quarto-category">statistics</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jürgen Wilbert </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 27, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    Contrasts in regression modells
+  </div>
+</div>
+
+</header>
+
+<section id="example-dataset" class="level1">
+<h1>Example dataset</h1>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">table</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+
+<table class=" lightable-classic" style="width: auto !important; ">
+<caption>Single case data frame with 1 cases</caption>
+ <thead>
+<tr><th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Pawel</div></th></tr>
+  <tr>
+   <th style="text-align:center;"> values </th>
+   <th style="text-align:center;"> mt </th>
+   <th style="text-align:center;"> phase </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 19 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 16 </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 16 </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 17 </td>
+   <td style="text-align:center;"> 7 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 18 </td>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 12 </td>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 12 </td>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> A1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 39 </td>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 18 </td>
+   <td style="text-align:center;"> 12 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 25 </td>
+   <td style="text-align:center;"> 13 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 31 </td>
+   <td style="text-align:center;"> 14 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 29 </td>
+   <td style="text-align:center;"> 15 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 24 </td>
+   <td style="text-align:center;"> 16 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 37 </td>
+   <td style="text-align:center;"> 17 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 17 </td>
+   <td style="text-align:center;"> 18 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 21 </td>
+   <td style="text-align:center;"> 19 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 18 </td>
+   <td style="text-align:center;"> 20 </td>
+   <td style="text-align:center;"> B1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 16 </td>
+   <td style="text-align:center;"> 21 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 17 </td>
+   <td style="text-align:center;"> 22 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 19 </td>
+   <td style="text-align:center;"> 23 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 21 </td>
+   <td style="text-align:center;"> 24 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> 25 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> 26 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 23 </td>
+   <td style="text-align:center;"> 27 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> 28 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> 29 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> 30 </td>
+   <td style="text-align:center;"> A2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 34 </td>
+   <td style="text-align:center;"> 31 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 35 </td>
+   <td style="text-align:center;"> 32 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 28 </td>
+   <td style="text-align:center;"> 33 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 30 </td>
+   <td style="text-align:center;"> 34 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 22 </td>
+   <td style="text-align:center;"> 35 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 21 </td>
+   <td style="text-align:center;"> 36 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 21 </td>
+   <td style="text-align:center;"> 37 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 22 </td>
+   <td style="text-align:center;"> 38 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 23 </td>
+   <td style="text-align:center;"> 39 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 34 </td>
+   <td style="text-align:center;"> 40 </td>
+   <td style="text-align:center;"> B2 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dataset:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(exampleA1B1A2B2<span class="sc">$</span>Pawel)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>mt <span class="ot">&lt;-</span> df<span class="sc">$</span>mt <span class="sc">-</span> df<span class="sc">$</span>mt[<span class="dv">1</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># mean of all phases</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>(means <span class="ot">&lt;-</span> <span class="fu">tapply</span>(df<span class="sc">$</span>values, df<span class="sc">$</span>phase, mean))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  A1   B1   A2   B2 </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fl">13.7</span> <span class="fl">25.9</span> <span class="fl">14.7</span> <span class="fl">27.0</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>(grand_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(means))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">20.325</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plm function reference:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plm</span>(exampleA1B1A2B2<span class="sc">$</span>Pawel, <span class="at">contrast =</span> <span class="st">"first"</span>, <span class="at">trend =</span> <span class="cn">FALSE</span>, <span class="at">slope =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> .[,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)     phaseB1     phaseA2     phaseB2 
+       13.7        12.2         1.0        13.3 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plm</span>(exampleA1B1A2B2<span class="sc">$</span>Pawel, <span class="at">contrast =</span> <span class="st">"preceding"</span>, <span class="at">trend =</span> <span class="cn">FALSE</span>, <span class="at">slope =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> .[,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)     phaseB1     phaseA2     phaseB2 
+       13.7        12.2       -11.2        12.3 </code></pre>
+</div>
+</div>
+</section>
+<section id="contrasts" class="level1">
+<h1>Contrasts</h1>
+<section id="treatment-contrast" class="level2">
+<h2 class="anchored" data-anchor-id="treatment-contrast">Treatment contrast</h2>
+<p><em>Compare mean of second to last phase against first phase (intercept)</em></p>
+<p>The Intercept is the mean of a reference phase (defaults to the first).<br>
+The predictors are the differences from a phase to the reference (intercept).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">&lt;-</span> <span class="fu">contr.treatment</span>(<span class="dv">4</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(treatment) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B1vsA1"</span>,<span class="st">"A2vsA1"</span>,<span class="st">"B2vsA1"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>treatment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  B1vsA1 A2vsA1 B2vsA1
+1      0      0      0
+2      1      0      0
+3      0      1      0
+4      0      0      1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> treatment)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept) phaseB1vsA1 phaseA2vsA1 phaseB2vsA1 
+       13.7        12.2         1.0        13.3 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> <span class="fl">13.7</span>, <span class="co"># phaseA1</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsA1 =</span> <span class="fl">25.9</span> <span class="sc">-</span> <span class="fl">13.7</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsA1 =</span> <span class="fl">14.7</span> <span class="sc">-</span> <span class="fl">13.7</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1 =</span> <span class="dv">27</span> <span class="sc">-</span> <span class="fl">13.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Intercept phaseB1vsA1 phaseA2vsA1 phaseB2vsA1 
+       13.7        12.2         1.0        13.3 </code></pre>
+</div>
+</div>
+</section>
+<section id="sum-contrast" class="level2">
+<h2 class="anchored" data-anchor-id="sum-contrast">Sum contrast</h2>
+<p><em>Comparison from the first to the second last phase with the overall mean (Intercept is overall mean)</em></p>
+<p>The Intercept is the overall mean.<br>
+The predictors are the differences from a phase mean to the overall mean.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sum <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">4</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sum) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A1vsMean"</span>,<span class="st">"B1vsMean"</span>,<span class="st">"A2vsMean"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  A1vsMean B1vsMean A2vsMean
+1        1        0        0
+2        0        1        0
+3        0        0        1
+4       -1       -1       -1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> sum)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  (Intercept) phaseA1vsMean phaseB1vsMean phaseA2vsMean 
+       20.325        -6.625         5.575        -5.625 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA1vsMean =</span> <span class="fl">13.7</span> <span class="sc">-</span> grand_mean, </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsMean =</span> <span class="fl">25.9</span> <span class="sc">-</span> grand_mean, </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsMean =</span> <span class="fl">14.7</span> <span class="sc">-</span> grand_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Intercept phaseA1vsMean phaseB1vsMean phaseA2vsMean 
+       20.325        -6.625         5.575        -5.625 </code></pre>
+</div>
+</div>
+</section>
+<section id="helmert-contrast" class="level2">
+<h2 class="anchored" data-anchor-id="helmert-contrast">Helmert contrast</h2>
+<p><em>Compares from the second to the last phase with the mean of all preceding phases.</em></p>
+<p>The Intercept is the overall mean.<br>
+The predictors are the mean differences from a phase mean to the mean of all preceding phases.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>helmert <span class="ot">&lt;-</span> <span class="fu">contr.helmert</span>(<span class="dv">4</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(helmert) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B1vsA1"</span>, <span class="st">"A2vsA1_B1"</span>, <span class="st">"B2vsA1_B1_A2"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>helmert</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  B1vsA1 A2vsA1_B1 B2vsA1_B1_A2
+1     -1        -1           -1
+2      1        -1           -1
+3      0         2           -1
+4      0         0            3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> helmert)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      (Intercept)       phaseB1vsA1    phaseA2vsA1_B1 phaseB2vsA1_B1_A2 
+           20.325             6.100            -1.700             2.225 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsA1 =</span> (<span class="fl">25.9</span> <span class="sc">+</span> <span class="sc">-</span><span class="fl">13.7</span>) <span class="sc">/</span> <span class="dv">2</span>, </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsA1_B1 =</span> (<span class="fl">14.7</span>  <span class="sc">+</span> (<span class="sc">-</span><span class="fl">13.7-25.9</span>)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">3</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1_B1_A2 =</span> (<span class="dv">27</span> <span class="sc">+</span> (<span class="sc">-</span><span class="fl">13.7-25.9-14.7</span>)<span class="sc">/</span><span class="dv">3</span>) <span class="sc">/</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Intercept       phaseB1vsA1    phaseA2vsA1_B1 phaseB2vsA1_B1_A2 
+           20.325             6.100            -1.700             2.225 </code></pre>
+</div>
+</div>
+</section>
+<section id="revert-helmert" class="level2">
+<h2 class="anchored" data-anchor-id="revert-helmert">Revert Helmert</h2>
+<p><em>Comparing the second to last phase against the mean of all preceding phases</em></p>
+<p>The Intercept is the grand mean.<br>
+The predictors are the differences from a phase to the mean of the preeding phases.</p>
+<p><em>Compare phase2 vs.&nbsp;phase 1, phase 3 vs.&nbsp;mean of phase 1 and 2, phase4 vs.&nbsp;mean of phases 1,2,3 (Intercept is overall mean)</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>revers_helmert <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(revers_helmert) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B1vsA1"</span>, <span class="st">"A2vsA1_B1"</span>, <span class="st">"B2vsA1_B1_A2"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>revers_helmert</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     B1vsA1  A2vsA1_B1 B2vsA1_B1_A2
+[1,]   -0.5 -0.3333333        -0.25
+[2,]    0.5 -0.3333333        -0.25
+[3,]    0.0  0.6666667        -0.25
+[4,]    0.0  0.0000000         0.75</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> revers_helmert)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      (Intercept)       phaseB1vsA1    phaseA2vsA1_B1 phaseB2vsA1_B1_A2 
+           20.325            12.200            -5.100             8.900 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsA1 =</span> <span class="fl">25.7</span> <span class="sc">-</span> <span class="fl">13.7</span>,</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsA1_B1 =</span> <span class="fl">14.7</span> <span class="sc">-</span> (<span class="fl">13.7+25.9</span>)<span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1_B1_A2 =</span> <span class="dv">27</span> <span class="sc">-</span> (<span class="fl">13.7+25.9+14.7</span>)<span class="sc">/</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Intercept       phaseB1vsA1    phaseA2vsA1_B1 phaseB2vsA1_B1_A2 
+           20.325            12.000            -5.100             8.900 </code></pre>
+</div>
+</div>
+</section>
+<section id="cummulative" class="level2">
+<h2 class="anchored" data-anchor-id="cummulative">Cummulative</h2>
+<p><em>Compare mean of second to last phase to mean of preceding phase</em></p>
+<p>The Intercept is the mean of the first phase.<br>
+The predictors are the differences from a phase to the preeding phase.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>cumulative <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cumulative) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B1vsA1"</span>,<span class="st">"A2vsB1"</span>,<span class="st">"B2vsA2"</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>cumulative</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     B1vsA1 A2vsB1 B2vsA2
+[1,]      0      0      0
+[2,]      1      0      0
+[3,]      1      1      0
+[4,]      1      1      1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> cumulative)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept) phaseB1vsA1 phaseA2vsB1 phaseB2vsA2 
+       13.7        12.2       -11.2        12.3 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> <span class="fl">13.7</span>,</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsA1 =</span> <span class="fl">25.9</span> <span class="sc">-</span> <span class="fl">13.7</span>, </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsB1 =</span> <span class="fl">14.7</span> <span class="sc">-</span> <span class="fl">25.9</span>,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA2 =</span> <span class="dv">27</span> <span class="sc">-</span> <span class="fl">14.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Intercept phaseB1vsA1 phaseA2vsB1 phaseB2vsA2 
+       13.7        12.2       -11.2        12.3 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="contrast-computation" class="level1">
+<h1>Contrast computation</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">&lt;-</span> <span class="fu">contr.treatment</span>(<span class="dv">4</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">&lt;-</span>  <span class="fu">cbind</span>(<span class="dv">1</span>, treatment)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(treatment))</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">&lt;-</span> treatment[,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> treatment)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)      phase2      phase3      phase4 
+     20.325       5.575      -5.625       6.675 </code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="jazznbass/homepage" data-repo-id="MDEwOlJlcG9zaXRvcnkzNDA5MjU3ODY=" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Copyright 2022, Jürgen Wilbert</div>
+  </div>
+</footer>
+
+
+
+</body></html>

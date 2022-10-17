@@ -5,8 +5,9 @@ date: 2021/05/31
 abstract: An overview of extended Rasch modelling in R with the eRm package.
 categories: 
   - irt
-  - Rasch
+  - rasch
   - eRm
+  - statistics
 ---
 
 ```{r setup, include = FALSE}
