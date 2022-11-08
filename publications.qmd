@@ -4,7 +4,7 @@ toc: true
 toc-location: left
 ---
 
-Updated 2022-06-28
+Updated 2022-11-08
 
 # Journal papers
 
@@ -111,6 +111,8 @@ Updated 2022-06-28
 51. Wilbert, J., & Gerdes, H. (2007). Lehrerbild von Schülern und Lehrern: Eine empirische Studie zum Vergleich der Vorstellungen vom idealen und vom typischen Lehrer. *Psychologie in Erziehung und Unterricht*, *54*(3), 208--222.
 
 # Book chapters
+
+1. Scherreiks, L., Kuhr, L., & Wilbert, J. (2022). Veränderung der selbsteingeschätzten Kompetenz zur Diagnostik psychischer Auffälligkeiten im Psychodiagnostischen Praktikum. In J. Jennek (Ed.), *Professionalisierung in Praxisphasen: Ergebnisse der Lehrerbildungsforschung an der Universität Potsdam * (p. 23). Universitätsverlag Potsdam. DOI: 10.25932/publishup-50096
 
 1.  Wilbert, J., & Börnert, M. (2022). Unterricht. In I. Hedderich, G. Biewer, J. Hollenweger, & R. Markowetz (Hrsg.), *Handbuch Inklusion und Sonderpädagogik* (S. 346--353). 2. Auflage. Julius Klinkhardt.
 
