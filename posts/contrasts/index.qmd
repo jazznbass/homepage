@@ -7,7 +7,7 @@ categories:
   - contrasts
   - regression
   - statistics
-draft: true
+draft: FALSE
 ---
 
 ```{r}
