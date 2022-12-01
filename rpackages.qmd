@@ -19,9 +19,9 @@ html and latex tables in a publication friendly style.
 More details can be found at <https://jazznbass.github.io/scan-Book/>.
 
 *State:* Stable CRAN version and extended developmental version on github  
-*github:* https://github.com/jazznbass/scan  
-*CRAN:* https://CRAN.R-project.org/package=scan  
-*webpage:* https://jazznbass.github.io/scan/
+*github:* <https://github.com/jazznbass/scan>  
+*CRAN:* <https://CRAN.R-project.org/package=scan>   
+*webpage:* <https://jazznbass.github.io/scan/>  
 
 ## scaledic
 
@@ -35,9 +35,9 @@ Also documentation is poor. I am working on that.
 
 Basically, scaledic loads a dictionary file that contains all relevant information and applies these to a data frame. Here, every variable corresponding to the ones describes in the dictionary gets a new attribute `dic` which contains a list with all dictionary values for that variable.  
 
-*State:* Working but still experimental  
-*github:* https://github.com/jazznbass/scaledic
-*webpage:* https://jazznbass.github.io/scaledic/
+*State:* Working but still experimental   
+*github:* <https://github.com/jazznbass/scaledic>  
+*webpage:* <https://jazznbass.github.io/scaledic/>  
 
 ## scplot
 
@@ -48,8 +48,17 @@ Basically, scaledic loads a dictionary file that contains all relevant informati
 The generated plots are compatible to `ggplot2`. 
 
 *State:* Early development but already working  
-*github:* https://github.com/jazznbass/scplot
-*webpage:* https://jazznbass.github.io/scplot/
+*github:* <https://github.com/jazznbass/scplot>  
+*webpage:* <https://jazznbass.github.io/scplot/>  
+
+## mcscan
+
+### ***mcscan - Conduction Monte Carlo Single-Case Studies***
+
+`mcscan` is another extension to the `scan` package which provides functions for designing, conducting, and visualizing the results of Monte-Carlo Single-Case studies.
+
+*State:* Experimental   
+*github:* <https://github.com/jazznbass/mcscan/>  
 
 ## wmisc
 
