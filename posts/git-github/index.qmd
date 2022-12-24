@@ -21,7 +21,7 @@ categories:
 
 6.  On the main screen click: Add/push repository to git (or similar)
 
-7.  Give the repository a name: evoila!
+7.  Give the repository a name: et voilà!
 
     \
     Optional:
