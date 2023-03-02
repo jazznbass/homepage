@@ -9,9 +9,9 @@ title: "Homepage Jürgen Wilbert"
 ```
 # Hello!
 
-This is the centre of all my web activities, a place where anyone interested in my work can start.
+![](images/texel-2023-2.jpg){style="float: right;  margin-left: 20px; border-radius: 30%" width="300"}
 
-![](images/20200728181612-56270.jpg){style="float: right;  margin-left: 20px; border-radius: 30%" width="400"}
+This is the centre of all my web activities, a place where anyone interested in my work can start.
 
 My name is Jürgen Wilbert. I am a Professor of Research Methods and Diagnostics at the Department of Inclusive Education at the University of Potsdam in Germany. I studied education at the University of Cologne, where I also did my doctorate in cognitive psychology. I then obtained a permanent position as a senior researcher at the Department of Special Education. I later habilitated at the Carl-von-Osietzky University of Oldenburg on the topic of "Pedagogy and Psychology in Learning Disabilities".
 

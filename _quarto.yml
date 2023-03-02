@@ -4,7 +4,7 @@ project:
 
 website:
   favicon: images/penguin.png
-  page-footer: "Copyright 2022, Jürgen Wilbert"
+  page-footer: "Copyright 2023, Jürgen Wilbert"
   search: true
   navbar:
     logo: images/penguin.png
