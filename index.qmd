@@ -18,5 +18,5 @@ My name is Jürgen Wilbert. I am a Professor of Research Methods and Diagnostics
 My work focuses on:
 
 -   Single-case research designs, analyzing single case data, and reporting single-case based results.
--   Social inclusion and social participation in classrooms.
--   Implementation of Open Science and Data Science concepts into special education research.
+-   Social inclusion and social participation the classroom.
+-   Implementation of Open Science and Data Science concepts in special education research.
