@@ -47,8 +47,9 @@ Basically, scaledic loads a dictionary file that contains all relevant informati
 
 The generated plots are compatible to `ggplot2`. 
 
-*State:* Early development but already working  
+*State:* Stable CRAN version and extended developmental version on github  
 *github:* <https://github.com/jazznbass/scplot>  
+*CRAN:* <https://CRAN.R-project.org/package=scplot>   
 *webpage:* <https://jazznbass.github.io/scplot/>  
 
 ## mcscan
