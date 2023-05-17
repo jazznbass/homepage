@@ -1,0 +1,59 @@
+---
+title: "What's that all about the contrasts"
+author: "Jürgen Wilbert"
+date: "`r Sys.Date()`"
+format:
+  html:
+    page-layout: full
+    df-print: kable
+    toc: true
+    toc-location: right
+    self-contained: true
+categories:
+  - methods
+  - stats
+  - contrasts
+---
+
+# Example dataset
+
+Create a random dataset with criteria `y`, predictors `x1` and `x2` and `gender`.
+
+Al variables are correlated.
+
+```{r}
+n <- 10000
+gender <- rep(0:1, each = n/2)
+y <- sample(0:10, n, replace = TRUE) + gender * sample(0:10, n, replace = TRUE)
+x1 <- y + sample(0:10, n, replace = TRUE) + gender * sample(0:10, n, replace = TRUE)
+x2 <- y + x1 + sample(0:10, n, replace = TRUE) + gender * sample(0:10, n, replace = TRUE)
+
+dat <- data.frame(y = y, x1 = x1, x2 = x2, gender = gender)
+```
+
+# Descriptives
+
+```{r}
+psych::corr.test(dat)
+psych::describe(dat)
+```
+
+# Contrasts
+
+
+
+```{r}
+#, contrasts = list(gender = contr.treatment(2))
+
+# Gender has values 0 vs. 1 (treatment contrast)
+fit1 <- lm(y ~ gender * x1 * x2, data = dat)
+
+
+# Gender hast -1 vs. 1 (effect contrast)
+dat$gender <- car::recode(dat$gender, "0 = -1; 1 = 1")
+
+fit2 <- lm(y ~ gender * x1 * x2, data = dat)
+
+sjPlot::tab_model(fit1, fit2, show.std = TRUE, show.ci = FALSE, col.order = c("est", "se", "std.est", "p"), digits = 4)
+```
+
