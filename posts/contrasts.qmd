@@ -1,7 +1,8 @@
 ---
 title: "Treatment vs. effect contrasts"
 author: "Jürgen Wilbert"
-date: "`r Sys.Date()`"
+abstract: Here is a simple example to show the differences between treatment and effect contrasts.
+date: 2023/05/17
 format:
   html:
     page-layout: full
@@ -15,8 +16,6 @@ categories:
   - contrasts
 ---
 
-### Hi Wolfgang and Michel, here is a simple example to show the differences between treatment and effect contrasts.
-
 # Example dataset
 
 Create a random dataset with criteria `y`, predictors `x1`, `x2` and `gender`.
@@ -29,12 +28,12 @@ Create a random dataset with criteria `y`, predictors `x1`, `x2` and `gender`.
 
 ```{r}
 set.seed(1234)
-n <- 10000
+n <- 2000
 gender <- rep(0:1, each = n/2)
 y <- sample(0:10, n, replace = TRUE) + gender * sample(0:10, n, replace = TRUE)
 x1 <- sample(0:10, n, replace = TRUE) + gender * y
 x2 <- x1 + sample(0:10, n, replace = TRUE) + gender * y
-y <- y + (x1 > median(x1) & x2 > median(x2) & gender == 1) * sample(0:10, n, replace = TRUE)
+y <- y + (x1 > median(x1) & x2 > median(x2) & gender == 1) * sample(0:10, n, replace = TRUE) * 2
 
 dat <- data.frame(y = y, x1 = x1, x2 = x2, gender = gender)
 ```
