@@ -42,12 +42,11 @@ psych::describe(dat)
 
 # Contrasts
 
-
+The left part of the table is with gender as treatment contrast (0 vs. 1) and the right part with gender as effect contrast (-1 vs. 1)
 
 ```{r}
 # Gender has values 0 vs. 1 (treatment contrast)
 fit1 <- lm(y ~ gender * x1 * x2, data = dat)
-
 
 # Gender hast -1 vs. 1 (effect contrast)
 dat$gender <- car::recode(dat$gender, "0 = -1; 1 = 1")
