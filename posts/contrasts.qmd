@@ -67,4 +67,4 @@ sjPlot::tab_model(fit1, fit2, show.se = TRUE, show.ci = FALSE, col.order = c("es
 - All predictors in model2 without a `gender` term are effects *across gender* while the interactions with a `gender` term are the effects of `gender` (subtracted for *gender 0* and added for *gender 1*).
 - `gender` has a significant effect on `y` in both models
 - `x1`, `x2` and `x1*x2` only have a significant effect on `y` in model 2
-- All `gender` interactions are significant in both models.
+- All `gender` interactions are significant in both models where the effect sizes and the standard errors of model2 are half of the corresponding values in model1, so `p` is identical.
