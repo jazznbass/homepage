@@ -15,7 +15,7 @@ categories:
   - contrasts
 ---
 
-# Hi Wolfgang and Michel, here is a simple example to show the differences between treatment and effect contrast.
+### Hi Wolfgang and Michel, here is a simple example to show the differences between treatment and effect contrast.
 
 # Example dataset
 
