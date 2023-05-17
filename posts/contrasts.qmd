@@ -30,8 +30,8 @@ gender <- rep(0:1, each = n/2)
 y <- sample(0:10, n, replace = TRUE) + gender * sample(0:10, n, replace = TRUE)
 x1 <- sample(0:10, n, replace = TRUE) + gender * y
 x2 <- x1 + sample(0:10, n, replace = TRUE) + gender * y
-inter <- x1 > median(x1) & x2 > median(x2) & gender == 1
-y[inter] <- y[inter] + sample(0:10, sum(inter), replace = TRUE)
+
+y <- y + (x1 > median(x1) & x2 > median(x2) & gender == 1) * sample(0:10, n, replace = TRUE)
 
 dat <- data.frame(y = y, x1 = x1, x2 = x2, gender = gender)
 ```
