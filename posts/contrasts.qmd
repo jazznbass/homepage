@@ -62,6 +62,10 @@ fit2 <- lm(y ~ gender * x1 * x2, data = dat)
 sjPlot::tab_model(fit1, fit2, show.se = TRUE, show.ci = FALSE, col.order = c("est", "se", "std.est", "p"), digits = 4, dv.labels = c("Treatment contrast<br> for gender", "Effect contrast<br> for gender"))
 ```
 
+- The `intercept` in model1 (treatment contrast) is the mean of `y` for *gender 0*
+- The `intercept` in model2 (effect contrast) is the mean of `y` for *all data*
+- All predictors in model1 without a `gender` term are effects for *gender 0* while the interactions with a `gender` term are effects for *gender 1*
+- All predictors in model2 without a `gender` term are effects *across gender* while the interactions with a `gender` term are the effects of `gender` (subtracted for *gender 0* and added for *gender 1*).
 - `gender` has a significant effect on `y` in both models
 - `x1`, `x2` and `x1*x2` only have a significant effect on `y` in model 2
 - All `gender` interactions are significant in both models.
