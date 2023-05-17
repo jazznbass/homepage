@@ -21,7 +21,11 @@ categories:
 
 Create a random dataset with criteria `y`, predictors `x1`, `x2` and `gender`.
 
-All variables are correlated.
+- y and gender are correlated
+- y and x1 are correlated ***only if gender is 1***
+- y and x1 are correlated ***only if gender is 1***
+- x1 and x2 are correlated
+- x1 and x2 have an interaction effect on y ***only if gender is 1***
 
 ```{r}
 set.seed(1234)
@@ -30,7 +34,6 @@ gender <- rep(0:1, each = n/2)
 y <- sample(0:10, n, replace = TRUE) + gender * sample(0:10, n, replace = TRUE)
 x1 <- sample(0:10, n, replace = TRUE) + gender * y
 x2 <- x1 + sample(0:10, n, replace = TRUE) + gender * y
-
 y <- y + (x1 > median(x1) & x2 > median(x2) & gender == 1) * sample(0:10, n, replace = TRUE)
 
 dat <- data.frame(y = y, x1 = x1, x2 = x2, gender = gender)
@@ -56,6 +59,9 @@ dat$gender <- car::recode(dat$gender, "0 = -1; 1 = 1")
 
 fit2 <- lm(y ~ gender * x1 * x2, data = dat)
 
-sjPlot::tab_model(fit1, fit2, show.se = TRUE, show.ci = FALSE, col.order = c("est", "se", "std.est", "p"), digits = 4)
+sjPlot::tab_model(fit1, fit2, show.se = TRUE, show.ci = FALSE, col.order = c("est", "se", "std.est", "p"), digits = 4, dv.labels = c("Treatment contrast<br> for gender", "Effect contrast<br> for gender"))
 ```
 
+- `gender` has a significant effect on `y` in both models
+- `x1`, `x2` and `x1*x2` only have a significant effect on `y` in model 2
+- All `gender` interactions are significant in both models.
