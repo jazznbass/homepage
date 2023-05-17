@@ -20,11 +20,11 @@ categories:
 
 Create a random dataset with criteria `y`, predictors `x1`, `x2` and `gender`.
 
-- y and gender are correlated
-- y and x1 are correlated ***only if gender is 1***
-- y and x1 are correlated ***only if gender is 1***
-- x1 and x2 are correlated
-- x1 and x2 have an interaction effect on y ***only if gender is 1***
+- `y` and `gender` are correlated
+- `y` and `x1` are correlated ***only if gender is 1***
+- `y` and `x2` are correlated ***only if gender is 1***
+- `x1` and `x2` are correlated
+- `x1` and `x2` have an interaction effect on y ***only if gender is 1***
 
 ```{r}
 set.seed(1234)
