@@ -15,11 +15,13 @@ categories:
   - contrasts
 ---
 
+# Hi Wolfgang and Michel, here is a simple example to show the differences between treatment and effect contrast.
+
 # Example dataset
 
 Create a random dataset with criteria `y`, predictors `x1` and `x2` and `gender`.
 
-Al variables are correlated.
+All variables are correlated.
 
 ```{r}
 n <- 10000
@@ -43,8 +45,6 @@ psych::describe(dat)
 
 
 ```{r}
-#, contrasts = list(gender = contr.treatment(2))
-
 # Gender has values 0 vs. 1 (treatment contrast)
 fit1 <- lm(y ~ gender * x1 * x2, data = dat)
 
