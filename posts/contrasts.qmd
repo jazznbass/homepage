@@ -68,3 +68,15 @@ sjPlot::tab_model(fit1, fit2, show.se = TRUE, show.ci = FALSE, col.order = c("es
 - `gender` has a significant effect on `y` in both models
 - `x1`, `x2` and `x1*x2` only have a significant effect on `y` in model 2
 - All `gender` interactions are significant in both models where the effect sizes and the standard errors of model2 are half of the corresponding values in model1, so `p` is identical.
+
+# For those who love Anovas ;-)
+
+```{r}
+fit1  |> car::Anova(type = "III") |> 
+  knitr::kable(digits = 3)  |>  kableExtra::kable_classic_2()
+```
+
+```{r}
+fit2  |> car::Anova(type = "III") |> 
+  knitr::kable(digits = 3)  |>  kableExtra::kable_classic_2()
+```
