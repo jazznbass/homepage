@@ -41,8 +41,7 @@ dat <- data.frame(y = y, x1 = x1, x2 = x2, gender = gender)
 # Descriptives
 
 ```{r}
-psych::corr.test(dat)
-psych::describe(dat)
+wmisc::nice_corrmatrix(dat, type = "html", numbered_columns = FALSE)
 ```
 
 # Contrasts
@@ -72,11 +71,9 @@ sjPlot::tab_model(fit1, fit2, show.se = TRUE, show.ci = FALSE, col.order = c("es
 # For those who love Anovas ;-)
 
 ```{r}
-fit1  |> car::Anova(type = "III") |> 
-  knitr::kable(digits = 3)  |>  kableExtra::kable_classic_2()
+fit1  |> car::Anova(type = "III") |> wmisc::nice_table()
 ```
 
 ```{r}
-fit2  |> car::Anova(type = "III") |> 
-  knitr::kable(digits = 3)  |>  kableExtra::kable_classic_2()
+fit2  |> car::Anova(type = "III") |> wmisc::nice_table()
 ```
