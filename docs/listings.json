@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/Logits as a link function.html",
       "/posts/contrasts.html",
       "/posts/contrasts/index.html",
       "/posts/eRm.html",
