@@ -72,3 +72,21 @@ $$logit(y_i)=log(\frac{P(y_i=1)}{1-P(y_i=0)})=log(odds)$$
 For example, if we have a 25% probability that is:
 
 $$logit(P=0.25)=log(\frac{0.25}{0.75})=log({1\over3})=-1.098612$$
+
+```{r}
+#| fig-cap: Distribution of the logistic function (invers logistic) 
+plot(function(x) exp(x)/(1 + exp(x)), from = -6, to = 6)
+# identical to plot(function(x) plogis(x), -6,6)
+```
+
+```{r}
+#| fig-cap: Logit/logistic function
+plot(function(x) log(x/(1-x)))
+# identical to plot(function(x) qlogis(x))
+```
+
+```{r}
+#| fig-cap: Logit/logistic density function
+plot(function(x) dlogis(x), -6,6)
+```
+
