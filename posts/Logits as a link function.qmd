@@ -20,7 +20,7 @@ categories:
 If you estimate a dichotomous outcome variable $y$ ($y$ can take the
 values 0 *or* 1) with a standard *ols* (ordinary least squares) regression the distribution of
 $y$ does not meet *ols* regression assumptions. Specifically, predictors
-can have values outside ${0,1}$ and are not continuous and normal
+can have values outside $\{0, 1\}$ and are not continuous and normal
 distributed. A common solution for this problem is to apply a
 generalization of the linear regression model which is (surprise,
 surprise) called the generalized linear model (GLM). One aspect of the
