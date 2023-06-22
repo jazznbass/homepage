@@ -2,7 +2,7 @@
 title: "Logits as a link function in **logistic regressions**"
 author: "Jürgen Wilbert"
 abstract: A brief explanation of the logit link function in logistic regression.
-date: 2023/06/20
+date: 2023/06/22
 format:
   html:
     page-layout: full
@@ -10,37 +10,81 @@ format:
     toc: true
     toc-location: right
     self-contained: true
+    collapse: true
+    code-fold: true
 categories:
   - regression
   - statistics
   - link
   - logistic
+editor: 
+  markdown: 
+    wrap: 72
 ---
-  
+
+## Problem and solution
+
 If you estimate a dichotomous outcome variable $y$ ($y$ can take the
-values 0 *or* 1) with a standard *ols* (ordinary least squares) regression the distribution of
-$y$ does not meet *ols* regression assumptions. Specifically, predictors
-can have values outside $\{0, 1\}$ and are not continuous and normal
-distributed. A common solution for this problem is to apply a
-generalization of the linear regression model which is (surprise,
-surprise) called the generalized linear model (GLM). One aspect of the
-generalized linear model is that the linear combination of the
-predictors (linear because we assume that the added up predictors are
-interval scaled) are linked to the distribution of the outcome variable
-via a function which is called: the link function (uhhh).
+values 0 *or* 1) with a standard *ols* (ordinary least squares)
+regression the distribution of $y$ does not meet *ols* regression
+assumptions. Specifically, predicted values can be outside $\{0, 1\}$
+and are not continuous and normal distributed. A common solution for
+this problem is to apply a generalization of the linear regression model
+which is (surprise, surprise) called the generalized linear model (GLM).
+One aspect of the generalized linear model is that the linear
+combination of the predictors (linear because we assume that the added
+up predictors are interval scaled) are linked to the distribution of the
+outcome variable via a function which is called: the link function
+(uhhh).
 
 It is helpful to keep in mind that for dichotomous variables, we
-estimate the probabilities that $y=1$. That is, the predicted values are
-probabilities of $[0, 1]$ (a continuous interval *between* 0 and 1) and
-not $\{0, 1\}$ (either 0 *or* 1). Therefore, we are looking for a link
-function that turns the linear combined predictors into a probability
-estimation. In case of a logistic regression, the predictors $y$ is
-transformed to values from $[-\infty, +\infty]$ where $0$ corresponds to
-a 50% probability. The distribution of the transformed $y$ values is a
-logit distribution and the transformation is called a logit
-transformation. This kind of function (i.e. a function that links the
-distribution of linear combinations of the predictors to the
-distribution of the criteria in a regression) is called a link function.
+estimate/predict the probabilities that $y=1$. That is, the predicted
+values are probabilities of $[0, 1]$ (a continuous interval *between* 0
+and 1) and not $\{0, 1\}$ (either 0 *or* 1). Therefore, we are looking
+for a link function that turns the linear combined predictors into a
+probability estimation. In case of a logistic regression, we need a
+formula, that turns continuous values from $[-\infty, +\infty]$ to a
+probability (where $0$ corresponds to a 50% probability) and vise-versa,
+a probability into a continuous scale with values from
+$[-\infty, +\infty]$. This transformation is called a logit
+transformation and the distribution of the transformed predicted $y$
+values is a logistic distribution. This kind of function (i.e. a
+function that links the distribution of linear combinations of the
+predictors to the distribution of the criteria in a regression) is
+called a link function.
+
+## The logit transformation
+
+The formula to turn probabilities into continuous values (here logits)
+is:
+
+$$logit(y_i)=log(\frac{P(y_i=1)}{1-P(y_i=0)})=log(odds)$$
+
+Here is the function plot for illustration with probabilities on x and
+logits on y:
+
+```{r}
+#| fig-cap: Logit/logistic function
+
+# identical: plot(function(x) qlogis(x))
+plot(function(x) log(x/(1-x)))
+```
+
+The formula to turn continuous values (here logits) into probabilities
+is:
+
+$$P(y_i=1)=\frac{exp(x)}{1 + exp(x)}$$
+
+Here is the function plot for illustration with logits on x and
+probablities on y:
+
+```{r}
+#| fig-cap: Distribution of the logistic function (invers logistic) 
+# identica: plot(function(x) plogis(x), -6,6)
+plot(function(x) exp(x)/(1 + exp(x)), from = -6, to = 6)
+```
+
+## What are logits?
 
 Logits are the logarithm of the odds of a probability $log(Odds)$. Odds
 is a way to represent the probability of an event: If the odds are four
@@ -51,12 +95,14 @@ are $4\over1$). If the odds are \< 1, the probability of an event is
 below 50%. For example, if the odds are 0.25 = $\frac{1}{4}$ we expect
 that the horse will win one out of five races.
 
+::: callout-caution
 Caution: Probabilities and odds can be confused easily but are not
 identical. A probability of $1\over4$ would index that a specific
 outcome happens in 1 *out of* 4 events, whereas odds of $1\over4$ would
 index that an event has the probability for two possible outcomes of 1
 *against* 4. For this example, odds of $1\over4$ equals a probability of
 $1\over5$ equals $0.20$.
+:::
 
 The odds are calculated as:
 
@@ -73,20 +119,12 @@ For example, if we have a 25% probability that is:
 
 $$logit(P=0.25)=log(\frac{0.25}{0.75})=log({1\over3})=-1.098612$$
 
-```{r}
-#| fig-cap: Distribution of the logistic function (invers logistic) 
-plot(function(x) exp(x)/(1 + exp(x)), from = -6, to = 6)
-# identical to plot(function(x) plogis(x), -6,6)
-```
+## Example
+
+To be continued 😉
 
 ```{r}
-#| fig-cap: Logit/logistic function
-plot(function(x) log(x/(1-x)))
-# identical to plot(function(x) qlogis(x))
-```
-
-```{r}
+#| include: false
 #| fig-cap: Logit/logistic density function
 plot(function(x) dlogis(x), -6,6)
 ```
-
