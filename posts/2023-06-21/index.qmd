@@ -1,7 +1,7 @@
 ---
-title: "Logits as a link function in **logistic regressions**"
+title: "A link function for logistic regressions"
 author: "Jürgen Wilbert"
-abstract: A brief explanation of the logit link function in logistic regression.
+abstract: A brief explanation of the link function in logistic regression.
 date: 2023/06/22
 format:
   html:
@@ -9,8 +9,7 @@ format:
     df-print: kable
     toc: true
     toc-location: right
-    self-contained: true
-    collapse: true
+    self-contained: false
     code-fold: true
 categories:
   - regression
