@@ -1,0 +1,164 @@
+---
+title: "Material SEM"
+author: "Jürgen Wilbert"
+abstract: Material for a brief explanation of sem.
+date: 2023/07/16
+format:
+  html:
+    page-layout: full
+    df-print: kable
+    toc: true
+    toc-location: right
+    self-contained: false
+    code-fold: true
+categories:
+  - sem
+  - statistics
+editor: 
+  markdown: 
+    wrap: 72
+execute: 
+  warning: false
+  error: false
+---
+
+```{r}
+#| label: Create an example data set
+#| code-summary: Create example data set
+
+# Load the required library
+library(dplyr)
+library(lavaan)
+
+# Create the example data frame
+set.seed(122)  # For reproducibility
+n <- 2000      # Number of samples
+
+example_data <- data.frame(
+  intercept = rep(3, n)) %>%
+  mutate(
+  X1 = rnorm(n, mean = 10, sd = 1),
+  X2 = X1 + rnorm(n, mean = 15, sd = 1),
+  X3 = X2 + rnorm(n, mean = 5, sd = 1),
+  residual = rnorm(n, mean = 0, sd = 1)
+)
+# Let's add a linear relationship to create criteria variable Y
+
+example_data <- example_data %>% 
+  mutate(Y = intercept + 0.5 * X1 + 0.3 * X2 + 0.2 * X3 + residual) %>%
+  relocate(Y)
+
+example_data %>% slice(1:10)
+
+```
+
+Do a regression with the `lm()` function:
+
+```{r}
+fit_lm <- lm(Y ~ X1 + X2 + X3, data = example_data)
+summary(fit_lm)
+```
+
+Do the same regression with lavaan
+
+```{r}
+# Define the model
+model <- '
+  # Regress Y on X1, X2, and X3
+  Y ~ X1 + X2 + X3
+'
+
+# Fit the model
+fit <- sem(model, data = example_data)
+
+# View the summary of the model
+summary(fit)
+```
+
+... add estimations for the intercept and standardized weights:
+
+```{r}
+fit <- sem(model, data = example_data, meanstructure = TRUE)
+summary(fit, standardized = TRUE)
+```
+
+Adding a measurement structure to all variables (endogeneous and
+exogeneous):
+
+```{r}
+# Define the model
+model <- '
+  # Regress Y on X1, X2, and X3
+  LY =~ Y
+  LX1 =~ X1
+  LX2 =~ X2
+  LX3 =~ X3
+  LY ~ LX1 + LX2 + LX3
+'
+
+# Fit the model
+fit <- sem(model, data = example_data, meanstructure = TRUE)
+
+# View the summary of the model
+summary(fit, standardize = TRUE)
+```
+
+Model a new latent variable latent_y
+
+```{r}
+model <- '
+  latent =~ X1 + X2 + X3
+'
+
+fit <- sem(model, data = example_data, std.lv = TRUE)
+
+# View the summary of the model
+summary(fit, standardize = TRUE)
+```
+
+A more complex example from the lavaan example data:
+
+![](sem.png)
+
+y1 Expert ratings of the freedom of the press in 1960
+
+y2 The freedom of political opposition in 1960
+
+y3 The fairness of elections in 1960
+
+y4 The effectiveness of the elected legislature in 1960
+
+y5 Expert ratings of the freedom of the press in 1965
+
+y6 The freedom of political opposition in 1965
+
+y7 The fairness of elections in 1965
+
+y8 The effectiveness of the elected legislature in 1965
+
+x1 The gross national product (GNP) per capita in 1960
+
+x2 The inanimate energy consumption per capita in 1960
+
+x3 The percentage of the labor force in industry in 1960
+
+```{r}
+myModel <- '
+   # latent variables
+     ind60 =~ x1 + x2 + x3
+     dem60 =~ y1 + y2 + y3 + y4
+     dem65 =~ y5 + y6 + y7 + y8
+   # regressions
+     dem60 ~ ind60
+     dem65 ~ ind60 + dem60
+   # residual covariances
+     y1 ~~ y5
+     y2 ~~ y4 + y6
+     y3 ~~ y7
+     y4 ~~ y8
+     y6 ~~ y8
+'
+fit <- sem(model = myModel, data  = PoliticalDemocracy)
+summary(fit, standardize = TRUE)
+
+```
