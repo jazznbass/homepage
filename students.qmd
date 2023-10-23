@@ -9,7 +9,7 @@ toc-location: left
 # Completed PhD students
 
 | Name                             | Field                                      | Graduation |
-|------------------------|:-----------------------------|:----------------:|
+|------------------------|:-----------------------------|:-----------------:|
 | Prof. Dr. Karolina Urton         | Inclusive school development               |    2016    |
 | Dr. Johanna Krull                | Social Inclusion                           |    2018    |
 | Prof. Dr. Moritz Börnert-Ringleb | Dynamic Testing                            |    2018    |
@@ -19,9 +19,8 @@ toc-location: left
 # Present PhD students
 
 | Name          | Field                                                          | Started |
-|---------------|:---------------------------------------------------------------|:-------:|
+|-------------|:---------------------------------------------|:-----------:|
 | Anja Schwalbe | Social norms in inclusive classrooms                           |  2014   |
 | Linda Kuhr    | Math anxiety                                                   |  2018   |
 | Ella Baer     | Diagnosing students' internalization problems in the classroom |  2020   |
-| Ante Pavic    |                                                                |  2022   |
 | Lydia Küttner |                                                                |  2022   |
