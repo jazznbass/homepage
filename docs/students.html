@@ -141,21 +141,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#completed-phd-students" id="toc-completed-phd-students" class="nav-link active" data-scroll-target="#completed-phd-students">Completed PhD students</a></li>
-  <li><a href="#present-phd-students" id="toc-present-phd-students" class="nav-link" data-scroll-target="#present-phd-students">Present PhD students</a></li>
-  </ul>
-</nav>
-</nav>
+  
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -179,12 +170,14 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/phdhat.png" class="img-fluid figure-img" width="217"></p>
 </figure>
 </div>
-<section id="completed-phd-students" class="level1">
-<h1>Completed PhD students</h1>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Completed PhD students</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Present PhD students</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <table class="table">
 <colgroup>
-<col style="width: 32%">
-<col style="width: 41%">
+<col style="width: 33%">
+<col style="width: 40%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -222,14 +215,13 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="present-phd-students" class="level1">
-<h1>Present PhD students</h1>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <table class="table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 63%">
-<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 58%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -261,9 +253,11 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
