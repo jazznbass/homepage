@@ -77,6 +77,34 @@ logit2prob <- function(logit){
 
 ```
 
+# Deisgn
+
+```{r}
+
+dat_items %>% filter(question == "effect") %>%
+  group_by(sessionToken, group) %>%
+  summarise(n = n()) %>%
+  group_by(group) %>%
+  summarise(n = n())
+
+
+```
+
+DV 1: Yes/No ratings of single-case graphs "did the intervention have an effect?"
+
+*DV 2: 1-5 scale "How certain are you about your rating?"*
+
+Between IV 1: Intervention group with training in graphreading vs. controll group without training in graph reading.
+
+Within IV 1: Pre-intervention vs. post-intervention
+
+Within IV 2: Graph shows a trend-effect vs. no trend-effect
+
+Within IV 3: Graph shows a slope-effect vs. no slope-effect
+
+10 graphs per within condition: 2 x 2 x 2 x 10 = 80 Graphs 
+
+
 # Descriptive analyses
 
 ```{r}
