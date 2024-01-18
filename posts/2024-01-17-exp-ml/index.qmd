@@ -1,0 +1,257 @@
+---
+title: "Analyze experimental data with a multilevel model"
+author: "Jürgen Wilbert"
+abstract: Material for a brief explanation of how to analyse data from an experimental study with a multilevel model in R.
+date: 2024/01/17
+format:
+  html:
+    page-layout: full
+    df-print: kable
+    toc: true
+    toc-location: right
+    self-contained: false
+    code-fold: true
+categories:
+  - multilevel
+  - R
+  - experiments
+  - statistics
+editor: 
+  markdown: 
+    wrap: 72
+execute: 
+  warning: false
+  error: false
+---
+
+```{r}
+#| label: Load data
+#| code-summary: Load data
+
+# Load the required library
+library(tidyverse)
+library(lmerTest)
+library(sjPlot)
+library(emmeans)
+library(ez)
+
+if (!("wmisc" %in% installed.packages())) devtools::install_github("jazznbass/wmisc")
+if (!packageDate("wmisc") >= as.Date("2023-12-27")) devtools::install_github("jazznbass/wmisc")
+library(wmisc)
+
+dat_items <- readRDS(file.path("data-items.rds"))
+dat_items <- dat_items %>%
+  mutate(
+    group = factor(
+      group, levels = c(1, 0), 
+      labels = c("Control", "Training")
+    ),
+    id_subject = sessionToken,
+    time = factor(
+      run, levels = c("pre", "post"),
+      labels = c("Pre", "Post")
+    ),
+    item_effect = paste0(trend, slope),
+    effect = factor(
+      item_effect, 
+      levels = c("00", "10", "01", "11"),
+      labels = c("None", "Trend", "Slope", "Trend+Slope"))
+  ) %>%
+  arrange(id_subject,curr_timestamp)
+
+dat_subjects <- dat_items %>% 
+  filter(question == "effect") %>%
+  group_by(id_subject, time, trend, slope, group) %>%
+  summarise(
+    prop = mean(response, na.rm = TRUE)
+  ) %>% 
+  mutate(id_subject = factor(id_subject), trend = factor(trend), slope = factor(slope)) %>%
+  ungroup()
+
+
+logit2prob <- function(logit){
+  odds <- exp(logit)
+  prob <- odds / (1 + odds)
+  prob
+}
+
+```
+
+# Descriptive analyses
+
+```{r}
+dat_items %>%
+  filter(question == "effect") %>%
+  group_by(group, effect, time) %>%
+  summarise(
+    mean_true = round(mean(response, na.rm = TRUE), 2)
+  ) %>%
+  ungroup() %>%
+  pivot_wider(names_from = "time", values_from = "mean_true") %>%
+    mutate(
+    "Difference" = Post - Pre
+    #sdt_category = rep(c("false alarm", "hit"), 4)
+  ) %>%
+  rename(Condition = group, Effect = effect) %>%
+  relocate(Condition, Effect) %>%
+  nice_table(
+    file = "tab-desc-prop-response.docx", 
+    title = "Proportion of graphs rated as showing an intervention effect"
+  )
+
+```
+
+# "Traditional" Manova
+
+```{r}
+dat_subjects %>% slice(1:20) %>% nice_table()
+```
+
+
+Between subject factor is group and within subject factors are time, trend, and slope.
+
+```{r}
+fit <- ezANOVA(
+  dat_subjects, 
+  wid = id_subject, 
+  dv = prop, 
+  within = list(time, trend, slope), 
+  between = group, 
+  type = 3
+)
+
+nice_table(fit$ANOVA, decimals = 2)
+
+```
+
+# Analyses with multilevel model
+
+```{r}
+dat <- dat_items %>% 
+  filter(question == "effect") %>%
+  mutate(response = factor(response, labels = c("No", "Yes"))) %>%
+  rename(Condition = group, Effect = effect, Time = time)
+
+dat %>% slice(1:30) %>% select(id_subject, Condition, Time, Effect, response) %>% nice_table()
+```
+
+
+1. Variables slope and trend are aggrgated into a new variable "effect" with for levels: "None", "Trend", "Slope", "Trend+Slope"
+
+```{r}
+#| tbl-cap: logistic models for assumed true responses (dummy contrasts)
+
+
+
+model <- glmer(
+  response ~ Time * Condition * Effect + 
+             (1|id_subject) + (1|id_subject:Time) + 
+             (1|id_subject:Effect), 
+  family = binomial,
+  nAGQ = 0,
+  data = dat, 
+  na.action = na.omit
+)
+
+sjPlot::tab_model(
+  model, 
+  #file = "tab-reg-response.doc",
+  show.se = FALSE, 
+  show.ci = FALSE,
+  show.stat = TRUE,
+  show.df = FALSE,
+  string.se = "se",
+  string.est = "OR",
+  string.stat = "t"
+)
+
+```
+
+## Estimated marginal means from the model
+
+```{r}
+marginal_means <- emmeans(model, c("Time", "Effect", "Condition"),
+  pbkrtest.limit = 9000,
+  lmerTest.limit = 9000
+)
+
+means <- summary(marginal_means) |> as.data.frame()
+means$probability <- logit2prob(means$emmean)
+means$prob.ll <- logit2prob(means$asymp.LCL)
+means$prob.ul <- logit2prob(means$asymp.UCL)
+
+table_pre_post <- means %>%
+  select(Condition, Effect, Time, probability) %>%
+  pivot_wider(names_from = "Time", values_from = "probability") %>%
+  mutate(Difference = round(Post-Pre, 2), Pre = round(Pre, 2), Post = round(Post, 2)) 
+
+table_contrast <- marginal_means |> 
+  pairs() |> 
+  as.data.frame() |> 
+    filter(contrast %in% c(
+    "Pre None Control - Post None Control",
+    "Pre None Training - Post None Training",
+    "Pre Trend Control - Post Trend Control",
+    "Pre Trend Training - Post Trend Training",
+    "Pre Slope Control - Post Slope Control",
+    "Pre Slope Training - Post Slope Training",
+    "(Pre Trend+Slope Control) - (Post Trend+Slope Control)",
+    "(Pre Trend+Slope Training) - (Post Trend+Slope Training)"
+  )) %>% 
+  mutate(
+    across(where(is.numeric), ~round(.x, 2)),
+    contrast = case_match(
+      contrast,
+      "Pre None Control - Post None Control" ~ "Control / none",
+      "Pre None Training - Post None Training" ~ "Training / none",
+      "Pre Trend Control - Post Trend Control" ~ "Control / trend",
+      "Pre Trend Training - Post Trend Training" ~ "Training / trend",
+      "Pre Slope Control - Post Slope Control" ~ "Control / slope",
+      "Pre Slope Training - Post Slope Training" ~ "Training / slope",
+      "(Pre Trend+Slope Control) - (Post Trend+Slope Control)" ~ "Control / trend+slope",
+      "(Pre Trend+Slope Training) - (Post Trend+Slope Training)" ~ "Training trend+slope"
+    )
+  ) %>%
+  rename("z ratio" = z.ratio, p = p.value) %>% 
+  select(-1, -estimate, -df)
+
+table_pre_post <- cbind(table_pre_post, table_contrast)
+  nice_table(
+    table_pre_post,
+    file = "tab-marginal-means-response.docx",
+    title = "Pre/post post-hoc contrasts of proportions of graphs rated as showing an intervention effect"
+  )
+
+```
+
+```{r}
+means %>% 
+  mutate(Percentage = probability * 100) %>%
+  ggplot(aes(x = Time, y = Percentage)) +
+  geom_line(
+    aes(color = Effect, group = Effect, linetype = Effect),
+    position = position_dodge(0.2)
+  ) + 
+  geom_point(
+    aes(group = Effect),
+    position = position_dodge(0.2)
+  ) + 
+  geom_errorbar(
+    aes(ymin = prob.ll * 100, ymax = prob.ul * 100), 
+    width = 0.2,
+    position = position_dodge2(0.2)
+  ) +  
+  facet_grid(cols = vars(Condition)) +
+  ylim(c(0,100)) +
+  theme(
+    panel.background = element_rect(fill = "white"),
+    legend.key  = element_rect(fill = "white"),
+    axis.line.x = element_line(colour = "black", linewidth = 1),
+    axis.line.y = element_line(colour = "black", linewidth = 1)
+  ) + 
+  xlab("Time") +
+  ggtitle("Estimated marginal means of response that an effect exists")
+
+
+```
+
