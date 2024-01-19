@@ -21,8 +21,6 @@ website:
       - blog.qmd
         
     right:
-      - icon: twitter
-        href: https://twitter.com/juergen_wilbert
       - icon: github
         href: https://github.com/jazznbass
       - icon: researchgate

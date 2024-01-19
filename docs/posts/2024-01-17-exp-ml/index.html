@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.4.388">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jürgen Wilbert">
-<meta name="dcterms.date" content="2024-01-17">
+<meta name="dcterms.date" content="2024-01-19">
 
 <title>Analyze experimental data with a multilevel model</title>
 <style>
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,43 +49,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -112,6 +83,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -121,7 +98,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -135,35 +113,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/penguin.png" alt="" class="navbar-logo">
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../rpackages.html">
- <span class="menu-text">R Packages</span></a>
+    <a class="nav-link" href="../../rpackages.html"> 
+<span class="menu-text">R Packages</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../students.html">
- <span class="menu-text">Graduate Students</span></a>
+    <a class="nav-link" href="../../students.html"> 
+<span class="menu-text">Graduate Students</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../links.html">
- <span class="menu-text">Links</span></a>
+    <a class="nav-link" href="../../links.html"> 
+<span class="menu-text">Links</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -177,29 +156,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
- <span class="menu-text">Private blog</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Private blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/juergen_wilbert"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://github.com/jazznbass"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jazznbass"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://www.researchgate.net/profile/Juergen_Wilbert2"> <i class="bi bi-researchgate" role="img">
 </i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.researchgate.net/profile/Juergen_Wilbert2"><i class="bi bi-researchgate" role="img">
-</i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -238,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -250,7 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 17, 2024</p>
+      <p class="date">January 19, 2024</p>
     </div>
   </div>
   
@@ -259,12 +234,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">Abstract</div>
+    <div class="block-title">Abstract</div>
     Material for a brief explanation of how to analyse data from an experimental study with a multilevel model in R.
   </div>
 </div>
 
+
 </header>
+
 
 <div class="cell">
 <details>
@@ -330,7 +307,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-
 <table>
 <thead>
 <tr>
@@ -360,7 +336,6 @@ Training
 </td>
 </tr>
 </tbody>
-
 </table>
 </div>
 </div>
@@ -380,42 +355,84 @@ Training
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dat_items <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(question <span class="sc">==</span> <span class="st">"effect"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group, effect, time) <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_true =</span> <span class="fu">round</span>(<span class="fu">mean</span>(response, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">"time"</span>, <span class="at">values_from =</span> <span class="st">"mean_true"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Difference"</span> <span class="ot">=</span> Post <span class="sc">-</span> Pre</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">#sdt_category = rep(c("false alarm", "hit"), 4)</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Condition =</span> group, <span class="at">Effect =</span> effect) <span class="sc">%&gt;%</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(Condition, Effect) <span class="sc">%&gt;%</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nice_table</span>(</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">file =</span> <span class="st">"tab-desc-prop-response.docx"</span>, </span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Proportion of graphs rated as showing an intervention effect"</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()<span class="sc">/</span> <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div id="agegfpsixz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#agegfpsixz table {
+<div class="kable-table">
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+group
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Control
+</td>
+<td style="text-align:right;">
+53
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Training
+</td>
+<td style="text-align:right;">
+64
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dat_items <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(question <span class="sc">==</span> <span class="st">"effect"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group, effect, time) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_true =</span> <span class="fu">round</span>(<span class="fu">mean</span>(response, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">"time"</span>, <span class="at">values_from =</span> <span class="st">"mean_true"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Difference"</span> <span class="ot">=</span> Post <span class="sc">-</span> Pre</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">#sdt_category = rep(c("false alarm", "hit"), 4)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Condition =</span> group, <span class="at">Effect =</span> effect) <span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(Condition, Effect) <span class="sc">%&gt;%</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nice_table</span>(</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">file =</span> <span class="st">"tab-desc-prop-response.docx"</span>, </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Proportion of graphs rated as showing an intervention effect"</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fbqfsmgyxw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fbqfsmgyxw table {
   font-family: times, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#agegfpsixz thead, #agegfpsixz tbody, #agegfpsixz tfoot, #agegfpsixz tr, #agegfpsixz td, #agegfpsixz th {
+#fbqfsmgyxw thead, #fbqfsmgyxw tbody, #fbqfsmgyxw tfoot, #fbqfsmgyxw tr, #fbqfsmgyxw td, #fbqfsmgyxw th {
   border-style: none;
 }
 
-#agegfpsixz p {
+#fbqfsmgyxw p {
   margin: 0;
   padding: 0;
 }
 
-#agegfpsixz .gt_table {
+#fbqfsmgyxw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -441,12 +458,12 @@ Training
   border-left-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_caption {
+#fbqfsmgyxw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#agegfpsixz .gt_title {
+#fbqfsmgyxw .gt_title {
   color: #333333;
   font-size: 100%;
   font-weight: initial;
@@ -458,7 +475,7 @@ Training
   border-bottom-width: 0;
 }
 
-#agegfpsixz .gt_subtitle {
+#fbqfsmgyxw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -470,7 +487,7 @@ Training
   border-top-width: 0;
 }
 
-#agegfpsixz .gt_heading {
+#fbqfsmgyxw .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -482,13 +499,13 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_bottom_border {
+#fbqfsmgyxw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: #000000;
 }
 
-#agegfpsixz .gt_col_headings {
+#fbqfsmgyxw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -503,7 +520,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_col_heading {
+#fbqfsmgyxw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -523,7 +540,7 @@ Training
   overflow-x: hidden;
 }
 
-#agegfpsixz .gt_column_spanner_outer {
+#fbqfsmgyxw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -535,15 +552,15 @@ Training
   padding-right: 4px;
 }
 
-#agegfpsixz .gt_column_spanner_outer:first-child {
+#fbqfsmgyxw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#agegfpsixz .gt_column_spanner_outer:last-child {
+#fbqfsmgyxw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#agegfpsixz .gt_column_spanner {
+#fbqfsmgyxw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -555,11 +572,11 @@ Training
   width: 100%;
 }
 
-#agegfpsixz .gt_spanner_row {
+#fbqfsmgyxw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#agegfpsixz .gt_group_heading {
+#fbqfsmgyxw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -585,7 +602,7 @@ Training
   text-align: left;
 }
 
-#agegfpsixz .gt_empty_group_heading {
+#fbqfsmgyxw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -600,15 +617,15 @@ Training
   vertical-align: middle;
 }
 
-#agegfpsixz .gt_from_md > :first-child {
+#fbqfsmgyxw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#agegfpsixz .gt_from_md > :last-child {
+#fbqfsmgyxw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#agegfpsixz .gt_row {
+#fbqfsmgyxw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -627,7 +644,7 @@ Training
   overflow-x: hidden;
 }
 
-#agegfpsixz .gt_stub {
+#fbqfsmgyxw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -640,7 +657,7 @@ Training
   padding-right: 5px;
 }
 
-#agegfpsixz .gt_stub_row_group {
+#fbqfsmgyxw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -654,15 +671,15 @@ Training
   vertical-align: top;
 }
 
-#agegfpsixz .gt_row_group_first td {
+#fbqfsmgyxw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#agegfpsixz .gt_row_group_first th {
+#fbqfsmgyxw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#agegfpsixz .gt_summary_row {
+#fbqfsmgyxw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -672,16 +689,16 @@ Training
   padding-right: 5px;
 }
 
-#agegfpsixz .gt_first_summary_row {
+#fbqfsmgyxw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_first_summary_row.thick {
+#fbqfsmgyxw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#agegfpsixz .gt_last_summary_row {
+#fbqfsmgyxw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -691,7 +708,7 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_grand_summary_row {
+#fbqfsmgyxw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -701,7 +718,7 @@ Training
   padding-right: 5px;
 }
 
-#agegfpsixz .gt_first_grand_summary_row {
+#fbqfsmgyxw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -711,7 +728,7 @@ Training
   border-top-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_last_grand_summary_row_top {
+#fbqfsmgyxw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -721,11 +738,11 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_striped {
+#fbqfsmgyxw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#agegfpsixz .gt_table_body {
+#fbqfsmgyxw .gt_table_body {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -734,7 +751,7 @@ Training
   border-bottom-color: #000000;
 }
 
-#agegfpsixz .gt_footnotes {
+#fbqfsmgyxw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -748,7 +765,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_footnote {
+#fbqfsmgyxw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -757,7 +774,7 @@ Training
   padding-right: 5px;
 }
 
-#agegfpsixz .gt_sourcenotes {
+#fbqfsmgyxw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -771,7 +788,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#agegfpsixz .gt_sourcenote {
+#fbqfsmgyxw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -779,125 +796,148 @@ Training
   padding-right: 5px;
 }
 
-#agegfpsixz .gt_left {
+#fbqfsmgyxw .gt_left {
   text-align: left;
 }
 
-#agegfpsixz .gt_center {
+#fbqfsmgyxw .gt_center {
   text-align: center;
 }
 
-#agegfpsixz .gt_right {
+#fbqfsmgyxw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#agegfpsixz .gt_font_normal {
+#fbqfsmgyxw .gt_font_normal {
   font-weight: normal;
 }
 
-#agegfpsixz .gt_font_bold {
+#fbqfsmgyxw .gt_font_bold {
   font-weight: bold;
 }
 
-#agegfpsixz .gt_font_italic {
+#fbqfsmgyxw .gt_font_italic {
   font-style: italic;
 }
 
-#agegfpsixz .gt_super {
+#fbqfsmgyxw .gt_super {
   font-size: 65%;
 }
 
-#agegfpsixz .gt_footnote_marks {
+#fbqfsmgyxw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#agegfpsixz .gt_asterisk {
+#fbqfsmgyxw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#agegfpsixz .gt_indent_1 {
+#fbqfsmgyxw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#agegfpsixz .gt_indent_2 {
+#fbqfsmgyxw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#agegfpsixz .gt_indent_3 {
+#fbqfsmgyxw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#agegfpsixz .gt_indent_4 {
+#fbqfsmgyxw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#agegfpsixz .gt_indent_5 {
+#fbqfsmgyxw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style=""><strong>Table</strong><br>  <em>Proportion of graphs rated as showing an intervention effect</em></td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Condition">Condition</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Effect">Effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Pre">Pre</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Post">Post</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Difference">Difference</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Condition" class="gt_row gt_left">Control</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="Pre" class="gt_row gt_center">0.15</td>
-<td headers="Post" class="gt_row gt_center">0.20</td>
-<td headers="Difference" class="gt_row gt_center">0.05</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Control</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="Pre" class="gt_row gt_center">0.76</td>
-<td headers="Post" class="gt_row gt_center">0.81</td>
-<td headers="Difference" class="gt_row gt_center">0.05</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Control</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="Pre" class="gt_row gt_center">0.62</td>
-<td headers="Post" class="gt_row gt_center">0.70</td>
-<td headers="Difference" class="gt_row gt_center">0.08</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Control</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="Pre" class="gt_row gt_center">0.95</td>
-<td headers="Post" class="gt_row gt_center">0.95</td>
-<td headers="Difference" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Training</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="Pre" class="gt_row gt_center">0.14</td>
-<td headers="Post" class="gt_row gt_center">0.16</td>
-<td headers="Difference" class="gt_row gt_center">0.02</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Training</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="Pre" class="gt_row gt_center">0.85</td>
-<td headers="Post" class="gt_row gt_center">0.70</td>
-<td headers="Difference" class="gt_row gt_center">-0.15</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Training</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="Pre" class="gt_row gt_center">0.66</td>
-<td headers="Post" class="gt_row gt_center">0.68</td>
-<td headers="Difference" class="gt_row gt_center">0.02</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Training</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="Pre" class="gt_row gt_center">0.98</td>
-<td headers="Post" class="gt_row gt_center">0.91</td>
-<td headers="Difference" class="gt_row gt_center">-0.07</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header gt_heading">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>Table</strong><br>
+<em>Proportion of graphs rated as showing an intervention effect</em></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="Condition" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Condition</th>
+<th id="Effect" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Effect</th>
+<th id="Pre" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Pre</th>
+<th id="Post" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Post</th>
+<th id="Difference" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Difference</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Condition">Control</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="Pre">0.15</td>
+<td class="gt_row gt_center" headers="Post">0.20</td>
+<td class="gt_row gt_center" headers="Difference">0.05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Condition">Control</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="Pre">0.76</td>
+<td class="gt_row gt_center" headers="Post">0.81</td>
+<td class="gt_row gt_center" headers="Difference">0.05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Condition">Control</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="Pre">0.62</td>
+<td class="gt_row gt_center" headers="Post">0.70</td>
+<td class="gt_row gt_center" headers="Difference">0.08</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Condition">Control</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="Pre">0.95</td>
+<td class="gt_row gt_center" headers="Post">0.95</td>
+<td class="gt_row gt_center" headers="Difference">0.00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="Pre">0.14</td>
+<td class="gt_row gt_center" headers="Post">0.16</td>
+<td class="gt_row gt_center" headers="Difference">0.02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="Pre">0.85</td>
+<td class="gt_row gt_center" headers="Post">0.70</td>
+<td class="gt_row gt_center" headers="Difference">-0.15</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="Pre">0.66</td>
+<td class="gt_row gt_center" headers="Post">0.68</td>
+<td class="gt_row gt_center" headers="Difference">0.02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="Pre">0.98</td>
+<td class="gt_row gt_center" headers="Post">0.91</td>
+<td class="gt_row gt_center" headers="Difference">-0.07</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -907,27 +947,26 @@ Training
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dat_subjects <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="fu">nice_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dat_subjects <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="fu">nice_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div id="kjwnitkuto" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kjwnitkuto table {
+<div id="bfqbhwohnj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bfqbhwohnj table {
   font-family: times, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kjwnitkuto thead, #kjwnitkuto tbody, #kjwnitkuto tfoot, #kjwnitkuto tr, #kjwnitkuto td, #kjwnitkuto th {
+#bfqbhwohnj thead, #bfqbhwohnj tbody, #bfqbhwohnj tfoot, #bfqbhwohnj tr, #bfqbhwohnj td, #bfqbhwohnj th {
   border-style: none;
 }
 
-#kjwnitkuto p {
+#bfqbhwohnj p {
   margin: 0;
   padding: 0;
 }
 
-#kjwnitkuto .gt_table {
+#bfqbhwohnj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -953,12 +992,12 @@ Training
   border-left-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_caption {
+#bfqbhwohnj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kjwnitkuto .gt_title {
+#bfqbhwohnj .gt_title {
   color: #333333;
   font-size: 100%;
   font-weight: initial;
@@ -970,7 +1009,7 @@ Training
   border-bottom-width: 0;
 }
 
-#kjwnitkuto .gt_subtitle {
+#bfqbhwohnj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -982,7 +1021,7 @@ Training
   border-top-width: 0;
 }
 
-#kjwnitkuto .gt_heading {
+#bfqbhwohnj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -994,13 +1033,13 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_bottom_border {
+#bfqbhwohnj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: #000000;
 }
 
-#kjwnitkuto .gt_col_headings {
+#bfqbhwohnj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -1015,7 +1054,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_col_heading {
+#bfqbhwohnj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1035,7 +1074,7 @@ Training
   overflow-x: hidden;
 }
 
-#kjwnitkuto .gt_column_spanner_outer {
+#bfqbhwohnj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1047,15 +1086,15 @@ Training
   padding-right: 4px;
 }
 
-#kjwnitkuto .gt_column_spanner_outer:first-child {
+#bfqbhwohnj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kjwnitkuto .gt_column_spanner_outer:last-child {
+#bfqbhwohnj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kjwnitkuto .gt_column_spanner {
+#bfqbhwohnj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -1067,11 +1106,11 @@ Training
   width: 100%;
 }
 
-#kjwnitkuto .gt_spanner_row {
+#bfqbhwohnj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kjwnitkuto .gt_group_heading {
+#bfqbhwohnj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1097,7 +1136,7 @@ Training
   text-align: left;
 }
 
-#kjwnitkuto .gt_empty_group_heading {
+#bfqbhwohnj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1112,15 +1151,15 @@ Training
   vertical-align: middle;
 }
 
-#kjwnitkuto .gt_from_md > :first-child {
+#bfqbhwohnj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kjwnitkuto .gt_from_md > :last-child {
+#bfqbhwohnj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kjwnitkuto .gt_row {
+#bfqbhwohnj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1139,7 +1178,7 @@ Training
   overflow-x: hidden;
 }
 
-#kjwnitkuto .gt_stub {
+#bfqbhwohnj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1152,7 +1191,7 @@ Training
   padding-right: 5px;
 }
 
-#kjwnitkuto .gt_stub_row_group {
+#bfqbhwohnj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1166,15 +1205,15 @@ Training
   vertical-align: top;
 }
 
-#kjwnitkuto .gt_row_group_first td {
+#bfqbhwohnj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kjwnitkuto .gt_row_group_first th {
+#bfqbhwohnj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kjwnitkuto .gt_summary_row {
+#bfqbhwohnj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1184,16 +1223,16 @@ Training
   padding-right: 5px;
 }
 
-#kjwnitkuto .gt_first_summary_row {
+#bfqbhwohnj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_first_summary_row.thick {
+#bfqbhwohnj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kjwnitkuto .gt_last_summary_row {
+#bfqbhwohnj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1203,7 +1242,7 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_grand_summary_row {
+#bfqbhwohnj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1213,7 +1252,7 @@ Training
   padding-right: 5px;
 }
 
-#kjwnitkuto .gt_first_grand_summary_row {
+#bfqbhwohnj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1223,7 +1262,7 @@ Training
   border-top-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_last_grand_summary_row_top {
+#bfqbhwohnj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1233,11 +1272,11 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_striped {
+#bfqbhwohnj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kjwnitkuto .gt_table_body {
+#bfqbhwohnj .gt_table_body {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -1246,7 +1285,7 @@ Training
   border-bottom-color: #000000;
 }
 
-#kjwnitkuto .gt_footnotes {
+#bfqbhwohnj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1260,7 +1299,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_footnote {
+#bfqbhwohnj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1269,7 +1308,7 @@ Training
   padding-right: 5px;
 }
 
-#kjwnitkuto .gt_sourcenotes {
+#bfqbhwohnj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1283,7 +1322,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#kjwnitkuto .gt_sourcenote {
+#bfqbhwohnj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1291,203 +1330,242 @@ Training
   padding-right: 5px;
 }
 
-#kjwnitkuto .gt_left {
+#bfqbhwohnj .gt_left {
   text-align: left;
 }
 
-#kjwnitkuto .gt_center {
+#bfqbhwohnj .gt_center {
   text-align: center;
 }
 
-#kjwnitkuto .gt_right {
+#bfqbhwohnj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kjwnitkuto .gt_font_normal {
+#bfqbhwohnj .gt_font_normal {
   font-weight: normal;
 }
 
-#kjwnitkuto .gt_font_bold {
+#bfqbhwohnj .gt_font_bold {
   font-weight: bold;
 }
 
-#kjwnitkuto .gt_font_italic {
+#bfqbhwohnj .gt_font_italic {
   font-style: italic;
 }
 
-#kjwnitkuto .gt_super {
+#bfqbhwohnj .gt_super {
   font-size: 65%;
 }
 
-#kjwnitkuto .gt_footnote_marks {
+#bfqbhwohnj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kjwnitkuto .gt_asterisk {
+#bfqbhwohnj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kjwnitkuto .gt_indent_1 {
+#bfqbhwohnj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kjwnitkuto .gt_indent_2 {
+#bfqbhwohnj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kjwnitkuto .gt_indent_3 {
+#bfqbhwohnj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kjwnitkuto .gt_indent_4 {
+#bfqbhwohnj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kjwnitkuto .gt_indent_5 {
+#bfqbhwohnj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="id_subject">id_subject</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="time">time</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="trend">trend</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="slope">slope</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="group">group</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="prop">prop</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.2</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.8</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.9</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">1.0</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="time" class="gt_row gt_center">Post</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.4</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="time" class="gt_row gt_center">Post</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.7</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="time" class="gt_row gt_center">Post</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.5</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="time" class="gt_row gt_center">Post</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.9</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">0crR6ITOH4Hn</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.2</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">0crR6ITOH4Hn</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.9</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">0crR6ITOH4Hn</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">1.0</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">0crR6ITOH4Hn</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">1.0</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">0crR6ITOH4Hn</td>
-<td headers="time" class="gt_row gt_center">Post</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.6</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">0crR6ITOH4Hn</td>
-<td headers="time" class="gt_row gt_center">Post</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.9</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">0crR6ITOH4Hn</td>
-<td headers="time" class="gt_row gt_center">Post</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">1.0</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">0crR6ITOH4Hn</td>
-<td headers="time" class="gt_row gt_center">Post</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">1.0</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">15Eh1B5Nmc70</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.0</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">15Eh1B5Nmc70</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">0</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">0.8</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">15Eh1B5Nmc70</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">0</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">1.0</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">15Eh1B5Nmc70</td>
-<td headers="time" class="gt_row gt_center">Pre</td>
-<td headers="trend" class="gt_row gt_center">1</td>
-<td headers="slope" class="gt_row gt_center">1</td>
-<td headers="group" class="gt_row gt_center">Training</td>
-<td headers="prop" class="gt_row gt_center">1.0</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="id_subject" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">id_subject</th>
+<th id="time" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">time</th>
+<th id="trend" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">trend</th>
+<th id="slope" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">slope</th>
+<th id="group" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">group</th>
+<th id="prop" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">prop</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.9</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">1.0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="time">Post</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.4</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="time">Post</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="time">Post</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="time">Post</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">0crR6ITOH4Hn</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">0crR6ITOH4Hn</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">0crR6ITOH4Hn</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">1.0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">0crR6ITOH4Hn</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">1.0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">0crR6ITOH4Hn</td>
+<td class="gt_row gt_center" headers="time">Post</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.6</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">0crR6ITOH4Hn</td>
+<td class="gt_row gt_center" headers="time">Post</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">0crR6ITOH4Hn</td>
+<td class="gt_row gt_center" headers="time">Post</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">1.0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">0crR6ITOH4Hn</td>
+<td class="gt_row gt_center" headers="time">Post</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">1.0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">15Eh1B5Nmc70</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">15Eh1B5Nmc70</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">0</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">0.8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">15Eh1B5Nmc70</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">0</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">1.0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">15Eh1B5Nmc70</td>
+<td class="gt_row gt_center" headers="time">Pre</td>
+<td class="gt_row gt_center" headers="trend">1</td>
+<td class="gt_row gt_center" headers="slope">1</td>
+<td class="gt_row gt_center" headers="group">Training</td>
+<td class="gt_row gt_center" headers="prop">1.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1495,36 +1573,35 @@ Training
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">ezANOVA</span>(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  dat_subjects, </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">wid =</span> id_subject, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">dv =</span> prop, </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">within =</span> <span class="fu">list</span>(time, trend, slope), </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">between =</span> group, </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="dv">3</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">nice_table</span>(fit<span class="sc">$</span>ANOVA, <span class="at">decimals =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">ezANOVA</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  dat_subjects, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">wid =</span> id_subject, </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">dv =</span> prop, </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">within =</span> <span class="fu">list</span>(time, trend, slope), </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">between =</span> group, </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="dv">3</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">nice_table</span>(fit<span class="sc">$</span>ANOVA, <span class="at">decimals =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div id="gghtwjjsiy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gghtwjjsiy table {
+<div id="euyuvmvrxw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#euyuvmvrxw table {
   font-family: times, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gghtwjjsiy thead, #gghtwjjsiy tbody, #gghtwjjsiy tfoot, #gghtwjjsiy tr, #gghtwjjsiy td, #gghtwjjsiy th {
+#euyuvmvrxw thead, #euyuvmvrxw tbody, #euyuvmvrxw tfoot, #euyuvmvrxw tr, #euyuvmvrxw td, #euyuvmvrxw th {
   border-style: none;
 }
 
-#gghtwjjsiy p {
+#euyuvmvrxw p {
   margin: 0;
   padding: 0;
 }
 
-#gghtwjjsiy .gt_table {
+#euyuvmvrxw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1550,12 +1627,12 @@ Training
   border-left-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_caption {
+#euyuvmvrxw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gghtwjjsiy .gt_title {
+#euyuvmvrxw .gt_title {
   color: #333333;
   font-size: 100%;
   font-weight: initial;
@@ -1567,7 +1644,7 @@ Training
   border-bottom-width: 0;
 }
 
-#gghtwjjsiy .gt_subtitle {
+#euyuvmvrxw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1579,7 +1656,7 @@ Training
   border-top-width: 0;
 }
 
-#gghtwjjsiy .gt_heading {
+#euyuvmvrxw .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1591,13 +1668,13 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_bottom_border {
+#euyuvmvrxw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: #000000;
 }
 
-#gghtwjjsiy .gt_col_headings {
+#euyuvmvrxw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -1612,7 +1689,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_col_heading {
+#euyuvmvrxw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1632,7 +1709,7 @@ Training
   overflow-x: hidden;
 }
 
-#gghtwjjsiy .gt_column_spanner_outer {
+#euyuvmvrxw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1644,15 +1721,15 @@ Training
   padding-right: 4px;
 }
 
-#gghtwjjsiy .gt_column_spanner_outer:first-child {
+#euyuvmvrxw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gghtwjjsiy .gt_column_spanner_outer:last-child {
+#euyuvmvrxw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gghtwjjsiy .gt_column_spanner {
+#euyuvmvrxw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -1664,11 +1741,11 @@ Training
   width: 100%;
 }
 
-#gghtwjjsiy .gt_spanner_row {
+#euyuvmvrxw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gghtwjjsiy .gt_group_heading {
+#euyuvmvrxw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1694,7 +1771,7 @@ Training
   text-align: left;
 }
 
-#gghtwjjsiy .gt_empty_group_heading {
+#euyuvmvrxw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1709,15 +1786,15 @@ Training
   vertical-align: middle;
 }
 
-#gghtwjjsiy .gt_from_md > :first-child {
+#euyuvmvrxw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gghtwjjsiy .gt_from_md > :last-child {
+#euyuvmvrxw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gghtwjjsiy .gt_row {
+#euyuvmvrxw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1736,7 +1813,7 @@ Training
   overflow-x: hidden;
 }
 
-#gghtwjjsiy .gt_stub {
+#euyuvmvrxw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1749,7 +1826,7 @@ Training
   padding-right: 5px;
 }
 
-#gghtwjjsiy .gt_stub_row_group {
+#euyuvmvrxw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1763,15 +1840,15 @@ Training
   vertical-align: top;
 }
 
-#gghtwjjsiy .gt_row_group_first td {
+#euyuvmvrxw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gghtwjjsiy .gt_row_group_first th {
+#euyuvmvrxw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gghtwjjsiy .gt_summary_row {
+#euyuvmvrxw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1781,16 +1858,16 @@ Training
   padding-right: 5px;
 }
 
-#gghtwjjsiy .gt_first_summary_row {
+#euyuvmvrxw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_first_summary_row.thick {
+#euyuvmvrxw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gghtwjjsiy .gt_last_summary_row {
+#euyuvmvrxw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1800,7 +1877,7 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_grand_summary_row {
+#euyuvmvrxw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1810,7 +1887,7 @@ Training
   padding-right: 5px;
 }
 
-#gghtwjjsiy .gt_first_grand_summary_row {
+#euyuvmvrxw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1820,7 +1897,7 @@ Training
   border-top-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_last_grand_summary_row_top {
+#euyuvmvrxw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1830,11 +1907,11 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_striped {
+#euyuvmvrxw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gghtwjjsiy .gt_table_body {
+#euyuvmvrxw .gt_table_body {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -1843,7 +1920,7 @@ Training
   border-bottom-color: #000000;
 }
 
-#gghtwjjsiy .gt_footnotes {
+#euyuvmvrxw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1857,7 +1934,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_footnote {
+#euyuvmvrxw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1866,7 +1943,7 @@ Training
   padding-right: 5px;
 }
 
-#gghtwjjsiy .gt_sourcenotes {
+#euyuvmvrxw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1880,7 +1957,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#gghtwjjsiy .gt_sourcenote {
+#euyuvmvrxw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1888,189 +1965,218 @@ Training
   padding-right: 5px;
 }
 
-#gghtwjjsiy .gt_left {
+#euyuvmvrxw .gt_left {
   text-align: left;
 }
 
-#gghtwjjsiy .gt_center {
+#euyuvmvrxw .gt_center {
   text-align: center;
 }
 
-#gghtwjjsiy .gt_right {
+#euyuvmvrxw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gghtwjjsiy .gt_font_normal {
+#euyuvmvrxw .gt_font_normal {
   font-weight: normal;
 }
 
-#gghtwjjsiy .gt_font_bold {
+#euyuvmvrxw .gt_font_bold {
   font-weight: bold;
 }
 
-#gghtwjjsiy .gt_font_italic {
+#euyuvmvrxw .gt_font_italic {
   font-style: italic;
 }
 
-#gghtwjjsiy .gt_super {
+#euyuvmvrxw .gt_super {
   font-size: 65%;
 }
 
-#gghtwjjsiy .gt_footnote_marks {
+#euyuvmvrxw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gghtwjjsiy .gt_asterisk {
+#euyuvmvrxw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gghtwjjsiy .gt_indent_1 {
+#euyuvmvrxw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gghtwjjsiy .gt_indent_2 {
+#euyuvmvrxw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gghtwjjsiy .gt_indent_3 {
+#euyuvmvrxw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gghtwjjsiy .gt_indent_4 {
+#euyuvmvrxw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gghtwjjsiy .gt_indent_5 {
+#euyuvmvrxw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Effect">Effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="DFn">DFn</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="DFd">DFd</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="F">F</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="p">p</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="p&amp;lt;.05">p&lt;.05</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="ges">ges</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Effect" class="gt_row gt_left">group</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">0.11</td>
-<td headers="p" class="gt_row gt_center">0.74</td>
-<td headers="p<.05" class="gt_row gt_center"></td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">time</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">0.00</td>
-<td headers="p" class="gt_row gt_center">0.95</td>
-<td headers="p<.05" class="gt_row gt_center"></td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">trend</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">1,124.79</td>
-<td headers="p" class="gt_row gt_center">0.00</td>
-<td headers="p<.05" class="gt_row gt_center">*</td>
-<td headers="ges" class="gt_row gt_center">0.58</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">slope</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">1,050.28</td>
-<td headers="p" class="gt_row gt_center">0.00</td>
-<td headers="p<.05" class="gt_row gt_center">*</td>
-<td headers="ges" class="gt_row gt_center">0.44</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">group:time</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">16.85</td>
-<td headers="p" class="gt_row gt_center">0.00</td>
-<td headers="p<.05" class="gt_row gt_center">*</td>
-<td headers="ges" class="gt_row gt_center">0.02</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">group:trend</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">0.01</td>
-<td headers="p" class="gt_row gt_center">0.91</td>
-<td headers="p<.05" class="gt_row gt_center"></td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">group:slope</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">1.06</td>
-<td headers="p" class="gt_row gt_center">0.30</td>
-<td headers="p<.05" class="gt_row gt_center"></td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">time:trend</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">26.39</td>
-<td headers="p" class="gt_row gt_center">0.00</td>
-<td headers="p<.05" class="gt_row gt_center">*</td>
-<td headers="ges" class="gt_row gt_center">0.01</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">time:slope</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">0.94</td>
-<td headers="p" class="gt_row gt_center">0.33</td>
-<td headers="p<.05" class="gt_row gt_center"></td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">trend:slope</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">138.22</td>
-<td headers="p" class="gt_row gt_center">0.00</td>
-<td headers="p<.05" class="gt_row gt_center">*</td>
-<td headers="ges" class="gt_row gt_center">0.16</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">group:time:trend</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">5.27</td>
-<td headers="p" class="gt_row gt_center">0.02</td>
-<td headers="p<.05" class="gt_row gt_center">*</td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">group:time:slope</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">3.64</td>
-<td headers="p" class="gt_row gt_center">0.06</td>
-<td headers="p<.05" class="gt_row gt_center"></td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">group:trend:slope</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">0.24</td>
-<td headers="p" class="gt_row gt_center">0.62</td>
-<td headers="p<.05" class="gt_row gt_center"></td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">time:trend:slope</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">0.05</td>
-<td headers="p" class="gt_row gt_center">0.82</td>
-<td headers="p<.05" class="gt_row gt_center"></td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Effect" class="gt_row gt_left">group:time:trend:slope</td>
-<td headers="DFn" class="gt_row gt_center">1.00</td>
-<td headers="DFd" class="gt_row gt_center">115.00</td>
-<td headers="F" class="gt_row gt_center">7.68</td>
-<td headers="p" class="gt_row gt_center">0.01</td>
-<td headers="p<.05" class="gt_row gt_center">*</td>
-<td headers="ges" class="gt_row gt_center">0.00</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="Effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Effect</th>
+<th id="DFn" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">DFn</th>
+<th id="DFd" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">DFd</th>
+<th id="F" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">F</th>
+<th id="p" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">p</th>
+<th id="p&amp;lt;.05" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">p&lt;.05</th>
+<th id="ges" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ges</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Effect">group</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">0.11</td>
+<td class="gt_row gt_center" headers="p">0.74</td>
+<td class="gt_row gt_center" headers="p<.05"></td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Effect">time</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">0.00</td>
+<td class="gt_row gt_center" headers="p">0.95</td>
+<td class="gt_row gt_center" headers="p<.05"></td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Effect">trend</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">1,124.79</td>
+<td class="gt_row gt_center" headers="p">0.00</td>
+<td class="gt_row gt_center" headers="p<.05">*</td>
+<td class="gt_row gt_center" headers="ges">0.58</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Effect">slope</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">1,050.28</td>
+<td class="gt_row gt_center" headers="p">0.00</td>
+<td class="gt_row gt_center" headers="p<.05">*</td>
+<td class="gt_row gt_center" headers="ges">0.44</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Effect">group:time</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">16.85</td>
+<td class="gt_row gt_center" headers="p">0.00</td>
+<td class="gt_row gt_center" headers="p<.05">*</td>
+<td class="gt_row gt_center" headers="ges">0.02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Effect">group:trend</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">0.01</td>
+<td class="gt_row gt_center" headers="p">0.91</td>
+<td class="gt_row gt_center" headers="p<.05"></td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Effect">group:slope</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">1.06</td>
+<td class="gt_row gt_center" headers="p">0.30</td>
+<td class="gt_row gt_center" headers="p<.05"></td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Effect">time:trend</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">26.39</td>
+<td class="gt_row gt_center" headers="p">0.00</td>
+<td class="gt_row gt_center" headers="p<.05">*</td>
+<td class="gt_row gt_center" headers="ges">0.01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Effect">time:slope</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">0.94</td>
+<td class="gt_row gt_center" headers="p">0.33</td>
+<td class="gt_row gt_center" headers="p<.05"></td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Effect">trend:slope</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">138.22</td>
+<td class="gt_row gt_center" headers="p">0.00</td>
+<td class="gt_row gt_center" headers="p<.05">*</td>
+<td class="gt_row gt_center" headers="ges">0.16</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Effect">group:time:trend</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">5.27</td>
+<td class="gt_row gt_center" headers="p">0.02</td>
+<td class="gt_row gt_center" headers="p<.05">*</td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Effect">group:time:slope</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">3.64</td>
+<td class="gt_row gt_center" headers="p">0.06</td>
+<td class="gt_row gt_center" headers="p<.05"></td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Effect">group:trend:slope</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">0.24</td>
+<td class="gt_row gt_center" headers="p">0.62</td>
+<td class="gt_row gt_center" headers="p<.05"></td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Effect">time:trend:slope</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">0.05</td>
+<td class="gt_row gt_center" headers="p">0.82</td>
+<td class="gt_row gt_center" headers="p<.05"></td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Effect">group:time:trend:slope</td>
+<td class="gt_row gt_center" headers="DFn">1.00</td>
+<td class="gt_row gt_center" headers="DFd">115.00</td>
+<td class="gt_row gt_center" headers="F">7.68</td>
+<td class="gt_row gt_center" headers="p">0.01</td>
+<td class="gt_row gt_center" headers="p<.05">*</td>
+<td class="gt_row gt_center" headers="ges">0.00</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2080,32 +2186,31 @@ Training
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat_items <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(question <span class="sc">==</span> <span class="st">"effect"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">response =</span> <span class="fu">factor</span>(response, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Condition =</span> group, <span class="at">Effect =</span> effect, <span class="at">Time =</span> time)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(id_subject, Condition, Time, Effect, response) <span class="sc">%&gt;%</span> <span class="fu">nice_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat_items <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(question <span class="sc">==</span> <span class="st">"effect"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">response =</span> <span class="fu">factor</span>(response, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Condition =</span> group, <span class="at">Effect =</span> effect, <span class="at">Time =</span> time)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(id_subject, Condition, Time, Effect, response) <span class="sc">%&gt;%</span> <span class="fu">nice_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div id="ejuxhtodzw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ejuxhtodzw table {
+<div id="ibwexwktgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ibwexwktgw table {
   font-family: times, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ejuxhtodzw thead, #ejuxhtodzw tbody, #ejuxhtodzw tfoot, #ejuxhtodzw tr, #ejuxhtodzw td, #ejuxhtodzw th {
+#ibwexwktgw thead, #ibwexwktgw tbody, #ibwexwktgw tfoot, #ibwexwktgw tr, #ibwexwktgw td, #ibwexwktgw th {
   border-style: none;
 }
 
-#ejuxhtodzw p {
+#ibwexwktgw p {
   margin: 0;
   padding: 0;
 }
 
-#ejuxhtodzw .gt_table {
+#ibwexwktgw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2131,12 +2236,12 @@ Training
   border-left-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_caption {
+#ibwexwktgw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ejuxhtodzw .gt_title {
+#ibwexwktgw .gt_title {
   color: #333333;
   font-size: 100%;
   font-weight: initial;
@@ -2148,7 +2253,7 @@ Training
   border-bottom-width: 0;
 }
 
-#ejuxhtodzw .gt_subtitle {
+#ibwexwktgw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2160,7 +2265,7 @@ Training
   border-top-width: 0;
 }
 
-#ejuxhtodzw .gt_heading {
+#ibwexwktgw .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2172,13 +2277,13 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_bottom_border {
+#ibwexwktgw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: #000000;
 }
 
-#ejuxhtodzw .gt_col_headings {
+#ibwexwktgw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -2193,7 +2298,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_col_heading {
+#ibwexwktgw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2213,7 +2318,7 @@ Training
   overflow-x: hidden;
 }
 
-#ejuxhtodzw .gt_column_spanner_outer {
+#ibwexwktgw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2225,15 +2330,15 @@ Training
   padding-right: 4px;
 }
 
-#ejuxhtodzw .gt_column_spanner_outer:first-child {
+#ibwexwktgw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ejuxhtodzw .gt_column_spanner_outer:last-child {
+#ibwexwktgw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ejuxhtodzw .gt_column_spanner {
+#ibwexwktgw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -2245,11 +2350,11 @@ Training
   width: 100%;
 }
 
-#ejuxhtodzw .gt_spanner_row {
+#ibwexwktgw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ejuxhtodzw .gt_group_heading {
+#ibwexwktgw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2275,7 +2380,7 @@ Training
   text-align: left;
 }
 
-#ejuxhtodzw .gt_empty_group_heading {
+#ibwexwktgw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2290,15 +2395,15 @@ Training
   vertical-align: middle;
 }
 
-#ejuxhtodzw .gt_from_md > :first-child {
+#ibwexwktgw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ejuxhtodzw .gt_from_md > :last-child {
+#ibwexwktgw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ejuxhtodzw .gt_row {
+#ibwexwktgw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2317,7 +2422,7 @@ Training
   overflow-x: hidden;
 }
 
-#ejuxhtodzw .gt_stub {
+#ibwexwktgw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2330,7 +2435,7 @@ Training
   padding-right: 5px;
 }
 
-#ejuxhtodzw .gt_stub_row_group {
+#ibwexwktgw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2344,15 +2449,15 @@ Training
   vertical-align: top;
 }
 
-#ejuxhtodzw .gt_row_group_first td {
+#ibwexwktgw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ejuxhtodzw .gt_row_group_first th {
+#ibwexwktgw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ejuxhtodzw .gt_summary_row {
+#ibwexwktgw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2362,16 +2467,16 @@ Training
   padding-right: 5px;
 }
 
-#ejuxhtodzw .gt_first_summary_row {
+#ibwexwktgw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_first_summary_row.thick {
+#ibwexwktgw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ejuxhtodzw .gt_last_summary_row {
+#ibwexwktgw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2381,7 +2486,7 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_grand_summary_row {
+#ibwexwktgw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2391,7 +2496,7 @@ Training
   padding-right: 5px;
 }
 
-#ejuxhtodzw .gt_first_grand_summary_row {
+#ibwexwktgw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2401,7 +2506,7 @@ Training
   border-top-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_last_grand_summary_row_top {
+#ibwexwktgw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2411,11 +2516,11 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_striped {
+#ibwexwktgw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ejuxhtodzw .gt_table_body {
+#ibwexwktgw .gt_table_body {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -2424,7 +2529,7 @@ Training
   border-bottom-color: #000000;
 }
 
-#ejuxhtodzw .gt_footnotes {
+#ibwexwktgw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2438,7 +2543,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_footnote {
+#ibwexwktgw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2447,7 +2552,7 @@ Training
   padding-right: 5px;
 }
 
-#ejuxhtodzw .gt_sourcenotes {
+#ibwexwktgw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2461,7 +2566,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#ejuxhtodzw .gt_sourcenote {
+#ibwexwktgw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2469,232 +2574,291 @@ Training
   padding-right: 5px;
 }
 
-#ejuxhtodzw .gt_left {
+#ibwexwktgw .gt_left {
   text-align: left;
 }
 
-#ejuxhtodzw .gt_center {
+#ibwexwktgw .gt_center {
   text-align: center;
 }
 
-#ejuxhtodzw .gt_right {
+#ibwexwktgw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ejuxhtodzw .gt_font_normal {
+#ibwexwktgw .gt_font_normal {
   font-weight: normal;
 }
 
-#ejuxhtodzw .gt_font_bold {
+#ibwexwktgw .gt_font_bold {
   font-weight: bold;
 }
 
-#ejuxhtodzw .gt_font_italic {
+#ibwexwktgw .gt_font_italic {
   font-style: italic;
 }
 
-#ejuxhtodzw .gt_super {
+#ibwexwktgw .gt_super {
   font-size: 65%;
 }
 
-#ejuxhtodzw .gt_footnote_marks {
+#ibwexwktgw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ejuxhtodzw .gt_asterisk {
+#ibwexwktgw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ejuxhtodzw .gt_indent_1 {
+#ibwexwktgw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ejuxhtodzw .gt_indent_2 {
+#ibwexwktgw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ejuxhtodzw .gt_indent_3 {
+#ibwexwktgw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ejuxhtodzw .gt_indent_4 {
+#ibwexwktgw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ejuxhtodzw .gt_indent_5 {
+#ibwexwktgw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="id_subject">id_subject</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Condition">Condition</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Time">Time</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Effect">Effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="response">response</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="response" class="gt_row gt_center">No</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-    <tr><td headers="id_subject" class="gt_row gt_left">03fRnek513UP</td>
-<td headers="Condition" class="gt_row gt_center">Training</td>
-<td headers="Time" class="gt_row gt_center">Pre</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="response" class="gt_row gt_center">Yes</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="id_subject" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">id_subject</th>
+<th id="Condition" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Condition</th>
+<th id="Time" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Time</th>
+<th id="Effect" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Effect</th>
+<th id="response" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">response</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="response">No</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id_subject">03fRnek513UP</td>
+<td class="gt_row gt_center" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Time">Pre</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="response">Yes</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2704,31 +2868,30 @@ Training
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">glmer</span>(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  response <span class="sc">~</span> Time <span class="sc">*</span> Condition <span class="sc">*</span> Effect <span class="sc">+</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>             (<span class="dv">1</span><span class="sc">|</span>id_subject) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>id_subject<span class="sc">:</span>Time) <span class="sc">+</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>             (<span class="dv">1</span><span class="sc">|</span>id_subject<span class="sc">:</span>Effect), </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> binomial,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">nAGQ =</span> <span class="dv">0</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> dat, </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.action =</span> na.omit</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>sjPlot<span class="sc">::</span><span class="fu">tab_model</span>(</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  model, </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">#file = "tab-reg-response.doc",</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.se =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.ci =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.stat =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.df =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">string.se =</span> <span class="st">"se"</span>,</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">string.est =</span> <span class="st">"OR"</span>,</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">string.stat =</span> <span class="st">"t"</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">glmer</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  response <span class="sc">~</span> Time <span class="sc">*</span> Condition <span class="sc">*</span> Effect <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>             (<span class="dv">1</span><span class="sc">|</span>id_subject) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>id_subject<span class="sc">:</span>Time) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>             (<span class="dv">1</span><span class="sc">|</span>id_subject<span class="sc">:</span>Effect), </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> binomial,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">nAGQ =</span> <span class="dv">0</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> dat, </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.action =</span> na.omit</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>sjPlot<span class="sc">::</span><span class="fu">tab_model</span>(</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  model, </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">#file = "tab-reg-response.doc",</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.se =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.ci =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.stat =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">show.df =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">string.se =</span> <span class="st">"se"</span>,</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">string.est =</span> <span class="st">"OR"</span>,</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">string.stat =</span> <span class="st">"t"</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<table style="border-collapse:collapse; border:none;"><caption>logistic models for assumed true responses (dummy contrasts)</caption>
+<table style="border-collapse:collapse; border:none;"><caption><p>logistic models for assumed true responses (dummy contrasts)</p></caption>
 <tbody><tr>
 <th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">&nbsp;</th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">response</th>
@@ -2771,7 +2934,7 @@ Training
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Effect [Trend+Slope]</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">246.79</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">246.78</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">17.69</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><strong>&lt;0.001</strong></td>
 </tr>
@@ -2889,77 +3052,76 @@ Training
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>marginal_means <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(model, <span class="fu">c</span>(<span class="st">"Time"</span>, <span class="st">"Effect"</span>, <span class="st">"Condition"</span>),</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">pbkrtest.limit =</span> <span class="dv">9000</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">lmerTest.limit =</span> <span class="dv">9000</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>means <span class="ot">&lt;-</span> <span class="fu">summary</span>(marginal_means) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>means<span class="sc">$</span>probability <span class="ot">&lt;-</span> <span class="fu">logit2prob</span>(means<span class="sc">$</span>emmean)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>means<span class="sc">$</span>prob.ll <span class="ot">&lt;-</span> <span class="fu">logit2prob</span>(means<span class="sc">$</span>asymp.LCL)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>means<span class="sc">$</span>prob.ul <span class="ot">&lt;-</span> <span class="fu">logit2prob</span>(means<span class="sc">$</span>asymp.UCL)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>table_pre_post <span class="ot">&lt;-</span> means <span class="sc">%&gt;%</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Condition, Effect, Time, probability) <span class="sc">%&gt;%</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">"Time"</span>, <span class="at">values_from =</span> <span class="st">"probability"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Difference =</span> <span class="fu">round</span>(Post<span class="sc">-</span>Pre, <span class="dv">2</span>), <span class="at">Pre =</span> <span class="fu">round</span>(Pre, <span class="dv">2</span>), <span class="at">Post =</span> <span class="fu">round</span>(Post, <span class="dv">2</span>)) </span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>table_contrast <span class="ot">&lt;-</span> marginal_means <span class="sc">|&gt;</span> </span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pairs</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(contrast <span class="sc">%in%</span> <span class="fu">c</span>(</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre None Control - Post None Control"</span>,</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre None Training - Post None Training"</span>,</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre Trend Control - Post Trend Control"</span>,</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre Trend Training - Post Trend Training"</span>,</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre Slope Control - Post Slope Control"</span>,</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre Slope Training - Post Slope Training"</span>,</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"(Pre Trend+Slope Control) - (Post Trend+Slope Control)"</span>,</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"(Pre Trend+Slope Training) - (Post Trend+Slope Training)"</span></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="sc">~</span><span class="fu">round</span>(.x, <span class="dv">2</span>)),</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">contrast =</span> <span class="fu">case_match</span>(</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>      contrast,</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre None Control - Post None Control"</span> <span class="sc">~</span> <span class="st">"Control / none"</span>,</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre None Training - Post None Training"</span> <span class="sc">~</span> <span class="st">"Training / none"</span>,</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre Trend Control - Post Trend Control"</span> <span class="sc">~</span> <span class="st">"Control / trend"</span>,</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre Trend Training - Post Trend Training"</span> <span class="sc">~</span> <span class="st">"Training / trend"</span>,</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre Slope Control - Post Slope Control"</span> <span class="sc">~</span> <span class="st">"Control / slope"</span>,</span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre Slope Training - Post Slope Training"</span> <span class="sc">~</span> <span class="st">"Training / slope"</span>,</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(Pre Trend+Slope Control) - (Post Trend+Slope Control)"</span> <span class="sc">~</span> <span class="st">"Control / trend+slope"</span>,</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(Pre Trend+Slope Training) - (Post Trend+Slope Training)"</span> <span class="sc">~</span> <span class="st">"Training trend+slope"</span></span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"z ratio"</span> <span class="ot">=</span> z.ratio, <span class="at">p =</span> p.value) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span>estimate, <span class="sc">-</span>df)</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>table_pre_post <span class="ot">&lt;-</span> <span class="fu">cbind</span>(table_pre_post, table_contrast)</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nice_table</span>(</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>    table_pre_post,</span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">file =</span> <span class="st">"tab-marginal-means-response.docx"</span>,</span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Pre/post post-hoc contrasts of proportions of graphs rated as showing an intervention effect"</span></span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>marginal_means <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(model, <span class="fu">c</span>(<span class="st">"Time"</span>, <span class="st">"Effect"</span>, <span class="st">"Condition"</span>),</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">pbkrtest.limit =</span> <span class="dv">9000</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">lmerTest.limit =</span> <span class="dv">9000</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>means <span class="ot">&lt;-</span> <span class="fu">summary</span>(marginal_means) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>means<span class="sc">$</span>probability <span class="ot">&lt;-</span> <span class="fu">logit2prob</span>(means<span class="sc">$</span>emmean)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>means<span class="sc">$</span>prob.ll <span class="ot">&lt;-</span> <span class="fu">logit2prob</span>(means<span class="sc">$</span>asymp.LCL)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>means<span class="sc">$</span>prob.ul <span class="ot">&lt;-</span> <span class="fu">logit2prob</span>(means<span class="sc">$</span>asymp.UCL)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>table_pre_post <span class="ot">&lt;-</span> means <span class="sc">%&gt;%</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Condition, Effect, Time, probability) <span class="sc">%&gt;%</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">"Time"</span>, <span class="at">values_from =</span> <span class="st">"probability"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Difference =</span> <span class="fu">round</span>(Post<span class="sc">-</span>Pre, <span class="dv">2</span>), <span class="at">Pre =</span> <span class="fu">round</span>(Pre, <span class="dv">2</span>), <span class="at">Post =</span> <span class="fu">round</span>(Post, <span class="dv">2</span>)) </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>table_contrast <span class="ot">&lt;-</span> marginal_means <span class="sc">|&gt;</span> </span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pairs</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(contrast <span class="sc">%in%</span> <span class="fu">c</span>(</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre None Control - Post None Control"</span>,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre None Training - Post None Training"</span>,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre Trend Control - Post Trend Control"</span>,</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre Trend Training - Post Trend Training"</span>,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre Slope Control - Post Slope Control"</span>,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pre Slope Training - Post Slope Training"</span>,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"(Pre Trend+Slope Control) - (Post Trend+Slope Control)"</span>,</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"(Pre Trend+Slope Training) - (Post Trend+Slope Training)"</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="sc">~</span><span class="fu">round</span>(.x, <span class="dv">2</span>)),</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">contrast =</span> <span class="fu">case_match</span>(</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>      contrast,</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre None Control - Post None Control"</span> <span class="sc">~</span> <span class="st">"Control / none"</span>,</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre None Training - Post None Training"</span> <span class="sc">~</span> <span class="st">"Training / none"</span>,</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre Trend Control - Post Trend Control"</span> <span class="sc">~</span> <span class="st">"Control / trend"</span>,</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre Trend Training - Post Trend Training"</span> <span class="sc">~</span> <span class="st">"Training / trend"</span>,</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre Slope Control - Post Slope Control"</span> <span class="sc">~</span> <span class="st">"Control / slope"</span>,</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Pre Slope Training - Post Slope Training"</span> <span class="sc">~</span> <span class="st">"Training / slope"</span>,</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(Pre Trend+Slope Control) - (Post Trend+Slope Control)"</span> <span class="sc">~</span> <span class="st">"Control / trend+slope"</span>,</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>      <span class="st">"(Pre Trend+Slope Training) - (Post Trend+Slope Training)"</span> <span class="sc">~</span> <span class="st">"Training trend+slope"</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"z ratio"</span> <span class="ot">=</span> z.ratio, <span class="at">p =</span> p.value) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span>estimate, <span class="sc">-</span>df)</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>table_pre_post <span class="ot">&lt;-</span> <span class="fu">cbind</span>(table_pre_post, table_contrast)</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nice_table</span>(</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>    table_pre_post,</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">file =</span> <span class="st">"tab-marginal-means-response.docx"</span>,</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Pre/post post-hoc contrasts of proportions of graphs rated as showing an intervention effect"</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div id="pyszfbizpb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pyszfbizpb table {
+<div id="abrrfzwlbm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#abrrfzwlbm table {
   font-family: times, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pyszfbizpb thead, #pyszfbizpb tbody, #pyszfbizpb tfoot, #pyszfbizpb tr, #pyszfbizpb td, #pyszfbizpb th {
+#abrrfzwlbm thead, #abrrfzwlbm tbody, #abrrfzwlbm tfoot, #abrrfzwlbm tr, #abrrfzwlbm td, #abrrfzwlbm th {
   border-style: none;
 }
 
-#pyszfbizpb p {
+#abrrfzwlbm p {
   margin: 0;
   padding: 0;
 }
 
-#pyszfbizpb .gt_table {
+#abrrfzwlbm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2985,12 +3147,12 @@ Training
   border-left-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_caption {
+#abrrfzwlbm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pyszfbizpb .gt_title {
+#abrrfzwlbm .gt_title {
   color: #333333;
   font-size: 100%;
   font-weight: initial;
@@ -3002,7 +3164,7 @@ Training
   border-bottom-width: 0;
 }
 
-#pyszfbizpb .gt_subtitle {
+#abrrfzwlbm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3014,7 +3176,7 @@ Training
   border-top-width: 0;
 }
 
-#pyszfbizpb .gt_heading {
+#abrrfzwlbm .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -3026,13 +3188,13 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_bottom_border {
+#abrrfzwlbm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: #000000;
 }
 
-#pyszfbizpb .gt_col_headings {
+#abrrfzwlbm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -3047,7 +3209,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_col_heading {
+#abrrfzwlbm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3067,7 +3229,7 @@ Training
   overflow-x: hidden;
 }
 
-#pyszfbizpb .gt_column_spanner_outer {
+#abrrfzwlbm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3079,15 +3241,15 @@ Training
   padding-right: 4px;
 }
 
-#pyszfbizpb .gt_column_spanner_outer:first-child {
+#abrrfzwlbm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pyszfbizpb .gt_column_spanner_outer:last-child {
+#abrrfzwlbm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pyszfbizpb .gt_column_spanner {
+#abrrfzwlbm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -3099,11 +3261,11 @@ Training
   width: 100%;
 }
 
-#pyszfbizpb .gt_spanner_row {
+#abrrfzwlbm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pyszfbizpb .gt_group_heading {
+#abrrfzwlbm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3129,7 +3291,7 @@ Training
   text-align: left;
 }
 
-#pyszfbizpb .gt_empty_group_heading {
+#abrrfzwlbm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3144,15 +3306,15 @@ Training
   vertical-align: middle;
 }
 
-#pyszfbizpb .gt_from_md > :first-child {
+#abrrfzwlbm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pyszfbizpb .gt_from_md > :last-child {
+#abrrfzwlbm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pyszfbizpb .gt_row {
+#abrrfzwlbm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3171,7 +3333,7 @@ Training
   overflow-x: hidden;
 }
 
-#pyszfbizpb .gt_stub {
+#abrrfzwlbm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3184,7 +3346,7 @@ Training
   padding-right: 5px;
 }
 
-#pyszfbizpb .gt_stub_row_group {
+#abrrfzwlbm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3198,15 +3360,15 @@ Training
   vertical-align: top;
 }
 
-#pyszfbizpb .gt_row_group_first td {
+#abrrfzwlbm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pyszfbizpb .gt_row_group_first th {
+#abrrfzwlbm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pyszfbizpb .gt_summary_row {
+#abrrfzwlbm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3216,16 +3378,16 @@ Training
   padding-right: 5px;
 }
 
-#pyszfbizpb .gt_first_summary_row {
+#abrrfzwlbm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_first_summary_row.thick {
+#abrrfzwlbm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pyszfbizpb .gt_last_summary_row {
+#abrrfzwlbm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3235,7 +3397,7 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_grand_summary_row {
+#abrrfzwlbm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3245,7 +3407,7 @@ Training
   padding-right: 5px;
 }
 
-#pyszfbizpb .gt_first_grand_summary_row {
+#abrrfzwlbm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3255,7 +3417,7 @@ Training
   border-top-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_last_grand_summary_row_top {
+#abrrfzwlbm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3265,11 +3427,11 @@ Training
   border-bottom-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_striped {
+#abrrfzwlbm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pyszfbizpb .gt_table_body {
+#abrrfzwlbm .gt_table_body {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: #000000;
@@ -3278,7 +3440,7 @@ Training
   border-bottom-color: #000000;
 }
 
-#pyszfbizpb .gt_footnotes {
+#abrrfzwlbm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3292,7 +3454,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_footnote {
+#abrrfzwlbm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3301,7 +3463,7 @@ Training
   padding-right: 5px;
 }
 
-#pyszfbizpb .gt_sourcenotes {
+#abrrfzwlbm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3315,7 +3477,7 @@ Training
   border-right-color: #D3D3D3;
 }
 
-#pyszfbizpb .gt_sourcenote {
+#abrrfzwlbm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3323,187 +3485,219 @@ Training
   padding-right: 5px;
 }
 
-#pyszfbizpb .gt_left {
+#abrrfzwlbm .gt_left {
   text-align: left;
 }
 
-#pyszfbizpb .gt_center {
+#abrrfzwlbm .gt_center {
   text-align: center;
 }
 
-#pyszfbizpb .gt_right {
+#abrrfzwlbm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pyszfbizpb .gt_font_normal {
+#abrrfzwlbm .gt_font_normal {
   font-weight: normal;
 }
 
-#pyszfbizpb .gt_font_bold {
+#abrrfzwlbm .gt_font_bold {
   font-weight: bold;
 }
 
-#pyszfbizpb .gt_font_italic {
+#abrrfzwlbm .gt_font_italic {
   font-style: italic;
 }
 
-#pyszfbizpb .gt_super {
+#abrrfzwlbm .gt_super {
   font-size: 65%;
 }
 
-#pyszfbizpb .gt_footnote_marks {
+#abrrfzwlbm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pyszfbizpb .gt_asterisk {
+#abrrfzwlbm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pyszfbizpb .gt_indent_1 {
+#abrrfzwlbm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pyszfbizpb .gt_indent_2 {
+#abrrfzwlbm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pyszfbizpb .gt_indent_3 {
+#abrrfzwlbm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pyszfbizpb .gt_indent_4 {
+#abrrfzwlbm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pyszfbizpb .gt_indent_5 {
+#abrrfzwlbm .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border" style=""><strong>Table</strong><br>  <em>Pre/post post-hoc contrasts of proportions of graphs rated as showing an intervention effect</em></td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Condition">Condition</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Effect">Effect</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Pre">Pre</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Post">Post</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Difference">Difference</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="SE">SE</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="z ratio">z ratio</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="p">p</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Condition" class="gt_row gt_left">Control</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="Pre" class="gt_row gt_center">0.11</td>
-<td headers="Post" class="gt_row gt_center">0.17</td>
-<td headers="Difference" class="gt_row gt_center">0.06</td>
-<td headers="SE" class="gt_row gt_center">0.21</td>
-<td headers="z ratio" class="gt_row gt_center">-2.26</td>
-<td headers="p" class="gt_row gt_center">0.65</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Control</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="Pre" class="gt_row gt_center">0.80</td>
-<td headers="Post" class="gt_row gt_center">0.85</td>
-<td headers="Difference" class="gt_row gt_center">0.05</td>
-<td headers="SE" class="gt_row gt_center">0.20</td>
-<td headers="z ratio" class="gt_row gt_center">-1.83</td>
-<td headers="p" class="gt_row gt_center">0.90</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Control</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="Pre" class="gt_row gt_center">0.64</td>
-<td headers="Post" class="gt_row gt_center">0.74</td>
-<td headers="Difference" class="gt_row gt_center">0.10</td>
-<td headers="SE" class="gt_row gt_center">0.18</td>
-<td headers="z ratio" class="gt_row gt_center">-2.58</td>
-<td headers="p" class="gt_row gt_center">0.41</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Control</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="Pre" class="gt_row gt_center">0.97</td>
-<td headers="Post" class="gt_row gt_center">0.97</td>
-<td headers="Difference" class="gt_row gt_center">0.00</td>
-<td headers="SE" class="gt_row gt_center">0.33</td>
-<td headers="z ratio" class="gt_row gt_center">0.01</td>
-<td headers="p" class="gt_row gt_center">1.00</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Training</td>
-<td headers="Effect" class="gt_row gt_center">None</td>
-<td headers="Pre" class="gt_row gt_center">0.11</td>
-<td headers="Post" class="gt_row gt_center">0.13</td>
-<td headers="Difference" class="gt_row gt_center">0.02</td>
-<td headers="SE" class="gt_row gt_center">0.20</td>
-<td headers="z ratio" class="gt_row gt_center">-0.77</td>
-<td headers="p" class="gt_row gt_center">1.00</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Training</td>
-<td headers="Effect" class="gt_row gt_center">Trend</td>
-<td headers="Pre" class="gt_row gt_center">0.88</td>
-<td headers="Post" class="gt_row gt_center">0.73</td>
-<td headers="Difference" class="gt_row gt_center">-0.15</td>
-<td headers="SE" class="gt_row gt_center">0.18</td>
-<td headers="z ratio" class="gt_row gt_center">5.48</td>
-<td headers="p" class="gt_row gt_center">0.00</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Training</td>
-<td headers="Effect" class="gt_row gt_center">Slope</td>
-<td headers="Pre" class="gt_row gt_center">0.70</td>
-<td headers="Post" class="gt_row gt_center">0.71</td>
-<td headers="Difference" class="gt_row gt_center">0.02</td>
-<td headers="SE" class="gt_row gt_center">0.16</td>
-<td headers="z ratio" class="gt_row gt_center">-0.47</td>
-<td headers="p" class="gt_row gt_center">1.00</td></tr>
-    <tr><td headers="Condition" class="gt_row gt_left">Training</td>
-<td headers="Effect" class="gt_row gt_center">Trend+Slope</td>
-<td headers="Pre" class="gt_row gt_center">0.98</td>
-<td headers="Post" class="gt_row gt_center">0.93</td>
-<td headers="Difference" class="gt_row gt_center">-0.05</td>
-<td headers="SE" class="gt_row gt_center">0.33</td>
-<td headers="z ratio" class="gt_row gt_center">4.49</td>
-<td headers="p" class="gt_row gt_center">0.00</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header gt_heading">
+<th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>Table</strong><br>
+<em>Pre/post post-hoc contrasts of proportions of graphs rated as showing an intervention effect</em></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="Condition" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Condition</th>
+<th id="Effect" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Effect</th>
+<th id="Pre" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Pre</th>
+<th id="Post" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Post</th>
+<th id="Difference" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Difference</th>
+<th id="SE" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">SE</th>
+<th id="z ratio" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">z ratio</th>
+<th id="p" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">p</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Condition">Control</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="Pre">0.11</td>
+<td class="gt_row gt_center" headers="Post">0.17</td>
+<td class="gt_row gt_center" headers="Difference">0.06</td>
+<td class="gt_row gt_center" headers="SE">0.21</td>
+<td class="gt_row gt_center" headers="z ratio">-2.26</td>
+<td class="gt_row gt_center" headers="p">0.65</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Condition">Control</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="Pre">0.80</td>
+<td class="gt_row gt_center" headers="Post">0.85</td>
+<td class="gt_row gt_center" headers="Difference">0.05</td>
+<td class="gt_row gt_center" headers="SE">0.20</td>
+<td class="gt_row gt_center" headers="z ratio">-1.83</td>
+<td class="gt_row gt_center" headers="p">0.90</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Condition">Control</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="Pre">0.64</td>
+<td class="gt_row gt_center" headers="Post">0.74</td>
+<td class="gt_row gt_center" headers="Difference">0.10</td>
+<td class="gt_row gt_center" headers="SE">0.18</td>
+<td class="gt_row gt_center" headers="z ratio">-2.58</td>
+<td class="gt_row gt_center" headers="p">0.41</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Condition">Control</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="Pre">0.97</td>
+<td class="gt_row gt_center" headers="Post">0.97</td>
+<td class="gt_row gt_center" headers="Difference">0.00</td>
+<td class="gt_row gt_center" headers="SE">0.33</td>
+<td class="gt_row gt_center" headers="z ratio">0.01</td>
+<td class="gt_row gt_center" headers="p">1.00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Effect">None</td>
+<td class="gt_row gt_center" headers="Pre">0.11</td>
+<td class="gt_row gt_center" headers="Post">0.13</td>
+<td class="gt_row gt_center" headers="Difference">0.02</td>
+<td class="gt_row gt_center" headers="SE">0.20</td>
+<td class="gt_row gt_center" headers="z ratio">-0.77</td>
+<td class="gt_row gt_center" headers="p">1.00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Effect">Trend</td>
+<td class="gt_row gt_center" headers="Pre">0.88</td>
+<td class="gt_row gt_center" headers="Post">0.73</td>
+<td class="gt_row gt_center" headers="Difference">-0.15</td>
+<td class="gt_row gt_center" headers="SE">0.18</td>
+<td class="gt_row gt_center" headers="z ratio">5.48</td>
+<td class="gt_row gt_center" headers="p">0.00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Effect">Slope</td>
+<td class="gt_row gt_center" headers="Pre">0.70</td>
+<td class="gt_row gt_center" headers="Post">0.71</td>
+<td class="gt_row gt_center" headers="Difference">0.02</td>
+<td class="gt_row gt_center" headers="SE">0.16</td>
+<td class="gt_row gt_center" headers="z ratio">-0.47</td>
+<td class="gt_row gt_center" headers="p">1.00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Condition">Training</td>
+<td class="gt_row gt_center" headers="Effect">Trend+Slope</td>
+<td class="gt_row gt_center" headers="Pre">0.98</td>
+<td class="gt_row gt_center" headers="Post">0.93</td>
+<td class="gt_row gt_center" headers="Difference">-0.05</td>
+<td class="gt_row gt_center" headers="SE">0.33</td>
+<td class="gt_row gt_center" headers="z ratio">4.49</td>
+<td class="gt_row gt_center" headers="p">0.00</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>means <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Percentage =</span> probability <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Percentage)) <span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">color =</span> Effect, <span class="at">group =</span> Effect, <span class="at">linetype =</span> Effect),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">group =</span> Effect),</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">ymin =</span> prob.ll <span class="sc">*</span> <span class="dv">100</span>, <span class="at">ymax =</span> prob.ul <span class="sc">*</span> <span class="dv">100</span>), </span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.2</span>,</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="fl">0.2</span>)</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span>  </span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Condition)) <span class="sc">+</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>)) <span class="sc">+</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>),</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.key  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>),</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>),</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>)</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Estimated marginal means of response that an effect exists"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>means <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Percentage =</span> probability <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Percentage)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">color =</span> Effect, <span class="at">group =</span> Effect, <span class="at">linetype =</span> Effect),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">group =</span> Effect),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">ymin =</span> prob.ll <span class="sc">*</span> <span class="dv">100</span>, <span class="at">ymax =</span> prob.ul <span class="sc">*</span> <span class="dv">100</span>), </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="fl">0.2</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span>  </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Condition)) <span class="sc">+</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>),</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.key  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>),</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>),</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Estimated marginal means of response that an effect exists"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="index_files/figure-html/unnamed-chunk-10-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img" width="672">
+</div>
+</figure>
+</div>
 </div>
 </div>
 
@@ -3539,9 +3733,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -3577,10 +3785,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -3590,8 +3797,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -3606,6 +3822,241 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -3647,12 +4098,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="jazznbass/homepage" data-repo-id="MDEwOlJlcG9zaXRvcnkzNDA5MjU3ODY=" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Copyright 2023, Jürgen Wilbert</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2023, Jürgen Wilbert</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
+
 
 
 

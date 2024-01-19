@@ -107,6 +107,15 @@ Within IV 3: Graph shows a slope-effect vs. no slope-effect
 
 # Descriptive analyses
 
+
+```{r}
+dat_items %>%
+  filter(question == "effect") %>%
+  group_by(group) %>%
+  summarise(n = n()/ 80)
+```
+
+
 ```{r}
 dat_items %>%
   filter(question == "effect") %>%
