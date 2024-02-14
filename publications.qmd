@@ -6,6 +6,8 @@ toc-location: left
 
 Updated 2024-01-10
 
+![](images/publications.png){fig-align="center" width="250"}
+
 # Journal papers
 
 1.  Bosch, J., Baer, E., Meisel, M., & Wilbert, J. (accepted). What makes school hard for students with internalizing problems? - Students’ insights on emotional challenges at school. *Empirische Sonderpädagogik*.

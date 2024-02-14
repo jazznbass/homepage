@@ -1,73 +1,93 @@
 ---
 title: "R Packages"
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-::: panel-tabset
+![](images/packages.png){fig-align="center" width="250"}
 
+::: panel-tabset
 ## scan
 
 ### ***scan - Single-Case Data Analyses for Single and Multiple Baseline Designs***
 
-This package provides a collection of procedures for analyzing, visualizing, 
-and managing single-case data. These include piecewise linear regression 
-models, multilevel models, overlap indices (PND, PEM, PAND, PET, tauU, 
-baseline corrected tau), and randomization tests. Data preparation functions 
-support outlier detection, handling missing values, scaling, truncating, 
-rank transformation, and smoothing. An exporting function helps to generate 
-html and latex tables in a publication friendly style.  
+This package provides a collection of procedures for analyzing,
+visualizing, and managing single-case data. These include piecewise
+linear regression models, multilevel models, overlap indices (PND, PEM,
+PAND, PET, tauU, baseline corrected tau), and randomization tests. Data
+preparation functions support outlier detection, handling missing
+values, scaling, truncating, rank transformation, and smoothing. An
+exporting function helps to generate html and latex tables in a
+publication friendly style.
 
 More details can be found at <https://jazznbass.github.io/scan-Book/>.
 
-*State:* Stable CRAN version and extended developmental version on github  
-*github:* <https://github.com/jazznbass/scan>  
-*CRAN:* <https://CRAN.R-project.org/package=scan>   
-*webpage:* <https://jazznbass.github.io/scan/>  
+*State:* Stable CRAN version and extended developmental version on
+github\
+*github:* <https://github.com/jazznbass/scan>\
+*CRAN:* <https://CRAN.R-project.org/package=scan>\
+*webpage:* <https://jazznbass.github.io/scan/>
 
 ## scaledic
 
 ### ***scaledic - A dictionary for scales***
 
-`scaledic` is an R package for extending data frames and tibbles with several scale related attributes. It is designed to implement (psychometric) scale information to items of a data frame. 
-These include values, labels, sub scales, weights etc.. A couple of functions help to organize, extract, replace and impute missing values, find typos, build scale scores etc.
+`scaledic` is an R package for extending data frames and tibbles with
+several scale related attributes. It is designed to implement
+(psychometric) scale information to items of a data frame. These include
+values, labels, sub scales, weights etc.. A couple of functions help to
+organize, extract, replace and impute missing values, find typos, build
+scale scores etc.
 
-For now, `scaledic` is already working and up to the task but still in an experimental stage where I might change the basic syntax.  
+For now, `scaledic` is already working and up to the task but still in
+an experimental stage where I might change the basic syntax.\
 Also documentation is poor. I am working on that.
 
-Basically, scaledic loads a dictionary file that contains all relevant information and applies these to a data frame. Here, every variable corresponding to the ones describes in the dictionary gets a new attribute `dic` which contains a list with all dictionary values for that variable.  
+Basically, scaledic loads a dictionary file that contains all relevant
+information and applies these to a data frame. Here, every variable
+corresponding to the ones describes in the dictionary gets a new
+attribute `dic` which contains a list with all dictionary values for
+that variable.
 
-*State:* Working but still experimental   
-*github:* <https://github.com/jazznbass/scaledic>  
-*webpage:* <https://jazznbass.github.io/scaledic/>  
+*State:* Working but still experimental\
+*github:* <https://github.com/jazznbass/scaledic>\
+*webpage:* <https://jazznbass.github.io/scaledic/>
 
 ## scplot
 
 ### ***scplot - Visualizing single-case data***
 
-`scplot` is an extension to the `scan` package which provides powerful functions to generate single-case data plots. I try to keep the syntax simple and readable but nevertheless also allowing for sophisticated and complex depictions.
+`scplot` is an extension to the `scan` package which provides powerful
+functions to generate single-case data plots. I try to keep the syntax
+simple and readable but nevertheless also allowing for sophisticated and
+complex depictions.
 
-The generated plots are compatible to `ggplot2`. 
+The generated plots are compatible to `ggplot2`.
 
-*State:* Stable CRAN version and extended developmental version on github  
-*github:* <https://github.com/jazznbass/scplot>  
-*CRAN:* <https://CRAN.R-project.org/package=scplot>   
-*webpage:* <https://jazznbass.github.io/scplot/>  
+*State:* Stable CRAN version and extended developmental version on
+github\
+*github:* <https://github.com/jazznbass/scplot>\
+*CRAN:* <https://CRAN.R-project.org/package=scplot>\
+*webpage:* <https://jazznbass.github.io/scplot/>
 
 ## mcscan
 
 ### ***mcscan - Conduction Monte Carlo Single-Case Studies***
 
-`mcscan` is another extension to the `scan` package which provides functions for designing, conducting, and visualizing the results of Monte-Carlo Single-Case studies.
+`mcscan` is another extension to the `scan` package which provides
+functions for designing, conducting, and visualizing the results of
+Monte-Carlo Single-Case studies.
 
-*State:* Experimental   
-*github:* <https://github.com/jazznbass/mcscan/>  
+*State:* Experimental\
+*github:* <https://github.com/jazznbass/mcscan/>
 
 ## wmisc
 
 ### ***wmisc - Wilbert's miscellaneous functions***
 
-This R package comprises miscellaneous functions that I use to ease my work.
-It is developed to help people who work with my code.
+This R package comprises miscellaneous functions that I use to ease my
+work. It is developed to help people who work with my code.
 
 *State:* Experimental
-
 :::

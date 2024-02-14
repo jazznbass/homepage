@@ -4,7 +4,7 @@ toc: true
 toc-location: left
 ---
 
-![](images/phdhat.png){fig-align="center" width="217"}
+![](images/phdhats.png){fig-align="center" width="270"}
 
 ::: panel-tabset
 ## Completed PhD students
