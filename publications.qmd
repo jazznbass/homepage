@@ -4,8 +4,6 @@ toc: true
 toc-location: left
 ---
 
-Updated 2024-01-10
-
 ![](images/publications-2.webp){fig-align="center" width="250"}
 
 # Journal papers
@@ -201,3 +199,5 @@ Updated 2024-01-10
 4.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40). University of Potsdam.
 
 5.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20). University of Potsdam.
+
+***Last updated 2024-01-10***
