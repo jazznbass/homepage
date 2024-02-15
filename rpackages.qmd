@@ -1,11 +1,11 @@
 ---
-title: "R Packages"
+title: "Software"
 editor: 
   markdown: 
     wrap: 72
 ---
 
-![](images/packages.png){fig-align="center" width="250"}
+![](images/packages.webp){fig-align="center"}
 
 ::: panel-tabset
 ## scan

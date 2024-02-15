@@ -7,11 +7,11 @@ website:
   page-footer: "Copyright 2023, Jürgen Wilbert"
   search: true
   navbar:
-    logo: images/penguin.png
+    #logo: images/penguin.png
     left:
       - projects.qmd
-      - rpackages.qmd
       - publications.qmd
+      - rpackages.qmd
       - students.qmd
       - links.qmd
       - text: "Courses"

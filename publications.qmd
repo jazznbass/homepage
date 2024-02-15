@@ -6,7 +6,7 @@ toc-location: left
 
 Updated 2024-01-10
 
-![](images/publications.png){fig-align="center" width="250"}
+![](images/publications-2.webp){fig-align="center" width="250"}
 
 # Journal papers
 
