@@ -9,11 +9,16 @@ website:
   navbar:
     #logo: images/penguin.png
     left:
-      - projects.qmd
-      - publications.qmd
-      - rpackages.qmd
-      - students.qmd
-      - links.qmd
+      - text: "Projects"
+        file: "projects.qmd"
+      - text: "Publications"
+        file: "publications.qmd"
+      - text: "Software"
+        file: "rpackages.qmd"
+      - text: "Graduate Students"
+        file: "students.qmd"
+      - text: "Links"
+        file: "links.qmd"
       #- text: "Courses"
       #  menu:
       #    - text: "Single-case regression analzes"

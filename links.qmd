@@ -1,5 +1,5 @@
 ---
-title: Links
+#title: Links
 ---
 
 ![](images/links.webp){fig-align="center" width="250"}

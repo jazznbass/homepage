@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+#title: "Publications"
 toc: true
 toc-location: left
 ---
