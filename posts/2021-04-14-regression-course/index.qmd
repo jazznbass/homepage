@@ -1,0 +1,28 @@
+---
+title: "Workshop - Multilevel regression analysis for single-case data with scan"
+author: "Jürgen Wilbert"
+abstract: Slides for a workshop Timo Lüke and I gave in 2021
+date: 2021-04-15
+format:
+  html:
+    page-layout: full
+    df-print: kable
+    toc: true
+    toc-location: right
+    self-contained: false
+    code-fold: true
+categories:
+  - teaching
+  - R
+  - videos
+  - regression
+  - single-case
+editor: 
+  markdown: 
+    wrap: 72
+execute: 
+  warning: false
+  error: false
+---
+
+<https://jazznbass.github.io/workshop_scan_regression/>
