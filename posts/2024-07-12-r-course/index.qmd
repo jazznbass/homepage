@@ -25,7 +25,7 @@ execute:
 
 # Courses: Introduction to data analysis with R
 
-![](images/Screenshot 2024-07-12 at 09.25.43.png)
+![](images/cover.png)
 
 # Session 1: Introduction
 
