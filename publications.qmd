@@ -8,13 +8,13 @@ toc-location: left
 
 # Journal papers
 
-1.  Bosch, J., Baer, E., Meisel, M., & Wilbert, J. (accepted). What makes school hard for students with internalizing problems? - Students’ insights on emotional challenges at school. *Empirische Sonderpädagogik*.
+1.  Bosch, J., Baer, E., Meisel, M., & Wilbert, J. (2023). What makes school hard for students with internalizing problems? Students’ insights on emotional challenges at school. *Empirische Sonderpädagogik*, 15(4), 345–361. <https://doi.org/10.25656/01:29920>
 
 2.  Urton, K., Wilbert, J., Krull, J., & Hennemann, T. (2023). Factors explaining teachers' intention to implement inclusive practices in the classroom: Indications based on the theory of planned behaviour. *Teaching and Teacher Education*, *132*, 104225. <https://doi.org/10.1016/j.tate.2023.104225>
 
-3.  Bosch, J., & Wilbert, J. (2023). The Impact of Social Comparison Processes on Self-Evaluation of Performance, Self-Concept, and Task Interest. *Frontiers in Education: Educational Psychology*.
+3.  Bosch, J., & Wilbert, J. (2023). The impact of social comparison processes on self-evaluation of performance, self-concept, and task interest. *Frontiers in Education*, 8. <https://doi.org/10.3389/feduc.2023.1033488>
 
-4.  Krull, J., Urton, K., Kulawiak, P. R., Wilbert, J., & Hennemann, T. (2022). Social-relational classroom climate and its link to primary students' behavioral problems. *Empirische Sonderpädagogik*, *24*(2), 22.
+4.  Krull, J., Urton, K., Kulawiak, P. R., Wilbert, J., & Hennemann, T. (2022). Social-relational classroom climate and its link to primary students’ behavioral problems. *Empirische Sonderpädagogik*, *24*(2), 22. <https://doi.org/10.25656/01:25769>
 
 5.  Leidig, T., Casale, G., Wilbert, J., Hennemann, T., Volpe, R. J., Briesch, A., & Grosche, M. (2022). Individual, generalized, and moderated effects of the good behavior game on at-risk primary school students: A multilevel multiple baseline study using behavioral progress monitoring. *Frontiers in Education*, 7. <https://doi.org/10.3389/feduc.2022.917138>
 
@@ -52,11 +52,11 @@ toc-location: left
 
 22. Krull, J., Urton, K., Wilbert, J., & Hennemann, T. (2018). Der Kreis Mettmann auf dem Weg zum inklusiven Schulsystem -- zentrale Ergebnisse der wissenschaftlichen Begleitung. *Zeitschrift für Heilpädagogik*, *69*(1), 17--39.
 
-23. Urton, K., Börnert-Ringleb, M., Krull, J., Wilbert, J., & Hennemann, T. (2018). Inklusives Schulklima: Konzeptionelle Darstellung eines Rahmendmodells. *Zeitschrift für Heilpädagogik*, *69*, 40--52.
+23. Urton, K., Börnert-Ringleb, M., Krull, J., Wilbert, J., & Hennemann, T. (2018). Inklusives Schulklima: Konzeptionelle Darstellung eines Rahmendmodells. *Zeitschrift für Heilpädagogik*, *69*(1), 40--52.
 
 24. Bosch, J., & Wilbert, J. (2017). Contrast and Assimilation Effects on Task Interest in an Academic Learning Task. *Frontline Learning Research*, *5*(2), 60--78. <https://doi.org/10.14786/flr.v5i2.292>
 
-25. Grünke, M., Wilbert, J., Tsiriotakis, I. K., & Agirregoikoa, A. L. (2017). Improving the Length and Quality of Texts Written by Fourth Graders With Learning Disabilities Through a Peer-Tutoring Graphic Organizing Strategy. *Insights into Learning Disabilities*, *14*(2), 167--188. <https://eric.ed.gov/?q=Improving+the+Length+and+Quality+of+Texts+Written+by+Fourth+Graders+With+Learning+Disabilities+Through+a+Peer-Tutoring+Graphic+Organizing+Strategy.+Insights+into+Learning+Disabilities&id=EJ1164946>
+25. Grünke, M., Wilbert, J., Tsiriotakis, I. K., & Agirregoikoa, A. L. (2017). Improving the Length and Quality of Texts Written by Fourth Graders With Learning Disabilities Through a Peer-Tutoring Graphic Organizing Strategy. *Insights into Learning Disabilities*, *14*(2), 167--188. <https://files.eric.ed.gov/fulltext/EJ1164946.pdf>
 
 26. Hennemann, T., Casale, G., Wilbert, J., Grosche, M., Fitting-Dahlmann, K., Hövel, D., Hagen, T., Leidig, T., & Melzer, C. (2017). „Schulen auf dem Weg zur Inklusion" Konzeption, Evaluation und erste Befunde eines landesweiten Qualifizierungsprogrammes zur Umsetzung von Inklusion in Nordrhein-Westfalen. *Zeitschrift für Heilpädagogik*.
 
@@ -90,31 +90,31 @@ toc-location: left
 
 41. Grünke, M., Wilbert, J., & Stegemann-Calder, K. (2013). Analyzing the effects of story mapping on the reading comprehension of children with low intellectual abilities. *Learning Disabilities: A Contemporary Journal*, *11*(2), 51--64.
 
-42. Huber, C., & Wilbert, J. (2012). Soziale Ausgrenzung von Schülern mit sonderpädagogischem Förderbedarf und niedrigen Schulleistungen im gemeinsamen Unterricht. *Empirische Sonderpädagogik*, *4*(2), 147--165.
+42. Huber, C., & Wilbert, J. (2012). Soziale Ausgrenzung von Schülern mit sonderpädagogischem Förderbedarf und niedrigen Schulleistungen im gemeinsamen Unterricht. *Empirische Sonderpädagogik*, *4*(2), 147--165. <https://doi.org/10.25656/01:9296>
 
-43. Wilbert, J., & Grosche, M. (2012). A dissociation of implicit and explicit spatial sequence learning in a group of students with learning difficulties. *Journal of Cognitive Education and Psychology*, *11*(3), 301--316.
+43. Wilbert, J., & Grosche, M. (2012). A dissociation of implicit and explicit spatial sequence learning in a group of students with learning difficulties. *Journal of Cognitive Education and Psychology*, *11*(3), 301--316. [download](https://www.researchgate.net/publication/259390751_A_Dissociation_of_Implicit_and_Explicit_Spatial_Sequence_Learning_in_a_Group_of_Students_With_Learning_Difficulties){.uri}
 
 44. Wilbert, J., & Haider, H. (2012). The subjective experience of committed errors and the Discrepancy-Attribution hypothesis. *Acta Psychologica*, *139*, 370--381. <https://doi.org/10.1016/j.actpsy.2011.11.010>
 
-45. Wilbert, J. (2011). Die Einsetzbarkeit der Skalen zur Erfassung der Lern- und Leistungsmotivation (SELLMO) bei Schülern des Förderschwerpunkts Lernen. *Zeitschrift für Heilpädagogik*, *62*, 11--17.
+45. Wilbert, J. (2011). Die Einsetzbarkeit der Skalen zur Erfassung der Lern- und Leistungsmotivation (SELLMO) bei Schülern des Förderschwerpunkts Lernen. *Zeitschrift für Heilpädagogik*, *62*, 11--17. [download](https://www.researchgate.net/publication/259397795_Die_Einsetzbarkeit_der_Skalen_zur_Erfassung_der_Lern-_und_Leistungsmotivation_SELLMO_bei_Schulern_des_Forderschwerpunkts_Lernen){.uri}
 
-46. Wilbert, J., & Linnemann, M. (2011). Kriterien zur Analyse eines Tests zur Lernverlaufsdiagnostik. *Empirische Sonderpädagogik*, *3*(3), 225--242.
+46. Wilbert, J., & Linnemann, M. (2011). Kriterien zur Analyse eines Tests zur Lernverlaufsdiagnostik. *Empirische Sonderpädagogik*, *3*(3), 225--242. <https://doi.org/10.25656/01:9325>
 
-47. Hennemann, T., Hillenbrand, C., Wilbert, J., Franke, S., Spieß, R., Jürgens, J., & Görgens, G. (2010). Kompetenzen und Risiken in der Transition in die Hauptschule - eine Querschnittsuntersuchung von Schülerinnen und Schülern der 5. Jahrgangsstufen. *Empirische Sonderpädagogik*, *2*(4), 36--49.
+47. Hennemann, T., Hillenbrand, C., Wilbert, J., Franke, S., Spieß, R., Jürgens, J., & Görgens, G. (2010). Kompetenzen und Risiken in der Transition in die Hauptschule - eine Querschnittsuntersuchung von Schülerinnen und Schülern der 5. Jahrgangsstufen. *Empirische Sonderpädagogik*, *2*(4), 36--49. <https://doi.org/10.25656/01:9353>
 
-48. Neugebauer, U., & Wilbert, J. (2010). Zum Zusammenhang zwischen Bewältigungsstil und Burnout-Symptomen bei Lehrkräften der Förderschule Lernen. *Empirische Sonderpädagogik*, *2*(3), 69--82.
+48. Neugebauer, U., & Wilbert, J. (2010). Zum Zusammenhang zwischen Bewältigungsstil und Burnout-Symptomen bei Lehrkräften der Förderschule Lernen. *Empirische Sonderpädagogik*, *2*(3), 69--82. <https://doi.org/10.25656/01:9349>
 
-49. Wilbert, J. (2010). Stereotype-Threat Effekte bei Schülern des Förderschwerpunkts Lernen. *Heilpädagogische Forschung*, *36*(4), 154--161.
+49. Wilbert, J. (2010). Stereotype-Threat Effekte bei Schülern des Förderschwerpunkts Lernen. *Heilpädagogische Forschung*, *36*(4), 154--161. [download](https://www.researchgate.net/publication/259397692_Stereotype-Threat_Effekte_bei_Schulern_des_Forderschwerpunkts_Lernen){.uri}
 
-50. Wilbert, J., Grosche, M., & Gerdes, H. (2010). Effects of Evaluative Feedback on Rate of Learning and Task Motivation: An Analogue Experiment. *Learning Disabilities: A Contemporary Journal*, *8*(1), 43--52.
+50. Wilbert, J., Grosche, M., & Gerdes, H. (2010). Effects of Evaluative Feedback on Rate of Learning and Task Motivation: An Analogue Experiment. *Learning Disabilities: A Contemporary Journal*, *8*(1), 43--52. <https://files.eric.ed.gov/fulltext/EJ914126.pdf>
 
-51. Wilbert, J., & Grünke, M. (2010a). Ein Vergleich des Lehrerbildes von Schülern der Förderschule Lernen und der Regelschule. *Heilpädagogische Forschung*, *36*(1), 2--14.
+51. Wilbert, J., & Grünke, M. (2010a). Ein Vergleich des Lehrerbildes von Schülern der Förderschule Lernen und der Regelschule. *Heilpädagogische Forschung*, *36*(1), 2--14. [download](https://www.researchgate.net/publication/259390585_Ein_Vergleich_des_Lehrerbildes_von_Schulern_der_Forderschule_Lernen_und_der_Regelschule){.uri}
 
-52. Wilbert, J., & Grünke, M. (2010b). Norms and goals of appraisal of German teachers for students with learning disabilities. *Learning Disabilities: A Contemporary Journal*, *8*(2), 19--30.
+52. Wilbert, J., & Grünke, M. (2010b). Norms and goals of appraisal of German teachers for students with learning disabilities. *Learning Disabilities: A Contemporary Journal*, *8*(2), 19--30. <https://files.eric.ed.gov/fulltext/EJ914124.pdf>
 
-53. Wilbert, J., & Gerdes, H. (2009). Die Bezugsnormwahl bei der Bewertung schulischer Leistungen durch angehende Lehrkräfte des Förderschwerpunktes Lernen. *Heilpädagogische Forschung*, *35*, 122--135.
+53. Wilbert, J., & Gerdes, H. (2009). Die Bezugsnormwahl bei der Bewertung schulischer Leistungen durch angehende Lehrkräfte des Förderschwerpunktes Lernen. *Heilpädagogische Forschung*, *35*, 122--135. [download](https://www.researchgate.net/publication/259398029_Die_Bezugsnormwahl_bei_der_Bewertung_schulischer_Leistungen_durch_angehende_Lehrkrafte_des_Forderschwerpunktes_Lernen){.uri}
 
-54. Wilbert, J., & Gerdes, H. (2007). Lehrerbild von Schülern und Lehrern: Eine empirische Studie zum Vergleich der Vorstellungen vom idealen und vom typischen Lehrer. *Psychologie in Erziehung und Unterricht*, *54*(3), 208--222.
+54. Wilbert, J., & Gerdes, H. (2007). Lehrerbild von Schülern und Lehrern: Eine empirische Studie zum Vergleich der Vorstellungen vom idealen und vom typischen Lehrer. *Psychologie in Erziehung und Unterricht*, *54*(3), 208--222. [download](https://www.researchgate.net/publication/259390574_Lehrerbild_von_Schulern_und_Lehrern_Eine_empirische_Studie_zum_Vergleich_der_Vorstellungen_vom_idealen_und_vom_typischen_Lehrer){.uri}
 
 # Book chapters
 
