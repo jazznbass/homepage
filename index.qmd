@@ -2,21 +2,21 @@
 title: "Homepage Jürgen Wilbert"
 ---
 
-```{=html}
 <style>
 .title{display: none;}
 </style>
-```
-# Hello!
 
 ![](images/texel-2023-2.jpg){style="float: right;  margin-left: 20px; border-radius: 30%" width="300"}
 
-This is the center of all my web activities, a place where anyone interested in my work can start.
+Welcome to the central hub of my academic and professional work. This site serves as a gateway for anyone interested in my research and contributions to special education.
 
-My name is Jürgen Wilbert. I am a Professor of Special Education at the University of Münster in Germany. Before that I have been a Professor for Research Methods and Diagnostics at the University of Potsdam. I studied education at the University of Cologne, where I also did my doctorate in cognitive psychology. I then obtained a permanent position as a senior researcher at the Department of Special Education. I later habilitated at the Carl-von-Osietzky University of Oldenburg on the topic of "Pedagogy and Psychology in Learning Disabilities".
+I am Jürgen Wilbert, a Professor of Special Education at the University of Münster, Germany. Prior to this, I held a professorship in Research Methods and Diagnostics at the University of Potsdam. My academic journey began at the University of Cologne, where I studied educational sciences and later earned my doctorate in cognitive psychology. Following this, I accepted a permanent role as a senior researcher in Special Education and later habilitated at the Carl von Ossietzky University of Oldenburg on Pedagogy and Psychology in Learning Disabilities.
 
-My work focuses on:
+My research primarily focuses on:
 
--   Single-case research designs, analysis of single-case data, and reporting of single-case based results.
--   Social inclusion and social participation the classroom.
--   Implementation of Open Science and Data Science concepts in special education research.
+-   Single-case research designs and the nuanced analysis and reporting of single-case data.
+-   Promoting social inclusion and participation within the classroom.
+-   Learning disabilities, with an emphasis on evidence-based approaches to diagnosis and intervention.
+-   Advancing Open Science and Data Science methodologies within the field of special education research.
+
+Through my work, I aim to bridge the gap between theory and practice, ensuring that research outcomes translate into tangible improvements for educators and students alike.
