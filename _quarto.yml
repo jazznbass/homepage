@@ -9,6 +9,8 @@ website:
   navbar:
     #logo: images/penguin.png
     left:
+      - text: "Home"
+        file: "index.qmd"
       - text: "Projects"
         file: "projects.qmd"
       - text: "Publications"
