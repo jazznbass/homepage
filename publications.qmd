@@ -6,7 +6,8 @@ toc-location: left
 
 ![](images/publications-2.webp){fig-align="center" width="250"}
 
-# Journal papers
+::: panel-tabset
+## Journal papers
 
 1.  Bosch, J., Baer, E., Meisel, M., & Wilbert, J. (2023). What makes school hard for students with internalizing problems? Students’ insights on emotional challenges at school. *Empirische Sonderpädagogik*, 15(4), 345–361. <https://doi.org/10.25656/01:29920>
 
@@ -116,7 +117,7 @@ toc-location: left
 
 54. Wilbert, J., & Gerdes, H. (2007). Lehrerbild von Schülern und Lehrern: Eine empirische Studie zum Vergleich der Vorstellungen vom idealen und vom typischen Lehrer. *Psychologie in Erziehung und Unterricht*, *54*(3), 208--222. [download](https://www.researchgate.net/publication/259390574_Lehrerbild_von_Schulern_und_Lehrern_Eine_empirische_Studie_zum_Vergleich_der_Vorstellungen_vom_idealen_und_vom_typischen_Lehrer){.uri}
 
-# Book chapters
+## Book chapters
 
 1.  Baer, E., Bosch, J., & Wilbert, J. (2023). Diagnostik internalisierender Probleme im Schulkontext - das Erleben von Kindern in emotional herausfordernden Schulsituationen. In J. Hermanns, K. Böhme, M. Meyering, I. Fuchs, S. Wagner, K. Krauskopf, M. Knigge, S. Rother, F. Tosch, M. Wendland, P. Wulff, L. Mientus, A. Nowak, A. Borowski, E. Baer, J. Bosch, J. Wilbert, T. Bräsel, M. Fenn, ... D. N. Kayser, *PSI-Potsdam: Ergebnisbericht zu den Aktivitäten im Rahmen der Qualitätsoffensive Lehrerbildung (2019-2023)*. Universitätsverlag Potsdam. <https://doi.org/10.25932/publishup-60187>
 
@@ -170,13 +171,13 @@ toc-location: left
 
 26. Grünke, M., & Wilbert, J. (2008). Offener Unterricht und Projektunterricht. In M. Fingerle & S. Ellinger (Hrsg.), *Sonderpädagogische Förderung: Förderkonzepte auf dem Prüfstand* (S. 13--33). Kohlhammer.
 
-# Books and reports
+## Books and reports
 
-1.  Kuhr, L., Napiany, S., Huber, C., & Wilbert, J. (2021). *Abschlussbericht F1-Projekt KOMPASS Standorte: Potsdam/ Wuppertal* (S. 317). University of Potsdam and University of Wuppertal.
+1.  Wilbert, J. (2024). *Analyzing single-case data with R and scan*. doi: 10.5281/zenodo.5713559. <https://jazznbass.github.io/scan-Book/>
 
-2.  Krull, J., Urton, K., Hennemann, T., & Wilbert, J. (2021). *Mettmann 2.0 -- Wissenschaftliche Begleitung auf dem Weg zum inklusiven Schulsystem des Kreises Mettmann Abschlussbericht* (S. 68). University of Cologne.
+2.  Kuhr, L., Napiany, S., Huber, C., & Wilbert, J. (2021). *Abschlussbericht F1-Projekt KOMPASS Standorte: Potsdam/ Wuppertal* (S. 317). University of Potsdam and University of Wuppertal.
 
-3.  Wilbert, J. (2022). *Analyzing single-case data with R and scan*. doi: 10.5281/zenodo.5713559. <https://jazznbass.github.io/scan-Book/>
+3.  Krull, J., Urton, K., Hennemann, T., & Wilbert, J. (2021). *Mettmann 2.0 -- Wissenschaftliche Begleitung auf dem Weg zum inklusiven Schulsystem des Kreises Mettmann Abschlussbericht* (S. 68). University of Cologne.
 
 4.  Hennemann, T., Wilbert, J., & Hillenbrand, C. (2014). *Wissenschaftliche Begleitung im Rahmen der Umsetzung zur inklusiven Schule im Kreis Mettmann (Mehrebenenanalyse 2010 -- 2012). Abschlussbericht*. Universität zu Köln.
 
@@ -186,16 +187,5 @@ toc-location: left
 
 7.  Wilbert, J. (2010). *Förderung der Motivation bei Lernstörungen*. Kohlhammer.
 
-8.  Wilbert, J. (2006). *Die Etikettierung eines Verhaltens als Fehlerhaft: Eine empirische Untersuchung zur bewussten Gewahrwerdung eigener Verhaltensfehler*. Pabst Science Publishers.
-
-# Software
-
-1.  Wilbert, J. (2023). *scplot: An R package for visualizing single-case data* (0.3.0) \[English\]. University of Potsdam. <https://CRAN.R-project.org/package=scplot>
-
-2.  Wilbert, J., & Lüke, T. (2023). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.57.1). University of Potsdam. <https://CRAN.R-project.org/package=scan>
-
-3.  Wilbert, J. (2020). *scaledic: An R package for adding scaling information to variables in data frames* (0.1.8). University of Potsdam. <https://github.com/jazznbass/scaledic/>
-
-4.  Wilbert, J., & Lüke, T. (2019). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.40). University of Potsdam.
-
-5.  Wilbert, J. (2016). *Scan: Single-Case Data Analyses for Single and Multiple Baseline Designs.* (0.20). University of Potsdam.
+8. Wilbert, J. (2006). *Die Etikettierung eines Verhaltens als Fehlerhaft: Eine empirische Untersuchung zur bewussten Gewahrwerdung eigener Verhaltensfehler*. Pabst Science Publishers.
+:::
