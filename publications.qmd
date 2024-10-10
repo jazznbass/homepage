@@ -187,5 +187,27 @@ toc-location: left
 
 7.  Wilbert, J. (2010). *Förderung der Motivation bei Lernstörungen*. Kohlhammer.
 
-8. Wilbert, J. (2006). *Die Etikettierung eines Verhaltens als Fehlerhaft: Eine empirische Untersuchung zur bewussten Gewahrwerdung eigener Verhaltensfehler*. Pabst Science Publishers.
+8.  Wilbert, J. (2006). *Die Etikettierung eines Verhaltens als Fehlerhaft: Eine empirische Untersuchung zur bewussten Gewahrwerdung eigener Verhaltensfehler*. Pabst Science Publishers.
+
+## In preparation
+
+Barth, M., Wilbert, J., & Lüke, T. (n.d.). *The Effectiveness of Phonics Instruction on Word Reading Skills of Students with Intellectual Disability: A Meta-Analysis of Single Case Research*.
+
+Börnert-Ringleb, M., Veerbeek, J., & Wilbert, J. (n.d.). *Validität und psychometrische Eigenschaften im Dynamischen Testen: Analyse der Trainingsdaten des Graduated Prompt Ansatzes*.
+
+Bosch, J., Lüke, T., Steiner, T. M., & Wilbert, J. (n.d.). *Enhancing Pre-Service Teachers’ Visual Analysis Skills for Single-Case Experimental Designs: The Role of Trend and Slope Effect*.
+
+Gabriel, T., Kreyes, A., Mähler, C., Küttner, L., Wilbert, J., & Börnert-Ringleb, M. (n.d.). *Evaluating the Usefulness of Dynamic Testing of Arithmetic Abilities for Educational Planning*.
+
+Grosche, M., & Wilbert, J. (n.d.). *Ressourcenorientierte Diagnostik des Sozial- und Lernverhaltens von Schülerinnen und Schülern? Eine theoretische und empirische Evaluation der Lehrereinschätzliste für Sozial- und Lernverhalten (LSL) von Petermann und Petermann (2013)*.
+
+Hertel, S., Urton, K., Wilbert, J., Krull, J., Bosch, J., & Hennemann, T. (n.d.). *Teachers’ Judgment Accuracy of Students’ Reading Comprehension in Inclusive Primary Schools*.
+
+Karhu, A., Heiskanen, N., Husberg, H., Nähri, V., Wilbert, J., Savolainen, H., Bosch, J., & Paananen, M. (n.d.). *Implementation and effectiveness of two research-based interventions for problem behavior in early childhood education and care: Study protocol*.
+
+Klemp, G., Urton, K., Krull, J., Bosch, J., & Wilbert, J. (n.d.). *What does well-being at school mean to primary school students? Children’s Understanding of Basic Psychological Needs*.
+
+Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (n.d.). *A Monte-Carlo Study on the usefulness of Tau-U variations for the analysis of Single Case Experimental Designs*.
+
+Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (n.d.). *The Power of Randomization Tests for Intraindividual Variability: Insights from a Monte Carlo Study*.
 :::
