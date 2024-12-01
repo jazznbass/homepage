@@ -4,7 +4,7 @@ project:
 
 website:
   favicon: images/penguin.png
-  page-footer: "&#169; Jürgen Wilbert, last updated 2024-10-14"
+  page-footer: "&#169; Jürgen Wilbert, last updated 2024-12-01"
   search: true
   navbar:
     #logo: images/penguin.png
