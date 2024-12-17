@@ -2,7 +2,7 @@
 #title: Links
 ---
 
-![](images/links.webp){fig-align="center" width="250"}
+<!-- ![](images/links.webp){fig-align="center" width="250"} -->
 
 +-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | [![Researchgate](images/researchgate_icon.png){width="70"}](https://www.researchgate.net/profile/Juergen_Wilbert2)      | Research gate                                                                |

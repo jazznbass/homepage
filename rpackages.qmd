@@ -5,7 +5,7 @@ editor:
     wrap: 72
 ---
 
-![](images/packages.webp){fig-align="center"}
+<!-- ![](images/packages.webp){fig-align="center"} -->
 
 ::: panel-tabset
 ## scan

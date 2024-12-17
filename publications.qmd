@@ -4,7 +4,7 @@ toc: true
 toc-location: left
 ---
 
-![](images/publications-2.webp){fig-align="center" width="250"}
+<!-- ![](images/publications-2.webp){fig-align="center" width="250"} -->
 
 ::: panel-tabset
 ## Journal papers
