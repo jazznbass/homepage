@@ -21,11 +21,13 @@ website:
         file: "students.qmd"
       - text: "Links"
         file: "links.qmd"
+      - text: "Private Blog"
+        file: blog.html
+
       #- text: "Courses"
       #  menu:
       #    - text: "Single-case regression analzes"
       #      href: https://jazznbass.github.io/workshop_scan_regression/
-      - blog.qmd
         
     right:
       - icon: github

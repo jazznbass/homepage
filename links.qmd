@@ -4,16 +4,11 @@
 
 <!-- ![](images/links.webp){fig-align="center" width="250"} -->
 
-+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| [![Researchgate](images/researchgate_icon.png){width="70"}](https://www.researchgate.net/profile/Juergen_Wilbert2)      | Research gate                                                                |
-+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| [![GitHub](images/github.png)](https://github.com/jazznbass)                                                            | Github                                                                       |
-+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| [![Empirische Sonderpädagogik](images/esp_icon.png){width="70"}](http://www.psychologie-aktuell.com/index.php?id=255)   | Empirische Sonderpädagogik (Journal Empirical Research in Special Education) |
-+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| [![ORCID](images/ORCID_iD.svg.png){width="69"}](https://orcid.org/0000-0002-8392-2873)                                  | ORCID                                                                        |
-+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| [![Google](images/google_scholar.png){width="60"}](https://scholar.google.de/citations?user=RF7Siq4AAAAJ&hl=en)         | Google Scholar                                                               |
-+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| [![OSF](images/osf.png){width="60"}](https://osf.io/q7gme/)                                                             | OFS - Open Science Framework                                                 |
-+-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+|  |  |
+|----|----|
+| [![Researchgate](images/researchgate_icon.png){width="70"}](https://www.researchgate.net/profile/Juergen_Wilbert2) | Research gate |
+| [![GitHub](images/github.png)](https://github.com/jazznbass) | Github |
+| [![Empirische Sonderpädagogik](images/esp_icon.png){width="70"}](http://www.psychologie-aktuell.com/index.php?id=255) | Empirische Sonderpädagogik (Journal Empirical Research in Special Education) |
+| [![ORCID](images/ORCID_iD.svg.png){width="69"}](https://orcid.org/0000-0002-8392-2873) | ORCID |
+| [![Google](images/google_scholar.png){width="60"}](https://scholar.google.de/citations?user=RF7Siq4AAAAJ&hl=en) | Google Scholar |
+| [![OSF](images/osf.png){width="60"}](https://osf.io/q7gme/) | OFS - Open Science Framework |

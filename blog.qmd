@@ -1,5 +1,5 @@
 ---
-title: Private blog
+#title: Private blog
 listing:
   contents: posts
   sort: "date desc"

@@ -20,7 +20,7 @@ toc-location: left
 ## Present PhD students
 
 | Name | Field | Started |
-|------------------------|:-----------------------|:----------------------:|
+|----|:---|:--:|
 | Anja Schwalbe | Social norms in inclusive classrooms | 2014 |
 | Linda Kuhr | Math anxiety | 2018 |
 | Ella Baer | Diagnosing students' internalization problems in the classroom | 2020 |
