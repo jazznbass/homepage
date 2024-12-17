@@ -2,7 +2,7 @@
 title: "Workshop - Multilevel regression analysis for single-case data with scan"
 author: "Jürgen Wilbert"
 abstract: Slides for a workshop Timo Lüke and I gave in 2021
-date: 2021-04-15
+date: 2021/04/15
 format:
   html:
     page-layout: full

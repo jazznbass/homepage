@@ -2,7 +2,7 @@
 title: "R Course"
 author: "Jürgen Wilbert"
 abstract: A somewhat dated series of videos on R
-date: today
+date: 2022/05/17
 format:
   html:
     page-layout: full
