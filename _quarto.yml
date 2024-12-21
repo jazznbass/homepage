@@ -7,6 +7,7 @@ website:
   page-footer: "&#169; Jürgen Wilbert, last updated 2024-12-11"
   search: true
   navbar:
+    alignment: center
     #logo: images/penguin.png
     left:
       - text: "Home"
@@ -19,16 +20,10 @@ website:
         file: "rpackages.qmd"
       - text: "Graduate Students"
         file: "students.qmd"
-      - text: "Links"
-        file: "links.qmd"
+      #- text: "Links"
+      #  file: "links.qmd"
       - text: "Private Blog"
         file: blog.html
-
-      #- text: "Courses"
-      #  menu:
-      #    - text: "Single-case regression analzes"
-      #      href: https://jazznbass.github.io/workshop_scan_regression/
-        
     right:
       - icon: github
         href: https://github.com/jazznbass

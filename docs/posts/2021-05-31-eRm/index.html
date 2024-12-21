@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jürgen Wilbert">
+<meta name="dcterms.date" content="2021-05-31">
+
+<title>eRm</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/penguin.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7ad6542725e80d1433b1f8ee26c2a1fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../style_add.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../rpackages.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../students.html"> 
+<span class="menu-text">Graduate Students</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Private Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jazznbass"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.researchgate.net/profile/Juergen_Wilbert2"> <i class="bi bi-researchgate" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#prepare-data" id="toc-prepare-data" class="nav-link active" data-scroll-target="#prepare-data">Prepare data</a></li>
+  <li><a href="#fit-model" id="toc-fit-model" class="nav-link" data-scroll-target="#fit-model">Fit model</a></li>
+  <li><a href="#report-item-difficulty" id="toc-report-item-difficulty" class="nav-link" data-scroll-target="#report-item-difficulty">Report item difficulty</a></li>
+  <li><a href="#person-parameters" id="toc-person-parameters" class="nav-link" data-scroll-target="#person-parameters">Person parameters</a>
+  <ul class="collapse">
+  <li><a href="#extract" id="toc-extract" class="nav-link" data-scroll-target="#extract">Extract</a></li>
+  </ul></li>
+  <li><a href="#test-modelfit" id="toc-test-modelfit" class="nav-link" data-scroll-target="#test-modelfit">Test Modelfit</a>
+  <ul class="collapse">
+  <li><a href="#visual-inspection-of-item-discrimination" id="toc-visual-inspection-of-item-discrimination" class="nav-link" data-scroll-target="#visual-inspection-of-item-discrimination">Visual inspection of item discrimination</a></li>
+  <li><a href="#likelihood-ratio-tests" id="toc-likelihood-ratio-tests" class="nav-link" data-scroll-target="#likelihood-ratio-tests">Likelihood ratio tests</a></li>
+  </ul></li>
+  <li><a href="#wald-test" id="toc-wald-test" class="nav-link" data-scroll-target="#wald-test">Wald Test</a>
+  <ul class="collapse">
+  <li><a href="#item-in-fit-out-fit" id="toc-item-in-fit-out-fit" class="nav-link" data-scroll-target="#item-in-fit-out-fit">Item In-Fit / Out Fit</a></li>
+  <li><a href="#person-in-fit-out-fit" id="toc-person-in-fit-out-fit" class="nav-link" data-scroll-target="#person-in-fit-out-fit">Person In-Fit / Out Fit</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">eRm</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">irt</div>
+    <div class="quarto-category">rasch</div>
+    <div class="quarto-category">eRm</div>
+    <div class="quarto-category">statistics</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jürgen Wilbert </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 31, 2021</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    An overview of extended Rasch modelling in R with the eRm package.
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="prepare-data" class="level1">
+<h1>Prepare data</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(eRm)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"erm_example.rds"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sum_d =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"D_"</span>))),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sum_a =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"A_"</span>)))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>dat_d <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"D_"</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>dat_a <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"A_"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="fit-model" class="level1">
+<h1>Fit model</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fit_d <span class="ot">&lt;-</span> <span class="fu">RM</span>(dat_d)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fit_a <span class="ot">&lt;-</span> <span class="fu">RM</span>(dat_a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="report-item-difficulty" class="level1">
+<h1>Report item difficulty</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Results of RM estimation: 
+
+Call:  RM(X = dat_d) 
+
+Conditional log-likelihood: -290.0775 
+Number of iterations: 7 
+Number of parameters: 14 
+
+Item (Category) Difficulty Parameters (eta): with 0.95 CI:
+              Estimate Std. Error lower CI upper CI
+D_02_Jan         0.537      0.340   -0.129    1.204
+D_03_und        -0.064      0.332   -0.716    0.587
+D_04_Michael     0.054      0.333   -0.599    0.707
+D_05_zum        -0.183      0.332   -0.834    0.469
+D_06_Schulhof   -0.183      0.332   -0.834    0.469
+D_07_kommen     -0.301      0.333   -0.953    0.351
+D_08_stehen      0.054      0.333   -0.599    0.707
+D_09_die        -0.183      0.332   -0.834    0.469
+D_10_meisten     0.293      0.336   -0.364    0.951
+D_11_aus         0.414      0.338   -0.247    1.076
+D_12_der        -0.301      0.333   -0.953    0.351
+D_13_Klasse     -0.064      0.332   -0.716    0.587
+D_14_schon      -0.064      0.332   -0.716    0.587
+D_15_da          0.054      0.333   -0.599    0.707
+
+Item Easiness Parameters (beta) with 0.95 CI:
+                   Estimate Std. Error lower CI upper CI
+beta D_01_Als         0.064      0.332   -0.587    0.716
+beta D_02_Jan        -0.537      0.340   -1.204    0.129
+beta D_03_und         0.064      0.332   -0.587    0.716
+beta D_04_Michael    -0.054      0.333   -0.707    0.599
+beta D_05_zum         0.183      0.332   -0.469    0.834
+beta D_06_Schulhof    0.183      0.332   -0.469    0.834
+beta D_07_kommen      0.301      0.333   -0.351    0.953
+beta D_08_stehen     -0.054      0.333   -0.707    0.599
+beta D_09_die         0.183      0.332   -0.469    0.834
+beta D_10_meisten    -0.293      0.336   -0.951    0.364
+beta D_11_aus        -0.414      0.338   -1.076    0.247
+beta D_12_der         0.301      0.333   -0.351    0.953
+beta D_13_Klasse      0.064      0.332   -0.587    0.716
+beta D_14_schon       0.064      0.332   -0.587    0.716
+beta D_15_da         -0.054      0.333   -0.707    0.599</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Results of RM estimation: 
+
+Call:  RM(X = dat_a) 
+
+Conditional log-likelihood: -283.8798 
+Number of iterations: 9 
+Number of parameters: 14 
+
+Item (Category) Difficulty Parameters (eta): with 0.95 CI:
+              Estimate Std. Error lower CI upper CI
+A_02_Jan        -0.633      0.342   -1.303    0.037
+A_03_und        -0.025      0.335   -0.682    0.632
+A_04_Michael    -0.145      0.335   -0.802    0.513
+A_05_zum         0.216      0.336   -0.443    0.876
+A_06_Schulhof    0.216      0.336   -0.443    0.876
+A_07_kommen     -0.025      0.335   -0.682    0.632
+A_08_stehen      0.461      0.340   -0.205    1.126
+A_09_die         0.096      0.335   -0.562    0.753
+A_10_meisten     0.461      0.340   -0.205    1.126
+A_11_aus        -0.266      0.336   -0.925    0.394
+A_12_der         0.585      0.342   -0.086    1.256
+A_13_Klasse     -0.266      0.336   -0.925    0.394
+A_14_schon      -0.145      0.335   -0.802    0.513
+A_15_da         -0.266      0.336   -0.925    0.394
+
+Item Easiness Parameters (beta) with 0.95 CI:
+                   Estimate Std. Error lower CI upper CI
+beta A_01_Als         0.266      0.336   -0.394    0.925
+beta A_02_Jan         0.633      0.342   -0.037    1.303
+beta A_03_und         0.025      0.335   -0.632    0.682
+beta A_04_Michael     0.145      0.335   -0.513    0.802
+beta A_05_zum        -0.216      0.336   -0.876    0.443
+beta A_06_Schulhof   -0.216      0.336   -0.876    0.443
+beta A_07_kommen      0.025      0.335   -0.632    0.682
+beta A_08_stehen     -0.461      0.340   -1.126    0.205
+beta A_09_die        -0.096      0.335   -0.753    0.562
+beta A_10_meisten    -0.461      0.340   -1.126    0.205
+beta A_11_aus         0.266      0.336   -0.394    0.925
+beta A_12_der        -0.585      0.342   -1.256    0.086
+beta A_13_Klasse      0.266      0.336   -0.394    0.925
+beta A_14_schon       0.145      0.335   -0.513    0.802
+beta A_15_da          0.266      0.336   -0.394    0.925</code></pre>
+</div>
+</div>
+</section>
+<section id="person-parameters" class="level1">
+<h1>Person parameters</h1>
+<section id="extract" class="level2">
+<h2 class="anchored" data-anchor-id="extract">Extract</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pp_a <span class="ot">&lt;-</span> <span class="fu">person.parameter</span>(fit_a)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pp_d <span class="ot">&lt;-</span> <span class="fu">person.parameter</span>(fit_d)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>pp_d <span class="ot">&lt;-</span> <span class="fu">coef</span>(pp_d) <span class="co"># add person parameter to raw data frame</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>pp_a <span class="ot">&lt;-</span> <span class="fu">coef</span>(pp_a) <span class="co"># add person parameter to raw data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Caution! Raw values of 0 and 15 (upper and lower limit) are between -Inf/+Inf and the upper/lower cut off and are estimated based on the distribution shape.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pp_d, <span class="at">main =</span> <span class="st">"Dekodierungsleistung"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pp_a, <span class="at">main =</span> <span class="st">"Automatisierung"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotPImap</span>(fit_d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="test-modelfit" class="level1">
+<h1>Test Modelfit</h1>
+<section id="visual-inspection-of-item-discrimination" class="level2">
+<h2 class="anchored" data-anchor-id="visual-inspection-of-item-discrimination">Visual inspection of item discrimination</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotjointICC</span>(fit_d, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotjointICC</span>(fit_a, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="likelihood-ratio-tests" class="level2">
+<h2 class="anchored" data-anchor-id="likelihood-ratio-tests">Likelihood ratio tests</h2>
+<p>LRtests test for the estimation “stability” across several sub-samples of the data set.</p>
+<p>A median split allows for checking if the item-difficulty estimations are constant for the lower and upper part of the performance scale. This is similar to a test for homoscedasticity.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lr_d <span class="ot">&lt;-</span> <span class="fu">LRtest</span>(fit_d, <span class="at">splitcr =</span> <span class="st">"median"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>lr_a <span class="ot">&lt;-</span> <span class="fu">LRtest</span>(fit_a, <span class="at">splitcr =</span> <span class="st">"median"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>lr_d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Andersen LR-test: 
+LR-value: 6.954 
+Chi-square df: 14 
+p-value:  0.936 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lr_a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Andersen LR-test: 
+LR-value: 17.088 
+Chi-square df: 14 
+p-value:  0.252 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotGOF</span>(lr_d, <span class="at">conf=</span> <span class="fu">list</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotGOF</span>(lr_a, <span class="at">ctrline=</span> <span class="fu">list</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="wald-test" class="level1">
+<h1>Wald Test</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Waldtest</span>(fit_d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Wald test on item level (z-values):
+
+                   z-statistic p-value
+beta D_01_Als            0.488   0.626
+beta D_02_Jan            1.496   0.135
+beta D_03_und           -0.943   0.346
+beta D_04_Michael       -0.566   0.572
+beta D_05_zum            0.094   0.925
+beta D_06_Schulhof      -0.626   0.531
+beta D_07_kommen         0.400   0.689
+beta D_08_stehen        -0.566   0.572
+beta D_09_die            0.808   0.419
+beta D_10_meisten        0.132   0.895
+beta D_11_aus           -0.272   0.785
+beta D_12_der           -1.051   0.293
+beta D_13_Klasse         0.488   0.626
+beta D_14_schon         -0.227   0.821
+beta D_15_da             0.860   0.390</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Waldtest</span>(fit_a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Wald test on item level (z-values):
+
+                   z-statistic p-value
+beta A_01_Als           -0.336   0.737
+beta A_02_Jan           -0.239   0.811
+beta A_03_und            1.184   0.236
+beta A_04_Michael       -0.648   0.517
+beta A_05_zum            1.894   0.058
+beta A_06_Schulhof       1.195   0.232
+beta A_07_kommen        -2.341   0.019
+beta A_08_stehen        -0.311   0.756
+beta A_09_die           -0.598   0.550
+beta A_10_meisten       -0.311   0.756
+beta A_11_aus           -0.336   0.737
+beta A_12_der            0.000   1.000
+beta A_13_Klasse        -0.336   0.737
+beta A_14_schon          0.803   0.422
+beta A_15_da             1.827   0.068</code></pre>
+</div>
+</div>
+<section id="item-in-fit-out-fit" class="level2">
+<h2 class="anchored" data-anchor-id="item-in-fit-out-fit">Item In-Fit / Out Fit</h2>
+<p>ItemFit interpretation:</p>
+<ul>
+<li>larger 2.0: Distorts or degrades the measurementsystem</li>
+<li>1.5-2.0: Unproductive for construction of measurement, but not degrading</li>
+<li>0.5-1.5: Productive for measurement</li>
+<li>&lt;0.5: Lessproductive for measurement, but not degrading. May produce misleadingly good reliabilities and separations</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">itemfit</span>(pp_d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Itemfit Statistics: 
+               Chisq df p-value Outfit MSQ Infit MSQ Outfit t Infit t Discrim
+D_01_Als      60.546 44   0.049      1.345     1.212    1.276   1.287   0.360
+D_02_Jan      55.231 44   0.119      1.227     1.163    0.846   0.950   0.397
+D_03_und      26.844 44   0.981      0.597     0.731   -1.722  -1.791   0.713
+D_04_Michael  42.051 44   0.555      0.934     0.931   -0.171  -0.382   0.569
+D_05_zum      46.485 44   0.370      1.033     1.029    0.211   0.232   0.490
+D_06_Schulhof 43.466 44   0.494      0.966     0.988   -0.040  -0.021   0.527
+D_07_kommen   45.764 44   0.399      1.017     1.036    0.153   0.277   0.462
+D_08_stehen   38.572 44   0.703      0.857     0.932   -0.491  -0.375   0.558
+D_09_die      52.715 44   0.173      1.171     1.064    0.697   0.444   0.457
+D_10_meisten  36.926 44   0.766      0.821     0.907   -0.634  -0.515   0.571
+D_11_aus      33.483 44   0.876      0.744     0.815   -0.945  -1.106   0.637
+D_12_der      33.313 44   0.880      0.740     0.892   -0.947  -0.652   0.569
+D_13_Klasse   57.032 44   0.090      1.267     1.124    1.027   0.792   0.417
+D_14_schon    47.227 44   0.342      1.049     0.937    0.273  -0.344   0.560
+D_15_da       57.058 44   0.090      1.268     1.174    1.036   1.068   0.382</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">itemfit</span>(pp_a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Itemfit Statistics: 
+                Chisq df p-value Outfit MSQ Infit MSQ Outfit t Infit t Discrim
+A_01_Als       63.799 45   0.034      1.387     1.123    1.244   0.785   0.432
+A_02_Jan       44.536 45   0.491      0.968     1.006    0.018   0.090   0.544
+A_03_und       49.213 45   0.308      1.070     1.164    0.330   1.037   0.427
+A_04_Michael   35.200 45   0.853      0.765     0.889   -0.765  -0.672   0.601
+A_05_zum       62.154 45   0.046      1.351     1.290    1.163   1.735   0.334
+A_06_Schulhof  40.073 45   0.680      0.871     1.017   -0.354   0.157   0.534
+A_07_kommen    22.361 45   0.998      0.486     0.640   -2.086  -2.575   0.783
+A_08_stehen    28.876 45   0.970      0.628     0.823   -1.268  -1.104   0.655
+A_09_die       41.513 45   0.620      0.902     0.878   -0.245  -0.759   0.625
+A_10_meisten   40.687 45   0.655      0.885     0.899   -0.278  -0.584   0.589
+A_11_aus       34.902 45   0.861      0.759     0.929   -0.772  -0.395   0.591
+A_12_der       39.471 45   0.705      0.858     0.891   -0.347  -0.621   0.582
+A_13_Klasse    33.062 45   0.906      0.719     0.884   -0.933  -0.693   0.610
+A_14_schon     51.039 45   0.248      1.110     1.110    0.456   0.718   0.470
+A_15_da       103.787 45   0.000      2.256     1.387    3.192   2.191   0.239</code></pre>
+</div>
+</div>
+</section>
+<section id="person-in-fit-out-fit" class="level2">
+<h2 class="anchored" data-anchor-id="person-in-fit-out-fit">Person In-Fit / Out Fit</h2>
+<p>Personfit interpretation:</p>
+<ul>
+<li>larger 2.0: Distorts or degrades the measurementsystem</li>
+<li>1.5-2.0: Unproductive for construction of measurement, but not degrading</li>
+<li>0.5-1.5: Productive for measurement</li>
+<li>&lt;0.5: Lessproductive for measurement, but not degrading. May produce misleadingly good reliabilities and separations</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">personfit</span>(pp_d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Personfit Statistics: 
+     Chisq df p-value Outfit MSQ Infit MSQ Outfit t Infit t
+P3  18.927 14   0.168      1.262     1.049     0.61    0.27
+P5  15.238 14   0.362      1.016     1.015     0.22    0.21
+P6  14.437 14   0.418      0.962     1.000     0.27    0.30
+P7  13.111 14   0.518      0.874     0.945    -0.19   -0.02
+P8  15.300 14   0.358      1.020     1.012     0.17    0.13
+P9  13.724 14   0.470      0.915     0.982     0.04    0.15
+P10 14.481 14   0.415      0.965     0.991    -0.03    0.06
+P11 17.025 14   0.255      1.135     1.058     0.55    0.30
+P12 15.999 14   0.313      1.067     1.043     0.39    0.29
+P13 18.603 14   0.181      1.240     1.098     0.69    0.37
+P14 14.437 14   0.418      0.962     1.000     0.27    0.30
+P15 13.724 14   0.470      0.915     0.982     0.04    0.15
+P16 15.778 14   0.327      1.052     1.035     0.27    0.22
+P17 13.620 14   0.478      0.908     0.960    -0.10    0.02
+P18 15.606 14   0.338      1.040     1.041     0.59    0.59
+P19 13.829 14   0.463      0.922     0.957    -0.18   -0.07
+P20 15.778 14   0.327      1.052     1.035     0.27    0.22
+P21 13.658 14   0.475      0.911     0.936    -0.40   -0.29
+P22 13.922 14   0.456      0.928     0.926    -1.01   -1.05
+P23 13.165 14   0.514      0.878     0.880    -1.77   -1.76
+P24 13.396 14   0.496      0.893     0.919    -0.49   -0.39
+P25 14.991 14   0.379      0.999     1.000     0.02    0.03
+P26 13.170 14   0.513      0.878     0.880    -1.77   -1.76
+P27 15.468 14   0.347      1.031     1.021     0.29    0.22
+P28 16.349 14   0.293      1.090     1.067     0.74    0.60
+P29 14.214 14   0.434      0.948     0.953    -0.72   -0.68
+P30 16.024 14   0.312      1.068     1.063     0.95    0.93
+P31 15.018 14   0.377      1.001     1.007     0.07    0.10
+P32 14.503 14   0.413      0.967     0.975    -0.02    0.00
+P33 14.440 14   0.417      0.963     0.968    -0.26   -0.23
+P34 17.361 14   0.237      1.157     1.109     0.62    0.47
+P35 14.218 14   0.434      0.948     0.955    -0.20   -0.18
+P36 14.667 14   0.401      0.978     0.973     0.08    0.06
+P37 13.428 14   0.493      0.895     0.966     0.00    0.12
+P38 15.561 14   0.341      1.037     1.014     0.25    0.14
+P39 14.890 14   0.386      0.993     0.985     0.03   -0.02
+P40 17.319 14   0.240      1.155     1.049     0.45    0.27
+P41 16.305 14   0.295      1.087     1.036     0.34    0.25
+P42 14.612 14   0.405      0.974     1.005     0.28    0.30
+P43  9.352 14   0.808      0.623     0.923    -0.16    0.21
+P44 15.099 14   0.371      1.007     1.021     0.15    0.18
+P45 15.065 14   0.374      1.004     1.005     0.09    0.09
+P46 16.332 14   0.294      1.089     1.020     0.40    0.32
+P47 16.305 14   0.295      1.087     1.036     0.34    0.25
+P48 18.262 14   0.195      1.217     1.034     0.53    0.34</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">personfit</span>(pp_a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Personfit Statistics: 
+     Chisq df p-value Outfit MSQ Infit MSQ Outfit t Infit t
+P4  12.220 14   0.589      0.815     0.980     0.11    0.27
+P5   8.725 14   0.848      0.582     0.911    -0.21    0.19
+P6  14.450 14   0.417      0.963     1.011     0.14    0.20
+P7  16.258 14   0.298      1.084     0.981     0.34    0.15
+P8  13.671 14   0.475      0.911     0.999     0.22    0.30
+P9  13.088 14   0.520      0.873     0.937    -0.34   -0.15
+P10  8.725 14   0.848      0.582     0.911    -0.21    0.19
+P11 14.977 14   0.380      0.998     0.996     0.01   -0.02
+P12 14.291 14   0.428      0.953     1.000     0.02    0.13
+P13 16.408 14   0.289      1.094     1.082     0.50    0.48
+P14 16.279 14   0.297      1.085     1.040     0.34    0.26
+P15 12.310 14   0.581      0.821     0.957    -0.12    0.10
+P16 19.363 14   0.152      1.291     1.057     0.65    0.29
+P17 18.928 14   0.168      1.262     1.122     0.72    0.43
+P18 12.792 14   0.543      0.853     0.867    -1.06   -1.04
+P19 15.592 14   0.339      1.039     1.022     0.26    0.22
+P20 14.411 14   0.420      0.961     0.988    -0.12    0.00
+P21 12.136 14   0.595      0.809     0.814    -2.18   -2.21
+P22 14.732 14   0.397      0.982     0.980    -0.16   -0.20
+P23 13.039 14   0.523      0.869     0.884    -0.93   -0.89
+P24 14.846 14   0.389      0.990     0.995    -0.08   -0.02
+P25 13.750 14   0.468      0.917     0.909    -0.90   -1.02
+P26 16.428 14   0.288      1.095     1.096     1.03    1.08
+P27 13.448 14   0.492      0.897     0.899    -1.13   -1.16
+P28 15.995 14   0.314      1.066     1.070     0.38    0.42
+P29 13.976 14   0.451      0.932     0.940    -0.45   -0.43
+P30 16.719 14   0.271      1.115     1.111     1.22    1.25
+P31 17.110 14   0.250      1.141     1.117     1.01    0.90
+P32 16.487 14   0.285      1.099     1.094     1.07    1.07
+P33 12.345 14   0.579      0.823     0.845    -0.83   -0.78
+P34 13.757 14   0.468      0.917     0.921    -0.56   -0.58
+P35 17.053 14   0.253      1.137     1.119     0.99    0.92
+P36 15.893 14   0.320      1.060     1.063     0.66    0.73
+P37 15.219 14   0.363      1.015     1.031     0.15    0.20
+P38 14.328 14   0.426      0.955     1.007     0.27    0.30
+P39 15.560 14   0.341      1.037     1.048     0.22    0.26
+P40 15.269 14   0.360      1.018     1.014     0.15    0.14
+P41 14.119 14   0.441      0.941     0.951    -0.10   -0.09
+P42 13.641 14   0.477      0.909     0.965    -0.09    0.04
+P43 17.825 14   0.215      1.188     1.071     0.50    0.31
+P44 12.803 14   0.542      0.854     0.989     0.15    0.28
+P45 20.151 14   0.125      1.343     1.050     0.64    0.35
+P46 20.151 14   0.125      1.343     1.050     0.64    0.35
+P47 11.101 14   0.678      0.740     0.910    -0.29    0.02
+P48 20.151 14   0.125      1.343     1.050     0.64    0.35
+P49 20.152 14   0.125      1.343     1.050     0.64    0.35</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="jazznbass/homepage" data-repo-id="MDEwOlJlcG9zaXRvcnkzNDA5MjU3ODY=" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© Jürgen Wilbert, last updated 2024-12-11</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
