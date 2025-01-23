@@ -4,7 +4,7 @@ project:
 
 website:
   favicon: images/penguin.png
-  page-footer: "&#169; Jürgen Wilbert, last updated 2024-12-11"
+  page-footer: "&#169; Jürgen Wilbert, last updated 2025-01-23"
   search: true
   navbar:
     alignment: center
