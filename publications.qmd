@@ -9,7 +9,9 @@ toc-location: left
 ::: panel-tabset
 ## Journal papers
 
-1. Klemp, G., Urton, K., Krull, J., Bosch, J., & Wilbert, J. (2025). What does well-being at school mean to primary school students? Children’s understanding of basic psychological needs. International Journal of Educational Research Open, 8, 100442. <https://doi.org/10.1016/j.ijedro.2025.100442>
+1. Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (accepted). The Power of Randomization Tests for Intraindividual Variability: Insights from a Monte Carlo Study. *Empirische Sonderpädagogik*.
+
+1. Klemp, G., Urton, K., Krull, J., Bosch, J., & Wilbert, J. (2025). What does well-being at school mean to primary school students? Children’s understanding of basic psychological needs. *International Journal of Educational Research Open*, 8, *100442*. <https://doi.org/10.1016/j.ijedro.2025.100442>
 
 1.  Hertel, S., Urton, K., Wilbert, J., Krull, J., Bosch, J., & Hennemann, T. (accepted). Teachers’ Judgment Accuracy of Students’ Reading Comprehension in Inclusive Primary Schools. *Empirische Sonderpädagogik*
 
@@ -214,4 +216,7 @@ Karhu, A., Heiskanen, N., Husberg, H., Nähri, V., Wilbert, J., Savolainen, H., 
 Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (submitted). *A Monte-Carlo Study on the usefulness of Tau-U variations for the analysis of Single Case Experimental Designs*.
 
 Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (submitted). *The Power of Randomization Tests for Intraindividual Variability: Insights from a Monte Carlo Study*.
+
+Baer, E., Bosch, J., & Wilbert, J. (submitted). *Assessing Internalizing Problems at School: A Comparative Review of Measurement Approaches*.
+
 :::
