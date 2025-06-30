@@ -211,13 +211,11 @@ Barth, M., Wilbert, J., & Lüke, T. (submitted). *The Effectiveness of Phonics I
 
 Bosch, J., Lüke, T., Steiner, T. M., & Wilbert, J. (submitted). *Enhancing Pre-Service Teachers’ Visual Analysis Skills for Single-Case Experimental Designs: The Role of Trend and Slope Effect*.
 
-Gabriel, T., Kreyes, A., Mähler, C., Küttner, L., Wilbert, J., & Börnert-Ringleb, M. (n.d.). *Evaluating the Usefulness of Dynamic Testing of Arithmetic Abilities for Educational Planning*.
+Gabriel, T., Kreyes, A., Mähler, C., Küttner, L., Wilbert, J., & Börnert-Ringleb, M. (submitted). *Evaluating the Usefulness of Dynamic Testing of Arithmetic Abilities for Educational Planning*.
 
 Karhu, A., Heiskanen, N., Husberg, H., Nähri, V., Wilbert, J., Savolainen, H., Bosch, J., & Paananen, M. (submitted). *Implementation and effectiveness of two research-based interventions for problem behavior in early childhood education and care: Study protocol*.
 
 Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (submitted). *A Monte-Carlo Study on the usefulness of Tau-U variations for the analysis of Single Case Experimental Designs*.
-
-Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (submitted). *The Power of Randomization Tests for Intraindividual Variability: Insights from a Monte Carlo Study*.
 
 Baer, E., Bosch, J., & Wilbert, J. (submitted). *Assessing Internalizing Problems at School: A Comparative Review of Measurement Approaches*.
 :::

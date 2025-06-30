@@ -1,0 +1,44 @@
+---
+title: "Curriculum Vitae"
+format: html
+execute:
+  echo: false
+bibliography: _data/pub.bib
+nocite: |
+  @*
+csl: apa.csl
+---
+
+```{r}
+#| results: markup
+
+library(yaml)
+library(glue)
+
+cv <- yaml::read_yaml("_data/wilbert_cv.yml")
+
+cat("##", cv$name, "\n\n")
+glue("**{cv$title}**\n\n")
+cat(cv$affiliation, "\n\n")
+
+cat("## Research Interests\n")
+for (topic in cv$research_interests) {
+  cat("- ", topic, "\n")
+}
+
+cat("\n## Academic Positions\n")
+for (job in cv$positions) {
+  cat("- **", job$title, "**, ", job$institution, " (", job$from, "–", job$to, ")\n", sep = "")
+}
+
+# cat("\n## Selected Publications\n")
+# for (pub in cv$publications) {
+#   cat("- *", pub$title, "*, ", pub$authors, ", *", pub$journal, "*, ", pub$year, "\n", sep = "")
+# }
+```
+
+## Selected Publications
+
+::: {#refs}
+:::
+

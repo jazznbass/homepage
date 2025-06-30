@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jürgen Wilbert">
-<meta name="dcterms.date" content="2021-04-19">
 
-<title>Create Rmarkdown webpage on gitHub</title>
+<title>Curriculum Vitae</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +20,47 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/penguin.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5bf7ca59d8cc7f7a8155307016a58e21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/penguin.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5bf7ca59d8cc7f7a8155307016a58e21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,10 +90,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../style_add.css">
+<link rel="stylesheet" href="style_add.css">
 </head>
 
-<body class="floating nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -88,27 +106,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projects.html"> 
+    <a class="nav-link" href="./projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications.html"> 
+    <a class="nav-link" href="./publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../rpackages.html"> 
+    <a class="nav-link" href="./rpackages.html"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../students.html"> 
+    <a class="nav-link" href="./students.html"> 
 <span class="menu-text">Graduate Students</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog.html"> 
+    <a class="nav-link" href="./blog.html"> 
 <span class="menu-text">Private Blog</span></a>
   </li>  
 </ul>
@@ -133,84 +151,83 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Create Rmarkdown webpage on gitHub</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Rmarkdown</div>
-    <div class="quarto-category">GitHub</div>
-    <div class="quarto-category">RStudio</div>
-    <div class="quarto-category">Webpage</div>
-  </div>
-  </div>
+<h1 class="title">Curriculum Vitae</h1>
+</div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jürgen Wilbert </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 19, 2021</p>
-    </div>
-  </div>
   
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="block-title">Abstract</div>
-    Short description how to create an Rmarkdown webpage and publish it on gitHub
-  </div>
-</div>
 
 
 </header>
 
 
-<ol type="1">
-<li>Create a new R Project:<br>
-<code>File -&gt; New Project -&gt; New Directory -&gt; Simple Rmarkdown website</code></li>
-<li>Open new project</li>
-<li>Activate “git” versioning for this project (<code>tools -&gt; project Options -&gt; Git/SVN</code>)</li>
-<li>Edit the YAML file <code>_site.yml</code>:<br>
-add the line: `output_dir: “docs”``</li>
-<li>Build website: <code>Build -&gt; Build all</code></li>
-<li>Change to Github Desktop</li>
-<li>Add repository: <code>File -&gt; Add local repository</code></li>
-<li>Click: Publish repository</li>
-<li>Open Github in Webbrowser and login</li>
-<li>Go to the new published repository</li>
-<li>Click <code>Settings</code></li>
-<li>Go to menu <code>Pages</code> or scroll to Github Pages</li>
-<li>At the field “Source” select <code>master</code></li>
-<li>Change <code>select folder</code> from <code>\(root)</code> to <code>\docs</code></li>
-<li>click save</li>
-<li>Copy / remember / open the link to the new webpage that opens up! 16 Change to webpage project at RStudio</li>
-<li>Commit <strong>and</strong> publish all files <code>[tab] Git -&gt; Commit</code></li>
-<li>Change to the new webpage address you remembered/copied or opened! (probably wait 30 seconds and renew the page)</li>
-</ol>
-<p>That’s it!</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>## Juergen Wilbert </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>**Professor of Special Education**</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>University of Münster </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>## Research Interests</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-  Data-based instruction 
+-  Single-case experimental design 
+-  Dynamic assessment 
+-  Special education 
+-  Open science 
+-  Educational assessment and intervention </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+## Academic Positions</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- **Professor of Special Education (Learning Disorders)**, University of Münster (2024–present)
+- **Professor of Research Methods and Diagnsotics in Inclusive Education**, University of Potsdam (2013–2024)
+- **Research Associate / Postdoc**, University of Cologne (2000–2013)</code></pre>
+</div>
+</div>
+<section id="selected-publications" class="level2">
+<h2 class="anchored" data-anchor-id="selected-publications">Selected Publications</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-bosch_impact_2023" class="csl-entry" role="listitem">
+Bosch, J., &amp; Wilbert, J. (2023). The impact of social comparison processes on self-evaluation of performance, self-concept, and task interest. <em>Frontiers in Education</em>, <em>8</em>. <a href="https://doi.org/10.3389/feduc.2023.1033488">https://doi.org/10.3389/feduc.2023.1033488</a>
+</div>
+<div id="ref-hertel_teachers_2024" class="csl-entry" role="listitem">
+Hertel, S., Urton, K., Wilbert, J., Krull, J., Bosch, J., &amp; Hennemann, T. (2024). Teachers’ <span>Judgment</span> <span>Accuracy</span> of <span>Students</span>’ <span>Reading</span> <span>Comprehension</span> in <span>Inclusive</span> <span>Primary</span> <span>Schools</span>. <em>Empirische Sonderpädagogik</em>, <em>16</em>(4), 297–315.
+</div>
+<div id="ref-klemp_what_2025" class="csl-entry" role="listitem">
+Klemp, G., Urton, K., Krull, J., Bosch, J., &amp; Wilbert, J. (2025). What does well-being at school mean to primary school students? <span>Children</span>’s understanding of basic psychological needs. <em>International Journal of Educational Research Open</em>, <em>8</em>, 100442. <a href="https://doi.org/10.1016/j.ijedro.2025.100442">https://doi.org/10.1016/j.ijedro.2025.100442</a>
+</div>
+<div id="ref-urton_factors_2023" class="csl-entry" role="listitem">
+Urton, K., Wilbert, J., Krull, J., &amp; Hennemann, T. (2023). Factors explaining teachers’ intention to implement inclusive practices in the classroom: <span>Indications</span> based on the theory of planned behaviour. <em>Teaching and Teacher Education</em>, <em>132</em>, 104225. <a href="https://doi.org/10.1016/j.tate.2023.104225">https://doi.org/10.1016/j.tate.2023.104225</a>
+</div>
+<div id="ref-wilbert_analyzing_2025" class="csl-entry" role="listitem">
+Wilbert, J. (2025). <em>Analyzing single-case data with <span>R</span> and scan</em>. <a href="https://jazznbass.github.io/scan-Book/">https://jazznbass.github.io/scan-Book/</a>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -612,35 +629,6 @@ add the line: `output_dir: “docs”``</li>
     }
   });
   </script>
-<input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
-<script>
-  function loadGiscus() {
-    // Function to get the theme based on body class
-    const getTheme = () => {
-      let baseTheme = document.getElementById('giscus-base-theme').value;
-      let altTheme = document.getElementById('giscus-alt-theme').value;
-      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
-    };
-    const script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-    script.dataset.repo = "jazznbass/homepage";
-    script.dataset.repoId = "MDEwOlJlcG9zaXRvcnkzNDA5MjU3ODY=";
-    script.dataset.category = "General";
-    script.dataset.categoryId = "";
-    script.dataset.mapping = "title";
-    script.dataset.reactionsEnabled = "1";
-    script.dataset.emitMetadata = "0";
-    script.dataset.inputPosition = "top";
-    script.dataset.theme = getTheme();
-    script.dataset.lang = "en";
-    script.crossOrigin = "anonymous";
-    // Append the script to the desired div instead of at the end of the body
-    document.getElementById("quarto-content").appendChild(script);
-  }
-  loadGiscus();
-</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -21,7 +21,7 @@ about:
       href: https://empirische-sonderpaedagogik.de/index.php/esp
 ---
 
-### Welcome! 
+## Welcome!
 
 I am a Professor of Special Education at the University of Münster, Germany. This website provides an overview of my research and contributions to the field of special education. My work centers on:
 

@@ -1,0 +1,69 @@
+
+name: Juergen Wilbert
+title: Professor of Special Education
+affiliation: University of Münster
+email: juergen.wilbert@uni-muenster.de
+location: Münster, Germany
+homepage: https://jazznbass.github.io/homepage/
+
+education:
+  - degree: Ph.D. in Psychology
+    institution: University of Cologne
+    year: 2006
+  - degree: Diploma in Education
+    institution: University of Cologne
+    year: 2000
+
+positions:
+  - title: Professor of Special Education (Learning Disorders)
+    institution: University of Münster
+    from: 2024
+    to: present
+  - title: Professor of Research Methods and Diagnsotics in Inclusive Education
+    institution: University of Potsdam
+    from: 2013
+    to: 2024
+  - title: Research Associate / Postdoc
+    institution: University of Cologne
+    from: 2000
+    to: 2013
+
+research_interests:
+  - Data-based instruction
+  - Single-case experimental design
+  - Dynamic assessment
+  - Special education
+  - Open science
+  - Educational assessment and intervention
+
+publications:
+  - title: "Introduction of a new method for representing the sociometric status"
+    authors: Juergen Wilbert, Pawel R. Kulawiak
+    journal: International Journal of Research & Method in Education
+    year: 2019
+  - title: "Validity and Judgment Bias in Visual Analysis of Single‑Case Data"
+    authors: Jannis Bosch, Juergen Wilbert, Timo Lüke
+    journal: International Journal for Research in Learning Disabilities
+    year: 2021
+  - title: "Dynamic versus static cognitive tests in predicting school achievement"
+    authors: Moritz Börnert-Ringleb, Juergen Wilbert
+    journal: Empirical Special Education
+    year: 2019
+  - title: "What makes school hard for students with internalizing problems?"
+    authors: Jannis Bosch, Karolina Urton, Juergen Wilbert
+    journal: Empirical Special Education
+    year: 2023
+
+software:
+  - name: scan
+    description: R package for analyzing single-case data
+    url: https://jazznbass.github.io/scan-Book/
+
+languages:
+  - German
+  - English
+
+identifiers:
+  orcid: 0000-0002-xxxx-xxxx
+  researchgate: https://www.researchgate.net/profile/Juergen-Wilbert
+  github: https://github.com/jazznbass
