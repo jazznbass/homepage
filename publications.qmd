@@ -11,7 +11,7 @@ toc-location: left
 
 1.  Gabriel, T., Mähler, C., Wilbert, J., & Börnert-Ringleb, M. (2026). Evaluating the Benefits of Dynamic Testing of Arithmetic Skills for Developing Individualized Education Plans. *International Journal for Research in Learning Disabilities*, *9*(1).
 
-2.  Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (accepted). The Power of Randomization Tests for Intraindividual Variability: Insights from a Monte Carlo Study. *Empirische Sonderpädagogik*.
+2.  Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (2025). The Power of Randomization Tests for Intraindividual Variability: Insights from a Monte Carlo Study. *Empirische Sonderpädagogik*.
 
 3.  Klemp, G., Urton, K., Krull, J., Bosch, J., & Wilbert, J. (2025). What does well-being at school mean to primary school students? Children’s understanding of basic psychological needs. *International Journal of Educational Research Open*, 8, *100442*. <https://doi.org/10.1016/j.ijedro.2025.100442>
 
@@ -127,17 +127,17 @@ toc-location: left
 
 ## Book chapters
 
-1.  Wilbert, J. (2025). Grundfertigkeiten des Rechnens vermitteln. In G. Lauth, M. Grünke, & J. Brunstein (Eds.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (3rd ed.). Hogrefe
+1.  Börnert-Ringleb, M., Veerbeek, J., & Wilbert, J. (accepted). Validität und psychometrische Eigenschaften im Dynamischen Testen: Analyse der Trainingsdaten des Graduated Prompt Ansatzes. In M. Hasselhorn, C. Mähler, U. Trautwein, & T. Richter (Eds.), *Tests und Trends der pädagogisch-psychologischen Diagnostik*.
 
-2.  Gabriel, T., Köhlken, K., Pavic, A., Mähler, C., Wilbert, J., & Börnert-Ringleb, M. (2025). Dynamisches Testen von Rechenfertigkeiten im Grundschulalter – zentrale Befunde des Verbundprojekts DYNAMIK. In K. Beck, R. A. Ferdigg, D. Katzenbach, J. Kett-Hauser, S. Laux, & M. Urban (Eds.), *Förderbezogene Diagnostik in der inklusiven Bildung. Kompetenzbereiche – Fachdidaktik* (pp. 189–208). Waxmann Verlag GmbH. <https://doi.org/10.31244/9783830999607>
+2.  Wilbert, J. (2025). Grundfertigkeiten des Rechnens vermitteln. In G. Lauth, M. Grünke, & J. Brunstein (Eds.), *Interventionen bei Lernstörungen: Förderung, Training und Therapie in der Praxis* (3rd ed.). Hogrefe
 
-3.  Linnemann, M., Gretsch, P., Kniffka, G., Vogt, B., Wilbert, J., & Willmann, M. (2025). Datenbasierte sprachsensible Unterrichtsgestaltung: Ein Vorschlag für eine effektive Bildungspraxis am Beispiel des Generalisierens. In K. Beck, R. A. Ferdigg, D. Katzenbach, J. Kett-Hauser, S. Laux, & M. Urban (Eds.), *Förderbezogene Diagnostik in der inklusiven Bildung. Kompetenzbereiche – Fachdidaktik* (pp. 189–208). Waxmann Verlag GmbH. <https://doi.org/10.31244/9783830999607>
+3.  Gabriel, T., Köhlken, K., Pavic, A., Mähler, C., Wilbert, J., & Börnert-Ringleb, M. (2025). Dynamisches Testen von Rechenfertigkeiten im Grundschulalter – zentrale Befunde des Verbundprojekts DYNAMIK. In K. Beck, R. A. Ferdigg, D. Katzenbach, J. Kett-Hauser, S. Laux, & M. Urban (Eds.), *Förderbezogene Diagnostik in der inklusiven Bildung. Kompetenzbereiche – Fachdidaktik* (pp. 189–208). Waxmann Verlag GmbH. <https://doi.org/10.31244/9783830999607>
 
-4.  Börnert-Ringleb, M., Veerbeek, J., & Wilbert, J. (accepted). Validität und psychometrische Eigenschaften im Dynamischen Testen: Analyse der Trainingsdaten des Graduated Prompt Ansatzes. In M. Hasselhorn, C. Mähler, U. Trautwein, & T. Richter (Eds.), *Tests und Trends der pädagogisch-psychologischen Diagnostik*.
+4.  Linnemann, M., Gretsch, P., Kniffka, G., Vogt, B., Wilbert, J., & Willmann, M. (2025). Datenbasierte sprachsensible Unterrichtsgestaltung: Ein Vorschlag für eine effektive Bildungspraxis am Beispiel des Generalisierens. In K. Beck, R. A. Ferdigg, D. Katzenbach, J. Kett-Hauser, S. Laux, & M. Urban (Eds.), *Förderbezogene Diagnostik in der inklusiven Bildung. Kompetenzbereiche – Fachdidaktik* (pp. 189–208). Waxmann Verlag GmbH. <https://doi.org/10.31244/9783830999607>
 
-5.  Wilbert, J. (accepted). Forschungsmethoden. In G. Casale, T. Hennemann, D. Hövel, & R. Markowetz (Eds.), *Handbuch Förderschwerpunkt emotional-soziale Entwicklung*. Juventa Verlag.
+5.  Wilbert, J. (2025). Forschungsmethoden. In G. Casale, T. Hennemann, D. Hövel, & R. Markowetz (Eds.), *Handbuch Förderschwerpunkt emotional-soziale Entwicklung*. Juventa Verlag.
 
-6.  Börnert-Ringleb, M., & Wilbert, J. (accepted). Dynamisches Testen. In G. Casale, T. Hennemann, D. Hövel, & R. Markowetz (Eds.), *Handbuch Förderschwerpunkt emotional-soziale Entwicklung*. Juventa Verlag.
+6.  Börnert-Ringleb, M., & Wilbert, J. (2025). Dynamisches Testen. In G. Casale, T. Hennemann, D. Hövel, & R. Markowetz (Eds.), *Handbuch Förderschwerpunkt emotional-soziale Entwicklung*. Juventa Verlag.
 
 7.  Baer, E., Bosch, J., & Wilbert, J. (2023). Diagnostik internalisierender Probleme im Schulkontext - das Erleben von Kindern in emotional herausfordernden Schulsituationen. In J. Hermanns, K. Böhme, M. Meyering, I. Fuchs, S. Wagner, K. Krauskopf, M. Knigge, S. Rother, F. Tosch, M. Wendland, P. Wulff, L. Mientus, A. Nowak, A. Borowski, E. Baer, J. Bosch, J. Wilbert, T. Bräsel, M. Fenn, ... D. N. Kayser, *PSI-Potsdam: Ergebnisbericht zu den Aktivitäten im Rahmen der Qualitätsoffensive Lehrerbildung (2019-2023)*. Universitätsverlag Potsdam. <https://doi.org/10.25932/publishup-60187>
 

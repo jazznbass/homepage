@@ -10,12 +10,13 @@ toc-location: left
 ## Present PhD students
 
 | Name | Field | Started |
-|------------------------|:-----------------------|:----------------------:|
+|----|:---|:--:|
 | Linda Kuhr | Math anxiety | 2018 |
 | Ella Baer | Diagnosing students' internalization problems in the classroom | 2020 |
 | Theresa Steiner |  | 2024 |
 | Fabienne Daniel | A network model of Learning- and behavioral disorders | 2024 |
 | Christina Schwarzmann | Basic psychological needs of children with learning and behavioral problems in elementary school | 2024 |
+| Lena Wallmeyer |  | 2025 |
 
 ## Completed PhD students
 
