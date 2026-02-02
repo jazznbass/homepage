@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jürgen Wilbert">
-<meta name="dcterms.date" content="2023-06-22">
 
-<title>Logits as a link function in logistic regressions</title>
+<title>readme-data-subjects.rds</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -106,40 +70,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../style_add.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -195,38 +130,34 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#problem-and-solution" id="toc-problem-and-solution" class="nav-link active" data-scroll-target="#problem-and-solution">Problem and solution</a></li>
-  <li><a href="#the-logit-transformation" id="toc-the-logit-transformation" class="nav-link" data-scroll-target="#the-logit-transformation">The logit transformation</a></li>
-  <li><a href="#what-are-logits" id="toc-what-are-logits" class="nav-link" data-scroll-target="#what-are-logits">What are logits?</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#discription-of-datafile-data-subjects.rds" id="toc-discription-of-datafile-data-subjects.rds" class="nav-link active" data-scroll-target="#discription-of-datafile-data-subjects.rds">Discription of datafile <code>data-subjects.rds</code></a>
+  <ul class="collapse">
+  <li><a href="#columns" id="toc-columns" class="nav-link" data-scroll-target="#columns">Columns</a></li>
+  </ul></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Logits as a link function in <strong>logistic regressions</strong></h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">regression</div>
-    <div class="quarto-category">statistics</div>
-    <div class="quarto-category">link</div>
-    <div class="quarto-category">logistic</div>
-  </div>
-  </div>
+</div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -235,101 +166,205 @@ window.Quarto = {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 22, 2023</p>
-    </div>
-  </div>
   
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="block-title">Abstract</div>
-    A brief explanation of the logit link function in logistic regression.
-  </div>
-</div>
 
 
 </header>
 
 
-<section id="problem-and-solution" class="level2">
-<h2 class="anchored" data-anchor-id="problem-and-solution">Problem and solution</h2>
-<p>If you estimate a dichotomous outcome variable <span class="math inline">\(y\)</span> (<span class="math inline">\(y\)</span> can take the values 0 <em>or</em> 1) with a standard <em>ols</em> (ordinary least squares) regression the distribution of <span class="math inline">\(y\)</span> does not meet <em>ols</em> regression assumptions. Specifically, predicted values can be outside <span class="math inline">\(\{0, 1\}\)</span> and are not continuous and normal distributed. A common solution for this problem is to apply a generalization of the linear regression model which is (surprise, surprise) called the generalized linear model (GLM). One aspect of the generalized linear model is that the linear combination of the predictors (linear because we assume that the added up predictors are interval scaled) are linked to the distribution of the outcome variable via a function which is called: the link function (uhhh).</p>
-<p>It is helpful to keep in mind that for dichotomous variables, we estimate/predict the probabilities that <span class="math inline">\(y=1\)</span>. That is, the predicted values are probabilities of <span class="math inline">\([0, 1]\)</span> (a continuous interval <em>between</em> 0 and 1) and not <span class="math inline">\(\{0, 1\}\)</span> (either 0 <em>or</em> 1). Therefore, we are looking for a link function that turns the linear combined predictors into a probability estimation. In case of a logistic regression, we need a formula, that turns continuous values from <span class="math inline">\([-\infty, +\infty]\)</span> to a probability (where <span class="math inline">\(0\)</span> corresponds to a 50% probability) and vise-versa, a probability into a continuous scale with values from <span class="math inline">\([-\infty, +\infty]\)</span>. This transformation is called a logit transformation and the distribution of the transformed predicted <span class="math inline">\(y\)</span> values is a logistic distribution. This kind of function (i.e.&nbsp;a function that links the distribution of linear combinations of the predictors to the distribution of the criteria in a regression) is called a link function.</p>
-</section>
-<section id="the-logit-transformation" class="level2">
-<h2 class="anchored" data-anchor-id="the-logit-transformation">The logit transformation</h2>
-<p>The formula to turn probabilities into continuous values (here logits) is:</p>
-<p><span class="math display">\[logit(y_i)=log(\frac{P(y_i=1)}{1-P(y_i=0)})=log(odds)\]</span></p>
-<p>Here is the function plot for illustration with probabilities on x and logits on y:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># identical: plot(function(x) qlogis(x))</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="cf">function</span>(x) <span class="fu">log</span>(x<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Logit/logistic function</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The formula to turn continuous values (here logits) into probabilities is:</p>
-<p><span class="math display">\[P(y_i=1)=\frac{exp(x)}{1 + exp(x)}\]</span></p>
-<p>Here is the function plot for illustration with logits on x and probablities on y:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># identica: plot(function(x) plogis(x), -6,6)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="cf">function</span>(x) <span class="fu">exp</span>(x)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(x)), <span class="at">from =</span> <span class="sc">-</span><span class="dv">6</span>, <span class="at">to =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Distribution of the logistic function (invers logistic)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="what-are-logits" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-logits">What are logits?</h2>
-<p>Logits are the logarithm of the odds of a probability <span class="math inline">\(log(Odds)\)</span>. Odds is a way to represent the probability of an event: If the odds are four against one (<span class="math inline">\(4\over1\)</span>), than out of 5 events, 4 have one category of outcome and 1 has an opposite outcome (for example, if a horse runs five races and we expect that it will win four races and loose one, the odds are <span class="math inline">\(4\over1\)</span>). If the odds are &lt; 1, the probability of an event is below 50%. For example, if the odds are 0.25 = <span class="math inline">\(\frac{1}{4}\)</span> we expect that the horse will win one out of five races.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Caution: Probabilities and odds can be confused easily but are not identical. A probability of <span class="math inline">\(1\over4\)</span> would index that a specific outcome happens in 1 <em>out of</em> 4 events, whereas odds of <span class="math inline">\(1\over4\)</span> would index that an event has the probability for two possible outcomes of 1 <em>against</em> 4. For this example, odds of <span class="math inline">\(1\over4\)</span> equals a probability of <span class="math inline">\(1\over5\)</span> equals <span class="math inline">\(0.20\)</span>.</p>
-</div>
-</div>
-<p>The odds are calculated as:</p>
-<p><span class="math display">\[Odds(y_i)=\frac{P(y_i=1)}{1-P(y_i=0)}\]</span></p>
-<p>For example, if we have a probability of 25%, the odds are:</p>
-<p><span class="math display">\[Odds=\frac{0.25}{0.75}={1\over3}\]</span><br>
-The formula for calculating logits is:</p>
-<p><span class="math display">\[logit(y_i)=log(\frac{P(y_i=1)}{1-P(y_i=0)})=log(odds)\]</span></p>
-<p>For example, if we have a 25% probability that is:</p>
-<p><span class="math display">\[logit(P=0.25)=log(\frac{0.25}{0.75})=log({1\over3})=-1.098612\]</span></p>
-</section>
-<section id="example" class="level2">
-<h2 class="anchored" data-anchor-id="example">Example</h2>
-<p>To be continued 😉</p>
+<section id="discription-of-datafile-data-subjects.rds" class="level1">
+<h1>Discription of datafile <code>data-subjects.rds</code></h1>
+<ul>
+<li>README file from: 2026-01-13 16:48:21<br>
+</li>
+<li>Datafile from: 2024-04-18 13:07:43<br>
+</li>
+<li>This data is a <code>data.frame</code> with 32 columns and 117 rows.</li>
+</ul>
+<section id="columns" class="level2">
+<h2 class="anchored" data-anchor-id="columns">Columns</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 30%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Class</th>
+<th style="text-align: left;">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">start_time</td>
+<td style="text-align: left;">(POSIXct/POSIXt, 0 NA)</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sessionToken</td>
+<td style="text-align: left;">(character, 0 NA)</td>
+<td style="text-align: left;">03fRnek513UP, 0crR6ITOH4Hn, 15 […]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">group</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">0 to 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uni</td>
+<td style="text-align: left;">(character, 0 NA)</td>
+<td style="text-align: left;">NA, PHSt, PPH Augustinum , Uni […]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fach</td>
+<td style="text-align: left;">(character, 0 NA)</td>
+<td style="text-align: left;">GrundschulpÃ¤dagogik, LA, LA ( […]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mathe</td>
+<td style="text-align: left;">(character, 0 NA)</td>
+<td style="text-align: left;">ja, NA, nein</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">semester</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">0 to 10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gesch</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">0 to 4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">0 to 5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">erfahrung_lvd</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">0 to 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">erfahrung_lehre</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">0 to 4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rt</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">134 to 319204</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">curr_timestamp</td>
+<td style="text-align: left;">(POSIXct/POSIXt, 0 NA)</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q1cc</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">-99 to 4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q2cc</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">-99 to 4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q3cc</td>
+<td style="text-align: left;">(integer, 0 NA)</td>
+<td style="text-align: left;">-99 to 4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mcpre_zz</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mcpre_oz</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mcpre_zo</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mcpre_oo</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mcpost_zz</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0.6 to 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mcpost_oz</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0.4 to 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mcpost_zo</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0.6 to 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mcpost_oo</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0.8 to 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mepre_zz</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mepre_oz</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mepre_zo</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mepre_oo</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0.2 to 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mepost_zz</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mepost_oz</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0.2 to 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mepost_zo</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0 to 0.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mepost_oo</td>
+<td style="text-align: left;">(numeric, 0 NA)</td>
+<td style="text-align: left;">0.3 to 1</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
