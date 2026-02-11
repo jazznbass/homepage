@@ -20,8 +20,8 @@ website:
         file: "rpackages.qmd"
       - text: "Graduate Students"
         file: "students.qmd"
-      #- text: "CV"
-      #  file: "cv.qmd"      
+      - text: "CV"
+        file: "cv.qmd"      
       #- text: "Links"
       #  file: "links.qmd"
       - text: "Private Blog"
@@ -39,8 +39,7 @@ format:
     highlight: tango
     css: style_add.css
 
-
-    
+csl: apa.csl
 
 
 

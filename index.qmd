@@ -23,14 +23,6 @@ about:
 
 ## Welcome!
 
-I am a Professor of Special Education at the University of Münster, Germany. This website provides an overview of my research and contributions to the field of special education. My work centers on:
-
--   Single-case research designs, including the analysis and reporting of single-case data.
-
--   Intervention-oriented assessment and diagnostics in special education.
-
--   Social inclusion and participation within the classroom.
-
--   Promoting Open Science and Data Science approaches in special education research.
+I am a Professor of Special Education at the University of Münster, Germany. This website provides an overview of my research and contributions to the field of special education. 
 
 <!--# I am a Professor of Special Education at the University of Münster, Germany. Prior to this, I held a professorship in Research Methods and Diagnostics at the University of Potsdam. My academic journey began at the University of Cologne, where I studied educational sciences and later earned my doctorate in cognitive psychology. Following this, I accepted a permanent role as a senior researcher in Special Education and later habilitated at the Carl von Ossietzky University of Oldenburg on Pedagogy and Psychology in Learning Disabilities. -->

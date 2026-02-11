@@ -1,44 +1,42 @@
 ---
-title: "Curriculum Vitae"
-format: html
+title: "Curriculum Vitae Jürgen Wilbert"
 execute:
   echo: false
-bibliography: _data/pub.bib
-nocite: |
-  @*
-csl: apa.csl
+page-layout: full
 ---
 
-```{r}
-#| results: markup
+**Professor of Special Education**
 
-library(yaml)
-library(glue)
+University of Münster
 
-cv <- yaml::read_yaml("_data/wilbert_cv.yml")
+## Research Interests
 
-cat("##", cv$name, "\n\n")
-glue("**{cv$title}**\n\n")
-cat(cv$affiliation, "\n\n")
+- Data-based instruction
+- Single-case experimental design
+- Dynamic assessment
+- Special education
+- Open science
+- Educational assessment and intervention
 
-cat("## Research Interests\n")
-for (topic in cv$research_interests) {
-  cat("- ", topic, "\n")
-}
+## Academic Positions
 
-cat("\n## Academic Positions\n")
-for (job in cv$positions) {
-  cat("- **", job$title, "**, ", job$institution, " (", job$from, "–", job$to, ")\n", sep = "")
-}
-
-# cat("\n## Selected Publications\n")
-# for (pub in cv$publications) {
-#   cat("- *", pub$title, "*, ", pub$authors, ", *", pub$journal, "*, ", pub$year, "\n", sep = "")
-# }
+```{mermaid}
+%%{init: {"theme":"base","timeline":{"disableMulticolor":true}}}%%
+timeline
+  2000 : Research assistant : Reading Research and Children's and Youth Media : University of Cologne
+  2001 : PhD student : General Psychology : University of Cologne
+  2006 : Postdoc : General Psychology : University of Cologne
+  2007 : Assistant Professor : Special education and Rehabilitation for Learning Disorders : University of Cologne
+  2013 : Full Professor : Research Methods and Diagnostics in Inclusive Education : University of Potsdam
+  2024 : Full Professor : Special Education of Learning : University of Münster
 ```
 
-## Selected Publications
+## Education
 
-::: {#refs}
-:::
-
+```{mermaid}
+%%{init: {"theme":"base","timeline":{"disableMulticolor":true}}}%%
+timeline
+  2000 : Diploma Education : University of Cologne
+  2006 : PhD Psychology : University of Cologne
+  2010 : Habilitation Special Education : University of Oldenburg
+```

@@ -9,16 +9,30 @@
   {
     "objectID": "cv.html",
     "href": "cv.html",
-    "title": "Curriculum Vitae",
+    "title": "Curriculum Vitae Jürgen Wilbert",
     "section": "",
-    "text": "## Juergen Wilbert \n\n\n**Professor of Special Education**\n\n\nUniversity of Münster \n\n\n## Research Interests\n\n\n-  Data-based instruction \n-  Single-case experimental design \n-  Dynamic assessment \n-  Special education \n-  Open science \n-  Educational assessment and intervention \n\n\n\n## Academic Positions\n\n\n- **Professor of Special Education (Learning Disorders)**, University of Münster (2024–present)\n- **Professor of Research Methods and Diagnsotics in Inclusive Education**, University of Potsdam (2013–2024)\n- **Research Associate / Postdoc**, University of Cologne (2000–2013)"
+    "text": "Professor of Special Education\nUniversity of Münster"
   },
   {
-    "objectID": "cv.html#selected-publications",
-    "href": "cv.html#selected-publications",
-    "title": "Curriculum Vitae",
-    "section": "Selected Publications",
-    "text": "Selected Publications\n\n\nBosch, J., & Wilbert, J. (2023). The impact of social comparison processes on self-evaluation of performance, self-concept, and task interest. Frontiers in Education, 8. https://doi.org/10.3389/feduc.2023.1033488\n\n\nHertel, S., Urton, K., Wilbert, J., Krull, J., Bosch, J., & Hennemann, T. (2024). Teachers’ Judgment Accuracy of Students’ Reading Comprehension in Inclusive Primary Schools. Empirische Sonderpädagogik, 16(4), 297–315.\n\n\nKlemp, G., Urton, K., Krull, J., Bosch, J., & Wilbert, J. (2025). What does well-being at school mean to primary school students? Children’s understanding of basic psychological needs. International Journal of Educational Research Open, 8, 100442. https://doi.org/10.1016/j.ijedro.2025.100442\n\n\nUrton, K., Wilbert, J., Krull, J., & Hennemann, T. (2023). Factors explaining teachers’ intention to implement inclusive practices in the classroom: Indications based on the theory of planned behaviour. Teaching and Teacher Education, 132, 104225. https://doi.org/10.1016/j.tate.2023.104225\n\n\nWilbert, J. (2025). Analyzing single-case data with R and scan. https://jazznbass.github.io/scan-Book/"
+    "objectID": "cv.html#research-interests",
+    "href": "cv.html#research-interests",
+    "title": "Curriculum Vitae Jürgen Wilbert",
+    "section": "Research Interests",
+    "text": "Research Interests\n\nData-based instruction\nSingle-case experimental design\nDynamic assessment\nSpecial education\nOpen science\nEducational assessment and intervention"
+  },
+  {
+    "objectID": "cv.html#academic-positions",
+    "href": "cv.html#academic-positions",
+    "title": "Curriculum Vitae Jürgen Wilbert",
+    "section": "Academic Positions",
+    "text": "Academic Positions\n\n\n\n\n\n%%{init: {\"theme\":\"base\",\"timeline\":{\"disableMulticolor\":true}}}%%\ntimeline\n  2000 : Research assistant : Reading Research and Children's and Youth Media : University of Cologne\n  2001 : PhD student : General Psychology : University of Cologne\n  2006 : Postdoc : General Psychology : University of Cologne\n  2007 : Assistant Professor : Special education and Rehabilitation for Learning Disorders : University of Cologne\n  2013 : Full Professor : Research Methods and Diagnostics in Inclusive Education : University of Potsdam\n  2024 : Full Professor : Special Education of Learning : University of Münster"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae Jürgen Wilbert",
+    "section": "Education",
+    "text": "Education\n\n\n\n\n\n%%{init: {\"theme\":\"base\",\"timeline\":{\"disableMulticolor\":true}}}%%\ntimeline\n  2000 : Diploma Education : University of Cologne\n  2006 : PhD Psychology : University of Cologne\n  2010 : Habilitation Special Education : University of Oldenburg"
   },
   {
     "objectID": "publications.html",
@@ -32,14 +46,14 @@
     "href": "index.html",
     "title": "Jürgen Wilbert",
     "section": "",
-    "text": "I am a Professor of Special Education at the University of Münster, Germany. This website provides an overview of my research and contributions to the field of special education. My work centers on:\n\nSingle-case research designs, including the analysis and reporting of single-case data.\nIntervention-oriented assessment and diagnostics in special education.\nSocial inclusion and participation within the classroom.\nPromoting Open Science and Data Science approaches in special education research."
+    "text": "I am a Professor of Special Education at the University of Münster, Germany. This website provides an overview of my research and contributions to the field of special education."
   },
   {
     "objectID": "index.html#welcome",
     "href": "index.html#welcome",
     "title": "Jürgen Wilbert",
     "section": "",
-    "text": "I am a Professor of Special Education at the University of Münster, Germany. This website provides an overview of my research and contributions to the field of special education. My work centers on:\n\nSingle-case research designs, including the analysis and reporting of single-case data.\nIntervention-oriented assessment and diagnostics in special education.\nSocial inclusion and participation within the classroom.\nPromoting Open Science and Data Science approaches in special education research."
+    "text": "I am a Professor of Special Education at the University of Münster, Germany. This website provides an overview of my research and contributions to the field of special education."
   },
   {
     "objectID": "posts/2024-01-17-exp-ml/index.html",

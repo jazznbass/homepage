@@ -7,7 +7,7 @@ categories:
   - projects
 ---
 
-# Intervnetion Oriented Assessment & Diagnostics
+# Intervention Oriented Assessment & Diagnostics
 
 ## Dynamic Testing
 
