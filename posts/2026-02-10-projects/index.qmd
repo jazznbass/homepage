@@ -1,0 +1,95 @@
+---
+title: 'Project overview'
+author: Jürgen Wilbert
+date: '2026-02-10'
+abstract: 'Short overview of currently running projects'
+categories:
+  - projects
+---
+
+# Intervnetion Oriented Assessment & Diagnostics
+
+## Dynamic Testing
+
+### 3️⃣ DYNAMIK \|Moritz, Claudia\|
+
+-   📝 Educational plan rating \|Taina\|
+-   📝 Dynamic test for arithmetic skills \|Taina\|
+
+### 💡 Dynamic Testing Delphi Study \|Jochanan, Moritz, Taina\|
+
+### 💡 Measuring support needs: Cumulative polynom Rasch models for scaling data from dynamic tests
+
+### 🔬 Dynamic Testing of Emotional Behavioral Competences \|☯️Ella, ☯️Fabienne, ☯️Lena\|
+
+## Data-Based Instruction
+
+### 3️⃣ IM TRANSFER \|Moritz, Timo\|
+
+### 🔬 COI Attitudes towards DBDM \|☯️Fabienne, ☯️Ella, Moritz, ..., Timo, Jochanan, Alisson\|
+
+### 🔬 Resource oriented assessment
+
+-   📝 LSL paper \|Michael\|
+-   📝 Network paper \|☯️Fabienne, Michael\|
+
+## Visual Analyses Skills
+
+### Decision making and heuristics \|☯️Theresa, Jochanan, Anja, Chris, Jannis\|
+
+-   📝 VA assessment accuracy \|Jannis\|
+-   📝 VA strategies (qualitative study) \|Anja\|
+
+### Implementation and training \|☯️Theresa, Finland, Jannis, Jochanan\|
+
+-   📝 Training VA skills (3 paper) \|Jannis, Irem\|
+-   📝 Changes in strategy use after training \|Jannis\|
+
+## Network model of learning and behavioral disorders \|☯️Fabienne\|
+
+## 📘 Buch Veränderungsdiagnostik (Oktober 2026) \|Moritz, Timo\|
+
+# Psychological Health & Development
+
+## ESPEN \|☯️Christina, ☯️Ella, Karolina, Jannis, Johanna\|
+
+-   📝 Internalizing problems and basic psychological needs \|☯️Ella\|
+-   📝 Need supportive teacher behavior / BPN / Wellbeing \|Karolina\|
+-   📝 Focus interview with students on BPN (qualitative study) \|Gesa\|
+-   📝 BPN and wellbeing variability from day to day \|Gesa\|
+-   📝 BPN scales \|Gesa\|
+
+## 👥 AG Bullying \|☯️Fabienne, ☯️Christina, Christian H, Moritz, Ute, Clemens, ...\|
+
+-   Proposal DFG Nachwuchsforschergruppe \|Phillip, Jule\|
+
+## 💡 University students psychological wellbeing and BPN \|☯️Christina, Karolina\|
+
+## Internalizing problems of students in the classroom \|☯️Ella\|
+
+-   📝 Attitudes and responsibility of teachers \|☯️Ella\|
+
+-   📝 The impact of teaching experience on university students' attitudes towards pupils' internalising problems \|☯️Ella\|
+
+## 🎓 Proposal DFG Graduiertenkolleg \|Stefanie Van Ophysen, Karolina, ...\|
+
+# Single-Case Data Analyses
+
+## Methodological advances
+
+-   📝 Three paper on analysing methods: PL Regression; Randomization tests; Tau-U \|Moritz, Timo\|
+-   💡 Validity of decision heuristics for assessing progress monitoring graphs
+
+## Software and application
+
+-   scan
+-   scplot
+-   shiny-scan
+-   You Tube Videos
+-   Scan - Book
+
+# Misc
+
+-   scaledic package for psychometric data coding in R
+
+![](images/logo-v2-tree-white.png)
