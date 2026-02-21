@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../images/penguin.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5bf7ca59d8cc7f7a8155307016a58e21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-80f6653e4bad1240590acd7234152a3f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -248,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-dataset" class="level1">
 <h1>Example dataset</h1>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">table</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">table</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
@@ -264,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <div class="cell-output-display">
-<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="lightable-classic caption-top table table-sm table-striped small">
 <caption>Single case data frame with one cases</caption>
 <colgroup>
 <col style="width: 33%">
@@ -492,22 +493,22 @@ Pawel
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean of all phases</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean of all phases</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>(means <span class="ot">&lt;-</span> <span class="fu">tapply</span>(df<span class="sc">$</span>values, df<span class="sc">$</span>phase, mean))</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  A1   B1   A2   B2 </span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fl">13.7</span> <span class="fl">25.9</span> <span class="fl">14.7</span> <span class="fl">27.0</span> </span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>(grand_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(means))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">20.325</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">20.325</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plm function reference:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plm</span>(exampleA1B1A2B2<span class="sc">$</span>Pawel, <span class="at">contrast =</span> <span class="st">"first"</span>, <span class="at">trend =</span> <span class="cn">FALSE</span>, <span class="at">slope =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> .[,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plm function reference:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plm</span>(exampleA1B1A2B2<span class="sc">$</span>Pawel, <span class="at">contrast =</span> <span class="st">"first"</span>, <span class="at">trend =</span> <span class="cn">FALSE</span>, <span class="at">slope =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> .[,<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)     phaseB1     phaseA2     phaseB2 
        13.7        12.2         1.0        13.3 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plm</span>(exampleA1B1A2B2<span class="sc">$</span>Pawel, <span class="at">contrast =</span> <span class="st">"preceding"</span>, <span class="at">trend =</span> <span class="cn">FALSE</span>, <span class="at">slope =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> .[,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plm</span>(exampleA1B1A2B2<span class="sc">$</span>Pawel, <span class="at">contrast =</span> <span class="st">"preceding"</span>, <span class="at">trend =</span> <span class="cn">FALSE</span>, <span class="at">slope =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> .[,<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)     phaseB1     phaseA2     phaseB2 
        13.7        12.2       -11.2        12.3 </code></pre>
@@ -522,9 +523,9 @@ Pawel
 <p>The Intercept is the mean of a reference phase (defaults to the first).<br>
 The predictors are the differences from a phase to the reference (intercept).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">&lt;-</span> <span class="fu">contr.treatment</span>(<span class="dv">4</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">&lt;-</span> <span class="fu">contr.treatment</span>(<span class="dv">4</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(treatment) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B1vsA1"</span>,<span class="st">"A2vsA1"</span>,<span class="st">"B2vsA1"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>treatment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>treatment</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  B1vsA1 A2vsA1 B2vsA1
 1      0      0      0
@@ -532,15 +533,15 @@ The predictors are the differences from a phase to the reference (intercept).</p
 3      0      1      0
 4      0      0      1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> treatment)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> treatment)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept) phaseB1vsA1 phaseA2vsA1 phaseB2vsA1 
        13.7        12.2         1.0        13.3 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> <span class="fl">13.7</span>, <span class="co"># phaseA1</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> <span class="fl">13.7</span>, <span class="co"># phaseA1</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsA1 =</span> <span class="fl">25.9</span> <span class="sc">-</span> <span class="fl">13.7</span>, </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsA1 =</span> <span class="fl">14.7</span> <span class="sc">-</span> <span class="fl">13.7</span>,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1 =</span> <span class="dv">27</span> <span class="sc">-</span> <span class="fl">13.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1 =</span> <span class="dv">27</span> <span class="sc">-</span> <span class="fl">13.7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Intercept phaseB1vsA1 phaseA2vsA1 phaseB2vsA1 
        13.7        12.2         1.0        13.3 </code></pre>
@@ -553,9 +554,9 @@ The predictors are the differences from a phase to the reference (intercept).</p
 <p>The Intercept is the overall mean.<br>
 The predictors are the differences from a phase mean to the overall mean.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sum <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">4</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sum <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">4</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sum) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A1vsMean"</span>,<span class="st">"B1vsMean"</span>,<span class="st">"A2vsMean"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>sum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  A1vsMean B1vsMean A2vsMean
 1        1        0        0
@@ -563,15 +564,15 @@ The predictors are the differences from a phase mean to the overall mean.</p>
 3        0        0        1
 4       -1       -1       -1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> sum)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> sum)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  (Intercept) phaseA1vsMean phaseB1vsMean phaseA2vsMean 
        20.325        -6.625         5.575        -5.625 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA1vsMean =</span> <span class="fl">13.7</span> <span class="sc">-</span> grand_mean, </span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsMean =</span> <span class="fl">25.9</span> <span class="sc">-</span> grand_mean, </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsMean =</span> <span class="fl">14.7</span> <span class="sc">-</span> grand_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsMean =</span> <span class="fl">14.7</span> <span class="sc">-</span> grand_mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Intercept phaseA1vsMean phaseB1vsMean phaseA2vsMean 
        20.325        -6.625         5.575        -5.625 </code></pre>
@@ -584,9 +585,9 @@ The predictors are the differences from a phase mean to the overall mean.</p>
 <p>The Intercept is the overall mean.<br>
 The predictors are the mean differences from a phase mean to the mean of all preceding phases.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>helmert <span class="ot">&lt;-</span> <span class="fu">contr.helmert</span>(<span class="dv">4</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>helmert <span class="ot">&lt;-</span> <span class="fu">contr.helmert</span>(<span class="dv">4</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(helmert) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B1vsA1"</span>, <span class="st">"A2vsA1_B1"</span>, <span class="st">"B2vsA1_B1_A2"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>helmert</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>helmert</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  B1vsA1 A2vsA1_B1 B2vsA1_B1_A2
 1     -1        -1           -1
@@ -594,15 +595,15 @@ The predictors are the mean differences from a phase mean to the mean of all pre
 3      0         2           -1
 4      0         0            3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> helmert)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> helmert)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      (Intercept)       phaseB1vsA1    phaseA2vsA1_B1 phaseB2vsA1_B1_A2 
            20.325             6.100            -1.700             2.225 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsA1 =</span> (<span class="fl">25.9</span> <span class="sc">+</span> <span class="sc">-</span><span class="fl">13.7</span>) <span class="sc">/</span> <span class="dv">2</span>, </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsA1_B1 =</span> (<span class="fl">14.7</span>  <span class="sc">+</span> (<span class="sc">-</span><span class="fl">13.7-25.9</span>)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">3</span>,</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1_B1_A2 =</span> (<span class="dv">27</span> <span class="sc">+</span> (<span class="sc">-</span><span class="fl">13.7-25.9-14.7</span>)<span class="sc">/</span><span class="dv">3</span>) <span class="sc">/</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1_B1_A2 =</span> (<span class="dv">27</span> <span class="sc">+</span> (<span class="sc">-</span><span class="fl">13.7-25.9-14.7</span>)<span class="sc">/</span><span class="dv">3</span>) <span class="sc">/</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        Intercept       phaseB1vsA1    phaseA2vsA1_B1 phaseB2vsA1_B1_A2 
            20.325             6.100            -1.700             2.225 </code></pre>
@@ -616,9 +617,9 @@ The predictors are the mean differences from a phase mean to the mean of all pre
 The predictors are the differences from a phase to the mean of the preeding phases.</p>
 <p><em>Compare phase2 vs.&nbsp;phase 1, phase 3 vs.&nbsp;mean of phase 1 and 2, phase4 vs.&nbsp;mean of phases 1,2,3 (Intercept is overall mean)</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>revers_helmert <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>revers_helmert <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(revers_helmert) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B1vsA1"</span>, <span class="st">"A2vsA1_B1"</span>, <span class="st">"B2vsA1_B1_A2"</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>revers_helmert</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>revers_helmert</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     B1vsA1  A2vsA1_B1 B2vsA1_B1_A2
 [1,]   -0.5 -0.3333333        -0.25
@@ -626,15 +627,15 @@ The predictors are the differences from a phase to the mean of the preeding phas
 [3,]    0.0  0.6666667        -0.25
 [4,]    0.0  0.0000000         0.75</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> revers_helmert)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> revers_helmert)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      (Intercept)       phaseB1vsA1    phaseA2vsA1_B1 phaseB2vsA1_B1_A2 
            20.325            12.200            -5.100             8.900 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsA1 =</span> <span class="fl">25.7</span> <span class="sc">-</span> <span class="fl">13.7</span>,</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsA1_B1 =</span> <span class="fl">14.7</span> <span class="sc">-</span> (<span class="fl">13.7+25.9</span>)<span class="sc">/</span><span class="dv">2</span>,</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1_B1_A2 =</span> <span class="dv">27</span> <span class="sc">-</span> (<span class="fl">13.7+25.9+14.7</span>)<span class="sc">/</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA1_B1_A2 =</span> <span class="dv">27</span> <span class="sc">-</span> (<span class="fl">13.7+25.9+14.7</span>)<span class="sc">/</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        Intercept       phaseB1vsA1    phaseA2vsA1_B1 phaseB2vsA1_B1_A2 
            20.325            12.000            -5.100             8.900 </code></pre>
@@ -647,9 +648,9 @@ The predictors are the differences from a phase to the mean of the preeding phas
 <p>The Intercept is the mean of the first phase.<br>
 The predictors are the differences from a phase to the preeding phase.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>cumulative <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>cumulative <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cumulative) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B1vsA1"</span>,<span class="st">"A2vsB1"</span>,<span class="st">"B2vsA2"</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>cumulative</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>cumulative</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     B1vsA1 A2vsB1 B2vsA2
 [1,]      0      0      0
@@ -657,15 +658,15 @@ The predictors are the differences from a phase to the preeding phase.</p>
 [3,]      1      1      0
 [4,]      1      1      1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> cumulative)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> cumulative)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept) phaseB1vsA1 phaseA2vsB1 phaseB2vsA2 
        13.7        12.2       -11.2        12.3 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> <span class="fl">13.7</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> <span class="fl">13.7</span>,</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsA1 =</span> <span class="fl">25.9</span> <span class="sc">-</span> <span class="fl">13.7</span>, </span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsB1 =</span> <span class="fl">14.7</span> <span class="sc">-</span> <span class="fl">25.9</span>,</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA2 =</span> <span class="dv">27</span> <span class="sc">-</span> <span class="fl">14.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB2vsA2 =</span> <span class="dv">27</span> <span class="sc">-</span> <span class="fl">14.7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Intercept phaseB1vsA1 phaseA2vsB1 phaseB2vsA2 
        13.7        12.2       -11.2        12.3 </code></pre>
@@ -678,7 +679,7 @@ The predictors are the differences from a phase to the preeding phase.</p>
 <section id="treatment" class="level2">
 <h2 class="anchored" data-anchor-id="treatment">treatment</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>(treatment <span class="ot">&lt;-</span> <span class="fu">contr.treatment</span>(<span class="dv">4</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>(treatment <span class="ot">&lt;-</span> <span class="fu">contr.treatment</span>(<span class="dv">4</span>))</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="dv">1</span> <span class="dv">0</span> <span class="dv">0</span></span>
@@ -726,13 +727,13 @@ The predictors are the differences from a phase to the preeding phase.</p>
 <span id="cb36-46"><a href="#cb36-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-47"><a href="#cb36-47" aria-hidden="true" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">5.928</span> on <span class="dv">36</span> degrees of freedom</span>
 <span id="cb36-48"><a href="#cb36-48" aria-hidden="true" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.5444</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.5064</span> </span>
-<span id="cb36-49"><a href="#cb36-49" aria-hidden="true" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">14.34</span> on <span class="dv">3</span> and <span class="dv">36</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">2.635e-06</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-49"><a href="#cb36-49" aria-hidden="true" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">14.34</span> on <span class="dv">3</span> and <span class="dv">36</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">2.635e-06</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="sum" class="level2">
 <h2 class="anchored" data-anchor-id="sum">sum</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>(sum <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>(sum <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [,1] [,2] [,3]
 1    1    0    0
@@ -740,7 +741,7 @@ The predictors are the differences from a phase to the preeding phase.</p>
 3    0    0    1
 4   -1   -1   -1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>(sum <span class="ot">&lt;-</span>  <span class="fu">cbind</span>(<span class="dv">1</span>, sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>(sum <span class="ot">&lt;-</span>  <span class="fu">cbind</span>(<span class="dv">1</span>, sum))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [,1] [,2] [,3] [,4]
 1    1    1    0    0
@@ -748,7 +749,7 @@ The predictors are the differences from a phase to the preeding phase.</p>
 3    1    0    0    1
 4    1   -1   -1   -1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>(sum <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(sum)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>(sum <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(sum)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [,1]  [,2]  [,3]  [,4]
 1 0.25  0.75 -0.25 -0.25
@@ -756,7 +757,7 @@ The predictors are the differences from a phase to the preeding phase.</p>
 3 0.25 -0.25 -0.25  0.75
 4 0.25 -0.25 -0.25 -0.25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>(sum <span class="ot">&lt;-</span> sum[,<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>(sum <span class="ot">&lt;-</span> sum[,<span class="sc">-</span><span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [,1]  [,2]  [,3]
 1  0.75 -0.25 -0.25
@@ -764,18 +765,18 @@ The predictors are the differences from a phase to the preeding phase.</p>
 3 -0.25 -0.25  0.75
 4 -0.25 -0.25 -0.25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sum) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A1vsMean"</span>,<span class="st">"B1vsMean"</span>,<span class="st">"A2vsMean"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sum) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A1vsMean"</span>,<span class="st">"B1vsMean"</span>,<span class="st">"A2vsMean"</span>)</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> sum)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(values<span class="sc">~</span>phase, <span class="at">data=</span>df, <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">phase =</span> sum)) <span class="sc">|&gt;</span> <span class="fu">coef</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  (Intercept) phaseA1vsMean phaseB1vsMean phaseA2vsMean 
        20.325       -13.300        -1.100       -12.300 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Intercept =</span> grand_mean,</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA1vsMean =</span> <span class="fl">13.7</span> <span class="sc">-</span> grand_mean, </span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseB1vsMean =</span> <span class="fl">25.9</span> <span class="sc">-</span> grand_mean, </span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsMean =</span> <span class="fl">14.7</span> <span class="sc">-</span> grand_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">phaseA2vsMean =</span> <span class="fl">14.7</span> <span class="sc">-</span> grand_mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Intercept phaseA1vsMean phaseB1vsMean phaseA2vsMean 
        20.325        -6.625         5.575        -5.625 </code></pre>
@@ -838,13 +839,14 @@ The predictors are the differences from a phase to the preeding phase.</p>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

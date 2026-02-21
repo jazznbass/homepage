@@ -1,0 +1,127 @@
+---
+title: Wellbeing Study Design
+author: Jürgen Wilbert
+date: '2026-02-21'
+categories:
+  - wellbeing
+  - presentation
+abstract: 'Short description of study design on psychological wellbeing'
+format: 
+  revealjs:
+    scrollable: true
+    theme: style.scss
+mermaid:
+  theme: default
+toc: false
+---
+
+## 
+
+### Definitions Psychological Wellbeing {.smaller}
+
+```{mermaid}
+flowchart TB
+    A2[Was sind die
+    Konstituenten des 
+    Wohlbefindens?]
+    A3["`**PERMA**<br>
+    Positive Emotions
+    Engagement
+    Relations
+    Meaning
+    Accomplishment`"]
+    
+    B2[Was sind die 
+    Ursachen des 
+    Wohlbefindens?]
+    B3["`**Self-Determination Theory**<br>
+    Autonomy
+    Relatedness
+    Competence`"]
+
+    C2[Wie erfassen/ 
+    erkennen wir 
+    Wohlbefinden?]
+    C3["`**Subjective Wellbeing**<br>
+    Positive Emotions
+    Negative Emotions
+    Life Satisaction`"]
+
+    subgraph "`***Präskriptiv - Formal***`"
+    direction TB
+    A2:::orange ==o A3
+    end
+    subgraph "`***Explanativ - Kausal***`"
+    direction TB
+    B2:::orange ==o B3
+    end
+    subgraph "`***Deskriptiv - Operational***`"
+    direction TB
+    C2:::orange ==o C3
+    end
+    
+    classDef orange fill: orange
+```
+
+
+## 
+
+### Framework {.smaller}
+
+```{mermaid}
+flowchart TB
+
+subgraph perma ["`***PERMA***`"]
+PERMA["`
+    Positive Emotions
+    Engagement
+    Relations
+    Meaning
+    Accomplishment`"]
+end
+
+subgraph sit ["`***Situative Kontexte***`"]
+direction TB
+SIT("`Seminare-Vorlesungen
+Prüfungen
+Sozialleben unter Studierenden
+Interaktionen mit Dozierenden
+Studienverwaltung
+Finanzielle Situation`")
+end
+
+subgraph swb ["`***Subjective Well being***`"]
+direction TB
+SWB("`Positive Emotions
+Negative Emotions
+Life Satisfaction`")
+end
+
+subgraph bpn ["`***Basic Psychological Needs***`"]
+direction TB
+BPN("`Autonomy
+Relatedness
+Competence
+`")
+end
+
+subgraph state ["`***State***`"]
+direction LR
+perma ==o|Dimensions| sit
+end
+
+subgraph trait ["`***Trait***`"]
+direction LR
+bpn ==>|Frustration| swb
+bpn ==>|Satisfaction| swb
+end
+
+state ==> trait
+
+style state fill:LightBlue, stroke:black
+style trait fill:LightBlue, stroke:black
+
+```
+
+
+
