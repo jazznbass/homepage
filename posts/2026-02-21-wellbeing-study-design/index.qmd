@@ -20,10 +20,11 @@ toc: false
 ### Definitions Psychological Wellbeing {.smaller}
 
 ```{mermaid}
+
 flowchart TB
-    A2[Was sind die
-    Konstituenten des 
-    Wohlbefindens?]
+    A2[What are the
+    constituents of 
+    wellbeing?]
     A3["`**PERMA**<br>
     Positive Emotions
     Engagement
@@ -31,44 +32,45 @@ flowchart TB
     Meaning
     Accomplishment`"]
     
-    B2[Was sind die 
-    Ursachen des 
-    Wohlbefindens?]
+    B2[What are the 
+    causes of 
+    wellbeing?]
     B3["`**Self-Determination Theory**<br>
     Autonomy
     Relatedness
     Competence`"]
 
-    C2[Wie erfassen/ 
-    erkennen wir 
-    Wohlbefinden?]
+    C2[How do we assess/ 
+    identify 
+    wellbeing?]
     C3["`**Subjective Wellbeing**<br>
     Positive Emotions
     Negative Emotions
     Life Satisaction`"]
 
-    subgraph "`***Präskriptiv - Formal***`"
+    subgraph "`***Prescriptive - Formal***`"
     direction TB
     A2:::orange ==o A3
     end
-    subgraph "`***Explanativ - Kausal***`"
+    subgraph "`***Explanatory - Causal***`"
     direction TB
     B2:::orange ==o B3
     end
-    subgraph "`***Deskriptiv - Operational***`"
+    subgraph "`***Descriptive - Operational***`"
     direction TB
     C2:::orange ==o C3
     end
     
     classDef orange fill: orange
-```
 
+```    
 
 ## 
 
 ### Framework {.smaller}
 
 ```{mermaid}
+
 flowchart TB
 
 subgraph perma ["`***PERMA***`"]
@@ -80,14 +82,14 @@ PERMA["`
     Accomplishment`"]
 end
 
-subgraph sit ["`***Situative Kontexte***`"]
+subgraph sit ["`***Situational Contexts***`"]
 direction TB
-SIT("`Seminare-Vorlesungen
-Prüfungen
-Sozialleben unter Studierenden
-Interaktionen mit Dozierenden
-Studienverwaltung
-Finanzielle Situation`")
+SIT("`Seminars-Lectures
+Exams
+Student social life
+Interactions with instructors
+Study administration
+Financial situation`")
 end
 
 subgraph swb ["`***Subjective Well being***`"]
@@ -122,6 +124,8 @@ style state fill:LightBlue, stroke:black
 style trait fill:LightBlue, stroke:black
 
 ```
+
+
 
 
 
