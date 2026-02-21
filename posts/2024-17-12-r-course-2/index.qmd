@@ -6,6 +6,7 @@ institute: "University of Münster"
 abstract: Slides for seminar on R
 categories:
   - teaching
+  - presentation
   - R
   - regression
 format: 

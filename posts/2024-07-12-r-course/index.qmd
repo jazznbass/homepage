@@ -13,6 +13,7 @@ format:
     code-fold: true
 categories:
   - teaching
+  - presentation
   - R
   - videos
 editor: 

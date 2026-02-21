@@ -1,0 +1,16 @@
+---
+title: R Introduction Course Winter 2025
+author: Jürgen Wilbert
+date: '2026-02-21'
+categories:
+  - teaching
+  - presentation
+  - R
+abstract: 'Slides and exercises from the R Introduction Course I gave in winter 2026.'
+---
+
+Here are slides and exercises from the R Introduction Course I gave in winter 2026.
+
+<https://jazznbass.github.io/course_dataanalyzes_with_r/>
+
+![](images/clipboard-3197592723.png)
