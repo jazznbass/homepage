@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2026-03-15-github-repos/index.html",
       "/posts/2026-02-21-r-introduction-course-winter-2025/index.html",
       "/posts/2026-02-21-wellbeing-study-design/index.html",
       "/posts/2026-02-10-projects/index.html",
@@ -13,10 +14,10 @@
       "/posts/2022-09-27-sc-contrasts/index.html",
       "/posts/2024-07-12-r-course/index.html",
       "/posts/2021-05-31-eRm/index.html",
-      "/posts/2021-04-19.html",
+      "/posts/2021-04-19-create-rmarkdown-github/index.html",
       "/posts/2021-04-14-regression-course/index.html",
       "/posts/2021-03-18-git-github/index.html",
-      "/posts/multivariate_multilevel.html"
+      "/posts/2021-03-17-multivariate-multilevel/index.html"
     ]
   }
 ]

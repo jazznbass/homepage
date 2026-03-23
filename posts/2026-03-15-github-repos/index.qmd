@@ -1,0 +1,103 @@
+---
+title: Github Repos
+author: Jürgen Wilbert
+date: '2026-03-15'
+format: 
+  revealjs:
+    scrollable: true
+    theme: style.scss
+categories:
+  - github
+  - R
+  - Rstudio
+  - presentation
+abstract: 'Introduction to our Gihub workflow.'
+---
+
+## Github account anlegen
+
+![](images/clipboard-2064334115.png)
+
+## Github Desktop installieren
+
+Mit dem Github Account verbinden
+
+## R-Studio Integration
+
+-   Tools –\> Global options –\> Git / SVN
+
+-   Github aktivieren
+
+-   Create SSH-Key
+
+![](images/clipboard-3429650889.png){width="408"}
+
+-   In Github —\> settings –\> SSH and GPG Keys
+
+-   New SSH Key / Key titel / Copy Key / Add key
+
+![](images/image1.png)
+
+## Repo anlegen
+
+![](images/clipboard-2141492066.png){width="1358"}
+
+## Download eines Repos auf den Rechner
+
+Github Desktop –\> File –\> Clone Repository -\> \[enter repo name\] -\> Clone
+
+Rstudio -\> File –\> New project -\> open in new session anklicken -\> Existing directory -\> Folder auswählen
+
+Sicherstellen, dass in RStudio "Show Hidden Files" aktiviert ist:
+
+![](images/clipboard-1003683151.png){width="274"}
+
+Unterordner .git Datei Config öffnen:
+
+![](images/clipboard-3042000500.png){width="522"}
+
+Dort muss unter \[remote "origin"\] eine andere url eingetragen werden.
+
+Die hat die folgende Form: git\@github.com:\[benutzername\]/\[reponame\].git
+
+Alternativ:
+
+In Github im Repo kopieren:\
+\
+![](images/clipboard-1409859133.png){width="497"}
+
+## Commits
+
+Öffne die Readme.md Datei und ergänze ein paar Infos:\
+\
+![](images/clipboard-377116977.png)
+
+Commit auswählen
+
+![](images/clipboard-3605503572.png){width="467"}
+
+![](images/clipboard-449244714.png)
+
+## Branches
+
+-   Sind eine Kopie aller Daten um darin sicher Veränderungen auszuprobieren
+
+![](images/clipboard-329925262.png)
+
+In dem neuen Branch wir dann normal weitergearbeitet inklusive commits, Pushs und Pulls:
+
+![](images/clipboard-2746406811.png){width="934"}
+
+## Pull requests
+
+Wenn man die in einem Branch gemachten Veränderungen wieder übernehmen will z.B. in den Hauptbranch, dann erstellt man einen Pull request:
+
+![](images/clipboard-346159348.png)
+
+## 
+
+![](images/clipboard-2174369482.png)
+
+## 
+
+![](images/clipboard-2652371950.png)
