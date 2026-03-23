@@ -2160,7 +2160,7 @@
     "href": "posts/2026-03-15-github-repos/index.html#commits",
     "title": "Github Repos",
     "section": "Commits",
-    "text": "Commits\nÖffne die Readme.md Datei und ergänze ein paar Infos:\n\n\nCommit auswählen"
+    "text": "Commits\nÖffne die Readme.md Datei und ergänze ein paar Infos:\n\n\nCommit auswählen\n\n\n⚠️ Pull: Damit werden Daten aus dem Repo in Github heruntergeladen und synchronisert!\n⚠️ Push: Mit Push werden die Commits ins Repo auf Github hochgeladen. Vorher nicht! Ohne Push sind die commits (nur) lokal auf Eurem Rechner vorhanden."
   },
   {
     "objectID": "posts/2026-03-15-github-repos/index.html#branches",
