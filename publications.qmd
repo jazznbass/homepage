@@ -13,7 +13,7 @@ toc-location: left
 
 2.  Gabriel, T., Mähler, C., Wilbert, J., & Börnert-Ringleb, M. (2026). Evaluating the Benefits of Dynamic Testing of Arithmetic Skills for Developing Individualized Education Plans. *International Journal for Research in Learning Disabilities*, *9*(1).
 
-3.  Wilbert, J., Lüke, T., & Börnert-Ringleb, M. (2025). The Power of Randomization Tests for Intraindividual Variability: Insights from a Monte Carlo Study. *Empirische Sonderpädagogik*.
+3.  Wilbert, Börnert-Ringleb, & Lüke. (2025). The Power of Randomization Tests to Detect Individual Intervention Effects: Insights from a Monte Carlo Study. *Empirische Sonderpädagogik*, *17*(3), 184. <https://doi.org/10.2440/003-0048>
 
 4.  Klemp, G., Urton, K., Krull, J., Bosch, J., & Wilbert, J. (2025). What does well-being at school mean to primary school students? Children’s understanding of basic psychological needs. *International Journal of Educational Research Open*, 8, *100442*. <https://doi.org/10.1016/j.ijedro.2025.100442>
 

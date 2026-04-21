@@ -1,0 +1,92 @@
+---
+title: FAS-D
+author: Jürgen Wilbert
+date: '2026-04-21'
+categories: 
+  - FAS
+  - Factor analysis
+abstract: '.'
+---
+
+```{r}
+#| include: false
+#| label: setup
+
+if (!("wmisc" %in% installed.packages()) || 
+    !packageDate("wmisc") >= as.Date("2025-12-30")) pak::pak("jazznbass/wmisc")
+library(wmisc)
+
+if (!("scaledic" %in% installed.packages()) || 
+    !packageDate("scaledic") >= as.Date("2025-12-30")) pak::pak("jazznbass/scaledic")
+library(scaledic)
+
+dat <- read.csv("zukunftsangst.csv", header = TRUE)
+
+```
+
+```{r}
+scales <- list(
+  fas = c("fa_01", "fa_02", "fa_03", "fa_04", "fa_05", 
+"fa_06", "fa_07", "fa_08", "fa_09", "fa_10", "fa_11", "fa_12", 
+"fa_13", "fa_14", "fa_15", "fa_16", "fa_17", "fa_18", "fa_19", 
+"fa_20", "fa_21", "fa_22", "fa_23", "fa_24", "fa_25", "fa_26", 
+"fa_27", "fa_28", "fa_29"), 
+fas_repeat = c("fa_t2_01", 
+"fa_t2_02", "fa_t2_03", "fa_t2_04", "fa_t2_05", "fa_t2_06", "fa_t2_07", 
+"fa_t2_08", "fa_t2_09", "fa_t2_10", "fa_t2_11", "fa_t2_12", "fa_t2_13", 
+"fa_t2_14", "fa_t2_15", "fa_t2_16", "fa_t2_17", "fa_t2_18", "fa_t2_19", 
+"fa_t2_20", "fa_t2_21", "fa_t2_22", "fa_t2_23", "fa_t2_24", "fa_t2_25", 
+"fa_t2_26", "fa_t2_27", "fa_t2_28", "fa_t2_29")
+)
+
+
+labels <- list(
+  fa_01 = "Meine Zukunft ist ungewiss.",
+  fa_02 = "Ich bin besorgt, dass bald eine Katastrophe eintreten wird.",
+  fa_03 = "Ich erschauere vor Angst bei dem Gedanken, was der nächste Tag, der nächste Monat, das nächste Jahr bringt.",
+  fa_04 = "Ich bin mir sicher, dass ich in der Zukunft nicht allein sein werde oder zurückgewiesen werde.",
+  fa_05 = "Ich habe Angst, die Zukunft zu planen.",
+  fa_06 = "Ich bin über mögliche Missgeschicke besorgt.",
+  fa_07 = "Ich fürchte, dass ich an wachsenden Schwierigkeiten scheitern werde.",
+  fa_08 = "Ich sorge mich um die Fehlschläge, die auf mich zukommen.",
+  fa_09 = "Ich bin durch den Gedanken verängstigt, dass ich manchmal Lebenskrisen oder Schwierigkeiten gegenüberstehen könnte.",
+  fa_10 = "Ich bin angespannt und mir ist unbehaglich, wenn ich an meine künftigen Angelegenheiten denke.",
+  fa_11 = "Ich bin mir sicher, dass ich in der Zukunft die wichtigsten Ziele und Werte in meinem Leben erreichen werde.",
+  fa_12 = "Ich mache mir Sorgen, dass ich meiner Familie keine guten materiellen Bedingungen bieten kann.",
+  fa_13 = "Ich habe das Gefühl, dass die Welt auf einen Kollaps, ein apokalyptisches Ende, zusteuert.",
+  fa_14 = "Ich fürchte mich vor dem Moment, in dem ich Verantwortung für die Entscheidungen und Handlungen in meinem Leben übernehmen muss.",
+  fa_15 = "Je näher ich dem Tod komme, desto mehr fürchte ich mich vor ihm.",
+  fa_16 = "Ich glaube, dass ich in der Zukunft fähig bin, meine Probleme selbst zu lösen.",
+  fa_17 = "Ich bin besorgt, dass wirtschaftlich-politische Veränderungen meine Zukunft gefährden.",
+  fa_18 = "Ich bin von dem Gedanken verängstigt, dass das Leben schnell vorübergeht.",
+  fa_19 = "Ich bin von dem Gedanken beunruhigt, dass ich in der Zukunft nicht fähig sein werde, meine Ziele zu verwirklichen.",
+  fa_20 = "Ich bin besorgt, dass die Probleme, die mich momentan beschäftigen, noch lange Zeit anhalten werden.",
+  fa_21 = "Selbst wenn die Dinge gut laufen, wird sich das Schicksal gegen mich wenden.",
+  fa_22 = "Ich bin von der Möglichkeit eines plötzlichen Unfalls oder einer ernsthaften Krankheit (z.B. AIDS, Krebs) beunruhigt.",
+  fa_23 = "Es ist lebenswert in dieser schönen, sich stetig weiter entwickelnden Welt.",
+  fa_24 = "Ich bin nicht besorgt, dass die Menschen in der Zukunft „Raubtiere“ zueinander sein werden.",
+  fa_25 = "Ich bin besorgt, dass andere in der Zukunft eine schlechte Meinung von mir haben werden.",
+  fa_26 = "Ich bin besorgt, dass ich mein Leben in einigen Jahren als sinnlos bewerte.",
+  fa_27 = "Ich bin besorgt, dass sich mein Leben in der Zukunft zum Schlechten wenden wird.",
+  fa_28 = "Ich bin besorgt, dass ich in meinem Beruf künftig nicht anerkannt werde.",
+  fa_29 = "Ich sorge mich, dass ich im Alter jemandem zur Last fallen werde."
+)
+
+dat <- wmisc::add_label(dat, labels)
+
+
+```
+
+```{r}
+wmisc::nice_item_analysis(dat, scales = scales$fas, labels = unlist(labels))
+```
+
+
+```{r}
+dat[, scales$fas] |> 
+  wmisc::rename_from_labels(keep = TRUE) |>  
+  psych::fa(nfactors = 1) |> 
+  wmisc::nice_efa()
+
+```
+
