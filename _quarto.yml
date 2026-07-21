@@ -3,12 +3,18 @@ project:
   output-dir: docs
 
 website:
-  favicon: images/penguin.png
-  page-footer: "&#169; Jürgen Wilbert, last updated 2026-06-12"
+  title: "Jürgen Wilbert"
+  description: "Research, projects, publications, and open-source software by Jürgen Wilbert, Professor of Special Education at the University of Münster."
+  site-url: https://jazznbass.github.io/homepage/
+  repo-url: https://github.com/jazznbass/homepage
+  favicon: images/penguin-favicon.png
+  open-graph: true
+  twitter-card: true
+  page-footer:
+    center: "© 2026 Jürgen Wilbert"
   search: true
   navbar:
     alignment: center
-    #logo: images/penguin.png
     left:
       - text: "Home"
         file: "index.qmd"
@@ -18,28 +24,29 @@ website:
         file: "publications.qmd"
       - text: "Software"
         file: "rpackages.qmd"
-      - text: "Graduate Students"
+      - text: "Supervisions"
         file: "students.qmd"
-      - text: "CV"
-        file: "cv.qmd"      
-      #- text: "Links"
-      #  file: "links.qmd"
-      - text: "Private Blog"
-        file: blog.html
+      - text: "More"
+        menu:
+          - text: "Curriculum Vitae"
+            file: "cv.qmd"
+          - text: "Notes"
+            file: "blog.qmd"
     right:
       - icon: github
         href: https://github.com/jazznbass
+        aria-label: GitHub
       - icon: researchgate
         href: https://www.researchgate.net/profile/Juergen_Wilbert2
+        aria-label: ResearchGate
 
 
 format:
   html:
-    theme: [sandstone]
+    theme: sandstone
     highlight: tango
     css: style_add.css
 
 csl: apa.csl
-
 
 

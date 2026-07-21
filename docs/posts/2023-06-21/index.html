@@ -9,7 +9,7 @@
 <meta name="author" content="Jürgen Wilbert">
 <meta name="dcterms.date" content="2023-06-22">
 
-<title>Logits as a link function in logistic regressions</title>
+<title>Logits as a link function in logistic regressions – Jürgen Wilbert</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,7 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../images/penguin.png" rel="icon" type="image/png">
+<link href="../../images/penguin-favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -138,6 +138,18 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../style_add.css">
+<meta property="og:title" content="A link function for logistic regressions – Jürgen Wilbert">
+<meta property="og:description" content="A brief explanation of the link function in logistic regression.">
+<meta property="og:image" content="https://jazznbass.github.io/homepage/posts/2023-06-21/index_files/figure-html/unnamed-chunk-1-1.png">
+<meta property="og:site_name" content="Jürgen Wilbert">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="A link function for logistic regressions – Jürgen Wilbert">
+<meta name="twitter:description" content="A brief explanation of the link function in logistic regression.">
+<meta name="twitter:image" content="https://jazznbass.github.io/homepage/posts/2023-06-21/index_files/figure-html/unnamed-chunk-1-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -146,6 +158,11 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Jürgen Wilbert</span>
+    </a>
+  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -170,25 +187,32 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../students.html"> 
-<span class="menu-text">Graduate Students</span></a>
+<span class="menu-text">Supervisions</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../cv.html"> 
-<span class="menu-text">CV</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">More</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../../cv.html">
+ <span class="dropdown-text">Curriculum Vitae</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
-<span class="menu-text">Private Blog</span></a>
+        <li>
+    <a class="dropdown-item" href="../../blog.html">
+ <span class="dropdown-text">Notes</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jazznbass"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jazznbass"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.researchgate.net/profile/Juergen_Wilbert2"> <i class="bi bi-researchgate" role="img">
+    <a class="nav-link" href="https://www.researchgate.net/profile/Juergen_Wilbert2"> <i class="bi bi-researchgate" role="img" aria-label="ResearchGate">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -411,7 +435,7 @@ The formula for calculating logits is:</p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/jazznbass\.github\.io\/homepage\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -774,7 +798,7 @@ The formula for calculating logits is:</p>
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© Jürgen Wilbert, last updated 2026-06-12</p>
+<p>© 2026 Jürgen Wilbert</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

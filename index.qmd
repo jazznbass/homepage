@@ -1,13 +1,19 @@
 ---
 title: "Jürgen Wilbert"
-image: images/texel-2023-2.jpg
+description: "Professor of Special Education researching educational assessment, data-based instruction, single-case methodology, and inclusive education."
+image: images/texel-2023-2-optimized.jpg
+image-alt: "Portrait of Jürgen Wilbert"
 toc: false
 about: 
   template: trestles
   image-shape: rounded
   image-width: 15em
   links:
-    - text: Research gate
+    - text: Email
+      href: mailto:juergen.wilbert@uni-muenster.de
+    - text: University profile
+      href: https://www.uni-muenster.de/EW/en/personen/wilbertjuergen.shtml
+    - text: ResearchGate
       href: https://www.researchgate.net/profile/Juergen_Wilbert2
     - text: GitHub
       href: https://github.com/jazznbass
@@ -21,8 +27,36 @@ about:
       href: https://empirische-sonderpaedagogik.de/index.php/esp
 ---
 
-## Welcome!
+## Research for better educational decisions
 
-I am a Professor of Special Education at the University of Münster, Germany. This website provides an overview of my research and contributions to the field of special education. 
+I am Professor of Special Education at the University of Münster, Germany. My research focuses on *data-based instruction*, *single-case experimental methods*, *dynamic assessment*, and the social and emotional dimensions of *inclusive education*. I study how assessment can support better decisions in schools and develop open tools that make analysis easier.
 
-<!--# I am a Professor of Special Education at the University of Münster, Germany. Prior to this, I held a professorship in Research Methods and Diagnostics at the University of Potsdam. My academic journey began at the University of Cologne, where I studied educational sciences and later earned my doctorate in cognitive psychology. Following this, I accepted a permanent role as a senior researcher in Special Education and later habilitated at the Carl von Ossietzky University of Oldenburg on Pedagogy and Psychology in Learning Disabilities. -->
+## Current highlights
+
+::: {.grid .homepage-highlights}
+
+::: {.g-col-12 .feature-card}
+### IM-TRANSFER
+
+Studying how support-oriented assessment and learning-progress monitoring can be implemented and transferred into inclusive schools.
+
+[View projects](projects.qmd#imtransfer)
+:::
+
+::: {.g-col-12 .feature-card}
+### Recent publication
+
+Development and evaluation of a rating scale for assessing the quality of individualized education plans.
+
+[Browse publications](publications.qmd)
+:::
+
+::: {.g-col-12 .feature-card}
+### `scan` for R
+
+An open-source R package for managing, visualizing, and analyzing single-case data and multiple-baseline designs.
+
+[More details](rpackages.qmd#scan)
+:::
+
+:::

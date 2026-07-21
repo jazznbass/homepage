@@ -9,9 +9,9 @@ toc-location: left
 ::: panel-tabset
 ## Journal papers
 
-1.  Gabriel, T., Wilbert, J., Mähler, C., & Börnert-Ringleb, M. (accepted). Development and Evaluation of a Rating Scale to Assess the Quality of Individualized Education Plans. *Frontiers in Education - Special Educational Needs*.
+1.  Gabriel, T., Wilbert, J., Mähler, C., & Börnert-Ringleb, M. (2026). Development and evaluation of a rating scale to assess the quality of individualized education plans. *Frontiers in Education*, *11*. <https://doi.org/10.3389/feduc.2026.1784532>
 
-2.  Baer, E., Bosch, J., & Wilbert, J. (accepted). Assessing Internalizing Problems in School Research: A Scoping Review of Conceptualizations and Measurement Approaches. *School Mental Health.*
+2.  Baer, E., Bosch, J., & Wilbert, J. (2026). Assessing Internalizing Problems in School Research: A Scoping Review of Conceptualizations and Measurement Approaches. *School Mental Health*. <https://doi.org/10.1007/s12310-026-09895-x>
 
 3.  Bosch, J., Lüke, T., Steiner, T. M., & Wilbert, J. (2026). Enhancing Pre-service Teachers’ Visual Analysis Skills for Single-Case Graphs: The Role of Trend and Intervention Effect. *Journal of Behavioral Education*. <https://doi.org/10.1007/s10864-026-09615-0>
 
