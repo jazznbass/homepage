@@ -71,7 +71,6 @@ h2 {
 }
 
 .feature-card {
-  background: var(--site-surface);
   border: 1px solid var(--site-border);
   border-radius: 0.65rem;
   display: flex;
@@ -80,7 +79,6 @@ h2 {
 }
 
 .feature-card h3 {
-  color: var(--site-accent-dark);
   font-size: 1.2rem;
   margin-top: 0;
 }
